@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Odczyt NCH v2 — Aleksander Komaniecki</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Georgia', serif; background: #080a10; color: #e0d8c8; line-height: 1.8; font-size: 16px; }
+  .page { max-width: 860px; margin: 0 auto; padding: 40px 28px 100px; }
+
+  .header { text-align: center; padding: 70px 0 50px; border-bottom: 1px solid #1e2235; margin-bottom: 60px; }
+  .header .eyebrow { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: #4466aa; margin-bottom: 20px; }
+  .header h1 { font-size: 2.6em; font-weight: normal; color: #f0e8d5; line-height: 1.25; margin-bottom: 10px; }
+  .header .sub { font-style: italic; color: #8090a0; font-size: 1em; margin-bottom: 28px; }
+  .header .meta { display: inline-flex; gap: 36px; font-size: 12px; color: #607090; border: 1px solid #1e2535; padding: 11px 28px; border-radius: 4px; }
+  .header .meta b { color: #a0b0c8; }
+
+  .section { margin-bottom: 70px; }
+  .section-label { font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: #4466aa; margin-bottom: 8px; }
+  h2 { font-size: 1.55em; font-weight: normal; color: #c8d0e0; border-bottom: 1px solid #1e2235; padding-bottom: 12px; margin-bottom: 28px; }
+  h3 { font-size: 0.85em; font-weight: normal; color: #a0b0c8; margin: 28px 0 10px; text-transform: uppercase; letter-spacing: 2px; }
+  p { margin-bottom: 14px; color: #b8c0c8; }
+  blockquote { border-left: 2px solid #2a3a6a; margin: 16px 0; padding: 10px 20px; font-style: italic; color: #9098a8; font-size: 0.95em; }
+
+  /* MAPA 3x3 */
+  .kwadrat-wrap { display: flex; justify-content: center; margin: 32px 0; }
+  .kwadrat { display: grid; grid-template-columns: repeat(3, 120px); grid-template-rows: repeat(3, 100px); gap: 6px; }
+  .kw-cell { background: #0d1020; border: 1px solid #1e2840; border-radius: 6px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+  .kw-cell.filled { border-color: #2a4080; background: #0f1530; }
+  .kw-cell.empty { opacity: 0.35; }
+  .kw-cell .kw-pos { font-size: 9px; color: #304060; letter-spacing: 1px; margin-bottom: 3px; }
+  .kw-cell .kw-num { font-size: 1.7em; font-weight: bold; color: #6088d0; letter-spacing: 3px; }
+  .kw-cell .kw-lbl { font-size: 9px; color: #4060a0; letter-spacing: 1px; margin-top: 2px; text-transform: uppercase; }
+  .kw-cell.empty .kw-num { color: #2a3550; }
+
+  /* TABELE */
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+  th { background: #0e1220; color: #7090b0; font-weight: normal; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; padding: 10px 14px; text-align: left; border-bottom: 1px solid #1e2a3a; }
+  td { padding: 10px 14px; border-bottom: 1px solid #141c28; color: #b0b8c0; }
+  tr:hover td { background: #0c1018; }
+  .num-col { font-size: 1.1em; font-weight: bold; color: #6088d0; }
+  .warn-row td { color: #c08060; }
+  .warn-row .num-col { color: #d09060; }
+
+  /* KARTY */
+  .card { background: #0c1020; border: 1px solid #1a2438; border-radius: 10px; padding: 28px 30px; margin-bottom: 24px; }
+  .card.dz { border-left: 3px solid #4070c0; }
+  .card.slabs { border-left: 3px solid #a04040; }
+  .card.rok { border-left: 3px solid #40a080; }
+  .card.num { border-left: 3px solid #304880; }
+  .card .card-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 16px; }
+  .card .card-num { font-size: 1.8em; font-weight: bold; color: #6088d0; letter-spacing: 3px; min-width: 60px; }
+  .card.slabs .card-num { color: #c06060; }
+  .card.rok .card-num { color: #50b090; }
+  .card .card-title { font-size: 1em; color: #8090a8; }
+  .card .card-heb { font-size: 12px; color: #506888; font-style: italic; }
+
+  /* PIRAMIDY */
+  .piramida-wrap { display: flex; justify-content: center; margin: 28px 0; }
+  .piramida { display: grid; grid-template-columns: 70px repeat(3, 130px) 70px; gap: 4px 6px; align-items: center; max-width: 620px; }
+  .pir-cell { background: #0d1020; border: 1px solid #1e2840; border-radius: 6px; padding: 14px 10px; text-align: center; }
+  .pir-cell .pir-num { font-size: 1.5em; font-weight: bold; color: #6088d0; }
+  .pir-cell .pir-lbl { font-size: 9px; color: #405070; text-transform: uppercase; letter-spacing: 1px; margin-top: 3px; }
+  .pir-cell .pir-okres { font-size: 10px; color: #506080; margin-top: 2px; font-style: italic; }
+  .pir-cell.active { border-color: #3060a0; background: #101830; }
+  .pir-cell.active .pir-num { color: #80a8e0; }
+  .pir-cell.base { border-color: #1a2a40; background: #080e18; }
+  .pir-cell.base .pir-num { font-size: 1.1em; color: #4060a0; }
+
+  /* PLAN PLANSZA */
+  .plan-box { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; margin: 20px 0; }
+  .plan-cell { background: #0d1020; border: 1px solid #1a2438; border-radius: 8px; padding: 16px 18px; }
+  .plan-cell .plan-nazwa { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #405070; margin-bottom: 6px; }
+  .plan-cell .plan-stan { font-size: 13px; color: #8090a8; }
+  .plan-cell.pusty { border-color: #402020; }
+  .plan-cell.pusty .plan-stan { color: #a05050; }
+  .plan-cell.slaby { border-color: #403020; }
+  .plan-cell.slaby .plan-stan { color: #a08050; }
+
+  /* BLOKI INSIGHT */
+  .insight { background: #0c1018; border: 1px solid #1a2030; border-radius: 8px; padding: 16px 20px; margin: 16px 0; font-size: 15px; color: #b8c0c8; border-left: 3px solid #4070c0; }
+  .insight.red { border-left-color: #a04040; color: #c8b8b0; }
+  .insight.gold { border-left-color: #a08030; color: #c8c0a0; }
+  .insight.green { border-left-color: #408050; color: #a8c0b0; }
+
+  /* LISTA */
+  ul { padding-left: 20px; margin: 12px 0 16px; }
+  ul li { color: #a8b0b8; margin-bottom: 8px; font-size: 15px; }
+  ul li strong { color: #c0c8d0; }
+
+  /* SYNTEZA */
+  .synthesis-box { background: #0c1018; border: 1px solid #202840; border-radius: 12px; padding: 40px 36px; text-align: center; margin: 40px 0; }
+  .synthesis-box h2 { border: none; margin-bottom: 20px; font-size: 1.3em; }
+  .synthesis-box p { font-size: 1.05em; color: #c0c8d0; max-width: 640px; margin: 0 auto 16px; }
+  .synthesis-box .portret { font-size: 1.15em; color: #d0d8e8; font-style: italic; line-height: 2.2; margin-top: 24px; padding-top: 24px; border-top: 1px solid #1e2840; }
+
+  .footer { margin-top: 80px; padding-top: 24px; border-top: 1px solid #141c28; font-size: 12px; color: #404858; text-align: center; font-style: italic; }
+  .badge { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 3px; letter-spacing: 1px; text-transform: uppercase; margin-right: 6px; }
+  .badge.fiz { background: #1a2440; color: #6080b0; border: 1px solid #2a3860; }
+  .badge.men { background: #1a2030; color: #507090; border: 1px solid #253040; }
+  .badge.emo { background: #2a1a1a; color: #905050; border: 1px solid #4a2a2a; }
+  .badge.ok { background: #1a2a1a; color: #508050; border: 1px solid #2a4a2a; }
+
+  .divider { height: 1px; background: #1a2030; margin: 20px 0; }
+  .znani { font-size: 13px; color: #506070; font-style: italic; margin-top: 8px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="eyebrow">Numerologia Chińska — System Zachodni · Wg Zbigniewa Królickiego</div>
+  <h1>Aleksander Komaniecki</h1>
+  <div class="sub">Odczyt numerologiczny — wersja rozszerzona z opisami z książki</div>
+  <div class="meta">
+    <span><b>Data urodzenia:</b> 09.11.1969</span>
+    <span><b>Droga Życia:</b> 9</span>
+    <span><b>Rok osobisty 2026:</b> 3</span>
+    <span><b>Odczyt:</b> 01.04.2026</span>
+  </div>
+</div>
+
+<!-- OBLICZENIA -->
+<div class="section">
+  <div class="section-label">Obliczenia bazowe</div>
+  <h2>Dane numerologiczne</h2>
+  <table>
+    <tr><th>Element</th><th>Wzór obliczeniowy</th><th>Wynik</th></tr>
+    <tr><td>E1 — Droga Życia</td><td>9 + 1+1 + 1+9+6+9 = 36 → 3+6 = 9</td><td class="num-col">9</td></tr>
+    <tr><td>E2 — Akcent dnia urodzenia</td><td>dzień 9 (bez redukcji)</td><td class="num-col">9</td></tr>
+    <tr><td>E3 — Cyfry kwadratu</td><td>0,9 | 1,1 | 1,9,6,9 → zero pomijamy</td><td>1×3, 6×1, 9×3</td></tr>
+    <tr><td>E9 — Rok osobisty 2026</td><td>9+1+1+2+0+2+6 = 21 → 2+1</td><td class="num-col">3</td></tr>
+    <tr><td>E10 — Miesiąc osobisty (kwiecień 2026)</td><td>rok(3) + miesiąc(4) = 7</td><td class="num-col">7</td></tr>
+    <tr><td>E11 — Piramida Szczyt 1</td><td>M(11→2) + D(9) = 11 → 1+1 = 2</td><td class="num-col">2</td></tr>
+    <tr><td>E11 — Piramida Szczyt 2</td><td>D(9) + R(1969→25→7) = 16 → 7</td><td class="num-col">7</td></tr>
+    <tr><td>E11 — Piramida Szczyt 3</td><td>S1(2) + S2(7) = 9</td><td class="num-col">9</td></tr>
+    <tr><td>E11 — Piramida Szczyt 4</td><td>M(2) + R(7) = 9</td><td class="num-col">9</td></tr>
+  </table>
+</div>
+
+<!-- DROGA ŻYCIA -->
+<div class="section">
+  <div class="section-label">E1 + E2 — Główna ścieżka</div>
+  <h2>Droga Życia 9 — Humanitaryzm</h2>
+
+  <div class="card dz">
+    <div class="card-head">
+      <div class="card-num">9 · 9</div>
+      <div>
+        <div class="card-title">DŻ 9 + Akcent dnia 9 — Podwójny humanitaryzm</div>
+        <div class="card-heb">Najczystsza forma tej Drogi w całym systemie</div>
+      </div>
+    </div>
+
+    <h3>Mocne strony — wg Królickiego</h3>
+    <p>Droga Życia 9 to droga humanisty i idealisty. Ludzie z tą Drogą mają <strong>skłonności do poświęceń, działalności misyjnej, podróżowania i bezinteresownego pomagania innym</strong>. Można odnieść wrażenie, że przychodzą na świat tylko po to, aby służyć. To niepoprawni romantycy i mistycy. Nieobce im są poszukiwania intelektualne, ale i doświadczenia metafizyczne, magia i okultyzm.</p>
+    <p>Są otwarci, zrównoważeni, dociekliwi. Przyjmują na swoje barki problemy ludzkości i świata — identyfikują się z nimi i cierpią. <strong>Potrafią głęboko i bezwarunkowo kochać</strong>. Posiadają intuicję, wiedzę i mądrość wewnętrzną. Jako Dziewiątka jesteś przede wszystkim humanistą i idealistą — dążysz do światła i wykształcenia. Masz wizję idealnego świata pełnej szczęśliwości i realizujesz ją bezinteresownie, wiedząc na poziomie duszy, że wszystko co zrobisz dla innych, wraca do Ciebie zwielokrotnione.</p>
+    <p>Dziewiątki fantastycznie radzą sobie w zawodach wymagających kontaktu z drugim człowiekiem. Są znakomitymi <strong>adwokatami, lekarzami, terapeutami, doradcami</strong>. Odnoszą sukcesy we wszelkich dziedzinach humanistycznych.</p>
+
+    <h3>Cień — słabe strony</h3>
+    <p>Dziewiątki cierpią — bo świat, który spotykają na tej Drodze, nie jest altruistyczny i uczciwy. Pomagają tam, gdzie nie trzeba, zaniedbując siebie. Stawiają się w roli źródła frustracji i dyskomfortu. <strong>Emocje nie zawsze są dobrym doradcą</strong> — posiadając wewnętrzną mądrość, brakuje im niekiedy umiejętności prawidłowej oceny rzeczywistości. Potrzebujesz ciągłych potwierdzeń, że jesteś kochany. Różne zdolności parapsychologiczne współistnieją z tendencjami do uporu, niecierpliwości i kłótliwości.</p>
+
+    <h3>Akcent dnia — urodzony 9. dnia</h3>
+    <p>Ludzie urodzeni 9. dnia miesiąca <strong>często poświęcają się dla innych i wpadają w różne pułapki uzależnień od innych</strong>. Są niezwykle odpowiedzialni, zorganizowani, podejmujący zadania i wyzwania. Silnie przywiązani do rodziców i rodziny. Mogą być doskonałymi opiekunami rodziny, ale ta sama głęboka troska może stawać się pułapką.</p>
+
+    <div class="insight gold">Aleksander ma <strong>DŻ 9 wzmocnioną dniem 9</strong> — to podwójny humanitaryzm. Wyjątkowo silna orientacja na innych, służbę, misję. W skali całego systemu Królickiego to jeden z najbardziej „czystych" profili humanisty i idealisty, jaki może wynieść numerologia.</div>
+
+    <h3>Zdrowie — obszary szczególnej uwagi</h3>
+    <p>Wg Królickiego, Droga Życia 9 związana jest ze zdrowiem w obszarach: <strong>nerki, gardło, układ krążenia, narządy płciowe</strong>. Stres emocjonalny i perfekcjonizm Dziewiątki mogą odbijać się szczególnie w tych układach.</p>
+
+    <div class="divider"></div>
+    <p class="znani">Znane Dziewiątki: Mahatma Gandhi, Carl G. Jung, Albert Schweitzer, Harrison Ford, Jimmy Carter, Dustin Hoffman, Shirley MacLaine, Carlos Castaneda, Benazir Bhutto, Nelson Rockefeller, Patrick Swayze.</p>
+  </div>
+</div>
+
+<!-- MAPA NUMEROLOGICZNA -->
+<div class="section">
+  <div class="section-label">E3 — Mapa numerologiczna</div>
+  <h2>Kwadrat Numerologiczny Lo Shu</h2>
+  <p>Cyfry z daty 09.11.1969: <b>9, 1, 1, 1, 9, 6, 9</b> &nbsp;|&nbsp; Wypełnione pola: <b>1, 6, 9</b> &nbsp;|&nbsp; Brakujące: <b>2, 3, 4, 5, 7, 8</b> &nbsp;|&nbsp; Pusta pola: 6 z 9</p>
+  <div class="kwadrat-wrap">
+    <div class="kwadrat">
+      <!-- rząd górny: 3 | 6 | 9 -->
+      <div class="kw-cell empty">
+        <div class="kw-pos">Plan Mentalny</div>
+        <div class="kw-num">—</div>
+        <div class="kw-lbl">3 · pamięć</div>
+      </div>
+      <div class="kw-cell filled">
+        <div class="kw-pos">Plan Mentalny</div>
+        <div class="kw-num">6</div>
+        <div class="kw-lbl">twórczość</div>
+      </div>
+      <div class="kw-cell filled">
+        <div class="kw-pos">Plan Mentalny</div>
+        <div class="kw-num">999</div>
+        <div class="kw-lbl">idealizm</div>
+      </div>
+      <!-- rząd środkowy: 2 | 5 | 8 -->
+      <div class="kw-cell empty">
+        <div class="kw-pos">Plan Emocjonalny</div>
+        <div class="kw-num">—</div>
+        <div class="kw-lbl">2 · intuicja</div>
+      </div>
+      <div class="kw-cell empty">
+        <div class="kw-pos">Plan Emocjonalny</div>
+        <div class="kw-num">—</div>
+        <div class="kw-lbl">5 · centrum</div>
+      </div>
+      <div class="kw-cell empty">
+        <div class="kw-pos">Plan Emocjonalny</div>
+        <div class="kw-num">—</div>
+        <div class="kw-lbl">8 · metodyka</div>
+      </div>
+      <!-- rząd dolny: 1 | 4 | 7 -->
+      <div class="kw-cell filled">
+        <div class="kw-pos">Plan Materialny</div>
+        <div class="kw-num">111</div>
+        <div class="kw-lbl">komunikacja</div>
+      </div>
+      <div class="kw-cell empty">
+        <div class="kw-pos">Plan Materialny</div>
+        <div class="kw-num">—</div>
+        <div class="kw-lbl">4 · praca</div>
+      </div>
+      <div class="kw-cell empty">
+        <div class="kw-pos">Plan Materialny</div>
+        <div class="kw-num">—</div>
+        <div class="kw-lbl">7 · poświęcenie</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="plan-box">
+    <div class="plan-cell slaby">
+      <div class="plan-nazwa">Plan Mentalny (3–6–9)</div>
+      <div class="plan-stan">CZĘŚCIOWY<br><small>Obecne: 6 i 999 &nbsp;|&nbsp; Brak: 3</small></div>
+    </div>
+    <div class="plan-cell pusty">
+      <div class="plan-nazwa">Plan Emocjonalny (2–5–8)</div>
+      <div class="plan-stan">PUSTY<br><small>Brak wszystkich: 2, 5, 8</small></div>
+    </div>
+    <div class="plan-cell slaby">
+      <div class="plan-nazwa">Plan Materialny (1–4–7)</div>
+      <div class="plan-stan">SŁABY<br><small>Obecne: 111 &nbsp;|&nbsp; Brak: 4, 7</small></div>
+    </div>
+  </div>
+  <div class="plan-box">
+    <div class="plan-cell slaby">
+      <div class="plan-nazwa">Myśl / Planowanie (1–2–3)</div>
+      <div class="plan-stan">SŁABA<br><small>Tylko: 111 &nbsp;|&nbsp; Brak: 2, 3</small></div>
+    </div>
+    <div class="plan-cell slaby">
+      <div class="plan-nazwa">Wola / Determinacja (4–5–6)</div>
+      <div class="plan-stan">SŁABA<br><small>Tylko: 6 &nbsp;|&nbsp; Brak: 4, 5</small></div>
+    </div>
+    <div class="plan-cell slaby">
+      <div class="plan-nazwa">Akcja / Działanie (7–8–9)</div>
+      <div class="plan-stan">SŁABA<br><small>Tylko: 999 &nbsp;|&nbsp; Brak: 7, 8</small></div>
+    </div>
+  </div>
+
+  <!-- TRZY JEDYNKI -->
+  <div class="card num">
+    <div class="card-head">
+      <div class="card-num">111</div>
+      <div>
+        <div class="card-title">Trzy jedynki — Plan Materialny, komunikacja</div>
+        <div class="card-heb">Pole 1 · lewy dolny róg kwadratu · wyraz siebie</div>
+      </div>
+    </div>
+    <p>Liczba 1 dostarcza najbardziej wartościowych informacji o tym, jak dana osoba komunikuje się z innymi. Pole lewego dolnego rogu kwadratu mówi o zdolnościach werbalnych, wyrażaniu siebie i kontaktach z otoczeniem.</p>
+    <p>Trzy jedynki (111) to, wg Królickiego, wzorzec, który może tworzyć dwa bardzo różne typy osobowości — <strong>w zależności od sytuacji i nastroju</strong>: albo wielki gaduła, którego bardzo trudno przekonać i przegadać, albo zamknięty w sobie introwertyk. Oba typy mogą występować u jednej osoby. Generalnie jednak osoby z 111 są szczęśliwe i otwarte, a przy odpowiednim układzie innych liczb wykazują <strong>wybitne zdolności do wystąpień publicznych i osiągnięć estradowych</strong>.</p>
+    <p>Wg Królickiego, posiadają duże zdolności do wystąpień publicznych. Mogą być wspaniałymi mówcami, pisarzami, poetami. <strong>Ekspresja przez słowo jest ich naturalnym medium</strong> — pełna trójka jedynek to wyjątkowy talent wypowiadania się i wyrażania siebie, rzadko spotykany w tej czystej formie.</p>
+    <div class="insight">Trzy jedynki + Droga Życia 9 = naturalne predyspozycje do pracy terapeutycznej, dydaktycznej i każdej, gdzie słowo służy człowiekowi. Komunikacja nie jest dla Aleksandra narzędziem — jest powołaniem.</div>
+    <p class="znani">Przykład wg Królickiego: Cliff Richard (14.10.1940) — trzy jedynki, wybitne zdolności estradowe.</p>
+  </div>
+
+  <!-- JEDNA SZÓSTKA -->
+  <div class="card num">
+    <div class="card-head">
+      <div class="card-num">6</div>
+      <div>
+        <div class="card-title">Jedna szóstka — Plan Mentalny, dom i twórczość</div>
+        <div class="card-heb">Pole 6 · środek prawej kolumny · miłość, rodzina, korzenie</div>
+      </div>
+    </div>
+    <p>Szóstka to środkowa liczba Planu Emocjonalnego i ostatnia kolumny woli. Mówi o kreatywności związanej z domem, rodziną, miłością do miejsca urodzenia. Symbolizuje umiłowanie tradycji, pamięć o korzeniach, szacunek dla przodków.</p>
+    <p>Jedna szóstka oznacza, wg Królickiego, <strong>ogromne umiłowanie domu rodzinnego, rodziny, partnera</strong>. Stałość w uczuciach i niezwykłą odpowiedzialność. Osoby z jedną szóstką wykorzystują swój twórczy potencjał i kreatywność właśnie w kierunkach związanych z troską o innych. Są bardzo dobrymi rodzicami i zajmują szczególną pozycję w rodzinie. <strong>Bardzo źle znoszą utratę „obiektu miłości"</strong> — rozczarowanie w miłości lub rodzinie dotyka ich głębiej niż innych.</p>
+    <div class="insight">Szóstka w planie mentalnym oznacza, że twórczość i intelekt Aleksandra są głęboko zakorzenione w wartościach rodziny i troski. Myśli przez pryzmat odpowiedzialności za drugiego człowieka — to naturalne "oprogramowanie" jego umysłu.</div>
+    <p class="znani">Przykład wg Królickiego: Ginger Rogers (16.07.1911) — jedna szóstka, ogromne umiłowanie domu i trwałość w uczuciach.</p>
+  </div>
+
+  <!-- TRZY DZIEWIĄTKI -->
+  <div class="card num">
+    <div class="card-head">
+      <div class="card-num">999</div>
+      <div>
+        <div class="card-title">Trzy dziewiątki — Plan Mentalny, humanitaryzm i idealizm</div>
+        <div class="card-heb">Pole 9 · prawy górny róg kwadratu · ambicja, odpowiedzialność</div>
+      </div>
+    </div>
+    <p>Dziewiątka to liczba humanitarna — idealizm, dzielność i ambicja. Każdy urodzony w XX wieku ma przynajmniej jedną dziewiątkę w kwadracie. Prawy górny róg kwadratu reprezentuje Plan Mentalny i kolumnę działania.</p>
+    <p>Trzy dziewiątki (999) to, wg Królickiego, profil osoby <strong>bardzo inteligentnej, pełnej ideałów i troski o innych</strong>. W dojrzałym wieku w pełni zdolnej do wykorzystania wszystkich talentów i zdolności. Jednak: <strong>mają tendencje do wyolbrzymiania i robienia gór z kretowisk</strong>. Gdy korzystają ze swoich zdolności mentalnych — są w pełni szczęśliwi i optymistycznie nastawieni do świata. Szybko stają się znudzeni i sfrustrowani, gdy zmuszani do rutynowych, schematycznych działań.</p>
+    <p>Wg autora, trzy dziewiątki dają <strong>silny idealizm, ambicję i dążenie do doskonałości oraz silną wolę</strong>. Poczucie odpowiedzialności działa na poziomie myślenia — może prowadzić do perfekcjonizmu i stawiania zbyt wysokich wymagań sobie i innym.</p>
+    <div class="insight gold">999 w połączeniu z 111 i DŻ 9 tworzy rzadki wzorzec: <strong>intelekt (999) + ekspresja (111) + misja (DŻ 9)</strong>. To pełna architektura człowieka, który myśli idealistycznie, wyraża to słowem i żyje tą misją całym życiem. Kluczowe ryzyko: mózg pracuje na najwyższych obrotach idealizmu przy jednoczesnym braku centrum emocjonalnego (plan środkowy pusty).</div>
+    <p class="znani">Przykład wg Królickiego: Lech Wałęsa (29.09.1943) — trzy dziewiątki, pełny idealizm i troska o innych.</p>
+  </div>
+</div>
+
+<!-- BRAKUJĄCE LICZBY -->
+<div class="section">
+  <div class="section-label">E4 — Lekcje życia</div>
+  <h2>Brakujące liczby — obszary do pracy</h2>
+  <p>Brakujące liczby wskazują cechy i problemy, którymi Aleksander powinien szczególnie się zająć. Królicki używa pojęcia <em>„lekcja do przerobienia"</em>. Prawie każdy człowiek ma dwie lub więcej brakujących liczb — tu mamy wyjątkowo ich sześć, co czyni tę mapę rzadką i bardzo charakterystyczną.</p>
+
+  <div class="card num">
+    <div class="card-head">
+      <div class="card-num">2</div>
+      <div>
+        <div class="card-title">Brak dwójki — wrażliwość i intuicja</div>
+        <div class="card-heb">Plan Emocjonalny · intuicja, subtelność</div>
+      </div>
+    </div>
+    <p>Dwójka to pierwsza i podstawowa liczba Planu Emocjonalnego. Mówi o wrażliwości i intuicji. Brak dwójki, wg Królickiego, oznacza: <strong>brak wrażliwości intuicyjnej</strong> i tendencje do pomijania małych sygnałów, które — gdyby zostały zauważone — przyniosłyby sukces. Pojawiają się <strong>tendencje do usprawiedliwiania się i szukania wymówek</strong> zamiast przyznawania do błędów. Towarzyszy temu niecierpliwość i niepunktualność.</p>
+    <div class="insight red">Lekcja: Uczyć się uważności na subtelne sygnały — w relacjach, w ciele, w przestrzeni wokół. Intuicja istnieje, ale wymaga treningu uważności. Praca z ciałem i emocjami (bioenergoterapia, refleksologia, kody emocji) są naturalną odpowiedzią na tę lekcję.</div>
+    <p class="znani">Przykład wg Królickiego: Richard Nixon (09.01.1913)</p>
+  </div>
+
+  <div class="card num">
+    <div class="card-head">
+      <div class="card-num">3</div>
+      <div>
+        <div class="card-title">Brak trójki — intelekt, pamięć i samoakceptacja</div>
+        <div class="card-heb">Plan Mentalny · logika, ufność, wyrażanie siebie</div>
+      </div>
+    </div>
+    <p>Trójka to pole intelektu, pamięci i logicznego myślenia — szczytu lewej kolumny. Brak trójki, wg Królickiego, oznacza <strong>brak zaufania do siebie i trudności w wyrażaniu siebie</strong>. Trudności w docenieniu siebie i samoakceptacji. Tendencja do samozadręczania. <strong>W chwilach zagrożenia trudno myśleć logicznie</strong> — stres blokuje możliwości umysłu, które w spokojnym stanie są bardzo wysokie (bo 999 jest aktywne).</p>
+    <div class="insight red">Lekcja: Uczyć się przyjmowania siebie takimi, jakimi się jest. Paradoks tego wzorca: intelekt jest potężny (999), ale brak trójki blokuje zaufanie do własnego umysłu i jego wyrażania pod presją. Ćwiczenie logicznego myślenia w trudnych warunkach (np. praca z przekonaniami) jest kluczem.</div>
+    <p class="znani">Przykład wg Królickiego: księżna Walii Diana (01.07.1961)</p>
+  </div>
+
+  <div class="card num">
+    <div class="card-head">
+      <div class="card-num">4</div>
+      <div>
+        <div class="card-title">Brak czwórki — praktyczność i rutyna</div>
+        <div class="card-heb">Plan Materialny · praca fizyczna, porządek, systematyczność</div>
+      </div>
+    </div>
+    <p>Czwórka to pole praktyczności, pracowitości i porządku. Brak czwórki, wg Królickiego, oznacza <strong>bardzo trudno pracować systematycznie i wykonywać rutynowe czynności</strong>. Osoby bez czwórki są często zdezorganizowane i brak im motywacji do codziennego działania. <strong>Rzadko dokonują czegoś wielkiego — chyba że zmienią stosunek do świata</strong>. Ludziom bez czwórki ciężko „działać rękami". Jeżeli nauczą się tolerancji i cierpliwości — łatwiej.</p>
+    <div class="insight red">Lekcja: Uczyć się porządku, organizowania i systematycznej pracy — takiej, jakiej sami chcą. Kluczowy paradoks: misja DŻ 9 wymaga długoterminowej, konsekwentnej pracy, a brak 4 utrudnia właśnie to. Rozwiązanie: tworzyć rutyny wokół pasji, nie obowiązku.</div>
+    <p class="znani">Przykład wg Królickiego: Agnieszka Osiecka (09.10.1936)</p>
+  </div>
+
+  <div class="card num">
+    <div class="card-head">
+      <div class="card-num">5</div>
+      <div>
+        <div class="card-title">Brak piątki — centrum i cele</div>
+        <div class="card-heb">Plan Emocjonalny · centrum kwadratu · równowaga, zapał</div>
+      </div>
+    </div>
+    <p>Piątka to centrum kwadratu — symbol zrównoważenia i stałości emocjonalnej, umiłowania wolności. Brak piątki, wg Królickiego, oznacza: <strong>bardzo trudno przychodzi ustalanie celów</strong>. Brak wewnętrznego zapału i wszechstronności. <strong>Potrzeba stałej motywacji i zachęty od innych</strong>, aby kontynuować działania. Lekcja: nauczyć się wyznaczać realistyczne cele i osiągać je etapami.</p>
+    <div class="insight red">Lekcja: Centrum kwadratu pustym — to metafora braku "osi" emocjonalnej. Działania bez zakorzenionego centrum mogą być silne w porywach, ale nie zawsze konsekwentne. Praca ze świadomością własnych celów (nie misji innych, ale własnych) jest fundamentalna.</div>
+    <p class="znani">Przykład wg Królickiego: Tomasz Alwa Edison (11.02.1847)</p>
+  </div>
+
+  <div class="card num">
+    <div class="card-head">
+      <div class="card-num">7</div>
+      <div>
+        <div class="card-title">Brak siódemki — doświadczenie przez stratę</div>
+        <div class="card-heb">Plan Materialny · duchowość przez rozczarowanie</div>
+      </div>
+    </div>
+    <p>Siódemka to pole doświadczania życia poprzez rozczarowanie lub stratę. Brak siódemki, wg Królickiego, oznacza <strong>tendencję do nieliczenia się z uczuciami innych</strong> osób. Niezorganizowanie i bałaganiarstwo w codziennych sprawach. Małe zainteresowanie sprawami duchowymi i mistycznymi (paradoks przy DŻ 9 — ale to właśnie lekcja). <strong>Poczucie bycia „środkiem tarczy strzelniczej"</strong> — ciągłe wrażenie bycia obserwowanym i krytykowanym.</p>
+    <div class="insight red">Lekcja: Uczyć się rozluźniania, relaksu, odpoczynku i dostrzegania innych. Paradoks: humanista DŻ 9 może nie dostrzegać uczuć konkretnych ludzi wokół, skupiając się na "ludzkości" jako abstrakcji. Praktyczna obecność i uważność to lek.</div>
+    <p class="znani">Przykład wg Królickiego: Sir Isaac Newton (25.12.1642)</p>
+  </div>
+
+  <div class="card num">
+    <div class="card-head">
+      <div class="card-num">8</div>
+      <div>
+        <div class="card-title">Brak ósemki — metodyczność i finanse</div>
+        <div class="card-heb">Plan Emocjonalny · konsekwencja, pieniądze, dociekliwość</div>
+      </div>
+    </div>
+    <p>Ósemka to liczba metodyki, konsekwencji i umiarkowanego zaufania do informacji, których nie można sprawdzić. Brak ósemki, wg Królickiego, oznacza: <strong>problemy z zarządzaniem pieniędzmi i operacjami finansowymi</strong>. Nadmierne zaufanie i łatwowierność. <strong>Brak motywacji, pozostawianie wielu spraw niedokończonych</strong>, rezygnacja w połowie drogi. Trudna samokontrola nad różnymi naturalnymi popędami. Lekcja: nauczyć się myśleć przed działaniem, szczególnie w kwestiach finansowych.</p>
+    <div class="insight red">Lekcja: Myśleć przed działaniem — zwłaszcza finansowo. Brak 8 przy DŻ 9 to klasyczna pułapka idealisty: daje, nie liczy, zostawia sprawy w połowie drogi, bo misja ważniejsza niż rozliczenie.</div>
+    <p class="znani">Przykład wg Królickiego: Mick Jagger (26.07.1943)</p>
+  </div>
+</div>
+
+<!-- STRZAŁY SŁABOŚCI -->
+<div class="section">
+  <div class="section-label">E7 + E8 — Strzały</div>
+  <h2>Strzały Siły i Słabości</h2>
+  <p>Strzały to linie kwadratu (rzędy, kolumny, przekątne), w których wszystkie trzy pola są albo wypełnione (Strzała Siły) albo puste (Strzała Słabości). Aleksander nie posiada żadnej Strzały Siły — żadna z 8 linii kwadratu nie jest kompletna. Posiada natomiast dwie Strzały Słabości.</p>
+
+  <div class="insight" style="margin-bottom:24px;">Brak Strzał Siły nie oznacza słabości — oznacza, że nie ma jednego, dominującego, gotowego talentu. Zamiast tego: potencjał rozproszony w 3 punktach (111, 6, 999), wymagający świadomej integracji.</div>
+
+  <div class="card slabs">
+    <div class="card-head">
+      <div class="card-num">2–5–8</div>
+      <div>
+        <div class="card-title">Strzała Wrażliwości Emocjonalnej</div>
+        <div class="card-heb">Cały środkowy rząd pusty — Plan Emocjonalny niezapisany</div>
+      </div>
+    </div>
+    <p>Strzała Wrażliwości Emocjonalnej (Strzała Słabości) powstaje przy nieobecności liczb 2, 5, 8 — całego środkowego rzędu kwadratu, Planu Emocjonalnego. Wg Królickiego: fakt, że są to liczby Planu Emocjonalnego, <strong>oznacza, że ludzie z tą konfiguracją muszą na tej płaszczyźnie chronić się sami</strong>.</p>
+    <p><strong>Ogromna wrażliwość i otwartość wciąż dostarcza im zmartw i cierpień.</strong> W dzieciństwie są nieśmiali. Stopniowo jednak pokonują tę cechę i uczą się ukrywać swoje uczucia. Posiadają umiejętności wychowawcze, chętnie pomagają innym, działają charytatywnie i społecznie. <strong>Ich ukrytym kompleksem jest niskie poczucie własnej wartości</strong> towarzyszące im przez całe życie.</p>
+    <div class="insight red">Paradoks: Droga Życia DŻ 9 wskazuje na misję humanistyczną i duchową, ale mapa kwadratu pokazuje, że ta misja jest realizowana "z zewnątrz" — przez intelekt (999) i ekspresję (111) — <strong>bez solidnego emocjonalnego zaplecza wewnętrznego</strong>. Aleksander niesie emocje innych, podczas gdy swoje centrum emocjonalne pozostaje niezapisane. To główne źródło wypalenia i poczucia braku spełnienia pomimo ogromnej aktywności.</div>
+    <p class="znani">Przykłady wg Królickiego: księżna Walii Diana (01.07.1961), John Lennon (09.10.1940)</p>
+  </div>
+
+  <div class="card slabs">
+    <div class="card-head">
+      <div class="card-num">3–5–7</div>
+      <div>
+        <div class="card-title">Strzała Sceptycyzmu</div>
+        <div class="card-heb">Przekątna pusta — brak własnej filozofii przez doświadczenie</div>
+      </div>
+    </div>
+    <p>Strzała Sceptycyzmu (brak 3, 5, 7 — pustej przekątnej) oznacza, wg Królickiego, że <strong>ludzie z taką konfiguracją wolą coś widzieć, dotykać, przekonać się empirycznie, a nie przyjmować na wiarę</strong>. Mają konserwatywne podejście do wiary i religii. Przyjmują tradycje jako najwłaściwszą drogę, bez rozglądania się za innymi możliwościami.</p>
+    <p>Jednocześnie: <strong>potrafią naprawdę kochać — pięknie i bezinteresownie</strong>. Miewają jednak kłopoty z odwzajemnieniem tych uczuć przez innych. <strong>Są idealistami i nieprawdopodobnymi wizjonerami</strong>. Strzała ta bywa też nazywana Strzałą Mistycyzmu — jej brak oznacza trudność w budowaniu własnej, stabilnej filozofii życia przez stopniowe, zakorzenione doświadczenie.</p>
+    <div class="insight red">Paradoks tej strzały u Aleksandra: posiada on potężny intelekt i idealizm (999, DŻ 9), ale bez przekątnej 3–5–7 może brakować mu głębokiego zakorzenienia wiedzy w ciele i spokoju psychicznym. Wiedza wchłaniana szybko — ale czy zakorzeniana? Praca z ciałem (refleksologia, bioenergoterapia) jest bezpośrednią odpowiedzią na tę lekcję.</div>
+    <p class="znani">Przykłady wg Królickiego: Abraham Lincoln (12.02.1809), Charles Chaplin (16.04.1889)</p>
+  </div>
+</div>
+
+<!-- PIRAMIDY -->
+<div class="section">
+  <div class="section-label">E11 — Etapy życia</div>
+  <h2>Piramidy numerologiczne</h2>
+  <p>Piramidy to specjalny wykres liczbowy umożliwiający śledzenie trendów w całym życiu — wzlotów i upadków. Cztery szczyty odpowiadają czterem etapom życia. Szczyt każdej piramidy to liczba dominująca w danym etapie — opisuje kluczowy temat i energię tego okresu.</p>
+
+  <div class="piramida-wrap">
+    <div class="piramida">
+      <div class="pir-cell base"><div class="pir-num">2</div><div class="pir-lbl">Miesiąc</div><div class="pir-okres">11→2</div></div>
+      <div class="pir-cell"><div class="pir-num">2</div><div class="pir-lbl">Szczyt 1</div><div class="pir-okres">do ~27 r.ż.</div></div>
+      <div class="pir-cell"><div class="pir-num">9</div><div class="pir-lbl">Szczyt 3</div><div class="pir-okres">36–45 r.ż.</div></div>
+      <div class="pir-cell active"><div class="pir-num">9</div><div class="pir-lbl">Szczyt 4 ★</div><div class="pir-okres">od 45 r.ż.</div></div>
+      <div class="pir-cell base"><div class="pir-num">7</div><div class="pir-lbl">Rok</div><div class="pir-okres">1969→7</div></div>
+      <div class="pir-cell base"><div class="pir-num">9</div><div class="pir-lbl">Dzień</div><div class="pir-okres">ur. 9</div></div>
+      <div class="pir-cell"><div class="pir-num">7</div><div class="pir-lbl">Szczyt 2</div><div class="pir-okres">27–36 r.ż.</div></div>
+      <div class="pir-cell" style="visibility:hidden"></div>
+      <div class="pir-cell" style="visibility:hidden"></div>
+      <div class="pir-cell base"><div class="pir-num">7</div><div class="pir-lbl">Rok</div><div class="pir-okres">1969→7</div></div>
+    </div>
+  </div>
+
+  <table>
+    <tr><th>Szczyt</th><th>Liczba</th><th>Okres (orientacyjny)</th><th>Temat i energia wg Królickiego</th></tr>
+    <tr>
+      <td>Szczyt 1</td>
+      <td class="num-col">2</td>
+      <td>0–27 r.ż. (do ok. 1996)</td>
+      <td>Droga współpracy i przyjaźni. Dominował temat relacji, cierpliwości, oczekiwania, scalania się. Wiek kształtowania się przez kontakty z innymi ludźmi. Dwójka to „Wu-Wei" — działanie w niedziałaniu, nauka zaufania.</td>
+    </tr>
+    <tr>
+      <td>Szczyt 2</td>
+      <td class="num-col">7</td>
+      <td>27–36 r.ż. (~1996–2005)</td>
+      <td>Analiza i zrozumienie. Czas budowania własnej filozofii życia — introspekcja, wycofanie do wewnątrz, nauka. Siódemka to Droga nie zachęcająca do pośpiechu. Niezależność, oryginalność, filozoficzna postawa. Czas wewnętrznych poszukiwań i budowania własnej mądrości.</td>
+    </tr>
+    <tr>
+      <td>Szczyt 3</td>
+      <td class="num-col">9</td>
+      <td>36–45 r.ż. (~2005–2014)</td>
+      <td>Humanitaryzm wchodzi jako dominujący temat etapu życia. Wzmocnienie natury DŻ 9 — misja, służba, idealizm stają się świadomym wyborem. Poświęcenie i bezinteresowność przechodzą z wzorca w powołanie.</td>
+    </tr>
+    <tr class="warn-row">
+      <td><strong>Szczyt 4 ★ TERAZ</strong></td>
+      <td class="num-col">9</td>
+      <td>od 45 r.ż. (~od 2014 → nadal)</td>
+      <td>Dojrzała forma humanizmu. Pełne wejście w misję życia. Szczyt 3 i 4 to ta sama liczba — od 36. roku życia jedna, spójna Droga. To nie próba — to właściwe życie.</td>
+    </tr>
+  </table>
+  <div class="insight gold">Szczyt 3 i 4 to ta sama liczba (9). Aleksander wchodzi w pełnię swojej Drogi Życia od 36. roku życia — i ta Droga trwa już nieprzerwanie. Dwa kolejne dziewięcioletnie szczyty z tą samą liczbą to <strong>rzadkie potwierdzenie, że jest we właściwym miejscu i czasie</strong>.</div>
+</div>
+
+<!-- ROK I MIESIĄC -->
+<div class="section">
+  <div class="section-label">E9 + E10 — Czas obecny</div>
+  <h2>Rok i miesiąc osobisty</h2>
+
+  <div class="card rok">
+    <div class="card-head">
+      <div class="card-num">3</div>
+      <div>
+        <div class="card-title">Rok osobisty 2026 — Przyjemność, Szczęście, Beztroska</div>
+        <div class="card-heb">Obliczenie: 9+1+1+2+0+2+6 = 21 → 3</div>
+      </div>
+    </div>
+    <p>Rok 3 to, wg Królickiego, rok miły, szczęśliwy i beztroski. <strong>Idealny do odpoczynku, zabawy, cieszenia się życiem</strong>. Dodają zniechęcenia do pracy. Dobry rok do spędzenia w gronie starych przyjaciół i zawierania nowych znajomości, pogłębiania hobby i zainteresowań. Niestety — jeżeli jesteś zmuszony ciężko pracować, ten rok nie pomaga.</p>
+    <div class="insight gold">Dla DŻ 9 rok 3 ma szczególne znaczenie: <strong>zwolnij, pozwól sobie na lekkość. Nie ratuj całego świata</strong>. To rok oddechu po ciężkiej pracy lat poprzednich. Czas celebracji tego, co zostało zbudowane — zamiast budowania kolejnych rzeczy.</div>
+  </div>
+
+  <div class="card rok">
+    <div class="card-head">
+      <div class="card-num">7</div>
+      <div>
+        <div class="card-title">Miesiąc osobisty — kwiecień 2026 — Nauka, Mądrość, Rozwój Wewnętrzny</div>
+        <div class="card-heb">Obliczenie: rok osobisty (3) + miesiąc (4) = 7</div>
+      </div>
+    </div>
+    <p>Miesiąc 7 to, wg Królickiego, <strong>bardzo spokojny i łagodny okres</strong>. Czas na naukę, rozmyślania, medytacje. Wiele osób rozpoczyna lub kontynuuje edukację. Dobry miesiąc do działalności poznawczej i naukowej we wszystkich kierunkach. Mniejsze zainteresowania materialne — energia kieruje się do wewnątrz.</p>
+    <div class="insight green">Kwiecień 2026: ten miesiąc idealnie koresponduje z naturą Aleksandra — czas na głębsze przemyślenia, naukę i rozwijanie wiedzy (np. numerologia chińska, nowe metody terapeutyczne). Miesięczna energia 7 i jego Szczyt 2 piramidy (liczba 7, czas nauki) rezonują z sobą — to naturalne powroty do głębokiego uczenia się.</div>
+  </div>
+</div>
+
+<!-- SYNTEZA -->
+<div class="synthesis-box">
+  <div class="section-label" style="text-align:center;margin-bottom:12px;">Synteza</div>
+  <h2>Portret numerologiczny Aleksandra Komanieckiego</h2>
+  <p><strong>Człowiek z misją.</strong> Droga Życia 9 wzmocniona dniem 9, podwójnym szczytem piramidy 9 od 36. roku życia i potężnym zestawem 999+111 — to jeden z najbardziej "czystych" i rzadkich profili humanisty, idealisty i terapeuty, jaki może wynieść numerologia.</p>
+  <p><strong>Siła:</strong> Intelekt i słowo (111 + 999). Aleksander myśli z wyjątkową głębią idealizmu i wyraża to z naturalną mocą. Jedynki dają ekspresję werbalną, dziewiątki dają paliwo humanistyczne. To rzadka kombinacja — myśli pięknie i potrafi to przekazać.</p>
+  <p><strong>Wyzwanie:</strong> Emocjonalne centrum (brak 2, 5, 8 — cały Plan Emocjonalny pusty). Droga Życia każe mu pomagać innym, ale mapa pokazuje, że robi to "z głowy i woli" — bez emocjonalnego zakorzenienia. To może prowadzić do wypalenia, frustracji i dawania innym więcej, niż daje sobie.</p>
+  <p><strong>Lekcje życia:</strong> Rutyna i systematyczność (brak 4), wyznaczanie własnych celów (brak 5), zarządzanie finansami i kończenie spraw (brak 8), relaks i obecność dla konkretnych ludzi zamiast abstrakcyjnej ludzkości (brak 7), uważność i intuicja (brak 2), samoakceptacja pod presją (brak 3).</p>
+  <div class="portret">
+    Twoja mapa jest rzadka.<br>
+    Nie dlatego że brakuje Ci liczb —<br>
+    ale dlatego że te, które masz,<br>
+    mówią jedno słowo: <em>misja.</em><br><br>
+    Teraz (2026): rok 3 mówi — odetchnij, baw się, nie ratuj świata.<br>
+    Kwiecień: czas na głębszą naukę i refleksję.<br>
+    Piramida od 45 r.ż.: jesteś w środku swojego czasu.<br>
+    To nie próba — to właściwe życie.
+  </div>
+</div>
+
+<div class="footer">
+  Źródło: Zbigniew Królicki, „Feng Shui Nieba i Ziemi. Numerologia Chińska", Wydawnictwo KOS, Katowice &nbsp;|&nbsp; Wersja 2.0 / 01.04.2026<br>
+  Odczyt dla: Aleksander Komaniecki, ur. 09.11.1969<br><br>
+  Aleksander Komaniecki &nbsp;|&nbsp; tel. +48 791 322 978 &nbsp;|&nbsp; komanieckialek@gmail.com
+</div>
+
+</div>
+</body>
+</html>

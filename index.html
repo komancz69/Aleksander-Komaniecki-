@@ -1,0 +1,2186 @@
+est <!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aleksander Komaniecki</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<style>
+:root {
+  --navy:   #2b2d42;
+  --sand:   #f5f0e8;
+  --sand-d: #ebe4d8;
+  --brown:  #3a3226;
+  --gold:   #a08c6a;
+  --gold-l: #c4aa85;
+  --green:  #6b8f71;
+  --white:  #ffffff;
+  --border: #d9d2c5;
+  --muted:  #7a6f64;
+
+  /* 4 obszary — kolory */
+  --umysl:   #5b7fa6;
+  --emocje:  #b5845a;
+  --duch:    #8b6fae;
+  --cialo:   #a08c6a;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body { font-family: 'Inter', sans-serif; background: var(--white); color: var(--brown); line-height: 1.7; }
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+
+/* ── LAYOUT ── */
+.inner { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
+.py-xl { padding: 96px 0; }
+.py-lg { padding: 72px 0; }
+.py-md { padding: 52px 0; }
+
+/* ── TYPOGRAFIA ── */
+.serif { font-family: 'Cormorant Garamond', Georgia, serif; }
+.tag {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); display: block; margin-bottom: 12px;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 600; line-height: 1.2;
+  color: var(--navy); margin-bottom: 16px;
+}
+.section-title.light { color: var(--sand); }
+.section-lead {
+  font-size: 17px; line-height: 1.85;
+  color: var(--muted); max-width: 600px;
+  margin-bottom: 52px;
+}
+.section-lead.light { color: rgba(245,240,232,.75); }
+
+/* ── BUTTON ── */
+.btn {
+  display: inline-block;
+  font-family: 'Inter', sans-serif;
+  font-size: 13px; font-weight: 600;
+  padding: 14px 28px; border-radius: 4px;
+  cursor: pointer; border: none;
+  transition: opacity .2s, transform .15s;
+  letter-spacing: .3px;
+}
+.btn:hover { opacity: .85; transform: translateY(-1px); }
+.btn-gold  { background: var(--gold); color: var(--white); }
+.btn-outline{ background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,.5); }
+.btn-navy  { background: var(--navy); color: var(--white); }
+.btn-lg    { padding: 17px 40px; font-size: 15px; }
+
+/* ══════════════════════════════════
+   NAW IGACJA
+══════════════════════════════════ */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  background: rgba(43, 45, 66, 0.96);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255,255,255,.08);
+}
+nav .inner {
+  display: flex; align-items: center;
+  justify-content: space-between;
+  height: 64px;
+}
+.nav-logo {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 600;
+  color: var(--sand); letter-spacing: .3px;
+}
+.nav-logo span { color: var(--gold-l); }
+.nav-links {
+  display: flex; gap: 32px; list-style: none;
+}
+.nav-links a {
+  color: rgba(245,240,232,.7);
+  font-size: 13px; font-weight: 500;
+  letter-spacing: .3px;
+  transition: color .2s;
+}
+.nav-links a:hover { color: var(--gold-l); }
+.nav-cta {
+  background: var(--gold); color: var(--white);
+  font-size: 13px; font-weight: 600;
+  padding: 9px 20px; border-radius: 4px;
+  transition: opacity .2s;
+}
+.nav-cta:hover { opacity: .85; }
+
+/* ══════════════════════════════════
+   HERO
+══════════════════════════════════ */
+.hero {
+  min-height: 100vh;
+  background: linear-gradient(135deg, var(--navy) 0%, #1e2035 50%, #2d3250 100%);
+  display: flex; align-items: center;
+  position: relative; overflow: hidden;
+  padding-top: 64px;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse 60% 60% at 70% 50%, rgba(160,140,106,.12) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 20% 80%, rgba(107,143,113,.1) 0%, transparent 60%);
+}
+.hero-inner {
+  position: relative; z-index: 1;
+  max-width: 1080px; margin: 0 auto;
+  padding: 80px 32px;
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: center;
+}
+.hero-pretag {
+  display: inline-block;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold-l); margin-bottom: 20px;
+}
+.hero-title {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-size: clamp(38px, 5.5vw, 66px);
+  font-weight: 600; line-height: 1.1;
+  color: var(--sand); margin-bottom: 24px;
+}
+.hero-title em { color: var(--gold-l); font-style: normal; }
+.hero-subtitle {
+  font-size: 17px; line-height: 1.85;
+  color: rgba(245,240,232,.7);
+  margin-bottom: 40px; max-width: 480px;
+}
+.hero-btns { display: flex; gap: 14px; flex-wrap: wrap; }
+.hero-photo {
+  display: flex; align-items: center; justify-content: center;
+}
+.hero-photo-box {
+  width: 340px; height: 420px;
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 12px;
+  color: rgba(245,240,232,.3);
+}
+.hero-photo-box .photo-icon { font-size: 52px; }
+.hero-photo-box p { font-size: 13px; letter-spacing: 1px; text-transform: uppercase; }
+
+/* filary w hero */
+.hero-pillars {
+  grid-column: 1 / -1;
+  display: flex; gap: 1px;
+  background: rgba(255,255,255,.08);
+  border-radius: 8px; overflow: hidden;
+  margin-top: 24px;
+}
+.hero-pillar {
+  flex: 1; padding: 22px 24px;
+  background: rgba(255,255,255,.04);
+  transition: background .2s;
+}
+.hero-pillar:hover { background: rgba(255,255,255,.08); }
+.hero-pillar-icon { font-size: 22px; margin-bottom: 8px; }
+.hero-pillar-title {
+  font-size: 13px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: 1.5px;
+  margin-bottom: 4px;
+}
+.hero-pillar-desc { font-size: 13px; color: rgba(245,240,232,.55); }
+.pillar-umysl  .hero-pillar-title { color: #8ab4d6; }
+.pillar-emocje .hero-pillar-title { color: #d4a876; }
+.pillar-duch   .hero-pillar-title { color: #c4a8e0; }
+.pillar-cialo  .hero-pillar-title { color: var(--gold-l); }
+
+/* ══════════════════════════════════
+   O MNIE
+══════════════════════════════════ */
+.about { background: var(--sand); }
+.about-grid {
+  display: grid; grid-template-columns: 1fr 1.4fr;
+  gap: 72px; align-items: center;
+}
+.about-photo {
+  width: 100%; aspect-ratio: 3/4;
+  background: var(--sand-d);
+  border-radius: 6px;
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; gap: 12px;
+  color: var(--muted); border: 1px solid var(--border);
+}
+.about-photo .photo-icon { font-size: 48px; }
+.about-photo p { font-size: 12px; letter-spacing: 1px; text-transform: uppercase; }
+.about-body .tag { color: var(--gold); }
+.about-text {
+  font-size: 17px; line-height: 1.9;
+  color: var(--brown);
+}
+.about-credentials {
+  display: flex; flex-wrap: wrap; gap: 8px;
+  margin-top: 28px;
+}
+.credential {
+  font-size: 12px; font-weight: 600;
+  padding: 6px 14px; border-radius: 100px;
+  background: var(--white); border: 1px solid var(--border);
+  color: var(--brown); letter-spacing: .3px;
+}
+
+/* ══════════════════════════════════
+   USŁUGI — 3 FILARY
+══════════════════════════════════ */
+.services { background: var(--white); }
+.services-tabs {
+  display: flex; gap: 0;
+  border-bottom: 2px solid var(--sand-d);
+  margin-bottom: 52px;
+}
+.stab {
+  padding: 14px 32px;
+  font-size: 13px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color .2s, border-color .2s;
+  color: var(--muted);
+}
+.stab.active-umysl  { color: var(--umysl);  border-color: var(--umysl); }
+.stab.active-emocje { color: var(--emocje); border-color: var(--emocje); }
+.stab.active-duch   { color: var(--duch);   border-color: var(--duch); }
+.stab.active-cialo  { color: var(--cialo);  border-color: var(--cialo); }
+.stab:not(.active-umysl):not(.active-emocje):not(.active-duch):not(.active-cialo):hover { color: var(--navy); }
+
+.filar-section { display: none; }
+.filar-section.active { display: block; }
+
+.filar-header { margin-bottom: 36px; }
+.filar-header .section-title { margin-bottom: 10px; }
+.filar-cards {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+.service-card {
+  border: 1px solid var(--border);
+  border-radius: 8px; padding: 28px;
+  background: var(--white);
+  transition: box-shadow .2s, transform .15s;
+}
+.service-card:hover {
+  box-shadow: 0 8px 32px rgba(43,45,66,.08);
+  transform: translateY(-2px);
+}
+.card-icon { font-size: 32px; margin-bottom: 14px; }
+.card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 600;
+  color: var(--navy); margin-bottom: 10px;
+}
+.card-desc { font-size: 14px; line-height: 1.75; color: var(--muted); }
+.card-tag {
+  display: inline-block; margin-top: 14px;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  padding: 4px 10px; border-radius: 100px;
+}
+.tag-umysl  { background: rgba(91,127,166,.12);  color: var(--umysl); }
+.tag-emocje { background: rgba(181,132,90,.12);  color: var(--emocje); }
+.tag-duch   { background: rgba(139,111,174,.12); color: var(--duch); }
+.tag-cialo  { background: rgba(160,140,106,.12); color: var(--cialo); }
+.card-mobile {
+  display: flex; align-items: center; gap: 6px;
+  margin-top: 14px; font-size: 12px; color: var(--muted);
+}
+
+/* ══════════════════════════════════
+   SZKOLENIA
+══════════════════════════════════ */
+.szkolenia {
+  background: var(--navy);
+}
+.szkolenia-grid {
+  display: grid; grid-template-columns: 1.2fr 1fr;
+  gap: 80px; align-items: center;
+}
+.szkolenia-cards { display: flex; flex-direction: column; gap: 16px; }
+.szk-card {
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.1);
+  border-radius: 8px; padding: 22px 24px;
+  transition: background .2s;
+}
+.szk-card:hover { background: rgba(255,255,255,.1); }
+.szk-card-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 20px; font-weight: 600;
+  color: var(--sand); margin-bottom: 6px;
+}
+.szk-card-desc { font-size: 13px; color: rgba(245,240,232,.6); }
+.szk-card-tag {
+  display: inline-block; margin-top: 10px;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--gold-l);
+}
+
+/* ══════════════════════════════════
+   JAK PRACUJĘ
+══════════════════════════════════ */
+.jak { background: var(--sand); }
+.jak-steps {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 32px; margin-top: 8px;
+}
+.jak-step { text-align: center; padding: 16px; }
+.jak-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 56px; font-weight: 600;
+  color: var(--gold); opacity: .3;
+  line-height: 1; margin-bottom: 10px;
+}
+.jak-title {
+  font-size: 16px; font-weight: 700;
+  color: var(--navy); margin-bottom: 8px;
+}
+.jak-desc { font-size: 14px; color: var(--muted); line-height: 1.7; }
+
+/* ══════════════════════════════════
+   KONTAKT
+══════════════════════════════════ */
+.kontakt { background: var(--white); }
+.kontakt-grid {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 64px; align-items: start;
+}
+.kontakt-info .section-title { margin-bottom: 20px; }
+.kontakt-info .section-lead { margin-bottom: 36px; }
+.kontakt-links { display: flex; flex-direction: column; gap: 16px; }
+.kontakt-link {
+  display: flex; align-items: center; gap: 16px;
+  padding: 18px 22px;
+  border: 1px solid var(--border); border-radius: 8px;
+  transition: border-color .2s, box-shadow .2s;
+}
+.kontakt-link:hover {
+  border-color: var(--gold);
+  box-shadow: 0 4px 16px rgba(160,140,106,.15);
+}
+.kontakt-link-icon { font-size: 22px; flex-shrink: 0; }
+.kontakt-link-body {}
+.kontakt-link-label {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 2px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 2px;
+}
+.kontakt-link-value {
+  font-size: 16px; font-weight: 600;
+  color: var(--navy);
+}
+.kontakt-area {
+  font-size: 14px; color: var(--muted);
+  margin-top: 8px; display: flex; gap: 12px;
+  flex-wrap: wrap;
+}
+.area-tag {
+  background: var(--sand); border: 1px solid var(--border);
+  padding: 4px 12px; border-radius: 100px;
+  font-size: 12px; color: var(--brown);
+}
+
+/* FORMULARZ */
+.kontakt-form {
+  background: var(--sand);
+  border-radius: 12px; padding: 40px;
+}
+.form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 26px; font-weight: 600;
+  color: var(--navy); margin-bottom: 24px;
+}
+.form-group { margin-bottom: 18px; }
+.form-label {
+  display: block; font-size: 12px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 6px;
+}
+.form-input, .form-select, .form-textarea {
+  width: 100%;
+  font-family: 'Inter', sans-serif; font-size: 15px;
+  padding: 12px 16px;
+  border: 1.5px solid var(--border); border-radius: 6px;
+  background: var(--white); color: var(--brown);
+  transition: border-color .2s;
+  outline: none;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: var(--gold);
+}
+.form-textarea { resize: vertical; min-height: 110px; }
+.form-submit {
+  width: 100%;
+  background: var(--navy); color: var(--white);
+  font-family: 'Inter', sans-serif; font-size: 14px; font-weight: 700;
+  padding: 15px; border: none; border-radius: 6px;
+  cursor: pointer; letter-spacing: .5px;
+  transition: opacity .2s;
+}
+.form-submit:hover { opacity: .85; }
+
+/* ══════════════════════════════════
+   FOOTER
+══════════════════════════════════ */
+footer {
+  background: var(--navy);
+  padding: 40px 0;
+  text-align: center;
+}
+footer .inner {
+  display: flex; flex-direction: column;
+  align-items: center; gap: 12px;
+}
+.footer-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px; font-weight: 600;
+  color: var(--sand);
+}
+.footer-name span { color: var(--gold-l); }
+.footer-tags { display: flex; gap: 8px; flex-wrap: wrap; justify-content: center; }
+.footer-tag {
+  font-size: 11px; letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(245,240,232,.4);
+}
+.footer-copy { font-size: 12px; color: rgba(245,240,232,.3); margin-top: 8px; }
+
+/* ══════════════════════════════════
+   NUMERY SEKCJI
+══════════════════════════════════ */
+.section-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); opacity: .5;
+  display: block; margin-bottom: 4px;
+}
+.section-num.light { color: var(--gold-l); opacity: .4; }
+
+/* ══════════════════════════════════
+   KOŁO KOHERENCJI
+══════════════════════════════════ */
+.koherencja-section { background: var(--navy); }
+.koherencja-section .tag { color: var(--gold-l); }
+.koherencja-section .section-title { color: var(--sand); }
+.koherencja-section .section-lead { color: rgba(245,240,232,.65); }
+
+/* Kwadranty — interaktywne */
+.wheel-q { cursor: pointer; }
+.wheel-q.wq-active { filter: brightness(1.18); outline: 2px solid rgba(160,140,106,.5); outline-offset: -2px; }
+.wheel-q.wq-active .q-title { text-decoration: underline; text-decoration-color: rgba(255,255,255,.25); text-underline-offset: 4px; }
+
+/* Panel detalu obszaru */
+.wheel-detail {
+  max-width: 720px; margin: 20px auto 0;
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: 12px; overflow: hidden;
+  display: none;
+  animation: fadeSlide .25s ease;
+}
+.wheel-detail.wdactive { display: block; }
+@keyframes fadeSlide {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.wheel-detail-inner {
+  display: grid; grid-template-columns: 1fr 1.5fr;
+}
+.wheel-detail-left {
+  padding: 28px 24px;
+  border-right: 1px solid rgba(255,255,255,.08);
+}
+.wheel-detail-right { padding: 28px 28px; }
+
+.wd-label {
+  font-size: 10px; font-weight: 700;
+  letter-spacing: 2.5px; text-transform: uppercase;
+  color: var(--gold-l); margin-bottom: 10px; display: block;
+}
+.wd-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 24px; font-weight: 600;
+  color: var(--sand); margin-bottom: 10px;
+}
+.wd-for-who {
+  font-size: 13px; color: rgba(245,240,232,.55);
+  line-height: 1.75; font-style: italic; margin-bottom: 18px;
+}
+.wd-sub {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: rgba(245,240,232,.35); margin-bottom: 10px;
+}
+.wd-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+.wd-tag {
+  font-size: 12px; font-weight: 600;
+  padding: 5px 12px; border-radius: 100px;
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(245,240,232,.7);
+}
+.wd-desc {
+  font-size: 14px; color: rgba(245,240,232,.7);
+  line-height: 1.8; margin-bottom: 14px;
+}
+.wd-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+.wd-list li {
+  display: flex; gap: 10px; align-items: flex-start;
+  font-size: 13px; color: rgba(245,240,232,.75); line-height: 1.6;
+}
+.wd-list li::before {
+  content: '—'; color: var(--gold);
+  font-weight: 700; flex-shrink: 0;
+}
+
+/* Sekcja naukowa */
+.nauka-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px,1fr));
+  gap: 16px;
+}
+.nauka-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px 22px;
+}
+.nauka-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px; font-weight: 600;
+  color: var(--gold); opacity: .35;
+  line-height: 1; margin-bottom: 8px;
+}
+.nauka-title {
+  font-size: 14px; font-weight: 700;
+  color: var(--navy); margin-bottom: 6px;
+}
+.nauka-sub {
+  font-size: 11px; font-weight: 700;
+  letter-spacing: 1.5px; text-transform: uppercase;
+  color: var(--muted); margin-bottom: 10px;
+}
+.nauka-desc {
+  font-size: 13px; color: var(--muted);
+  line-height: 1.75; margin-bottom: 12px;
+}
+.nauka-quote {
+  font-size: 12px; font-style: italic;
+  color: var(--brown); line-height: 1.65;
+  border-left: 2px solid var(--gold);
+  padding-left: 12px;
+}
+
+/* ── NAUKA OVERLAY ── */
+.nauka-overlay {
+  position: fixed; inset: 0; z-index: 500;
+  background: var(--sand);
+  overflow-y: auto;
+  opacity: 0; pointer-events: none;
+  transform: translateY(30px);
+  transition: opacity .35s ease, transform .35s ease;
+}
+.nauka-overlay.open {
+  opacity: 1; pointer-events: all;
+  transform: translateY(0);
+}
+.nauka-overlay-back {
+  position: sticky; top: 0; z-index: 10;
+  background: rgba(245,240,232,.95);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid var(--border);
+  padding: 16px 32px;
+  display: flex; align-items: center; gap: 14px;
+  cursor: pointer;
+}
+.nauka-overlay-back:hover { color: var(--gold); }
+.nauka-overlay-back span { font-size: 13px; font-weight: 600; color: var(--navy); letter-spacing: .3px; }
+.nauka-overlay-back:hover span { color: var(--gold); }
+
+.wheel-wrapper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  max-width: 520px;
+  margin: 0 auto;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255,255,255,.1);
+}
+
+/* Linie podziału */
+.wheel-lines { position: absolute; inset: 0; pointer-events: none; z-index: 1; }
+.wheel-line { position: absolute; background: rgba(255,255,255,.1); }
+.wheel-line-h { top: 50%; left: 0; right: 0; height: 1px; transform: translateY(-50%); }
+.wheel-line-v { left: 50%; top: 0; bottom: 0; width: 1px; transform: translateX(-50%); }
+
+/* Kwadranty */
+.wheel-q {
+  padding: 36px 28px;
+  display: flex; flex-direction: column;
+  align-items: center; text-align: center;
+  position: relative; z-index: 2;
+  transition: background .25s;
+}
+.wheel-q:hover { filter: brightness(1.08); }
+
+.q-umysl  { background: rgba(91,127,166,.18);  padding-bottom: 60px; }
+.q-duch   { background: rgba(139,111,174,.18); padding-bottom: 60px; }
+.q-emocje { background: rgba(181,132,90,.18);  padding-top: 60px; }
+.q-cialo  { background: rgba(160,140,106,.18); padding-top: 60px; }
+
+.q-icon { font-size: 22px; margin-bottom: 10px; opacity: .75; }
+.q-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px; font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--sand);
+}
+.q-umysl  .q-title { color: #8ab4d6; }
+.q-duch   .q-title { color: #c4a8e0; }
+.q-emocje .q-title { color: #d4a876; }
+.q-cialo  .q-title { color: var(--gold-l); }
+
+.q-desc {
+  font-size: 13px; line-height: 1.65;
+  color: rgba(245,240,232,.55);
+  max-width: 160px;
+}
+
+/* Centrum */
+.wheel-center {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 150px; height: 150px;
+  border-radius: 50%;
+  background: var(--sand);
+  border: 2px solid var(--gold);
+  box-shadow: 0 0 0 8px rgba(160,140,106,.15), 0 0 48px rgba(160,140,106,.2);
+  z-index: 10;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  text-align: center;
+  padding: 20px;
+  cursor: pointer;
+  transition: box-shadow .2s, transform .2s;
+}
+.wheel-center:hover {
+  box-shadow: 0 0 0 10px rgba(160,140,106,.25), 0 0 60px rgba(160,140,106,.3);
+  transform: translate(-50%, -50%) scale(1.04);
+}
+.wheel-center-label {
+  font-size: 9px; font-weight: 700;
+  letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold-l); margin-bottom: 6px;
+}
+.wheel-center-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 16px; font-weight: 600;
+  color: var(--sand); line-height: 1.2;
+  margin-bottom: 5px;
+}
+.wheel-center-desc {
+  font-size: 10px; line-height: 1.5;
+  color: rgba(245,240,232,.5);
+}
+
+@media (max-width: 600px) {
+  .wheel-wrapper { max-width: 100%; }
+  .wheel-q { padding: 36px 20px; }
+  .q-umysl, .q-duch { padding-bottom: 64px; }
+  .q-emocje, .q-cialo { padding-top: 64px; }
+  .wheel-center { width: 140px; height: 140px; }
+  .wheel-center-title { font-size: 17px; }
+  .q-desc { display: none; }
+}
+@media (max-width: 600px) {
+  .gallery-grid { grid-template-columns: 1fr 1fr; }
+  .gtab { padding: 10px 16px; font-size: 11px; }
+}
+
+/* ══════════════════════════════════
+   GALERIA
+══════════════════════════════════ */
+.galeria { background: var(--sand); }
+.gallery-tabs {
+  display: flex; gap: 0;
+  border-bottom: 2px solid var(--border);
+  margin-bottom: 36px;
+}
+.gtab {
+  padding: 12px 28px;
+  font-size: 12px; font-weight: 700;
+  letter-spacing: 1px; text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -2px;
+  transition: color .2s, border-color .2s;
+  color: var(--muted);
+}
+.gtab.gactive { color: var(--navy); border-color: var(--gold); }
+.gtab:not(.gactive):hover { color: var(--navy); }
+.gallery-content { display: none; }
+.gallery-content.gactive { display: block; }
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+.gallery-item {
+  border-radius: 8px; overflow: hidden;
+  aspect-ratio: 4/3;
+  background: var(--sand-d);
+  cursor: pointer;
+}
+.gallery-item img {
+  width: 100%; height: 100%;
+  object-fit: cover; object-position: center top;
+  display: block;
+  transition: transform .35s;
+}
+.gallery-item:hover img { transform: scale(1.05); }
+.gallery-caption {
+  font-size: 13px; color: var(--muted);
+  text-align: center; margin-top: 20px;
+  font-style: italic;
+}
+
+/* ══════════════════════════════════
+   RESPONSYWNOŚĆ (podstawowa)
+══════════════════════════════════ */
+@media (max-width: 768px) {
+  .hero-inner { grid-template-columns: 1fr; }
+  .hero-photo { display: none; }
+  .hero-pillars { flex-direction: column; }
+  .about-grid { grid-template-columns: 1fr; }
+  .about-photo { aspect-ratio: 4/3; }
+  .szkolenia-grid { grid-template-columns: 1fr; }
+  .kontakt-grid { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .stab { padding: 12px 16px; font-size: 12px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ══ NAWIGACJA ══ -->
+<nav>
+  <div class="inner">
+    <div class="nav-logo">Aleksander <span>Komaniecki</span></div>
+    <ul class="nav-links">
+      <li><a href="#o-mnie"><span style="color:rgba(245,240,232,.3);font-size:10px;margin-right:4px;">01</span>O mnie</a></li>
+      <li><a href="#metoda"><span style="color:rgba(245,240,232,.3);font-size:10px;margin-right:4px;">02</span>Metoda</a></li>
+      <li><a href="#uslugi"><span style="color:rgba(245,240,232,.3);font-size:10px;margin-right:4px;">03</span>Usługi</a></li>
+      <li><a href="#jak"><span style="color:rgba(245,240,232,.3);font-size:10px;margin-right:4px;">04</span>Jak pracuję</a></li>
+      <li><a href="#galeria"><span style="color:rgba(245,240,232,.3);font-size:10px;margin-right:4px;">05</span>Galeria</a></li>
+      <li><a href="#numerologia"><span style="color:rgba(245,240,232,.3);font-size:10px;margin-right:4px;">06</span>Numerologia</a></li>
+      <li><a href="#kontakt"><span style="color:rgba(245,240,232,.3);font-size:10px;margin-right:4px;">07</span>Kontakt</a></li>
+    </ul>
+    <a href="#kontakt" class="nav-cta">Umów się</a>
+  </div>
+</nav>
+
+<!-- ══ HERO ══ -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <span class="hero-pretag" style="font-family:'Cormorant Garamond',serif;font-style:italic;font-size:clamp(14px,1.4vw,18px);font-weight:400;letter-spacing:.5px;">Bioenergoterapeuta · Naturopata · Refleksolog · Certyfikowany Praktyk Kodów Emocji i Ciała · Trener Emocji</span>
+      <h1 class="hero-title">
+        Aleksander<br><em>Komaniecki</em>
+      </h1>
+      <p class="hero-subtitle" style="font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.2vw,24px);font-style:italic;font-weight:400;line-height:1.65;color:rgba(245,240,232,.85);">
+        Nie naprawiam ludzi. Pomagam im wrócić do siebie —<br>przez ciało, umysł, emocje i duchowość.
+      </p>
+      <div style="margin:28px 0;border-top:1px solid rgba(255,255,255,.1);padding-top:24px;">
+        <div style="font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold-l);margin-bottom:12px;font-style:normal;font-family:'Inter',sans-serif;">Co mnie wyróżnia</div>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(15px,1.7vw,19px);font-style:normal;color:rgba(245,240,232,.6);line-height:1.8;margin:0;">Niekonwencjonalne podejście, wiele narzędzi i metod dobranych do potrzeb, doświadczenie i nastawienie na trwały efekt — buduję przestrzeń koherencji — czyli stan równowagi — w człowieku. Nie ogranicza mnie miejsce ani czas.</p>
+      </div>
+      <div class="hero-btns">
+        <a href="#uslugi" class="btn btn-gold btn-lg">Poznaj ofertę</a>
+        <a href="#kontakt" class="btn btn-outline btn-lg">Napisz do mnie</a>
+      </div>
+    </div>
+
+    <div class="hero-photo">
+      <img src="zdjecia/M13A4104.jpg" alt="Aleksander Komaniecki" style="width:340px;height:420px;object-fit:cover;object-position:center top;border-radius:8px;border:1px solid rgba(255,255,255,.1);">
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══ O MNIE ══ -->
+<section class="about" id="o-mnie">
+  <div class="inner py-xl">
+    <div class="about-grid">
+      <div class="about-photo" style="overflow:hidden;padding:0;">
+        <img src="zdjecia/M13A4104.jpg" alt="Aleksander Komaniecki" style="width:100%;height:100%;object-fit:cover;object-position:center top;">
+      </div>
+      <div class="about-body">
+        <span class="section-num">01</span>
+        <span class="tag">O mnie</span>
+        <h2 class="section-title">Mam 56 lat.</h2>
+
+        <p class="about-text" style="margin-bottom:16px;">
+          Jestem mężczyzną z dużym bagażem doświadczeń — życiowych, zawodowych i osobistych.
+        </p>
+
+        <p class="about-text" style="margin-bottom:16px;">
+          Znam blask reflektorów i ciszę po wszystkim.<br>
+          Znam smak zwycięstwa i smak ziemi po upadku.<br>
+          Wiem, czym jest strata, choroba i niepełnosprawność.
+        </p>
+
+        <p class="about-text" style="margin-bottom:16px;font-weight:600;color:var(--navy);">
+          Nie pracuję z książek.<br>Pracuję z życia.
+        </p>
+
+        <p class="about-text" style="margin-bottom:20px;">
+          To właśnie przejścia nauczyły mnie pokory wobec człowieka i jego historii. Dziś wiem, że każdy ból ma swój sens, a każde doświadczenie może stać się początkiem zmiany.
+        </p>
+
+        <blockquote style="border-left:3px solid var(--gold);padding-left:20px;margin:20px 0 24px;font-family:'Cormorant Garamond',serif;font-size:20px;line-height:1.65;color:var(--navy);font-style:italic;">
+          Bo dopiero kiedy człowiek dotknie własnych granic,<br>zaczyna naprawdę rozumieć innych.
+        </blockquote>
+
+        <p class="about-text" style="margin-bottom:10px;">
+          Z wykształcenia jestem absolwentem Akademii Rolniczej w Krakowie. Z powołania — przewodnikiem po świecie wewnętrznym i energii.
+        </p>
+        <p class="about-text" style="margin-bottom:20px;">
+          Pracuję jako bioenergoterapeuta, naturopata (dyplom państwowy 12.2025) oraz terapeuta integrujący ciało, umysł, emocje i duchowość. Łączę fizykę kwantową z podejściem holistycznym. Nie wybieram między rozumem a intuicją — łączę oba światy.
+        </p>
+
+        <p class="about-text" style="margin-bottom:20px;">
+          Kompetencje zdobywałem od najlepszych — u twórców metod, nie z kursów online. Jestem certyfikowanym refleksologiem <strong>Polskiego Instytutu Refleksologii</strong> (jedyna szkoła w Polsce uznawana przez organizacje międzynarodowe), praktykiem <strong>Kodów Emocji i Kodów Ciała</strong> Bradleya Nelsona (II stopień) oraz <strong>Trenerem Emocji</strong> — Akademia Beaty Kaczor, opartym na neurobiologii i epigenetyce, egzamin honorowany przez MEN. Ta certyfikacja uprawnia mnie do pracy indywidualnej, szkolenia innych i prowadzenia wykładów.
+        </p>
+
+        <p class="about-text" style="margin-bottom:16px;font-weight:600;color:var(--navy);">
+          Nie boję się odpowiedzialności tej pracy.<br>Celem mojej pracy z klientem jest stan koherencji — trwała zmiana, nie kolejna wizyta.
+        </p>
+
+        <p class="about-text" style="margin-bottom:20px;">
+          Pracuję wielowarstwowo — na poziomie ciała, mózgu i świadomości jednocześnie. Czy to działa? O tym najlepiej mówią opinie ludzi, z którymi pracowałem.
+        </p>
+
+        <p style="font-family:'Cormorant Garamond',serif;font-size:26px;font-weight:600;font-style:italic;color:var(--gold);margin-bottom:28px;line-height:1.3;">
+          I właśnie dlatego pomagam.
+        </p>
+        <div class="about-credentials">
+          <span class="credential">✓ Naturopata — egzamin państwowy 12.2025</span>
+          <span class="credential">✓ Bioenergoterapia — dyplom</span>
+          <span class="credential">✓ Refleksolog — Szkoła PIR, egzamin praktyczny</span>
+          <span class="credential">✓ Kody Emocji II stopień — Bradley Nelson</span>
+          <span class="credential">✓ Kody Ciała II stopień — Bradley Nelson</span>
+          <span class="credential">✓ Trener Emocji — Akademia Trenera Emocji Beaty Kaczor, atest MEN</span>
+          <span class="credential">✓ Masaż ajurwedyjski — kurs</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ DLA KOGO ══ -->
+<section style="background:var(--navy);">
+  <div class="inner py-xl">
+    <span class="tag" style="color:var(--gold-l);">Dla kogo</span>
+    <h2 class="section-title light">Droga jest prosta.</h2>
+    <p class="section-lead light" style="max-width:680px;">Jestem autentyczny — otwarty i szczery bardziej, niż się tego spodziewasz. Sam sobą tworzę przestrzeń, w której wiele rzeczy zaczyna się uwalniać — rzeczy, które ludzie nosili w sobie latami.</p>
+    <p style="font-size:15px;color:rgba(245,240,232,.65);line-height:1.85;max-width:620px;margin-bottom:40px;">Praca ze mną nie jest dla każdego. Wymaga gotowości — do spotkania z sobą, do szczerości, do zmiany. Szanuję ten proces i traktuję go poważnie. Jestem empatyczny — głęboko. To nie stoi w sprzeczności z bezpośredniością, czasami przybierającą formę prowokatywną — jednak zawsze w szacunku dla procesu i klienta.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-bottom:40px;">
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:20px 24px;display:flex;gap:14px;align-items:flex-start;">
+        <span style="color:var(--gold-l);font-size:18px;flex-shrink:0;">→</span>
+        <span style="font-size:14px;color:rgba(245,240,232,.8);line-height:1.65;">Czujesz przewlekłe napięcie i zmęczenie, które nie mija mimo odpoczynku</span>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:20px 24px;display:flex;gap:14px;align-items:flex-start;">
+        <span style="color:var(--gold-l);font-size:18px;flex-shrink:0;">→</span>
+        <span style="font-size:14px;color:rgba(245,240,232,.8);line-height:1.65;">Doświadczasz trudności emocjonalnych — stres, lęk, blokady, trudne relacje</span>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:20px 24px;display:flex;gap:14px;align-items:flex-start;">
+        <span style="color:var(--gold-l);font-size:18px;flex-shrink:0;">→</span>
+        <span style="font-size:14px;color:rgba(245,240,232,.8);line-height:1.65;">Jesteś w procesie zmiany życiowej i szukasz kierunku i oparcia</span>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:20px 24px;display:flex;gap:14px;align-items:flex-start;">
+        <span style="color:var(--gold-l);font-size:18px;flex-shrink:0;">→</span>
+        <span style="font-size:14px;color:rgba(245,240,232,.8);line-height:1.65;">Czujesz, że „coś nie działa" — mimo że wyniki badań są prawidłowe</span>
+      </div>
+      <div style="background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);border-radius:8px;padding:20px 24px;display:flex;gap:14px;align-items:flex-start;">
+        <span style="color:var(--gold-l);font-size:18px;flex-shrink:0;">→</span>
+        <span style="font-size:14px;color:rgba(245,240,232,.8);line-height:1.65;">Chcesz pracować nad sobą głębiej i bardziej świadomie</span>
+      </div>
+    </div>
+
+    <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:rgba(245,240,232,.7);text-align:center;border-top:1px solid rgba(255,255,255,.1);padding-top:32px;">
+      Trwałe efekty pojawiają się wtedy,<br>gdy pracujemy kompleksowo.
+    </p>
+  </div>
+</section>
+
+<!-- ══ KOŁO KOHERENCJI ══ -->
+<section class="koherencja-section" id="metoda">
+  <div class="inner py-xl" style="text-align:center;">
+    <span class="section-num light" style="text-align:center;display:block;">02</span>
+    <span class="tag" style="text-align:center;display:block;">Filozofia i metoda pracy</span>
+    <h2 class="section-title" style="text-align:center;margin-bottom:12px;">Cztery wymiary człowieka</h2>
+
+    <!-- Fundament filozofii -->
+    <div style="max-width:620px;margin:0 auto 28px;text-align:center;">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(22px,2.8vw,30px);font-weight:600;color:rgba(245,240,232,.95);line-height:1.4;margin-bottom:8px;">
+        Człowiek nie składa się z części.<br>Człowiek jest całością.
+      </p>
+      <p style="font-size:15px;color:rgba(245,240,232,.55);line-height:1.8;margin-top:16px;">
+        Problemy pojawiają się wtedy, gdy któryś z obszarów zostaje pominięty lub przeciążony. Dlatego pracuję metodą równoważenia czterech filarów funkcjonowania: Ciała, Umysłu, Emocji i Duchowości.
+      </p>
+    </div>
+
+    <!-- Myśl filozoficzna — własna -->
+    <div style="max-width:680px;margin:0 auto 40px;padding:32px 40px;border-top:1px solid rgba(160,140,106,.25);border-bottom:1px solid rgba(160,140,106,.25);">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(17px,2vw,21px);font-style:italic;color:rgba(245,240,232,.82);line-height:1.85;margin-bottom:20px;">
+        Ciało to informacja klasyczna.<br>
+        Umysł to informacja kwantowa.<br>
+        Emocje — to <em style="color:var(--gold-l);font-style:normal;">komunikacja</em> między nimi.<br>
+        Duch — to <em style="color:var(--gold-l);font-style:normal;">znaczenie</em>, sens tej informacji.
+      </p>
+      <p style="font-size:14px;color:rgba(245,240,232,.45);line-height:1.85;max-width:520px;margin:0 auto;">
+        Każdy z nas musi odkryć, kim jest, poprzez doświadczenie tego, kim jest — nie przez czytanie książek i powtarzanie cudzych słów.
+      </p>
+    </div>
+
+    <p class="section-lead" style="margin:0 auto 20px;text-align:center;">
+      Celem pracy z klientem jest stan jego koherencji — psychofizycznej harmonii. To moment, w którym układ nerwowy uspokaja się, oddech pogłębia, a organizm wraca do naturalnej zdolności samoregulacji.
+      <strong style="color:rgba(245,240,232,.85)"> Napięcie ustępuje miejsca równowadze. To nie koncepcja — to praktyczna praca z człowiekiem tu i teraz.</strong>
+    </p>
+
+    <div style="border:1px solid rgba(160,140,106,.4);border-radius:8px;padding:20px 32px;max-width:600px;margin:0 auto 20px;background:rgba(160,140,106,.08);">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:22px;font-style:italic;color:var(--gold-l);line-height:1.6;text-align:center;">
+        Koherencja rodzi się w głowie,<br>mieszka w ciele,<br>komunikuje emocjami i dotyka duszy.
+      </p>
+    </div>
+
+    <p style="font-size:13px;color:rgba(245,240,232,.45);text-align:center;max-width:520px;margin:0 auto 12px;line-height:1.7;">
+      Słowo <em>koherencja</em> pochodzi z fizyki — oznacza spójność fal oscylujących w tym samym rytmie. W człowieku działa to samo: gdy wszystkie cztery obszary działają razem, pojawia się energia, jasność i spokój.
+    </p>
+
+    <p style="font-size:14px;color:rgba(245,240,232,.4);font-style:italic;text-align:center;max-width:540px;margin:0 auto 52px;">
+      Jak cztery koła napędu 4×4 — gdy jedno traci trakcję, a inne kompensuje nadmierną aktywnością, całość traci spójność.
+    </p>
+
+    <div class="wheel-wrapper">
+      <!-- LEWY GÓRNY: UMYSŁ -->
+      <div class="wheel-q q-umysl" data-area="umysl" onclick="showWheelArea('umysl')" title="Kliknij aby rozwinąć">
+        <div class="q-icon"><i class="fa-solid fa-brain" style="color:#8ab4d6;"></i></div>
+        <div class="q-title">Umysł</div>
+        <div class="q-desc" style="font-weight:600;letter-spacing:.5px;color:rgba(138,180,214,.8);margin-bottom:6px;">Wzorce · Przekonania</div>
+        <div class="q-desc">Zmiana zapisu w mózgu bez grzebania w przeszłości</div>
+        <div class="q-desc" style="margin-top:10px;font-size:11px;color:rgba(245,240,232,.25);letter-spacing:1px;">↓ rozwiń</div>
+      </div>
+
+      <!-- PRAWY GÓRNY: DUCHOWOŚĆ -->
+      <div class="wheel-q q-duch" data-area="duch" onclick="showWheelArea('duch')" title="Kliknij aby rozwinąć">
+        <div class="q-icon"><i class="fa-solid fa-infinity" style="color:#c4a8e0;"></i></div>
+        <div class="q-title">Duchowość</div>
+        <div class="q-desc" style="font-weight:600;letter-spacing:.5px;color:rgba(196,168,224,.8);margin-bottom:6px;">Sens · Wartości</div>
+        <div class="q-desc">Praca energetyczna i wgląd w sens życia</div>
+        <div class="q-desc" style="margin-top:10px;font-size:11px;color:rgba(245,240,232,.25);letter-spacing:1px;">↓ rozwiń</div>
+      </div>
+
+      <!-- LEWY DOLNY: EMOCJE -->
+      <div class="wheel-q q-emocje" data-area="emocje" onclick="showWheelArea('emocje')" title="Kliknij aby rozwinąć">
+        <div class="q-icon"><i class="fa-regular fa-heart" style="color:#d4a876;"></i></div>
+        <div class="q-title">Emocje</div>
+        <div class="q-desc" style="font-weight:600;letter-spacing:.5px;color:rgba(212,168,118,.8);margin-bottom:6px;">Historia · Relacje</div>
+        <div class="q-desc">Instrukcja obsługi emocji — dzieci, młodzież, dorośli</div>
+        <div class="q-desc" style="margin-top:10px;font-size:11px;color:rgba(245,240,232,.25);letter-spacing:1px;">↑ rozwiń</div>
+      </div>
+
+      <!-- PRAWY DOLNY: CIAŁO -->
+      <div class="wheel-q q-cialo" data-area="cialo" onclick="showWheelArea('cialo')" title="Kliknij aby rozwinąć">
+        <div class="q-icon"><i class="fa-solid fa-leaf" style="color:var(--gold-l);"></i></div>
+        <div class="q-title">Ciało</div>
+        <div class="q-desc" style="font-weight:600;letter-spacing:.5px;color:rgba(196,170,130,.8);margin-bottom:6px;">Napięcia · Oddech · Ruch</div>
+        <div class="q-desc">Ciało jako mapa blokad — refleksologia i masaż</div>
+        <div class="q-desc" style="margin-top:10px;font-size:11px;color:rgba(245,240,232,.25);letter-spacing:1px;">↑ rozwiń</div>
+      </div>
+
+      <!-- CENTRUM -->
+      <div class="wheel-center" onclick="openNauka()">
+        <div class="wheel-center-label" style="color:var(--gold);margin-bottom:6px;font-size:7px;letter-spacing:2px;">Stan równowagi</div>
+        <div class="wheel-center-name" style="color:var(--navy);font-size:13px;margin-bottom:4px;">Koherencja</div>
+        <div class="wheel-center-desc" style="color:var(--muted);font-size:10px;letter-spacing:.3px;margin-bottom:8px;">Homeostaza</div>
+        <div style="font-size:8px;color:var(--gold);letter-spacing:1px;text-transform:uppercase;opacity:.7;">↓ nauka</div>
+      </div>
+
+      <!-- LINIE ŁĄCZĄCE -->
+      <div class="wheel-lines">
+        <div class="wheel-line wheel-line-h"></div>
+        <div class="wheel-line wheel-line-v"></div>
+      </div>
+    </div>
+
+    <!-- ══ PANELE DETALU OBSZARÓW ══ -->
+
+    <!-- UMYSŁ -->
+    <div class="wheel-detail" id="wd-umysl" style="background:rgba(91,127,166,.12);">
+      <div class="wheel-detail-inner">
+        <div class="wheel-detail-left">
+          <span class="wd-label">🧠 Umysł</span>
+          <div class="wd-title">Przetwarza i interpretuje — Przekonania · Wzorce</div>
+          <p class="wd-for-who">Umysł przetwarza rzeczywistość przez filtry zbudowane przez lata doświadczeń — przekonania o sobie, o świecie, o tym co możliwe. Gdy te filtry są ograniczające, każda nowa sytuacja wciąż produkuje te same wnioski i decyzje. Umysł nie działa w izolacji: nienazwane emocje zamieniają się w myśli. Napięcie w ciele wpływa na koncentrację i sposób widzenia siebie. Brak sensu zasila ruminację. Dopóki wzorce myślowe pozostają nienaruszone — zmiana na innych poziomach jest jedynie tymczasowa.</p>
+          <div class="wd-sub">Co obejmuje</div>
+          <div class="wd-tags">
+            <span class="wd-tag" style="border-color:rgba(138,180,214,.3);color:#8ab4d6;">Przekonania</span>
+            <span class="wd-tag" style="border-color:rgba(138,180,214,.3);color:#8ab4d6;">Wzorce</span>
+            <span class="wd-tag" style="border-color:rgba(138,180,214,.3);color:#8ab4d6;">Uważność</span>
+          </div>
+        </div>
+        <div class="wheel-detail-right">
+          <div class="wd-sub">W pracy z umysłem stosuję</div>
+          <ul class="wd-list">
+            <li>Pracę z przekonaniami — identyfikacja i zmiana filtrów, przez które patrzysz na siebie i świat</li>
+            <li>Coaching mentalny — konkretne narzędzia do zarządzania uwagą i nawykami myślowymi</li>
+            <li>Uważność (mindfulness) — obserwacja myśli bez wciągania się w nie</li>
+            <li>Terapię poznawczą — rozpoznawanie zniekształceń myślowych i praca nad zmianą perspektywy</li>
+            <li>Pracę ze schematami — dotarcie do głęboko zakorzenionych wzorców, bez grzebania się w traumach i przeszłości</li>
+            <li>Pracę z obrazowaniem i wizualizacją</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- EMOCJE -->
+    <div class="wheel-detail" id="wd-emocje" style="background:rgba(181,132,90,.12);">
+      <div class="wheel-detail-inner">
+        <div class="wheel-detail-left">
+          <span class="wd-label">🗝 Emocje</span>
+          <div class="wd-title">Język systemu — sygnał zgodności lub napięcia</div>
+          <p class="wd-for-who">Emocje to system komunikacji organizmu — nie są reakcją, są sygnałem. Informują, czy jesteś w zgodzie ze sobą, czy Twoje potrzeby są zaspokojone, czy coś ważnego wymaga uwagi. Gdy emocje są tłumione lub nienazwane — ciało zaczyna mówić zamiast nich: napięcia, chroniczne zmęczenie, bóle bez wyraźnej przyczyny. Zablokowane emocje zniekształcają też sposób, w jaki umysł interpretuje rzeczywistość — i odcinają od sensu. Emocje są mostem między wszystkimi warstwami. Często to pierwszy poziom, gdzie zmiana staje się możliwa.</p>
+          <div class="wd-sub">Co obejmuje</div>
+          <div class="wd-tags">
+            <span class="wd-tag" style="border-color:rgba(212,168,118,.3);color:#d4a876;">Historia</span>
+            <span class="wd-tag" style="border-color:rgba(212,168,118,.3);color:#d4a876;">Relacje</span>
+            <span class="wd-tag" style="border-color:rgba(212,168,118,.3);color:#d4a876;">Wyrażanie</span>
+          </div>
+        </div>
+        <div class="wheel-detail-right">
+          <div class="wd-sub">W pracy z emocjami stosuję</div>
+          <ul class="wd-list">
+            <li>Terapię emocji — bezpieczna praca z uczuciami, których nie rozumiesz lub których się boisz</li>
+            <li>Kody Emocji (Bradley Nelson) — uwalnianie zablokowanych emocji zakodowanych w ciele i polu energetycznym</li>
+            <li>Kody Ciała (II stopień) — praca z zapisami emocjonalnymi w tkankach i układzie nerwowym</li>
+            <li>Regulację emocjonalną — nauka rozpoznawania gdy emocja „przejmuje ster" i powrót do równowagi</li>
+            <li>Pracę z historią — rozumienie skąd biorą się Twoje wzorce bez utknięcia w przeszłości</li>
+            <li>Coaching emocjonalny — praktyczne narzędzia na co dzień</li>
+            <li>Instrukcję obsługi bieżących emocji — jak rozpoznawać, nazywać i właściwie reagować na emocje w codziennym życiu</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- DUCHOWOŚĆ -->
+    <div class="wheel-detail" id="wd-duch" style="background:rgba(139,111,174,.12);">
+      <div class="wheel-detail-inner">
+        <div class="wheel-detail-left">
+          <span class="wd-label">✨ Duchowość</span>
+          <div class="wd-title">Sens doświadczenia — odpowiedź na „po co żyję"</div>
+          <p class="wd-for-who">Duchowość to warstwa sensu — fundament, na którym stoi wszystko inne. Nie chodzi o religię, ale o odpowiedź na pytanie: po co żyję? Jakie wartości mnie prowadzą? Kim jestem poza pełnionymi rolami? Gdy ta warstwa jest pusta lub odcięta, człowiek może sprawnie funkcjonować — i jednocześnie czuć, że brakuje czegoś istotnego. Brak sensu zasila chroniczne zmęczenie w ciele, żywi egzystencjalne myśli w umyśle, pozbawia emocje kierunku i głębi. Duchowość nie jest dodatkiem do zdrowia. Jest jego fundamentem.</p>
+          <div class="wd-sub">Co obejmuje</div>
+          <div class="wd-tags">
+            <span class="wd-tag" style="border-color:rgba(196,168,224,.3);color:#c4a8e0;">Sens</span>
+            <span class="wd-tag" style="border-color:rgba(196,168,224,.3);color:#c4a8e0;">Wartości</span>
+            <span class="wd-tag" style="border-color:rgba(196,168,224,.3);color:#c4a8e0;">Tożsamość</span>
+          </div>
+        </div>
+        <div class="wheel-detail-right">
+          <div class="wd-sub">W pracy z duchowością stosuję</div>
+          <ul class="wd-list">
+            <li>Coaching wartości — odkrywanie tego, co naprawdę dla Ciebie ważne, nie tego co powinno być</li>
+            <li>Pracę ze sensem — pytania o sens to dojrzałość, nie słabość. Szukamy odpowiedzi które są Twoje</li>
+            <li>Integrację tożsamości — budowanie spójności między tym kim jesteś w środku a tym jak żyjesz</li>
+            <li>Zabiegi na warstwach energetycznych — bioenergoterapia i praca z polem energetycznym</li>
+            <li>Pracę z kierunkiem życia — własny kompas i działanie w zgodzie z nim</li>
+            <li>Medytację i praktyki wyciszenia</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- CIAŁO -->
+    <div class="wheel-detail" id="wd-cialo" style="background:rgba(160,140,106,.12);">
+      <div class="wheel-detail-inner">
+        <div class="wheel-detail-left">
+          <span class="wd-label">🤲 Ciało</span>
+          <div class="wd-title">Klasyczna informacja — zapis doświadczeń</div>
+          <p class="wd-for-who">Ciało jest żywym archiwum — przechowuje wszystko, co przeżyłeś. Fizyczne napięcie to często zamrożona emocja. Postawa i rytm oddechu odzwierciedlają stan układu nerwowego. Ból pojawia się tam, gdzie coś nie zostało przetworzone na innym poziomie. Gdy ciało jest w chronicznym napięciu, blokuje przetwarzanie emocji i upośledza funkcje poznawcze. Odcięcie od ciała odcina też od głębszych warstw siebie. Ciało mówi wtedy, gdy wszystko inne milczy — i to ono często pokazuje, gdzie naprawdę należy zacząć.</p>
+          <div class="wd-sub">Co obejmuje</div>
+          <div class="wd-tags">
+            <span class="wd-tag" style="border-color:rgba(196,170,130,.3);color:var(--gold-l);">Napięcia</span>
+            <span class="wd-tag" style="border-color:rgba(196,170,130,.3);color:var(--gold-l);">Oddech</span>
+            <span class="wd-tag" style="border-color:rgba(196,170,130,.3);color:var(--gold-l);">Ruch</span>
+          </div>
+        </div>
+        <div class="wheel-detail-right">
+          <div class="wd-sub">W pracy z ciałem stosuję</div>
+          <ul class="wd-list">
+            <li>Refleksologię (stopy, twarz, ciało) — wpływam przez mapy refleksów na narządy wewnętrzne i uwalnianie blokad</li>
+            <li>Pracę somatyczną — ciało przechowuje historię, uczę jak odczytywać i uwalniać te sygnały</li>
+            <li>Regulację oddechu — oddech to najszybszy most między ciałem a układem nerwowym</li>
+            <li>Masaż ajurwedyjski — ciepłe olejki, praca z meridianami, głęboki relaks i detoks</li>
+            <li>Uwalnianie napięć — chroniczne napięcia to często zamrożone emocje lub stare reakcje stresowe</li>
+            <li>Pracę z blokadami metodą Kodów Ciała</li>
+            <li>Ruch, jogę i ćwiczenia świadome — ciało odzyskuje elastyczność i kontakt z sobą przez ruch</li>
+            <li>Taniec i ekspresję ruchową — uwalnianie napięć i emocji przez spontaniczny ruch, bez techniki</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ NAUKA OVERLAY ══ -->
+<div class="nauka-overlay" id="nauka-overlay">
+  <div class="nauka-overlay-back" onclick="closeNauka()">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="color:var(--navy)"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    <span>← Wróć do strony</span>
+  </div>
+  <div class="inner" style="padding-top:52px;padding-bottom:80px;">
+    <span class="tag">Perspektywa naukowa</span>
+    <h2 class="section-title">Koherencja — co mówi nauka</h2>
+    <p class="section-lead">Stan koherencji to nie metafora. To mierzalny, fizjologiczny stan organizmu — opisany w badaniach nad układem nerwowym, kardiologią i neurobiologią stresu.</p>
+
+    <div class="nauka-grid">
+
+      <div class="nauka-card">
+        <div class="nauka-num">01</div>
+        <div class="nauka-title">Układ nerwowy</div>
+        <div class="nauka-sub">Autonomiczna regulacja</div>
+        <p class="nauka-desc">Układ nerwowy autonomiczny działa w dwóch trybach: współczulnym (mobilizacja, stres) i przywspółczulnym (regeneracja, spokój). Koherencja to stan, w którym oba układy są zbalansowane — żaden nie dominuje przewlekle nad drugim.</p>
+        <blockquote class="nauka-quote">„Gdy organizm wchodzi w stan koherencji, zmienność rytmu serca tworzy regularny, falisty wzorzec — sygnał równowagi układu nerwowego."<br><cite style="font-size:11px;font-style:normal;color:var(--muted);display:block;margin-top:6px;">— McCraty et al., HeartMath Institute</cite></blockquote>
+      </div>
+
+      <div class="nauka-card">
+        <div class="nauka-num">02</div>
+        <div class="nauka-title">Kortyzol i stres</div>
+        <div class="nauka-sub">Redukcja odpowiedzi stresowej</div>
+        <p class="nauka-desc">Przewlekły stres utrzymuje oś HPA (podwzgórze–przysadka–nadnercza) w stanie ciągłej aktywacji. Regularna praca z ciałem, oddechem i emocjami obniża bazowy poziom kortyzolu i normalizuje reaktywność stresową.</p>
+        <blockquote class="nauka-quote">Uczestnicy 8-tygodniowego programu MBSR wykazali mierzalne obniżenie kortyzolu i redukcję objawów stresu o <strong>30–50%</strong>.<br><cite style="font-size:11px;font-style:normal;color:var(--muted);display:block;margin-top:6px;">— Carlson et al., 2007</cite></blockquote>
+      </div>
+
+      <div class="nauka-card">
+        <div class="nauka-num">03</div>
+        <div class="nauka-title">HRV — serce i mózg</div>
+        <div class="nauka-sub">Heart Rate Variability</div>
+        <p class="nauka-desc">Zmienność rytmu serca (HRV) to jeden z najdokładniejszych wskaźników stanu układu nerwowego. Wysoki HRV koreluje z lepszą regulacją emocji, zdrowiem sercowo-naczyniowym i zdolnościami poznawczymi.</p>
+        <blockquote class="nauka-quote">„Serce wysyła do mózgu więcej sygnałów nerwowych niż mózg do serca. Rytm serca bezpośrednio wpływa na funkcje poznawcze i emocjonalne."<br><cite style="font-size:11px;font-style:normal;color:var(--muted);display:block;margin-top:6px;">— HeartMath Research Center, 2015</cite></blockquote>
+      </div>
+
+      <div class="nauka-card">
+        <div class="nauka-num">04</div>
+        <div class="nauka-title">Teoria Poliwagalna</div>
+        <div class="nauka-sub">Bezpieczeństwo neuro-fizjologiczne</div>
+        <p class="nauka-desc">Dr Stephen Porges wykazał, że układ nerwowy nieustannie skanuje otoczenie w poszukiwaniu sygnałów bezpieczeństwa lub zagrożenia — poniżej progu świadomości. Zmiana jest możliwa tylko wtedy, gdy ciało „czuje się bezpiecznie".</p>
+        <blockquote class="nauka-quote">„Nie możemy zmienić przekonań rozmawiając z korą przedczołową, jeśli ciało wciąż jest w trybie zagrożenia."<br><cite style="font-size:11px;font-style:normal;color:var(--muted);display:block;margin-top:6px;">— Porges, 2011; van der Kolk, 2014</cite></blockquote>
+      </div>
+
+    </div>
+
+    <!-- Model czterech drzwi -->
+    <div style="margin-top:64px;">
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,40px);font-weight:600;color:var(--navy);text-align:center;margin-bottom:10px;">Model czterech drzwi</h2>
+      <p style="text-align:center;font-size:15px;color:var(--muted);margin-bottom:40px;">Każdy człowiek ma cztery wejścia do swojego systemu. Praca zaczyna się od tych drzwi, które są otwarte.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:860px;margin:0 auto;">
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:28px 32px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Drzwi Ciała</div>
+          <p style="font-size:15px;color:var(--brown);line-height:1.75;">Ciało jest klasyczną informacją. Zapisuje historię doświadczeń, napięć i emocji. To pierwszy poziom sygnałów o równowadze lub jej braku.</p>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:28px 32px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Drzwi Emocji</div>
+          <p style="font-size:15px;color:var(--brown);line-height:1.75;">Emocje są językiem komunikacji systemu człowieka. Informują nas, czy jesteśmy w zgodzie ze sobą.</p>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:28px 32px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Drzwi Umysłu</div>
+          <p style="font-size:15px;color:var(--brown);line-height:1.75;">Umysł interpretuje doświadczenie. Nadaje strukturę informacji i buduje znaczenie.</p>
+        </div>
+        <div style="background:var(--white);border:1px solid var(--border);border-radius:10px;padding:28px 32px;">
+          <div style="font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:10px;">Drzwi Ducha</div>
+          <p style="font-size:15px;color:var(--brown);line-height:1.75;">Duch jest sensem doświadczenia. Odpowiada na pytanie: po co żyję i jaki sens ma droga człowieka.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Mapa transformacji -->
+    <div style="margin-top:64px;">
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,40px);font-weight:600;color:var(--navy);text-align:center;margin-bottom:10px;">Mapa transformacji człowieka</h2>
+      <p style="text-align:center;font-size:15px;color:var(--muted);margin-bottom:40px;">Każda głęboka zmiana przebiega przez te same etapy — niezależnie od punktu wyjścia.</p>
+      <div style="display:flex;gap:0;max-width:900px;margin:0 auto;border-radius:12px;overflow:hidden;border:1px solid var(--border);">
+        <div style="flex:1;padding:28px 18px;text-align:center;background:var(--white);border-right:1px solid var(--border);">
+          <div style="font-size:28px;margin-bottom:10px;">🌀</div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">1</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:6px;">Chaos</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.5;">zagubienie, brak równowagi</div>
+        </div>
+        <div style="flex:1;padding:28px 18px;text-align:center;background:var(--white);border-right:1px solid var(--border);">
+          <div style="font-size:28px;margin-bottom:10px;">🌅</div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">2</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:6px;">Przebudzenie</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.5;">pytanie i ciekawość</div>
+        </div>
+        <div style="flex:1;padding:28px 18px;text-align:center;background:var(--white);border-right:1px solid var(--border);">
+          <div style="font-size:28px;margin-bottom:10px;">⚡</div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">3</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:6px;">Konfrontacja</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.5;">schematy i emocje</div>
+        </div>
+        <div style="flex:1;padding:28px 18px;text-align:center;background:var(--white);border-right:1px solid var(--border);">
+          <div style="font-size:28px;margin-bottom:10px;">🔗</div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--muted);margin-bottom:6px;">4</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:6px;">Integracja</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.5;">łączenie i rozumienie</div>
+        </div>
+        <div style="flex:1;padding:28px 18px;text-align:center;background:linear-gradient(135deg,var(--sand),#f0ebe0);">
+          <div style="font-size:28px;margin-bottom:10px;">✨</div>
+          <div style="font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);margin-bottom:6px;">5</div>
+          <div style="font-family:'Cormorant Garamond',serif;font-size:17px;font-weight:600;color:var(--navy);margin-bottom:6px;">Koherencja</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.5;">nowy sposób bycia</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 12 zasad Koherencji -->
+    <div style="margin-top:64px;margin-bottom:48px;">
+      <h2 style="font-family:'Cormorant Garamond',serif;font-size:clamp(26px,3.5vw,40px);font-weight:600;color:var(--navy);text-align:center;margin-bottom:10px;">12 zasad Koherencji</h2>
+      <p style="text-align:center;font-size:15px;color:var(--muted);margin-bottom:40px;">Fundament filozofii pracy — czym jest człowiek i jak działa zmiana.</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:860px;margin:0 auto;">
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 20px;background:var(--white);border:1px solid var(--border);border-radius:8px;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);flex-shrink:0;line-height:1;">1.</span>
+          <span style="font-size:14px;color:var(--brown);line-height:1.7;">Człowiek jest jednością — ciało, umysł, emocje i duch tworzą jeden system.</span>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 20px;background:var(--white);border:1px solid var(--border);border-radius:8px;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);flex-shrink:0;line-height:1;">2.</span>
+          <span style="font-size:14px;color:var(--brown);line-height:1.7;">Ciało przechowuje informację — zapis doświadczeń życia.</span>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 20px;background:var(--white);border:1px solid var(--border);border-radius:8px;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);flex-shrink:0;line-height:1;">3.</span>
+          <span style="font-size:14px;color:var(--brown);line-height:1.7;">Umysł interpretuje informację — nadaje strukturę temu, co przeżywamy.</span>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 20px;background:var(--white);border:1px solid var(--border);border-radius:8px;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);flex-shrink:0;line-height:1;">4.</span>
+          <span style="font-size:14px;color:var(--brown);line-height:1.7;">Emocje są komunikacją — mówią nam, czy jesteśmy w zgodzie ze sobą.</span>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 20px;background:var(--white);border:1px solid var(--border);border-radius:8px;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);flex-shrink:0;line-height:1;">5.</span>
+          <span style="font-size:14px;color:var(--brown);line-height:1.7;">Duch jest fundamentem — nadaje sens i odpowiada na pytanie: po co żyję. Ale jest też po to, by doświadczać, obserwować własne reakcje i uczyć się z każdego przeżycia.</span>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 20px;background:var(--white);border:1px solid var(--border);border-radius:8px;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);flex-shrink:0;line-height:1;">6.</span>
+          <span style="font-size:14px;color:var(--brown);line-height:1.7;">Brak spójności tworzy napięcie — w ciele, myślach i relacjach.</span>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 20px;background:var(--white);border:1px solid var(--border);border-radius:8px;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);flex-shrink:0;line-height:1;">7.</span>
+          <span style="font-size:14px;color:var(--brown);line-height:1.7;">Świadomość jest początkiem zmiany.</span>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 20px;background:var(--white);border:1px solid var(--border);border-radius:8px;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);flex-shrink:0;line-height:1;">8.</span>
+          <span style="font-size:14px;color:var(--brown);line-height:1.7;">Równowaga nie oznacza braku problemów, lecz zdolność powrotu do środka.</span>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 20px;background:var(--white);border:1px solid var(--border);border-radius:8px;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);flex-shrink:0;line-height:1;">9.</span>
+          <span style="font-size:14px;color:var(--brown);line-height:1.7;">Doświadczenie jest nauczycielem — nawet bolesne wydarzenia mają znaczenie.</span>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 20px;background:var(--white);border:1px solid var(--border);border-radius:8px;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);flex-shrink:0;line-height:1;">10.</span>
+          <span style="font-size:14px;color:var(--brown);line-height:1.7;">Autentyczność przywraca energię życia.</span>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 20px;background:var(--white);border:1px solid var(--border);border-radius:8px;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);flex-shrink:0;line-height:1;">11.</span>
+          <span style="font-size:14px;color:var(--brown);line-height:1.7;">Koherencja pojawia się, gdy wszystkie poziomy zaczynają współbrzmieć.</span>
+        </div>
+        <div style="display:flex;gap:16px;align-items:flex-start;padding:18px 20px;background:var(--sand);border:1px solid var(--gold);border-radius:8px;">
+          <span style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:700;color:var(--gold);flex-shrink:0;line-height:1;">12.</span>
+          <span style="font-size:14px;color:var(--brown);line-height:1.7;font-weight:500;">Stan koherencji przywraca naturalny dobrostan organizmu.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- ══ USŁUGI ══ -->
+<section class="services" id="uslugi">
+  <div class="inner py-xl">
+    <span class="section-num">03</span>
+    <span class="tag">Oferta</span>
+    <h2 class="section-title">Cztery obszary pracy</h2>
+
+    <div style="background:var(--sand);border-radius:10px;padding:28px 32px;margin-bottom:40px;border-left:3px solid var(--gold);">
+      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.2vw,22px);font-weight:600;color:var(--navy);line-height:1.45;margin-bottom:14px;">
+        Większość terapeutów specjalizuje się w jednym obszarze.<br>Ja pracuję ze wszystkimi czterema — jednocześnie.
+      </p>
+      <p style="font-size:14px;color:var(--brown);line-height:1.85;">
+        Ciało, umysł, emocje i duchowość — to nie są oddzielne tematy. To jeden człowiek. Kompleksowe podejście pozwala zobaczyć gdzie napięcie w ciele wynika z emocji, gdzie emocja blokuje się w przekonaniu, a przekonanie odcina od sensu. Praca zaczyna się od miejsca, w którym jesteś — nie od szufladki, w której cię umieszczono.
+      </p>
+    </div>
+
+    <!-- zakładki -->
+    <div class="services-tabs">
+      <div class="stab active-umysl" onclick="showFilar('umysl', this)">🧠 Umysł</div>
+      <div class="stab" onclick="showFilar('emocje', this)">🗝 Emocje</div>
+      <div class="stab" onclick="showFilar('duch', this)">✨ Duchowość</div>
+      <div class="stab" onclick="showFilar('cialo', this)">🤲 Ciało</div>
+    </div>
+
+    <!-- FILAR: UMYSŁ -->
+    <div class="filar-section active" id="filar-umysl">
+      <div class="filar-header">
+        <h3 class="section-title" style="font-size:clamp(22px,3vw,34px)">Praca z umysłem</h3>
+        <p class="section-lead" style="margin-bottom:0">Zmiana odwzorowania przekonań, wzorców i traum zapisanych w mózgu — bez konieczności grzebania się w przeszłości.</p>
+      </div>
+      <div class="filar-cards">
+        <div class="service-card">
+          <div class="card-icon">🧠</div>
+          <div class="card-title">Zmiana zapisu w mózgu</div>
+          <div class="card-desc">Praca bezpośrednio z neuralnymi wzorcami i traumami — zmieniam odwzorowanie zapisów bez wracania do bolesnych wspomnień. Szybko, precyzyjnie i trwale.</div>
+          <span class="card-tag tag-umysl">Umysł</span>
+        </div>
+        <div class="service-card">
+          <div class="card-icon">💭</div>
+          <div class="card-title">Praca z przekonaniami i wzorcami</div>
+          <div class="card-desc">Identyfikacja i transformacja ograniczających przekonań, które blokują zdrowie, relacje i rozwój. Zmiana na poziomie, gdzie wzorzec naprawdę powstał.</div>
+          <span class="card-tag tag-umysl">Umysł</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILAR: EMOCJE -->
+    <div class="filar-section" id="filar-emocje">
+      <div class="filar-header">
+        <h3 class="section-title" style="font-size:clamp(22px,3vw,34px)">Praca z emocjami</h3>
+        <p class="section-lead" style="margin-bottom:0">Instrukcja obsługi emocji — uczę jak je nazywać, rozumieć ich znaczenie i zmieniać niewłaściwe zasady reagowania. Pracuję z dziećmi, młodzieżą i dorosłymi.</p>
+      </div>
+      <div class="filar-cards">
+        <div class="service-card">
+          <div class="card-icon">📖</div>
+          <div class="card-title">Instrukcja obsługi emocji</div>
+          <div class="card-desc">Uczę jak nazywać emocje, rozumieć co mówią i zmieniać automatyczne, nieadaptacyjne zasady reagowania — kiedy emocja przychodzi, nie przejmuje kontroli.</div>
+          <span class="card-tag tag-emocje">Emocje</span>
+          <div class="card-mobile">👨‍👩‍👧 Dzieci · Młodzież · Dorośli · Grupy</div>
+        </div>
+        <div class="service-card">
+          <div class="card-icon">🗝</div>
+          <div class="card-title">Kody Emocji</div>
+          <div class="card-desc">Uwalnianie zablokowanych emocji zakodowanych w ciele i polu energetycznym. Certyfikowana metoda Bradley'a Nelsona II stopień — szybka i precyzyjna praca z konkretnymi blokadami.</div>
+          <span class="card-tag tag-emocje">Emocje</span>
+        </div>
+        <div class="service-card">
+          <div class="card-icon">🔑</div>
+          <div class="card-title">Kody Ciała</div>
+          <div class="card-desc">Praca z zapisami w ciele — odblokowanie napięć i wzorców fizycznych powstałych z nieprzepracowanych emocji i urazów. Certyfikacja II stopień (Bradley Nelson).</div>
+          <span class="card-tag tag-emocje">Emocje</span>
+        </div>
+        <div class="service-card">
+          <div class="card-icon">🎓</div>
+          <div class="card-title">Trening emocji</div>
+          <div class="card-desc">Nauka pracy z emocjami oparta na neurobiologii i epigenetyce — jak emocja przebiega przez układ nerwowy i jak na to wpływać. Akademia Trenera Emocji Beaty Kaczor — jedyna taka certyfikacja w Polsce (atest MEN).</div>
+          <span class="card-tag tag-emocje">Emocje</span>
+          <div class="card-mobile">💻 Online · gabinet · mobilnie</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILAR: DUCHOWOŚĆ -->
+    <div class="filar-section" id="filar-duch">
+      <div class="filar-header">
+        <h3 class="section-title" style="font-size:clamp(22px,3vw,34px)">Duchowość i energia</h3>
+        <p class="section-lead" style="margin-bottom:0">Duchowość nie jest elementem dodatkowym — jest fundamentem, bez którego koherencja pozostaje niepełna. Przez coaching duchowy, medytację i regulację oddechu pracuję nad równowagą fal serca i mózgu, odkrywaniem własnych wartości i sensu. To zmiana fundamentu funkcjonowania — tego, co niewidoczne, ale decydujące o wszystkim.</p>
+      </div>
+      <div class="filar-cards">
+        <div class="service-card">
+          <div class="card-icon">✨</div>
+          <div class="card-title">Bioenergoterapia</div>
+          <div class="card-desc">Praca z polem energetycznym człowieka — wykrywanie i harmonizowanie zaburzeń w przepływie energii życiowej. Dyplom bioenergoterapeuty.</div>
+          <span class="card-tag tag-duch">Duchowość</span>
+        </div>
+        <div class="service-card">
+          <div class="card-icon">🔮</div>
+          <div class="card-title">Wgląd w sens życia</div>
+          <div class="card-desc">Praca z własnym systemem wartości, poszukiwaniem sensu i kierunku. Towarzyszę w odkrywaniu tego, co naprawdę ważne — bez narzucania gotowych odpowiedzi.</div>
+          <span class="card-tag tag-duch">Duchowość</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- FILAR: CIAŁO -->
+    <div class="filar-section" id="filar-cialo">
+      <div class="filar-header">
+        <h3 class="section-title" style="font-size:clamp(22px,3vw,34px)">Praca z ciałem</h3>
+        <p class="section-lead" style="margin-bottom:0">Ciało jest miejscem manifestacji wszystkich blokad, nieprzepracowanych emocji i urazów. Pracuję z ciałem przez refleksy, oddech i dotyk — wywołując realne zmiany na poziomie fizycznym, które odblokowują to, co nie mogło wybrzmieć gdzie indziej.</p>
+      </div>
+      <div class="filar-cards">
+        <div class="service-card">
+          <div class="card-icon">🦶</div>
+          <div class="card-title">Refleksologia</div>
+          <div class="card-desc">Praca z mapą refleksów stóp, dłoni i twarzy — wpływam na narządy wewnętrzne i uwalniamy z ciała to, co umysł i emocje w nim zapisały. Szkoła PIR, egzamin praktyczny zdany.</div>
+          <span class="card-tag tag-cialo">Ciało</span>
+          <div class="card-mobile">📍 Gabinet + mobilnie po całej Polsce</div>
+        </div>
+        <div class="service-card">
+          <div class="card-icon">🕯</div>
+          <div class="card-title">Masaż ajurwedyjski</div>
+          <div class="card-desc">Tradycyjny masaż wspierający detoks, równowagę i głęboki relaks ciała. Ciepłe olejki, praca z meridianami. Ciało wraca do swojego naturalnego rytmu.</div>
+          <span class="card-tag tag-cialo">Ciało</span>
+          <div class="card-mobile">📍 Gabinet + mobilnie po całej Polsce</div>
+        </div>
+        <div class="service-card">
+          <div class="card-icon">🌬</div>
+          <div class="card-title">Praca z oddechem</div>
+          <div class="card-desc">Techniki oddechowe regulujące układ nerwowy i wspierające pracę ciała. Narzędzie do codziennego stosowania — na stres, przeciążenie i rozregulowanie.</div>
+          <span class="card-tag tag-cialo">Ciało</span>
+        </div>
+        <div class="service-card">
+          <div class="card-icon">🌿</div>
+          <div class="card-title">Naturopatia</div>
+          <div class="card-desc">Holistyczne podejście wspierające naturalne zdolności organizmu. Praca z żywieniem, stylem życia i naturalnymi metodami wspierania zdrowia. Egzamin państwowy 12.2025.</div>
+          <span class="card-tag tag-cialo">Ciało</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ JAK PRACUJĘ ══ -->
+<section class="jak" id="jak">
+  <div class="inner py-lg">
+    <span class="section-num">04</span>
+    <span class="tag">Jak to działa</span>
+    <h2 class="section-title">Jak pracuję</h2>
+
+    <!-- Zasady pracy -->
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:24px;margin-bottom:48px;">
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:24px 28px;">
+        <div style="font-size:22px;margin-bottom:10px;">🧍</div>
+        <div style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;">Mówię z drogi, nie z podręcznika</div>
+        <div style="font-size:14px;color:var(--muted);line-height:1.7;">Znam smak zagubienia, napięcia które siedzi w ciele latami i emocji, których nie umiałem nazwać. To doświadczenie — nie tytuły — sprawia, że wiem o czym mówię, kiedy siadam naprzeciw drugiego człowieka.</div>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:24px 28px;">
+        <div style="font-size:22px;margin-bottom:10px;">🌊</div>
+        <div style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;">Jestem autentyczny — i to działa</div>
+        <div style="font-size:14px;color:var(--muted);line-height:1.7;">Nie gram roli terapeuty. Jestem sobą — i w tej przestrzeni bezpieczeństwa wiele rzeczy zaczyna się uwalniać naturalnie. Empatia to nie słabość. To narzędzie i kompas. Gdy sytuacja tego wymaga, sięgam po podejście prowokatywne — skuteczne zwłaszcza tam, gdzie inne metody nie docierają. Zawsze z wyczuciem granicy tolerancji i w poszanowaniu procesu oraz klienta.</div>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:24px 28px;">
+        <div style="font-size:22px;margin-bottom:10px;">🎯</div>
+        <div style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;">Nie uzależniam — daję narzędzia</div>
+        <div style="font-size:14px;color:var(--muted);line-height:1.7;">Klient wychodzi z narzędziami do samodzielnej regulacji. Uczę jak pracować z emocjami i słuchać sygnałów ciała. Moim celem nie jest kolejna wizyta — moim celem jest trwała zmiana.</div>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:24px 28px;">
+        <div style="font-size:22px;margin-bottom:10px;">🤝</div>
+        <div style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;">Ta praca wymaga obecności</div>
+        <div style="font-size:14px;color:var(--muted);line-height:1.7;">Traktuję każdą sesję poważnie — bo ktoś przynosi coś ważnego. Dlatego cenię wzajemne zaangażowanie. Dostosowuję się do tempa i gotowości — ale nie zastąpię chęci drugiej strony do zmiany.</div>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:24px 28px;grid-column:1/-1;">
+        <div style="font-size:22px;margin-bottom:10px;">🚐</div>
+        <div style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;">Jestem mobilny i elastyczny — nie ogranicza mnie miejsce ani czas</div>
+        <div style="font-size:14px;color:var(--muted);line-height:1.7;">Praca jest moją pasją, nie tylko miejscem zarobku — i klient to czuje. Dostosowuję formę, termin i miejsce do wspólnych możliwości. Przyjeżdżam do Ciebie, pracuję zdalnie lub stacjonarnie w gabinecie w Mysłowicach. Klient jako podmiot tego procesu traktowany jest wyjątkowo — bo tak właśnie rozumiem tę pracę.</div>
+      </div>
+      <div style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:24px 28px;grid-column:1/-1;">
+        <div style="font-size:22px;margin-bottom:10px;">🔐</div>
+        <div style="font-size:14px;font-weight:700;color:var(--navy);margin-bottom:6px;text-transform:uppercase;letter-spacing:.5px;">Profesjonalizm, tajemnica, zasady — klient jest tu najważniejszy</div>
+        <div style="font-size:14px;color:var(--muted);line-height:1.7;">Każda sesja objęta jest pełną dyskrecją i tajemnicą zawodową. To oczywiste — ale warto to powiedzieć wprost. Ja jestem tylko narzędziem: człowiekiem, który wykorzystuje najlepszą dostępną wiedzę, metody i procesy w służbie jednemu celowi — dobrostanowi klienta. Nie moje ego, nie mój plan, nie moje przekonania o tym jak powinno być. Klient wyznacza kierunek. Ja dostarczam przestrzeń i narzędzia.<br><br>A on — gotowość. Praca ze mną nie jest dla każdego. Wymaga gotowości: do spotkania z sobą, do szczerości, do zmiany. To nie warunek, który stawiam z zewnątrz — to warunek, który rodzi się w samym kliencie. Bez niego żaden proces się nie wydarzy. Z nim — może wydarzyć się wszystko.</div>
+      </div>
+    </div>
+
+    <!-- Tajemnica klienta -->
+    <div style="border:1px solid var(--gold);border-radius:10px;padding:36px 44px;margin-bottom:40px;text-align:center;max-width:720px;margin-left:auto;margin-right:auto;">
+      <div style="font-size:20px;margin-bottom:16px;">🤫</div>
+      <p style="font-family:'Cormorant Garamond',serif;font-size:clamp(18px,2.2vw,24px);font-weight:600;color:var(--navy);line-height:1.5;margin-bottom:14px;">
+        Każdy klient to jego własny świat i jego własna tajemnica.
+      </p>
+      <p style="font-size:15px;color:var(--muted);line-height:1.8;max-width:560px;margin:0 auto;">
+        Klient nadaje tempo — ja jestem tylko towarzyszem jego wędrówki w głąb siebie. Nie popyham, nie oceniam, nie narzucam kierunku. Moją rolą jest być obecnym i gotowym — gdy on jest gotowy iść dalej.
+      </p>
+    </div>
+
+    <!-- Techniki pracy -->
+    <div style="background:var(--sand);border-radius:10px;padding:36px 40px;margin-bottom:52px;display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;">
+      <div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:20px;">W pracy wykorzystuję</h3>
+        <ul style="list-style:none;display:flex;flex-direction:column;gap:10px;">
+          <li style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px;">—</span>
+            <span style="font-size:14px;color:var(--brown);line-height:1.65;">Techniki regulacji emocji</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px;">—</span>
+            <span style="font-size:14px;color:var(--brown);line-height:1.65;">Świadomy oddech</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px;">—</span>
+            <span style="font-size:14px;color:var(--brown);line-height:1.65;">Praca z obrazowaniem</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px;">—</span>
+            <span style="font-size:14px;color:var(--brown);line-height:1.65;">Elementy pracy z przekonaniami</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px;">—</span>
+            <span style="font-size:14px;color:var(--brown);line-height:1.65;">Refleksologię — stopy, twarz, ciało</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px;">—</span>
+            <span style="font-size:14px;color:var(--brown);line-height:1.65;">Pracę z blokadami metodą Kodów Emocji i Kodów Ciała (Bradley Nelson, II stopień)</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px;">—</span>
+            <span style="font-size:14px;color:var(--brown);line-height:1.65;">Trening emocji oparty na neurobiologii — Akademia Trenera Emocji Beaty Kaczor (atest MEN); ruch, terapie emocji poprzez zmianę zapisu blokad w ciele, masaż ciała</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px;">—</span>
+            <span style="font-size:14px;color:var(--brown);line-height:1.65;">Zabiegi na warstwach energetycznych i bioenergoterapię</span>
+          </li>
+          <li style="display:flex;gap:12px;align-items:flex-start;">
+            <span style="color:var(--gold);font-weight:700;flex-shrink:0;margin-top:1px;">—</span>
+            <span style="font-size:14px;color:var(--brown);line-height:1.65;">Naturopatię — holistyczne wsparcie zdrowia (egzamin państwowy 12.2025); sesje uwalniania blokad emocjonalnych, coaching emocjonalny i duchowy</span>
+          </li>
+        </ul>
+      </div>
+      <div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:600;color:var(--navy);margin-bottom:20px;">Efekty i kontynuacja</h3>
+        <p style="font-size:14px;color:var(--brown);line-height:1.8;margin-bottom:14px;">
+          Poprzez redukcję chronicznego napięcia i obniżenie poziomu stresu wspieramy naturalne procesy regeneracyjne organizmu.
+        </p>
+        <p style="font-size:14px;color:var(--brown);line-height:1.8;margin-bottom:14px;">
+          Trwałe efekty pojawiają się wtedy, gdy pracujemy kompleksowo — nie tylko z objawem, ale z jego źródłem.
+        </p>
+        <p style="font-size:14px;font-weight:600;color:var(--navy);line-height:1.7;">
+          Moim celem nie jest kolejna wizyta.<br>Moim celem jest trwała zmiana.
+        </p>
+      </div>
+    </div>
+
+    <!-- Kroki procesu -->
+    <h3 style="font-family:'Cormorant Garamond',serif;font-size:24px;font-weight:600;color:var(--navy);margin-bottom:28px;">Jak wygląda współpraca</h3>
+    <div class="jak-steps">
+      <div class="jak-step">
+        <div class="jak-num">01</div>
+        <div class="jak-title">Kontakt</div>
+        <div class="jak-desc">Napisz lub zadzwoń. Powiedz co Cię sprowadza — ustalimy czy i jak mogę pomóc.</div>
+      </div>
+      <div class="jak-step">
+        <div class="jak-num">02</div>
+        <div class="jak-title">Rozmowa wstępna</div>
+        <div class="jak-desc">Bezpłatna konsultacja — określamy potrzeby i wybieramy właściwy obszar pracy.</div>
+      </div>
+      <div class="jak-step">
+        <div class="jak-num">03</div>
+        <div class="jak-title">Sesja</div>
+        <div class="jak-desc">Pracujemy stacjonarnie w Mysłowicach lub dojadę do Ciebie — do domu, hotelu, biura. Mam też mobilny gabinet w VW Crafterze 4×4 — pełne wyposażenie, leżanka, warunki jak w gabinecie, gdziekolwiek jesteś. Sesja trwa 60–90 minut.</div>
+      </div>
+      <div class="jak-step">
+        <div class="jak-num">04</div>
+        <div class="jak-title">Praca między sesjami</div>
+        <div class="jak-desc">Dostajesz narzędzia do pracy samodzielnej. Proces nie kończy się na spotkaniu.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ GALERIA ══ -->
+<section class="galeria" id="galeria">
+  <div class="inner py-xl">
+    <span class="section-num">05</span>
+    <span class="tag">Galeria</span>
+    <h2 class="section-title">W różnych sytuacjach</h2>
+    <p class="section-lead">Certyfikacje, praca z grupami i chwile poza gabinetem — bo autentyczność buduje zaufanie.</p>
+
+    <div class="gallery-tabs">
+      <div class="gtab gactive" onclick="showGallery('cert', this)">🏆 Certyfikacje</div>
+      <div class="gtab" onclick="showGallery('praca', this)">👥 Praca</div>
+      <div class="gtab" onclick="showGallery('zycie', this)">🌅 Poza pracą</div>
+    </div>
+
+    <!-- Certyfikacje -->
+    <div class="gallery-content gactive" id="gal-cert">
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="zdjecia/M13A4146.jpg" alt="Certyfikat Trenera Emocji — Aleksander Komaniecki">
+        </div>
+        <div class="gallery-item">
+          <img src="zdjecia/M13A4148.jpg" alt="Certyfikacja — Akademia Trenera Emocji">
+        </div>
+        <div class="gallery-item">
+          <img src="zdjecia/M13A4156.jpg" alt="Certyfikacja — radość">
+        </div>
+        <div class="gallery-item">
+          <img src="zdjecia/M13A4150.jpg" alt="Certyfikacja — Aleksander Komaniecki">
+        </div>
+        <div class="gallery-item">
+          <img src="zdjecia/M13A4163.jpg" alt="Certyfikacja — moment">
+        </div>
+        <div class="gallery-item">
+          <img src="zdjecia/M13A4171.jpg" alt="Certyfikacja — zakończenie">
+        </div>
+      </div>
+      <p class="gallery-caption">Akademia Trenera Emocji — Neuroscience and Epigenetics Trainer of Emotions, 21.09.2025</p>
+    </div>
+
+    <!-- Praca -->
+    <div class="gallery-content" id="gal-praca">
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="zdjecia/54710.jpg" alt="Szkolenie grupowe" style="object-position:center center;">
+        </div>
+        <div class="gallery-item">
+          <img src="zdjecia/96202.jpg" alt="Praca z grupą" style="object-position:center center;">
+        </div>
+        <div class="gallery-item">
+          <img src="zdjecia/49255.jpg" alt="Prowadzenie szkolenia" style="object-position:center center;">
+        </div>
+        <div class="gallery-item">
+          <img src="zdjecia/37752.jpg" alt="Warsztat grupowy" style="object-position:center center;">
+        </div>
+        <div class="gallery-item">
+          <img src="zdjecia/44464.jpg" alt="Praca indywidualna" style="object-position:center center;">
+        </div>
+        <div class="gallery-item">
+          <img src="zdjecia/79914.jpg" alt="Sesja — gabinet" style="object-position:center center;">
+        </div>
+      </div>
+      <p class="gallery-caption">Gabinet w Mysłowicach — szkolenia i sesje grupowe</p>
+    </div>
+
+    <!-- Poza pracą -->
+    <div class="gallery-content" id="gal-zycie">
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="zdjecia/IMG_9071.jpg" alt="Plaża o wschodzie słońca" style="object-position:center center;">
+        </div>
+        <div class="gallery-item">
+          <img src="zdjecia/IMG_3237.jpg" alt="Plaża — wschód słońca" style="object-position:center center;">
+        </div>
+        <div class="gallery-item">
+          <img src="zdjecia/IMG_9389.jpg" alt="Z kotkiem" style="object-position:center center;">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_3449.jpg" alt="Aleksander Komaniecki" style="object-position:center center;">
+        </div>
+        <div class="gallery-item">
+          <img src="IMG_90713.jpg" alt="Aleksander Komaniecki" style="object-position:center center;">
+        </div>
+        <div class="gallery-item">
+          <img src="zdjecia/IMG_3450.jpg" alt="Chwila dla siebie" style="object-position:center center;">
+        </div>
+      </div>
+      <p class="gallery-caption">Bo człowiek to nie tylko zawód</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══ SZKOLENIA ══ -->
+<section class="szkolenia" id="szkolenia">
+  <div class="inner py-xl">
+    <div class="szkolenia-grid">
+      <div>
+        <span class="tag" style="color:var(--gold-l)">Szkolenia</span>
+        <h2 class="section-title light">Naucz się pracować z emocjami i energią</h2>
+        <p class="section-lead light">
+          Prowadzę szkolenia indywidualne i grupowe dla osób, które chcą lepiej rozumieć emocje, energię i ciało — i skuteczniej funkcjonować w swoim życiu zawodowym i osobistym.
+        </p>
+        <p class="section-lead light" style="margin-top:16px;font-size:15px;opacity:.85;">
+          Mam doświadczenie w pracy z grupami terapeutycznymi pod superwizją psychiatry i psychologa, z dziećmi i młodzieżą w szkołach i przedszkolach, z grupami zawodowymi i biznesowymi. Prowadzę też warsztaty tematyczne — z konkretnym problemem: złością, wstydem, lękiem.
+        </p>
+        <p class="section-lead light" style="margin-top:12px;font-size:15px;opacity:.85;">
+          W ramach zajęć uczestnicy otrzymują instrukcję obsługi emocji — wiedzę z zakresu podstaw, która wywraca dotychczasowe rozumienie tego, czym są emocje i jak je latami postrzegali.
+        </p>
+        <a href="#kontakt" class="btn btn-gold" style="margin-top:24px;display:inline-block;">Zapytaj o szkolenie</a>
+      </div>
+      <div class="szkolenia-cards">
+        <div class="szk-card">
+          <div class="szk-card-title">Trening pracy z emocjami</div>
+          <div class="szk-card-desc">Nauka rozumienia, przyjmowania i transformacji emocji. Dla osób prywatnych i terapeutów.</div>
+          <div class="szk-card-tag">Szkolenie · indywidualne / grupowe</div>
+        </div>
+        <div class="szk-card">
+          <div class="szk-card-title">Kody Emocji — kurs</div>
+          <div class="szk-card-desc">Poznaj metodę Kodów Emocji i naucz się stosować ją w codziennej pracy ze sobą lub klientami.</div>
+          <div class="szk-card-tag">Szkolenie · online / stacjonarnie</div>
+        </div>
+        <div class="szk-card">
+          <div class="szk-card-title">Warsztaty tematyczne</div>
+          <div class="szk-card-desc">Złość, wstyd, lęk — praca z konkretną emocją w bezpiecznej grupie. Dla każdego, kto chce zrozumieć siebie głębiej.</div>
+          <div class="szk-card-tag">Warsztat · grupowy / otwarty</div>
+        </div>
+        <div class="szk-card">
+          <div class="szk-card-title">Szkolenia dla grup zawodowych</div>
+          <div class="szk-card-desc">Praca z emocjami w środowisku biznesowym, edukacyjnym i terapeutycznym. Superwizowane doświadczenie z dziećmi, młodzieżą i dorosłymi.</div>
+          <div class="szk-card-tag">Szkolenie · zamknięte / firmowe</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ NUMEROLOGIA / KALKULATOR ══ -->
+<section id="numerologia" style="background:#06060f; padding: 80px 0 0;">
+  <div class="inner" style="max-width:1000px;">
+    <span class="tag" style="color:#c0a040; letter-spacing:4px;">Numerologia · Kontrakt Duszy &amp; Droga Życia</span>
+    <span class="section-num light" style="color:rgba(192,160,64,.3);">06</span>
+    <h2 class="section-title light" style="margin-top:8px;">Twój plan zapisany w liczbach</h2>
+
+    <p style="font-size:17px; line-height:1.9; color:rgba(245,240,232,.65); max-width:780px; margin-bottom:16px;">
+      Imię z aktu urodzenia kształtuje Twoje życie od poczęcia do śmierci. Dusza wybiera je przed inkarnacją — aby stworzyć optymalne warunki do nauki i realizacji swojej misji. To nie przypadek. To plan.
+    </p>
+    <p style="font-size:15.5px; line-height:1.9; color:rgba(245,240,232,.45); max-width:780px; margin-bottom:40px;">
+      Numerologia nie przepowiada przyszłości — ona odczytuje to, <em style="color:rgba(245,240,232,.7);">z czym przyszedłeś i po co.</em> Pracuję dwoma uzupełniającymi się systemami: Numerologią Chińską (data urodzenia → Droga Życia i Mapa Urodzeniowa) oraz Kontraktem Duszy według Nicolasa Davida Ngana (imię → Gwiazda Dawida z 7 aspektami). Razem tworzą kompletny portret energetyczny.
+    </p>
+
+    <!-- Mój własny odczyt — intro -->
+    <div style="background:#0a0a18; border:1px solid #1e1e38; border-radius:14px; padding:32px 32px 28px; margin-bottom:40px;">
+      <div style="font-size:9px; letter-spacing:4px; text-transform:uppercase; color:#c0a040; margin-bottom:20px; font-family:'Montserrat',sans-serif;">Mój własny odczyt — Aleksander Antoni Komaniecki · ur. 09.11.1969</div>
+
+      <p style="font-size:15px; color:rgba(245,240,232,.6); line-height:1.85; margin-bottom:24px; font-family:'Cormorant Garamond',serif; font-style:italic;">
+        Mam <strong style="color:#c0a040; font-style:normal;">12-3 we wszystkich trzech pozycjach trójkąta fizycznego</strong> — zjawisko wyjątkowo rzadkie. Lamed–Gimel: nauczyciel który naucza prosto z duszy, z przeżytej prawdy. Karma "od biedy do bogactwa" — nie tylko finansowo. Przez całe pierwsze pół życia pracowałem na jednej, bardzo silnej częstotliwości.
+      </p>
+
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:20px;">
+
+        <div style="background:#0f0f22; border:1px solid #2a1a4a; border-radius:8px; padding:16px 18px;">
+          <div style="font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#6050a0; margin-bottom:8px; font-family:'Montserrat',sans-serif;">Trójkąt Fizyczny</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:1.05em; color:#d0c0e8; margin-bottom:6px;">12-3 · Lamed–Gimel · Nauczyciel</div>
+          <div style="font-size:12.5px; color:rgba(245,240,232,.4); line-height:1.7;">Karma, Talenty i Cele fizyczne — wszystkie na tej samej liczbie. Siła komunikacji i nauczania przez kanał (Gimel). Lekcja niegodności → praca do przepracowania.</div>
+        </div>
+
+        <div style="background:#0f0f22; border:1px solid #1a2a3a; border-radius:8px; padding:16px 18px;">
+          <div style="font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#407060; margin-bottom:8px; font-family:'Montserrat',sans-serif;">Trójkąt Duchowy</div>
+          <div style="font-family:'Cormorant Garamond',serif; font-size:1.05em; color:#c0d0c8; margin-bottom:6px;">5-5 · 11-2 · 8-8</div>
+          <div style="font-size:12.5px; color:rgba(245,240,232,.4); line-height:1.7;">Karma: otworzyć umysł. Talent: Budowniczy prawdy — analityk i mag w jednym. Cel: uziemić i służyć. Od ~42 r.ż. dominuje ta warstwa.</div>
+        </div>
+
+      </div>
+
+      <div style="background:#14100c; border:1px solid #c0a04044; border-radius:8px; padding:18px 20px;">
+        <div style="font-size:10px; letter-spacing:3px; text-transform:uppercase; color:#c0a040; margin-bottom:10px; font-family:'Montserrat',sans-serif;">Przeznaczenie Duszy · 6-6 · Vuv–Vuv</div>
+        <div style="font-size:14.5px; color:rgba(245,240,232,.7); line-height:1.8; font-family:'Cormorant Garamond',serif; font-style:italic;">
+          "Naczynie twórczej siły Boga" — centrum całej Gwiazdy Dawida. Synteza wszystkich aspektów. To jest prawdziwy powód inkarnacji.
+        </div>
+      </div>
+
+      <div style="margin-top:20px; font-size:13px; color:rgba(245,240,232,.3); font-family:'Montserrat',sans-serif;">
+        Twój plan też czeka na odczytanie. Sprawdź swoje liczby poniżej — albo zamów pełny odczyt.
+      </div>
+    </div>
+
+    <!-- Dwie metody -->
+    <div style="display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:40px;">
+
+      <div style="background:#0c0c1a; border:1px solid #1e1e38; border-left:3px solid #4466aa; border-radius:10px; padding:30px 28px;">
+        <div style="font-size:9px; letter-spacing:4px; text-transform:uppercase; color:#4466aa; margin-bottom:10px; font-family:'Montserrat',sans-serif;">Numerologia Chińska · Zbigniew Królicki</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1.3em; color:#c8d8e8; margin-bottom:14px;">Droga Życia i Mapa Urodzeniowa</div>
+        <p style="font-size:14px; color:rgba(245,240,232,.5); line-height:1.85; margin-bottom:16px;">
+          System oparty wyłącznie na dacie urodzenia. Cyfry daty tworzą <strong style="color:rgba(245,240,232,.7);">Kwadrat Lo Shu</strong> — starożytną chińską mapę 9 pól, gdzie każde pole odpowiada innej energii życiowej. Cyfry obecne w dacie mówią co masz w nadmiarze; cyfry nieobecne — czego szukasz i czego się uczysz.
+        </p>
+        <p style="font-size:14px; color:rgba(245,240,232,.5); line-height:1.85; margin-bottom:18px;">
+          <strong style="color:rgba(245,240,232,.7);">Droga Życia</strong> to główna liczba — wypadkowa całej daty urodzenia. Mówi o głównym temacie i misji tego wcielenia. Strzały siły i słabości pokazują wrodzone zasoby i lekcje do przepracowania — są ich dziesiątki kombinacji.
+        </p>
+        <div style="font-size:11.5px; color:rgba(245,240,232,.28); line-height:1.9; font-family:'Montserrat',sans-serif; border-top:1px solid #1a1a2a; padding-top:14px;">
+          Droga Życia (1–9, 11, 22) · Kwadrat Lo Shu · 9 pól energii<br>
+          Strzały Siły (talenty) · Strzały Słabości (lekcje)<br>
+          Liczby Brakujące · Rok Osobisty (cykl 9-letni) · Miesiąc Osobisty<br>
+          Piramidy Życia (4 szczyty) · Prognoza cyklu · Zbieżności z PD
+        </div>
+      </div>
+
+      <div style="background:#0c0c1a; border:1px solid #1e1e38; border-left:3px solid #6666aa; border-radius:10px; padding:30px 28px;">
+        <div style="font-size:9px; letter-spacing:4px; text-transform:uppercase; color:#8888cc; margin-bottom:10px; font-family:'Montserrat',sans-serif;">Kontrakt Duszy · Nicolas David Ngan · Frank Alper</div>
+        <div style="font-family:'Cormorant Garamond',serif; font-size:1.3em; color:#d0c8e8; margin-bottom:14px;">Gwiazda Dawida — Plan Duszy</div>
+        <p style="font-size:14px; color:rgba(245,240,232,.5); line-height:1.85; margin-bottom:16px;">
+          Pełne imię z aktu urodzenia konwertowane dźwięk po dźwięku na litery hebrajskie (system Franka Alpera). Każda litera niesie liczbę i jakość energetyczną. Z kolejności liter wyłania się <strong style="color:rgba(245,240,232,.7);">Gwiazda Dawida</strong> z siedmioma pozycjami — trójkąt fizyczny i duchowy plus centrum: Przeznaczenie Duszy.
+        </p>
+        <p style="font-size:14px; color:rgba(245,240,232,.5); line-height:1.85; margin-bottom:18px;">
+          Trójkąt fizyczny dominuje w pierwszej połowie życia (do ~35–42 r.ż.), duchowy aktywuje się od ~42 r.ż. wzwyż. To mapa etapów — nie przypadkowych zdarzeń, ale zaplanowanych lekcji. Każda pozycja ma własną karmę, talenty i cel.
+        </p>
+        <div style="font-size:11.5px; color:rgba(245,240,232,.28); line-height:1.9; font-family:'Montserrat',sans-serif; border-top:1px solid #1a1a2a; padding-top:14px;">
+          Karma Fizyczna · Talenty Fizyczne · Cele Fizyczne<br>
+          Karma Duchowa · Talenty Duchowe · Cele Duchowe<br>
+          Przeznaczenie Duszy (centrum Gwiazdy) · Litery hebrajskie<br>
+          Bramy ciała · Kierunki świata · Organy energetyczne · Zbieżności z NCH
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Tabela pozycji Gwiazdy -->
+    <div style="background:#080810; border:1px solid #1a1a30; border-radius:10px; padding:32px 30px; margin-bottom:40px;">
+      <div style="font-size:9px; letter-spacing:4px; text-transform:uppercase; color:#c0a040; margin-bottom:24px; font-family:'Montserrat',sans-serif;">Co odczytujemy — 7 pozycji Gwiazdy Dawida</div>
+      <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px 40px;">
+
+        <div style="font-size:13.5px; color:rgba(245,240,232,.55); line-height:1.8; padding-left:16px; border-left:2px solid #2a2050;">
+          <div style="color:#9090c8; font-family:'Cormorant Garamond',serif; font-size:1.05em; margin-bottom:4px;">Karma fizyczna / duchowa</div>
+          Nierozwiązane wzorce z poprzednich wcieleń. Lekcje, które dusza przynosi jako "zadanie domowe". Karma to nie kara — to największy dar, bo zawiera klucz do uwolnienia i przejścia na wyższy poziom.
+        </div>
+
+        <div style="font-size:13.5px; color:rgba(245,240,232,.55); line-height:1.8; padding-left:16px; border-left:2px solid #204030;">
+          <div style="color:#80c090; font-family:'Cormorant Garamond',serif; font-size:1.05em; margin-bottom:4px;">Talent fizyczny / duchowy</div>
+          Wrodzone zdolności dane specjalnie po to, by pokonać karmę i służyć innym. Talent jest kluczem do karmy — aktywowany świadomie, otwiera to co zablokowane. Często niewidoczny dla właściciela.
+        </div>
+
+        <div style="font-size:13.5px; color:rgba(245,240,232,.55); line-height:1.8; padding-left:16px; border-left:2px solid #1a3020;">
+          <div style="color:#70b080; font-family:'Cormorant Garamond',serif; font-size:1.05em; margin-bottom:4px;">Cel fizyczny / duchowy</div>
+          To, co dusza chce osiągnąć i ucieleśnić w tym wcieleniu. Kierunek, nie obowiązek. Zrealizowanie celu nie jest gwarantowane — zależy od stopnia świadomości i pracy nad karmą.
+        </div>
+
+        <div style="font-size:13.5px; color:rgba(245,240,232,.55); line-height:1.8; padding-left:16px; border-left:2px solid #503010;">
+          <div style="color:#c0a040; font-family:'Cormorant Garamond',serif; font-size:1.05em; margin-bottom:4px;">Przeznaczenie Duszy</div>
+          Centrum Gwiazdy — synteza wszystkich 6 aspektów. Prawdziwy powód inkarnacji. To jest pytanie, na które całe życie szuka się odpowiedzi — i które często rozumie się dopiero z perspektywy czasu.
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Jak wygląda proces -->
+    <div style="margin-bottom:56px;">
+      <div style="font-size:9px; letter-spacing:4px; text-transform:uppercase; color:rgba(245,240,232,.3); margin-bottom:24px; font-family:'Montserrat',sans-serif;">Jak wygląda proces — od liczb do gotowego dokumentu</div>
+      <div style="display:flex; flex-direction:column; gap:0;">
+
+        <div style="display:flex; gap:20px; align-items:flex-start; padding-bottom:28px; border-left:1px solid #1e1e38; margin-left:13px; padding-left:28px; position:relative;">
+          <div style="position:absolute; left:-14px; top:0; min-width:28px; height:28px; background:#0f0f20; border:1px solid #2a2a48; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; color:#6666aa; font-family:'Montserrat',sans-serif; flex-shrink:0;">1</div>
+          <div>
+            <div style="font-size:14.5px; color:rgba(245,240,232,.75); line-height:1.0; margin-bottom:8px; font-family:'Cormorant Garamond',serif;">Bezpłatny odczyt w formularzu poniżej</div>
+            <div style="font-size:13.5px; color:rgba(245,240,232,.45); line-height:1.8;">Wpisujesz imię i datę urodzenia z aktu urodzenia. Formularz oblicza automatycznie: Drogę Życia, Kwadrat Lo Shu z 9 polami, Rok i Miesiąc Osobisty, Strzały siły i słabości, Karma–Talent–Cel fizyczny Kontraktu Duszy. Część materiału jest zamglona — żebyś zobaczył ile jest do odkrycia.</div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:20px; align-items:flex-start; padding-bottom:28px; border-left:1px solid #1e1e38; margin-left:13px; padding-left:28px; position:relative;">
+          <div style="position:absolute; left:-14px; top:0; min-width:28px; height:28px; background:#0f0f20; border:1px solid #2a2a48; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; color:#6666aa; font-family:'Montserrat',sans-serif; flex-shrink:0;">2</div>
+          <div>
+            <div style="font-size:14.5px; color:rgba(245,240,232,.75); line-height:1.0; margin-bottom:8px; font-family:'Cormorant Garamond',serif;">Piszesz do mnie — zaczynam pracę</div>
+            <div style="font-size:13.5px; color:rgba(245,240,232,.45); line-height:1.8;">Podajesz pełne imię i datę urodzenia z aktu urodzenia (nie skrót, nie pseudonim — ważne jest brzmienie urzędowe). Potwierdzam dane, weryfikuję obliczenia i zaczynam pisać. Odczyt przygotowuję osobiście z pomocą Claude AI — nie generuję automatycznie, każdy akapit jest czytany i dopasowywany do konkretnej osoby.</div>
+          </div>
+        </div>
+
+        <div style="display:flex; gap:20px; align-items:flex-start; margin-left:13px; padding-left:28px; position:relative;">
+          <div style="position:absolute; left:-14px; top:0; min-width:28px; height:28px; background:#0f0f20; border:1px solid #2a2a48; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:11px; color:#6666aa; font-family:'Montserrat',sans-serif; flex-shrink:0;">3</div>
+          <div>
+            <div style="font-size:14.5px; color:rgba(245,240,232,.75); line-height:1.0; margin-bottom:8px; font-family:'Cormorant Garamond',serif;">W ciągu 48h otrzymujesz kompletny dokument HTML</div>
+            <div style="font-size:13.5px; color:rgba(245,240,232,.45); line-height:1.8;">Kompletny odczyt to zwykle 15–25 stron materiału: pełna Gwiazda Dawida z 6 aspektami i opisami (karma, talent, cel, bramy, kierunki, organy), Przeznaczenie Duszy, Droga Życia NCH, Piramidy Życia z 4 szczytami, Rok Osobisty z prognozą lat, Strzały z pełnymi opisami, Liczby Brakujące, 5+ zbieżności PD+NCH, Synteza i Portret Energetyczny, Zalecenia praktyczne. Gotowy plik HTML do zachowania i wracania do niego.</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <p style="font-size:15px; color:rgba(245,240,232,.4); max-width:640px; margin-bottom:48px; font-family:'Cormorant Garamond',serif; font-style:italic; line-height:1.85;">
+      Poniżej mój własny odczyt — skrócony (bezpłatny) i pełny (osobisty). Kliknij żeby zobaczyć dokładnie co dostajesz.
+    </p>
+
+    <!-- ══ PRZYKŁADY ODCZYTÓW ══ -->
+    <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:60px;">
+
+      <!-- Karta 1: Skrócony -->
+      <div style="background:#0c0c1e; border:1px solid #2a2a48; border-radius:14px; overflow:hidden;">
+        <button onclick="togglePrzyklad('skrocony')" style="width:100%; background:none; border:none; padding:24px 26px; text-align:left; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <div>
+            <div style="font-size:9px; letter-spacing:4px; text-transform:uppercase; color:#6666aa; margin-bottom:6px; font-family:'Montserrat',sans-serif;">Bezpłatny podgląd</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:1.35em; font-weight:300; color:#d0c8e8;">Skrócony odczyt — Aleksander Komaniecki</div>
+            <div style="font-size:12px; color:#6a6090; margin-top:6px; font-family:'Montserrat',sans-serif;">DŻ · Kwadrat Lo Shu · Rok osobisty · Strzały · Trójkąt Fizyczny (z zamgleniem)</div>
+          </div>
+          <span id="ico-skrocony" style="font-size:20px; color:#6666aa; flex-shrink:0;">▼</span>
+        </button>
+        <div id="panel-skrocony" style="display:none; border-top:1px solid #1e1e38;">
+          <iframe data-src="kalkulator.html?demo=aleksander" id="frame-skrocony"
+            style="width:100%; border:none; display:block; height:82vh; overflow:auto;"
+            scrolling="yes" title="Przykład skróconego odczytu"></iframe>
+        </div>
+      </div>
+
+      <!-- Karta 2: Plan Duszy PD -->
+      <div style="background:#0c0c1e; border:1px solid #2a2a48; border-radius:14px; overflow:hidden;">
+        <button onclick="togglePrzyklad('pd')" style="width:100%; background:none; border:none; padding:24px 26px; text-align:left; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <div>
+            <div style="font-size:9px; letter-spacing:4px; text-transform:uppercase; color:#c0a040; margin-bottom:6px; font-family:'Montserrat',sans-serif;">Kontrakt Duszy · Nicolas David Ngan</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:1.35em; font-weight:300; color:#e8d890;">Plan Duszy — Aleksander Komaniecki</div>
+            <div style="font-size:12px; color:#806840; margin-top:6px; font-family:'Montserrat',sans-serif;">Gwiazda Dawida · Karma · Talent · Cel · Przeznaczenie Duszy · Bramy · Organy</div>
+          </div>
+          <span id="ico-pd" style="font-size:20px; color:#c0a040; flex-shrink:0;">▼</span>
+        </button>
+        <div id="panel-pd" style="display:none; border-top:1px solid #1e1e38;">
+          <iframe data-src="pd-aleksander.html" id="frame-pd"
+            style="width:100%; border:none; display:block; height:82vh; overflow:auto;"
+            scrolling="yes" title="Plan Duszy Aleksandra"></iframe>
+        </div>
+      </div>
+
+      <!-- Karta 3: NCH -->
+      <div style="background:#0c0c1e; border:1px solid #2a2a48; border-radius:14px; overflow:hidden;">
+        <button onclick="togglePrzyklad('nch')" style="width:100%; background:none; border:none; padding:24px 26px; text-align:left; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <div>
+            <div style="font-size:9px; letter-spacing:4px; text-transform:uppercase; color:#c0a040; margin-bottom:6px; font-family:'Montserrat',sans-serif;">Numerologia Chińska · Zbigniew Królicki</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:1.35em; font-weight:300; color:#e8d890;">Droga Życia i Mapa Urodzeniowa — Aleksander Komaniecki</div>
+            <div style="font-size:12px; color:#806840; margin-top:6px; font-family:'Montserrat',sans-serif;">DŻ · Lo Shu · Strzały · Liczby Brakujące · Piramidy · Rok Osobisty · Prognoza</div>
+          </div>
+          <span id="ico-nch" style="font-size:20px; color:#c0a040; flex-shrink:0;">▼</span>
+        </button>
+        <div id="panel-nch" style="display:none; border-top:1px solid #1e1e38;">
+          <iframe data-src="nch-aleksander.html" id="frame-nch"
+            style="width:100%; border:none; display:block; height:82vh; overflow:auto;"
+            scrolling="yes" title="Odczyt NCH Aleksandra"></iframe>
+        </div>
+      </div>
+
+      <!-- Karta 4: Kompilacja -->
+      <div style="background:#0c0c1e; border:1px solid #c0a04022; border-radius:14px; overflow:hidden;">
+        <button onclick="togglePrzyklad('kompilacja')" style="width:100%; background:none; border:none; padding:24px 26px; text-align:left; cursor:pointer; display:flex; justify-content:space-between; align-items:center; gap:12px;">
+          <div>
+            <div style="font-size:9px; letter-spacing:4px; text-transform:uppercase; color:#c0a040; margin-bottom:6px; font-family:'Montserrat',sans-serif;">Kompilacja PD + NCH · Portret Energetyczny</div>
+            <div style="font-family:'Cormorant Garamond',serif; font-size:1.35em; font-weight:300; color:#e8d890;">Pełna Kompilacja — Aleksander Komaniecki</div>
+            <div style="font-size:12px; color:#806840; margin-top:6px; font-family:'Montserrat',sans-serif;">Zbieżności ★★★ · Synteza · Portret Energetyczny · Zalecenia Praktyczne</div>
+          </div>
+          <span id="ico-kompilacja" style="font-size:20px; color:#c0a040; flex-shrink:0;">▼</span>
+        </button>
+        <div id="panel-kompilacja" style="display:none; border-top:1px solid #1e1e38;">
+          <iframe data-src="kompilacja-aleksander.html" id="frame-kompilacja"
+            style="width:100%; border:none; display:block; height:82vh; overflow:auto;"
+            scrolling="yes" title="Kompilacja Aleksandra"></iframe>
+        </div>
+      </div>
+
+    </div>
+
+    <script>
+    function togglePrzyklad(typ) {
+      var panel = document.getElementById('panel-' + typ);
+      var ico   = document.getElementById('ico-' + typ);
+      var frame = document.getElementById('frame-' + typ);
+      var open  = panel.style.display === 'block';
+      panel.style.display = open ? 'none' : 'block';
+      ico.textContent = open ? '▼' : '▲';
+      if (!open && frame && frame.dataset.src && !frame.getAttribute('src')) {
+        frame.src = frame.dataset.src;
+      }
+      if (!open) {
+        setTimeout(function() {
+          panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 80);
+      }
+    }
+    </script>
+
+    <!-- ══ KALKULATOR ══ -->
+    <h2 class="section-title light" style="margin-top:0; margin-bottom:16px;">Sprawdź swoje liczby</h2>
+    <p style="font-size:17px; line-height:1.85; color:rgba(245,240,232,.6); max-width:620px; margin-bottom:48px;">
+      Wprowadź imię i datę urodzenia — bezpłatny odczyt pokaże Ci pierwszą warstwę swojego planu numerologicznego. Pełny odczyt przygotowuję osobiście w ciągu 48h.
+    </p>
+  </div>
+  <iframe
+    id="kalkulator-frame"
+    src="kalkulator.html"
+    style="width:100%; border:none; display:block; min-height:680px; background:#06060f;"
+    scrolling="no"
+    title="Bezpłatny odczyt numerologiczny">
+  </iframe>
+</section>
+<script>
+  // Obsługa wiadomości z iframe (kalkulator + przykłady)
+  window.addEventListener('message', function(e) {
+    if (e.data && e.data.kalkulatorHeight) {
+      // Tylko główny kalkulator (nie przykłady — mają stałą wysokość ze scrollem)
+      var frame = document.getElementById('kalkulator-frame');
+      if (frame) frame.style.height = (e.data.kalkulatorHeight + 40) + 'px';
+    }
+    if (e.data && e.data.zwijnPanel) {
+      var typ = e.data.zwijnPanel;
+      var panel = document.getElementById('panel-' + typ);
+      var ico   = document.getElementById('ico-' + typ);
+      if (panel && panel.style.display === 'block') {
+        panel.style.display = 'none';
+        if (ico) ico.textContent = '▼';
+        document.getElementById('panel-' + typ).closest('div[style*="border-radius:14px"]').scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    }
+    if (e.data && e.data.scrollTo === 'kontakt') {
+      var kontakt = document.getElementById('kontakt');
+      if (kontakt) kontakt.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+  // Resize iframe pełnego odczytu po załadowaniu
+  document.addEventListener('DOMContentLoaded', function() {
+    var fp = document.getElementById('frame-pelny');
+    if (fp) fp.addEventListener('load', function() {
+      try { fp.style.height = fp.contentWindow.document.body.scrollHeight + 40 + 'px'; } catch(e) {}
+    });
+  });
+  // Fallback: ustaw wysokość po załadowaniu (same-origin)
+  document.getElementById('kalkulator-frame').addEventListener('load', function() {
+    try {
+      this.style.height = this.contentWindow.document.body.scrollHeight + 'px';
+    } catch(e) {}
+  });
+</script>
+
+<!-- ══ KONTAKT ══ -->
+<section class="kontakt" id="kontakt">
+  <div class="inner py-xl">
+    <div class="kontakt-grid">
+      <div class="kontakt-info">
+        <span class="tag">Kontakt</span>
+        <h2 class="section-title">Porozmawiajmy</h2>
+        <p class="section-lead">Napisz do mnie — odpiszę w ciągu 24 godzin i umówimy termin który Ci odpowiada.</p>
+        <div class="kontakt-links">
+          <a href="tel:+48791322978" class="kontakt-link">
+            <div class="kontakt-link-icon">📞</div>
+            <div class="kontakt-link-body">
+              <div class="kontakt-link-label">Telefon</div>
+              <div class="kontakt-link-value">+48 791 322 978</div>
+            </div>
+          </a>
+          <a href="mailto:komanieckialek@gmail.com" class="kontakt-link">
+            <div class="kontakt-link-icon">✉️</div>
+            <div class="kontakt-link-body">
+              <div class="kontakt-link-label">E-mail</div>
+              <div class="kontakt-link-value">komanieckialek@gmail.com</div>
+            </div>
+          </a>
+          <a href="https://m.me/aleksander.komaniecki.9" target="_blank" class="kontakt-link">
+            <div class="kontakt-link-icon">💬</div>
+            <div class="kontakt-link-body">
+              <div class="kontakt-link-label">Facebook Messenger</div>
+              <div class="kontakt-link-value">Napisz wiadomość</div>
+            </div>
+          </a>
+          <div class="kontakt-link">
+            <div class="kontakt-link-icon">📍</div>
+            <div class="kontakt-link-body">
+              <div class="kontakt-link-label">Gabinet stacjonarny</div>
+              <div class="kontakt-link-value">Mysłowice</div>
+              <div class="kontakt-area">
+                <span class="area-tag">Mysłowice</span>
+                <span class="area-tag">Dojazd do klienta</span>
+                <span class="area-tag">Cała Polska</span>
+                <span class="area-tag">Online (sesje emocji)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kontakt-form">
+        <div class="form-title">Napisz do mnie</div>
+        <div class="form-group">
+          <label class="form-label">Imię i nazwisko</label>
+          <input type="text" class="form-input" placeholder="Twoje imię...">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Telefon lub e-mail</label>
+          <input type="text" class="form-input" placeholder="+48 lub adres email...">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Interesuje mnie</label>
+          <select class="form-select">
+            <option value="">Wybierz obszar...</option>
+            <option>Kody Emocji</option>
+            <option>Kody Ciała</option>
+            <option>Zmiana zapisu w mózgu</option>
+            <option>Bioenergoterapia</option>
+            <option>Naturopatia</option>
+            <option>Refleksologia</option>
+            <option>Masaż ajurwedyjski</option>
+            <option>Szkolenie</option>
+            <option>Nie wiem — chcę porozmawiać</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Wiadomość (opcjonalnie)</label>
+          <textarea class="form-textarea" placeholder="Opisz krótko co Cię sprowadza..."></textarea>
+        </div>
+        <button class="form-submit">Wyślij wiadomość →</button>
+        <p style="font-size:12px;color:var(--muted);margin-top:12px;text-align:center">
+          Odpiszę w ciągu 24 godzin. Nie wysyłam spamu.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="inner">
+    <div class="footer-name">Aleksander <span>Komaniecki</span></div>
+    <div class="footer-tags">
+      <span class="footer-tag">Bioenergoterapia</span>
+      <span class="footer-tag">·</span>
+      <span class="footer-tag">Naturopatia</span>
+      <span class="footer-tag">·</span>
+      <span class="footer-tag">Refleksologia</span>
+      <span class="footer-tag">·</span>
+      <span class="footer-tag">Kody Emocji</span>
+      <span class="footer-tag">·</span>
+      <span class="footer-tag">Mysłowice</span>
+    </div>
+    <div class="footer-copy">© 2026 Aleksander Komaniecki · Wszelkie prawa zastrzeżone</div>
+  </div>
+</footer>
+
+<script>
+function showFilar(id, el) {
+  document.querySelectorAll('.filar-section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('.stab').forEach(t => {
+    t.classList.remove('active-umysl', 'active-emocje', 'active-duch', 'active-cialo');
+  });
+  document.getElementById('filar-' + id).classList.add('active');
+  el.classList.add('active-' + id);
+}
+
+function showGallery(id, el) {
+  document.querySelectorAll('.gallery-content').forEach(s => s.classList.remove('gactive'));
+  document.querySelectorAll('.gtab').forEach(t => t.classList.remove('gactive'));
+  document.getElementById('gal-' + id).classList.add('gactive');
+  el.classList.add('gactive');
+}
+
+function showWheelArea(id) {
+  const allQs = document.querySelectorAll('.wheel-q');
+  const allDetails = document.querySelectorAll('.wheel-detail');
+  const clickedQ = document.querySelector('.wheel-q[data-area="' + id + '"]');
+  const targetDetail = document.getElementById('wd-' + id);
+  const isActive = clickedQ && clickedQ.classList.contains('wq-active');
+
+  allQs.forEach(q => q.classList.remove('wq-active'));
+  allDetails.forEach(d => d.classList.remove('wdactive'));
+
+  if (!isActive) {
+    if (clickedQ) clickedQ.classList.add('wq-active');
+    if (targetDetail) {
+      targetDetail.classList.add('wdactive');
+      setTimeout(() => targetDetail.scrollIntoView({behavior:'smooth', block:'nearest'}), 50);
+    }
+  }
+}
+
+function openNauka() {
+  const o = document.getElementById('nauka-overlay');
+  o.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  o.scrollTop = 0;
+}
+function closeNauka() {
+  document.getElementById('nauka-overlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeNauka(); });
+</script>
+
+</body>
+</html>

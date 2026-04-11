@@ -1,0 +1,790 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontrakt Duszy — Aleksander Antoni Komaniecki</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', serif;
+    background: #0a0a12;
+    color: #e0d8c8;
+    line-height: 1.8;
+    font-size: 16px;
+  }
+  .page { max-width: 860px; margin: 0 auto; padding: 40px 28px 100px; }
+
+  /* HEADER */
+  .header {
+    text-align: center;
+    padding: 70px 0 50px;
+    border-bottom: 1px solid #252535;
+    margin-bottom: 60px;
+  }
+  .header .eyebrow {
+    font-size: 11px; letter-spacing: 5px; text-transform: uppercase;
+    color: #6666aa; margin-bottom: 20px;
+  }
+  .header h1 {
+    font-size: 2.6em; font-weight: normal; color: #f0e8d5;
+    line-height: 1.25; margin-bottom: 10px;
+  }
+  .header .sub {
+    font-style: italic; color: #9080a0; font-size: 1em; margin-bottom: 28px;
+  }
+  .header .meta {
+    display: inline-flex; gap: 36px; font-size: 12px; color: #7070a0;
+    border: 1px solid #222235; padding: 11px 28px; border-radius: 4px;
+  }
+  .header .meta b { color: #b8b0c8; }
+
+  /* SEKCJE */
+  .section { margin-bottom: 60px; }
+  .section-label {
+    font-size: 10px; letter-spacing: 5px; text-transform: uppercase;
+    color: #6666aa; margin-bottom: 8px;
+  }
+  h2 {
+    font-size: 1.55em; font-weight: normal; color: #d8d0e8;
+    border-bottom: 1px solid #252535; padding-bottom: 12px; margin-bottom: 28px;
+  }
+  h3 {
+    font-size: 0.85em; font-weight: normal; color: #c0b8d8;
+    margin: 28px 0 10px; text-transform: uppercase; letter-spacing: 2px;
+  }
+  p { margin-bottom: 14px; color: #ccc8b8; }
+
+  /* GWIAZDA DAWIDA */
+  .star-box {
+    background: #0d0d1e; border: 1px solid #222235; border-radius: 12px;
+    padding: 44px 30px; margin-bottom: 60px;
+  }
+  .star-box .title {
+    text-align: center; font-size: 10px; letter-spacing: 5px;
+    text-transform: uppercase; color: #6666aa; margin-bottom: 36px;
+  }
+  .star-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 8px; max-width: 580px; margin: 0 auto;
+  }
+  .cell {
+    background: #13132a; border: 1px solid #252545; border-radius: 8px;
+    padding: 14px 12px; text-align: center; font-size: 13px;
+  }
+  .cell.fiz { border-color: #4a3a8a; background: #181630; }
+  .cell.duch { border-color: #2a5a48; background: #121e18; }
+  .cell.pd {
+    border-color: #b08030; background: #1e1810;
+    grid-column: 2;
+  }
+  .cell .pos { font-size: 9px; color: #404060; letter-spacing: 1px; margin-bottom: 3px; }
+  .cell .lbl { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #6668aa; margin-bottom: 4px; }
+  .cell .num { font-size: 1.6em; font-weight: bold; letter-spacing: 3px; margin-bottom: 2px; }
+  .cell.fiz .num { color: #9088d0; }
+  .cell.duch .num { color: #60a888; }
+  .cell.pd .num { color: #d0a040; font-size: 2em; }
+  .cell .heb { font-size: 11px; color: #7070aa; }
+  .cell.pd .heb { color: #a07830; }
+  .cell .pl { font-size: 10px; color: #5560aa; letter-spacing: 0.5px; margin-top: 2px; font-style: italic; }
+  .cell.pd .pl { color: #907028; }
+  .cell.empty { background: transparent; border-color: transparent; }
+  .tri-label {
+    grid-column: 1 / -1; text-align: center;
+    font-size: 9px; letter-spacing: 4px; text-transform: uppercase;
+    padding: 6px 0 4px;
+  }
+  .tri-label.duch { color: #3a8060; border-bottom: 1px solid #1a3028; }
+  .tri-label.fiz  { color: #5040a0; border-bottom: 1px solid #28203a; margin-top: 6px; }
+  .star-note {
+    text-align: center; font-size: 12px; color: #5555aa; margin-top: 20px;
+    font-style: italic;
+  }
+
+  /* TABELA */
+  table { width: 100%; border-collapse: collapse; margin-bottom: 28px; font-size: 14px; }
+  th { text-align: left; padding: 10px 14px; font-size: 10px; letter-spacing: 3px;
+    text-transform: uppercase; color: #6060a0; border-bottom: 1px solid #2a2a40; }
+  td { padding: 11px 14px; border-bottom: 1px solid #1e1e30; color: #c0b8c8; vertical-align: middle; }
+  .num-col { font-size: 1.15em; font-weight: bold; letter-spacing: 2px; }
+  .fiz-row td { background: #13121e; }
+  .fiz-row .num-col { color: #9088d0; }
+  .duch-row td { background: #111a14; }
+  .duch-row .num-col { color: #60a888; }
+  .pd-row td { background: #1a160a; }
+  .pd-row .num-col { color: #d0a040; }
+
+  /* KARTY */
+  .card {
+    background: #0f0f22; border: 1px solid #252540; border-radius: 10px;
+    padding: 28px 30px; margin-bottom: 28px;
+  }
+  .card.fiz { border-color: #3a3070; background: #0e0d1c; }
+  .card.duch { border-color: #1e4a38; background: #0b130f; }
+  .card.pd { border-color: #8a6020; background: #16120a; }
+  .card-head {
+    display: flex; align-items: flex-start; gap: 20px; margin-bottom: 16px;
+  }
+  .card-num {
+    font-size: 2.2em; font-weight: bold; letter-spacing: 3px;
+    line-height: 1; min-width: 72px;
+  }
+  .card.fiz .card-num { color: #9088d0; }
+  .card.duch .card-num { color: #60a888; }
+  .card.pd .card-num { color: #d0a040; }
+  .card-title { font-size: 1.1em; color: #d8d0e8; margin-bottom: 4px; }
+  .card-heb { font-size: 12px; color: #6868a8; letter-spacing: 1px; }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 16px; }
+  .tag {
+    font-size: 11px; padding: 3px 10px; border-radius: 12px; letter-spacing: 1px;
+  }
+  .tag.karma { background: #2a1a2a; color: #c080c0; border: 1px solid #4a2a4a; }
+  .tag.talent { background: #1a2a1a; color: #80c080; border: 1px solid #2a4a2a; }
+  .tag.cel { background: #1a1a2a; color: #8080c0; border: 1px solid #2a2a4a; }
+  .tag.znak { background: #2a2210; color: #c0a060; border: 1px solid #4a3820; }
+  .divider { border-top: 1px solid #1e1e30; margin: 14px 0; }
+  .insight {
+    background: #16142a; border-left: 3px solid #5555aa;
+    padding: 14px 18px; margin-top: 16px; font-style: italic;
+    font-size: 14px; color: #b0a8c8; border-radius: 0 6px 6px 0;
+  }
+  .insight.green { border-left-color: #3a8060; color: #a0c8b0; background: #0e1a12; }
+  .insight.gold { border-left-color: #a07830; color: #c8b070; background: #1a1408; }
+
+  /* OBLICZENIA */
+  .calc-box {
+    background: #0d0d1e; border: 1px solid #1a1a2e; border-radius: 8px;
+    padding: 24px 28px; margin-bottom: 40px; font-size: 13px;
+  }
+  .calc-box .calc-title {
+    font-size: 10px; letter-spacing: 4px; text-transform: uppercase;
+    color: #5555aa; margin-bottom: 16px;
+  }
+  .calc-row {
+    display: flex; align-items: baseline; gap: 16px;
+    padding: 7px 0; border-bottom: 1px solid #16162a;
+  }
+  .calc-row:last-child { border-bottom: none; }
+  .calc-row .label { min-width: 220px; color: #7070a0; font-size: 12px; }
+  .calc-row .seq { color: #a0a8c0; flex: 1; }
+  .calc-row .result { min-width: 100px; font-weight: bold; color: #9088d0; text-align: right; }
+
+  /* ZALECENIA */
+  .rec-list { list-style: none; padding: 0; margin: 0 0 20px; }
+  .rec-list li {
+    padding: 8px 0 8px 20px; border-bottom: 1px solid #16162a;
+    position: relative; color: #b8b0c0; font-size: 14px;
+  }
+  .rec-list li::before {
+    content: '—'; position: absolute; left: 0; color: #5050a0;
+  }
+  .rec-list li strong { color: #c8c0b8; }
+
+  /* SYNTEZA */
+  .synthesis-box {
+    background: #0e0e1c; border: 1px solid #2a2848; border-radius: 12px;
+    padding: 36px 34px; text-align: center; margin: 40px 0;
+  }
+  .synthesis-box h2 { border: none; margin-bottom: 20px; font-size: 1.3em; }
+  .synthesis-box p { font-size: 1.05em; color: #d0c8b8; max-width: 640px; margin: 0 auto 14px; }
+
+  /* FOOTER */
+  .footer {
+    margin-top: 80px; padding-top: 24px; border-top: 1px solid #1a1a28;
+    font-size: 12px; color: #4a4a6a; text-align: center; font-style: italic;
+  }
+
+  /* TEORIA */
+  .theory-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+  .theory-card { border-radius: 8px; padding: 16px 18px; border: 1px solid #252535; }
+  .theory-card.tc-karma { background: #13101e; border-color: #3a2a6a; }
+  .theory-card.tc-talent { background: #101820; border-color: #1a3a5a; }
+  .theory-card.tc-cel { background: #101810; border-color: #1a4a28; }
+  .theory-card.tc-pd { background: #181408; border-color: #4a3808; }
+  .tc-label { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 8px; }
+  .theory-card.tc-karma .tc-label { color: #8060c0; }
+  .theory-card.tc-talent .tc-label { color: #5090c0; }
+  .theory-card.tc-cel .tc-label { color: #50a870; }
+  .theory-card.tc-pd .tc-label { color: #c0a040; }
+  .tc-body { font-size: 13px; color: #a0a0c0; line-height: 1.65; }
+  .theory-notes { background: #0d0d1e; border: 1px solid #1e1e38; border-radius: 8px; padding: 18px 22px; margin-top: 16px; }
+  .theory-note { font-size: 13px; color: #9090b8; line-height: 1.7; margin-bottom: 8px; }
+  .theory-note:last-child { margin-bottom: 0; }
+  .tn-title { color: #c0b8e0; font-weight: bold; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="eyebrow">Kontrakt Duszy · Numerologia Hebrajska</div>
+  <h1>Aleksander Antoni Komaniecki</h1>
+  <div class="sub">Pełny odczyt Gwiazdy Dawida</div>
+  <div class="meta">
+    <span>Data urodzenia: <b>09.11.1969</b></span>
+    <span>Dźwięki fonetyczne: <b>26</b></span>
+    <span>Typ wykresu: <b>Jednolity trójkąt fizyczny (12–3 × 3)</b></span>
+    <span>Data odczytu: <b>01.04.2026</b></span>
+  </div>
+</div>
+
+<!-- PODSTAWY TEORETYCZNE -->
+<div class="section">
+  <div class="section-label">Wprowadzenie · System Ngana / Alper</div>
+  <h2>Numerologiczny Plan Duszy — Podstawy Teoretyczne</h2>
+  <p>Numerologiczny Plan Duszy (Kontrakt Duszy) to mapa zakodowana w imieniu z aktu urodzenia. Każdy dźwięk imienia odpowiada literze hebrajskiej o określonej wibracji. Razem tworzą sześcioramienną Gwiazdę Dawida — mapę karmy, talentów, celów i Przeznaczenia Duszy — według systemu Nicolasa Davida Ngana i Franka Alpera (Duchowa Numerologia Mojżesza).</p>
+  <div class="theory-grid">
+    <div class="theory-card tc-karma">
+      <div class="tc-label">Karma (poz. 1 i 2)</div>
+      <div class="tc-body">Wzorce z poprzednich wcieleń działające automatycznie, poza kontrolą woli. Wzorzec powtarza się dopóki nie zostanie przepracowany. Zadanie: przejść przez wzorzec ze świadomością, nie walczyć z nim.</div>
+    </div>
+    <div class="theory-card tc-talent">
+      <div class="tc-label">Talenty (poz. 3 i 4)</div>
+      <div class="tc-body">Naturalne dary duszy przyniesione z poprzednich wcieleń. Liczba podwójna w talencie = czysty, skoncentrowany dar. Zadanie: rozpoznać i w pełni wyrazić — talenty wspierają realizację celów.</div>
+    </div>
+    <div class="theory-card tc-cel">
+      <div class="tc-label">Cele (poz. 5 i 6)</div>
+      <div class="tc-body">Kierunek, w którym dusza chce podążać w tym wcieleniu. Wymagają świadomego działania — nie realizują się automatycznie. Talent jest naturalnym narzędziem do ich osiągania.</div>
+    </div>
+    <div class="theory-card tc-pd">
+      <div class="tc-label">Przeznaczenie Duszy</div>
+      <div class="tc-body">Esencja i synteza całego Kontraktu. Suma wszystkich sześciu aspektów. To, kim dusza jest w swojej najgłębszej naturze i czym ma się stać po zrealizowaniu pełnego potencjału.</div>
+    </div>
+  </div>
+  <div class="theory-notes">
+    <div class="theory-note"><span class="tn-title">⚡ Liczby podwójne (np. 5–5, 8–8, 6–6)</span> — W karmie: brak wolnej woli, wzorzec powtarza się bez przerwy. W talencie: czysty, skoncentrowany dar. W celach i PD: bezpośrednie, jednoznaczne powołanie.</div>
+    <div class="theory-note"><span class="tn-title">▲ Trójkąt duchowy</span> (karma duch. / talenty duch. / cele duch.) — Dominuje od ok. 35–42 r.ż. Związany z duchowością, wartościami, sensem i misją.</div>
+    <div class="theory-note"><span class="tn-title">▼ Trójkąt fizyczny</span> (karma fiz. / talenty fiz. / cele fiz.) — Dominuje w pierwszej połowie życia (0–35 r.ż.). Związany z materią, ciałem, relacjami, pracą i pieniędzmi.</div>
+    <div class="theory-note"><span class="tn-title">⭐ Liczby Mistrzowskie (3, 7, 12, 13, 18)</span> — Zwiększona moc i intensywność wzorca. Trudniejsze do opanowania, ale niosące wyjątkowy potencjał transformacji. <strong>Lamed (12)</strong> to Liczba Mistrzowska — oznacza intensywność całej ścieżki fizycznej.</div>
+  </div>
+</div>
+
+<!-- OBLICZENIA -->
+<div class="section">
+  <div class="section-label">Konwersja fonetyczna</div>
+  <h2>Obliczenie Kontraktu</h2>
+
+  <div class="calc-box">
+    <div class="calc-title">Sekwencja dźwięków fonetycznych</div>
+    <div class="calc-row">
+      <span class="label">KOMANIECKI (10 dźw.):</span>
+      <span class="seq">K(19) · O(6) · M(13) · A(1) · N(14) · I(10) · E(5) · C(11) · K(19) · I(10)</span>
+    </div>
+    <div class="calc-row">
+      <span class="label">ALEKSANDER (10 dźw.):</span>
+      <span class="seq">A(1) · L(12) · E(5) · K(19) · S(15) · A(1) · N(14) · D(4) · E(5) · R(20)</span>
+    </div>
+    <div class="calc-row">
+      <span class="label">ANTONI (6 dźw.):</span>
+      <span class="seq">A(1) · N(14) · T(9) · O(6) · N(14) · I(10)</span>
+    </div>
+    <div class="calc-row" style="border-top:1px solid #2a2a40; padding-top:10px; margin-top:10px">
+      <span class="label">Pełna sekwencja (26):</span>
+      <span class="seq">19,6,13,1,14,10,5,11,19,10 | 1,12,5,19,15,1,14,4,5,20 | 1,14,9,6,14,10</span>
+    </div>
+    <div class="calc-row" style="margin-top:8px">
+      <span class="label">Uwagi konwersji:</span>
+      <span class="seq" style="color:#8888aa">K=Kof=19; S=Samech=15; T=Tau=9 (prosta litera); C=Caf=11</span>
+    </div>
+    <div class="calc-row" style="margin-top:8px">
+      <span class="label">Rozkład na pozycje:</span>
+      <span class="seq" style="color:#8888aa">poz.1→KF, 2→TF, 3→CF, 4→CD, 5→TD, 6→KD (cykl co 6)</span>
+    </div>
+  </div>
+
+  <div class="calc-box">
+    <div class="calc-title">Sumy i redukcje per aspekt</div>
+    <div class="calc-row">
+      <span class="label">Karma fizyczna (1,7,13,19,25):</span>
+      <span class="seq">K(19) + E(5) + E(5) + E(5) + N(14) = 48 → 4+8=12 → 12</span>
+      <span class="result">12–3 Lamed ⭐</span>
+    </div>
+    <div class="calc-row">
+      <span class="label">Talenty fizyczne (2,8,14,20,26):</span>
+      <span class="seq">O(6) + C(11) + K(19) + R(20) + I(10) = 66 → 6+6=12 → 12</span>
+      <span class="result">12–3 Lamed ⭐</span>
+    </div>
+    <div class="calc-row">
+      <span class="label">Cele fizyczne (3,9,15,21):</span>
+      <span class="seq">M(13) + K(19) + S(15) + A(1) = 48 → 4+8=12 → 12</span>
+      <span class="result">12–3 Lamed ⭐</span>
+    </div>
+    <div class="calc-row">
+      <span class="label">Karma duchowa (6,12,18,24):</span>
+      <span class="seq">I(10) + L(12) + D(4) + O(6) = 32 → 3+2=5</span>
+      <span class="result">5–5 Heh ⚡</span>
+    </div>
+    <div class="calc-row">
+      <span class="label">Talenty duchowe (5,11,17,23):</span>
+      <span class="seq">N(14) + A(1) + N(14) + T(9) = 38 → 3+8=11 → 11</span>
+      <span class="result">11–2 Caf</span>
+    </div>
+    <div class="calc-row">
+      <span class="label">Cele duchowe (4,10,16,22):</span>
+      <span class="seq">A(1) + I(10) + A(1) + N(14) = 26 → 2+6=8</span>
+      <span class="result">8–8 Ches ⚡</span>
+    </div>
+    <div class="calc-row" style="border-top:1px solid #2a2a40; padding-top:10px; margin-top:10px">
+      <span class="label">PD — suma lewych:</span>
+      <span class="seq">12+12+12+5+11+8 = 60 → 6+0=6 → 6</span>
+      <span class="result" style="color:#d0a040">6–6 Vuv ⚡</span>
+    </div>
+    <div class="calc-row">
+      <span class="label">PD — suma prawych:</span>
+      <span class="seq">3+3+3+5+2+8 = 24 → 2+4=6 → potwierdzenie</span>
+      <span class="result" style="color:#d0a040">6–6</span>
+    </div>
+  </div>
+</div>
+
+<!-- GWIAZDA DAWIDA -->
+<div class="star-box">
+  <div class="title">Mapa Kontraktu — Gwiazda Dawida</div>
+  <div class="star-grid">
+
+    <!-- TRÓJKĄT DUCHOWY ▲ -->
+    <div class="tri-label duch">▲ Trójkąt duchowy — dominuje od ~35–42 r.ż.</div>
+
+    <!-- poz. 2 — Karma duchowa (szczyt) -->
+    <div class="cell empty"></div>
+    <div class="cell duch">
+      <div class="pos">poz. 2</div>
+      <div class="lbl">Karma duchowa</div>
+      <div class="num">5–5</div>
+      <div class="heb">Heh · Heh</div>
+      <div class="pl">Baran · Baran</div>
+    </div>
+    <div class="cell empty"></div>
+
+    <!-- poz. 4, PD, poz. 6 -->
+    <div class="cell duch">
+      <div class="pos">poz. 4</div>
+      <div class="lbl">Talenty duchowe</div>
+      <div class="num">11–2</div>
+      <div class="heb">Caf · Beth</div>
+      <div class="pl">Wenus · Księżyc</div>
+    </div>
+    <div class="cell pd">
+      <div class="lbl">Przeznaczenie Duszy</div>
+      <div class="num">6–6</div>
+      <div class="heb">Vuv · Vuv</div>
+      <div class="pl">Byk · Byk</div>
+    </div>
+    <div class="cell duch">
+      <div class="pos">poz. 6</div>
+      <div class="lbl">Cele duchowe</div>
+      <div class="num">8–8</div>
+      <div class="heb">Ches · Ches</div>
+      <div class="pl">Rak · Rak</div>
+    </div>
+
+    <!-- TRÓJKĄT FIZYCZNY ▼ -->
+    <div class="tri-label fiz">▼ Trójkąt fizyczny — dominuje 0–35 r.ż.</div>
+
+    <!-- poz. 1, środek pusty, poz. 5 -->
+    <div class="cell fiz">
+      <div class="pos">poz. 1</div>
+      <div class="lbl">Karma fizyczna</div>
+      <div class="num">12–3</div>
+      <div class="heb">Lamed · Gimel</div>
+      <div class="pl">Waga · Mars</div>
+    </div>
+    <div class="cell empty"></div>
+    <div class="cell fiz">
+      <div class="pos">poz. 5</div>
+      <div class="lbl">Cele fizyczne</div>
+      <div class="num">12–3</div>
+      <div class="heb">Lamed · Gimel</div>
+      <div class="pl">Waga · Mars</div>
+    </div>
+
+    <!-- poz. 3 — Talenty fizyczne (dół) -->
+    <div class="cell empty"></div>
+    <div class="cell fiz">
+      <div class="pos">poz. 3</div>
+      <div class="lbl">Talenty fizyczne</div>
+      <div class="num">12–3</div>
+      <div class="heb">Lamed · Gimel</div>
+      <div class="pl">Waga · Mars</div>
+    </div>
+    <div class="cell empty"></div>
+
+  </div>
+  <div class="star-note">
+    Numeracja pozycji zgodna z systemem Ngana · Aleksander: 56 lat — trójkąt duchowy w pełni aktywny · cały trójkąt fizyczny = 12–3 (sytuacja wyjątkowa)
+  </div>
+</div>
+
+<!-- TABELA KLUCZA -->
+<div class="section">
+  <div class="section-label">Przegląd</div>
+  <h2>Klucz do wykresu</h2>
+  <table>
+    <thead>
+      <tr><th>Aspekt</th><th>Para liczb</th><th>Litera hebrajska</th><th>Energia główna</th></tr>
+    </thead>
+    <tbody>
+      <tr class="fiz-row">
+        <td>Karma fizyczna</td>
+        <td class="num-col">12–3 ⭐</td>
+        <td>Lamed · Gimel</td>
+        <td>Blokada wzrostu z lęku przed zmianą · Waga · Liczba Mistrzowska</td>
+      </tr>
+      <tr class="fiz-row">
+        <td>Talenty fizyczne</td>
+        <td class="num-col">12–3 ⭐</td>
+        <td>Lamed · Gimel</td>
+        <td>Naturalny talent wiedzy i ekspansji · komunikacja jako dar · intuicja biznesowa</td>
+      </tr>
+      <tr class="fiz-row">
+        <td>Cele fizyczne</td>
+        <td class="num-col">12–3 ⭐</td>
+        <td>Lamed · Gimel</td>
+        <td>Nauczyciel i pedagog · dzielenie się wiedzą · finał cyklu inkarnacyjnego</td>
+      </tr>
+      <tr class="duch-row">
+        <td>Karma duchowa</td>
+        <td class="num-col">5–5 ⚡</td>
+        <td>Heh · Heh</td>
+        <td>Brak uziemienia duchowego · rozproszenie · lęk przed własnymi darami · Baran</td>
+      </tr>
+      <tr class="duch-row">
+        <td>Talenty duchowe</td>
+        <td class="num-col">11–2</td>
+        <td>Caf · Beth</td>
+        <td>Budowanie struktur prawdy · asylmilacja wiedzy · mądrość emocjonalna · Wenus</td>
+      </tr>
+      <tr class="duch-row">
+        <td>Cele duchowe</td>
+        <td class="num-col">8–8 ⚡</td>
+        <td>Ches · Ches</td>
+        <td>Uziemienie w służbie · jasnowidzenie jako narzędzie · otwarcie na ludzi · Rak</td>
+      </tr>
+      <tr class="pd-row">
+        <td><strong>Przeznaczenie Duszy</strong></td>
+        <td class="num-col">6–6 ⚡</td>
+        <td>Vuv · Vuv</td>
+        <td>Naczynie dla twórczej siły Boga · kreacja z myśli · esencja tego wcielenia</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="insight gold">
+    <strong>Wyjątkowa cecha tego wykresu:</strong> Cały trójkąt fizyczny (karma, talenty, cele) zdominowany przez 12–3 — sytuacja wyjątkowo rzadka. Trzy pozycje fizyczne mówią jednym głosem: ekspansja, wiedza, komunikacja. Lamed (12) to Liczba Mistrzowska — oznacza intensywność całej ścieżki i zbliżanie się do końca cyklu inkarnacyjnego. Trójkąt duchowy jest bogaty i zróżnicowany: 5–5 (karma), 11–2 (talenty), 8–8 (cele). W centrum: 6–6 — czyste naczynie kreacji.
+  </div>
+</div>
+
+<!-- ======================== TRÓJKĄT FIZYCZNY — 12-3 ======================== -->
+<div class="section">
+  <div class="section-label">Trójkąt fizyczny · Lamed · Waga</div>
+  <h2>12–3 · Karma, Talenty i Cele fizyczne</h2>
+  <p>Lamed (12) to Waga — równowaga, ekspansja i ekspresja. To Liczba Mistrzowska: inicjacja przez Wodę, gdzie emocje są tworzywem transformacji. Szczytem Lamed jest Mądrość jako żeński aspekt Boga. Gimel (3) to Mars — kanał komunikacji, energia „od biedy do bogactwa". <strong>Gdy wszystkie trzy aspekty fizyczne mają tę samą wartość 12–3, cała ziemska ścieżka Aleksandra jest jednym spójnym, intensywnym przekazem.</strong> Nie ma sprzeczności, nie ma „łatwego" aspektu kompensującego — jest jedna wielka siła prowadząca w jednym kierunku.</p>
+
+  <div class="card fiz">
+    <div class="card-head">
+      <div class="card-num">12–3</div>
+      <div>
+        <div class="card-title">Karma fizyczna — Lamed · Gimel</div>
+        <div class="card-heb">Waga · Liczba Mistrzowska · brak wolnej woli w tej energii</div>
+      </div>
+    </div>
+    <div class="tag-row">
+      <span class="tag karma">strach przed zmianą</span>
+      <span class="tag karma">stagnacja pomimo potencjału</span>
+      <span class="tag karma">poczucie niegodności</span>
+      <span class="tag znak">Waga</span>
+    </div>
+    <div class="divider"></div>
+    <p>Karma 12–3 to wzorzec przyniesiony z wielu poprzednich wcieleń. <strong>Strach przed zmianą i ruszeniem z miejsca — u korzeni leży głęboka obawa przed porażką.</strong> Lamed w karmie oznacza, że w poprzednich wcieleniach Aleksander wielokrotnie zatrzymywał się na progu ekspansji, cofał się z lęku zamiast wejść w pełnię możliwości. Ten wzorzec działa automatycznie — bez świadomości powtarza się sam z siebie.</p>
+    <p><strong>Pozorna stagnacja pomimo dużej wewnętrznej energii.</strong> Paradoks karmy 12–3: środku jest ogromny potencjał, napięcie, chęć ruchu — ale brakuje kanału ujścia. Aleksander czuje wewnętrznie, że jest zdolny do dużo więcej, niż pozwala sobie realizować. To nie jest brak energii — to zablokowany przepływ.</p>
+    <p><strong>Niedojrzałość jako mechanizm obronny.</strong> Cecha karmiczna Lamed to trudność w znalezieniu równowagi między sferą fizyczną a duchową — skakanie między skrajnościami zamiast wchodzenia w dojrzałą, wyważoną ekspresję. Oraz poczucie niegodności: niedocenianie własnych zdolności do nauczania, przekonanie, że „inni wiedzą lepiej" lub „mój głos nie jest wystarczająco ważny".</p>
+    <p><strong>Podwójne wzmocnienie przez 12–3 w trzech pozycjach.</strong> Karma fizyczna jest jednocześnie tym, co Aleksander musi przepracować w sferze materialnej. Ale skoro Talenty i Cele fizyczne mają tę samą liczbę — ten sam wzorzec jest narzędziem i celem. Nie ma ucieczki, można go tylko przejść ze świadomością.</p>
+    <div class="insight">
+      Karmiczny wzorzec: dusza o ogromnej wiedzy i potencjale nauczycielskim, która przez wiele wcieleń zatrzymywała się na progu pełnej ekspresji. Im większy potencjał wewnętrzny, tym silniejszy impuls do schowania się. To paradoks tej karmy.
+    </div>
+  </div>
+
+  <div class="card fiz">
+    <div class="card-head">
+      <div class="card-num">12–3</div>
+      <div>
+        <div class="card-title">Talenty fizyczne — Lamed · Gimel</div>
+        <div class="card-heb">Ten sam wzorzec co karma — talent i wyzwanie są jednym</div>
+      </div>
+    </div>
+    <div class="tag-row">
+      <span class="tag talent">pasja do wiedzy</span>
+      <span class="tag talent">intuicja biznesowa</span>
+      <span class="tag talent">dar dzielenia się</span>
+      <span class="tag talent">rzeźbiarz formy</span>
+      <span class="tag znak">Mars</span>
+    </div>
+    <div class="divider"></div>
+    <p><strong>Silna, intensywna motywacja do zdobywania i poszerzania wiedzy — ciągłe, niegasnące dążenie do wzrostu.</strong> Gimel (3) w talencie to kanał komunikacji: zdolność do przekazywania wiedzy w sposób naturalny, żywy, angażujący. Aleksander nie musi się uczyć mówić — on po prostu wie, jak trafiać do ludzi słowem.</p>
+    <p><strong>Zdolność do dzielenia się wielką miłością z innymi.</strong> To jest cecha charakterystyczna 12–3 w talentach: nie zimna transmisja informacji, lecz przekaz nasycony ciepłem i autentycznym zaangażowaniem. Wiedza Aleksandra przychodzi razem z sercem.</p>
+    <p><strong>Gdy dążysz do czegoś i to lubisz — osiągniesz to bez wątpienia.</strong> Ngan wprost tak opisuje pozytywną stronę 12–3 w talentach. Kluczowe słowo: lubisz. Gdy Aleksander działa z miłości do tematu, siła tej liczby jest nie do zatrzymania.</p>
+    <p><strong>OSTRZEŻENIE: Ryzyko fanatyzmu.</strong> 12–3 we wszystkich trzech fizycznych pozycjach jednocześnie to sytuacja intensywna — uważaj, by nie wkładać całej energii w jeden cel kosztem reszty życia. Rzeźbiarz — charakterystyczna metafora: Aleksander zaczyna od małej formy i stopniowo ją rozbudowuje. Intuicja finansowa i biznesowa — naturalna umiejętność dostrzegania wartości i potencjału tam, gdzie inni go nie widzą.</p>
+    <div class="insight green">
+      Talent fizyczny w skrócie: Aleksander jest naturalnym przekaźnikiem wiedzy. Jego siłą nie jest tylko to, co wie — lecz jak to przekazuje. Gdy działa z pasji, jest nieodparty.
+    </div>
+  </div>
+
+  <div class="card fiz">
+    <div class="card-head">
+      <div class="card-num">12–3</div>
+      <div>
+        <div class="card-title">Cele fizyczne — Lamed · Gimel</div>
+        <div class="card-heb">Finał cyklu inkarnacyjnego · każde doświadczenie = materiał do nauki</div>
+      </div>
+    </div>
+    <div class="tag-row">
+      <span class="tag cel">nauczyciel-mentor</span>
+      <span class="tag cel">zdobywanie i dzielenie wiedzy</span>
+      <span class="tag cel">finalne wcielenia</span>
+    </div>
+    <div class="divider"></div>
+    <p><strong>Cel życia fizycznego: zdobyć jak najwięcej wiedzy — i dzielić się nią dalej.</strong> To nie jest metafora — to dosłowny opis Ngana dla 12–3 w celach fizycznych. Aleksander traktuje każde nowe doświadczenie jako materiał do nauki. Nie ma dla niego „straconych" epizodów — każde przeżycie jest cennym przyczynkiem do większego obrazu.</p>
+    <p><strong>Doskonały pedagog, mentor, nauczyciel — gdy działa z miłości do wiedzy.</strong> Kluczowe zastrzeżenie: gdy działa z miłości, nie z obowiązku. 12–3 jako cel fizyczny daje naturalną zdolność do bycia przewodnikiem — ale tylko wtedy, gdy energia tej pracy płynie ze szczerego zaangażowania, a nie z chęci udowodnienia czegoś.</p>
+    <p><strong>Zbliżasz się do końca cyklu inkarnacyjnego — pozostałe 2, maksymalnie 3 wcielenia.</strong> To jeden z ważniejszych przekazów w tym wykresie. Lamed w celach fizycznych na tym etapie oznacza intensywną motywację do „dokończenia spraw" — poczucie pilności, które Aleksander nieraz odczuwa jako dziwny wewnętrzny pośpiech. To nie jest nerwowość — to głos duszy wiedzącej, że to jest jedno z ostatnich wcieleń tej skali.</p>
+    <p>Wszystko, co zostanie osiągnięte w tym życiu, zostanie zachowane w pamięci komórkowej duszy. To jest wcielenie kształtowania świadomej osobowości dostosowanej do niemal całej prawdy duszy.</p>
+    <div class="insight green">
+      Cel fizyczny w skrócie: być nauczycielem, który sam nigdy nie przestaje się uczyć. Każde doświadczenie — radosne, trudne, bolesne — jest surowcem dla wiedzy, którą Aleksander ma przekazać dalej.
+    </div>
+  </div>
+</div>
+
+<!-- ======================== KARMA DUCHOWA — 5-5 ======================== -->
+<div class="section">
+  <div class="section-label">Trójkąt duchowy · Heh · Baran</div>
+  <h2>5–5 · Karma duchowa</h2>
+
+  <div class="card duch">
+    <div class="card-head">
+      <div class="card-num">5–5</div>
+      <div>
+        <div class="card-title">Karma duchowa — Heh · Heh</div>
+        <div class="card-heb">Baran · mowa · pionier · brak wolnej woli (podwójna)</div>
+      </div>
+    </div>
+    <div class="tag-row">
+      <span class="tag karma">brak wolnej woli</span>
+      <span class="tag karma">nieuziemienie duchowe</span>
+      <span class="tag karma">lęk przed własnymi darami</span>
+      <span class="tag karma">rozproszenie</span>
+      <span class="tag znak">Baran</span>
+    </div>
+    <div class="divider"></div>
+    <p>Heh (5) to Baran — prosta litera, energia abstrakcji i manifestacji. Cecha charakterystyczna: <strong>Mowa</strong>. Baran jako pionier, inicjator — energia, która rusza naprzód bez wahania. Podwójna liczba w karmie oznacza brak wolnej woli: ten wzorzec powtarza się bez przerwy, wraca aż zostanie przepracowany.</p>
+    <p><strong>Brak motywacji do zajmowania się nieuchwytymi koncepcjami duchowymi.</strong> To paradoks w kontraście z trójkątem fizycznym, który pcha w kierunku wiedzy i ekspansji: Aleksander chętnie sięga po wiedzę empiryczną, intelektualną, sprawdzalną — ale energia czysto duchowa, niedefiniowalna, niematerialna wywołuje opór. „Nie wiem, czy to prawda" staje się wymówką, by nie ryzykować głębszego zaangażowania.</p>
+    <p><strong>Świadomość własnych zdolności duchowych — ale brak siły, by zaryzykować i uwierzyć, że są prawdziwe.</strong> To jest rdzeń karmy 5–5: Aleksander CZuje swoje zdolności. Intuicja, przeczucia, energetyczne postrzeżenia — to wszystko jest obecne. Ale coś blokuje pełne zaufanie tym sygnałom. Lęk przed byciem uznany za „dziwnego", lęk przed pomyłką, lęk przed otwarciem się na coś, czego nie można zmierzyć.</p>
+    <p><strong>Rozproszenie i nieuziemienie w sferze duchowej przez większość czasu.</strong> Karmiczne echo: w poprzednich wcieleniach niezdolność do pełnej asymilacji w wymiarze fizycznym. Aleksander wie dużo o sprawach duchowych, ale ta wiedza „unosi się" — nie jest w pełni wcielona, uziemiona, zakorzeniena w codziennym życiu.</p>
+    <p><strong>Pokusa: nadużycie władzy przez manipulację; trudności z mówieniem prawdy wprost.</strong> Heh w karmie niesie ciemną stronę Mowy: tendencję do formułowania prawdy tak, by służyła określonemu celowi zamiast być czysta. To może być subtelne — nie kłamstwo, lecz selektywna prawda, odpowiedź wymijająca, wpływ poprzez sugestię zamiast otwartego dialogu.</p>
+    <div class="insight">
+      Karma duchowa w skrócie: dusza z wielkimi zdolnościami duchowymi, która przez wiele wcieleń bała się im w pełni zaufać. Im większa zdolność wewnętrzna, tym silniejszy mechanizm jej kwestionowania. To jest duchowe lustro karmicznego wzorca fizycznego.
+    </div>
+  </div>
+</div>
+
+<!-- ======================== TALENTY DUCHOWE — 11-2 ======================== -->
+<div class="section">
+  <div class="section-label">Trójkąt duchowy · Caf · Wenus</div>
+  <h2>11–2 · Talenty duchowe</h2>
+
+  <div class="card duch">
+    <div class="card-head">
+      <div class="card-num">11–2</div>
+      <div>
+        <div class="card-title">Talenty duchowe — Caf · Beth</div>
+        <div class="card-heb">Wenus · Księżyc · od śmierci do życia · od głupoty do mądrości</div>
+      </div>
+    </div>
+    <div class="tag-row">
+      <span class="tag talent">budowanie struktur prawdy</span>
+      <span class="tag talent">wieloperspektywowość</span>
+      <span class="tag talent">mądrość przez głębię</span>
+      <span class="tag talent">wysoka inteligencja</span>
+      <span class="tag znak">Wenus</span>
+    </div>
+    <div class="divider"></div>
+    <p>Caf (11) to Wenus — asymilacja, od śmierci do życia. Dłoń/misa: przyjmuje, przetwarza, transformuje. Wysoka inteligencja i zdolność budowania struktur prawdy. Beth (2) to Księżyc — od głupoty do mądrości. Dom/naczynia jako przestrzeń wzrostu. Odporność emocjonalna, adaptacja. To są dwa dopełniające się dary: 11 daje wgląd i precyzję myśli, 2 daje mądrość zdobytą przez przeżycie.</p>
+    <p><strong>Ukryta zdolność do uczenia się podstaw filozofii — formułowania i porządkowania uniwersalnej prawdy.</strong> „Ukryta" to kluczowe słowo: talent 11–2 nie wyraża się sam z siebie, bez decyzji. Aleksander musi świadomie sięgnąć po te zdolności — gdy to robi, odkrywa, że potrafi formułować złożone koncepcje w sposób precyzyjny i dostępny. To rzadki dar: widzieć całość i umieć ją opisać.</p>
+    <p><strong>Przedstawianie tej prawdy światu z wielu różnych perspektyw.</strong> Beth (2) w redukcji daje zdolność do widzenia różnych punktów widzenia bez zagubienia się. Aleksander może opisywać to samo zjawisko z poziomu fizyki, psychologii, duchowości i filozofii — i każdy opis będzie trafny. To nie jest eklektyzm — to wielowymiarowość myślenia.</p>
+    <p><strong>Budowanie wewnętrznych struktur wiedzy etapami — stopniowo, krok po kroku.</strong> Caf uczy przez etapy transformacji. Aleksander nie przeskakuje do wniosków — on buduje fundamenty. Ten dar sprawia, że jego system wiedzy jest solidny i spójny, a nie naskórkowy.</p>
+    <p><strong>Zdolność dzielenia się wiedzą na wiele sposobów: nauczanie, pisanie, rozmowa, demonstracja.</strong> Cel przez te talenty: nauczyciel przekazujący wiedzę o wyższych poziomach prawdy i zrozumienia. Nie akademik, który odtwarza — lecz ktoś, kto tę wiedzę przeżył i może ją ucieleśnić.</p>
+    <div class="insight green">
+      Talent duchowy w skrócie: Aleksander ma wbudowany dar filozoficznego porządkowania złożonej rzeczywistości — i zdolność do dzielenia się tym porządkiem w sposób, który inni mogą naprawdę zrozumieć i przyjąć. Ten talent czeka na pełne wyrażenie.
+    </div>
+  </div>
+</div>
+
+<!-- ======================== CELE DUCHOWE — 8-8 ======================== -->
+<div class="section">
+  <div class="section-label">Trójkąt duchowy · Ches · Rak</div>
+  <h2>8–8 · Cele duchowe</h2>
+
+  <div class="card duch">
+    <div class="card-head">
+      <div class="card-num">8–8</div>
+      <div>
+        <div class="card-title">Cele duchowe — Ches · Ches</div>
+        <div class="card-heb">Rak · ameba · jasnowidzenie · brak wolnej woli (podwójna)</div>
+      </div>
+    </div>
+    <div class="tag-row">
+      <span class="tag cel">uziemienie w służbie</span>
+      <span class="tag cel">otwarcie na innych</span>
+      <span class="tag cel">jasnowidzenie jako narzędzie</span>
+      <span class="tag cel">adaptacja jak kameleon</span>
+      <span class="tag znak">Rak</span>
+    </div>
+    <div class="divider"></div>
+    <p>Ches (8) to Rak — prosta litera, symbol ameby: płynność, adaptacja, wrażliwość. Cecha charakterystyczna: <strong>Jasnowidzenie</strong>. Podwójna liczba w celach duchowych = silna koncentracja energii, jasno nakreślony kierunek. Aleksander musi w tej sferze iść jedną drogą: nie ma tu miejsca na kompromis ani ominięcie.</p>
+    <p><strong>Rozszerzyć duchowe talenty do służby innym — nie tylko dla siebie.</strong> Kluczowe rozróżnienie: Aleksander ma zdolności do głębokiej wewnętrznej pracy. Ale 8–8 mówi: te zdolności nie są dla własnego doskonalenia — są dla innych. Moment przełomu następuje wtedy, gdy Aleksander zaczyna używać swojej wrażliwości i intuicji w służbie ludziom, nie tylko w prywatnych rozmyślaniach.</p>
+    <p><strong>Nauka uziemienia energii duchowych i korzystania z nich na rzecz społeczeństwa.</strong> Ches jako ameba uczy adaptacji i płynności — ale nie w próżni, lecz w kontakcie. Uziemienie nie oznacza przyziemności; oznacza, że wysokie energie są dostępne w życiu codziennym, w relacjach, w pracy, a nie tylko w stanach wewnętrznego skupienia.</p>
+    <p><strong>Przestać żyć wyłącznie w swoim wnętrzu — nawiązywać głębsze więzi z innymi.</strong> To jest jedno z trudniejszych zadań dla tej konfiguracji. Aleksander naturalnie skłania się ku autonomii wewnętrznej — ale cel duchowy 8–8 wzywa wprost do wyjścia ku ludziom. Głęboka więź emocjonalna z drugim człowiekiem jest częścią misji, nie wyłącznie prywatną sprawą.</p>
+    <p><strong>Jak kameleon: zdolność dostosowania się do każdego człowieka; kompatybilność jako dar.</strong> Ches daje naturalne wyczucie rozmówcy — umiejętność bycia dokładnie tym, czego dana osoba w danym momencie potrzebuje: twardym, łagodnym, wymagającym, wspierającym. To nie jest manipulacja — to empatyczna adaptacja będąca prawdziwym darem terapeutycznym.</p>
+    <p><strong>Karmiczny cień 8–8:</strong> opór przed angażowaniem się w emocjonalne życie innych. Kiedy cudzej emocjonalności jest za dużo, Aleksander ma tendencję do wewnętrznego cofania się, dystansowania, intelektualizowania. Cel duchowy mówi: właśnie w tym miejscu dyskomfortu jest praca.</p>
+    <div class="insight green">
+      Cel duchowy w skrócie: Aleksander ma być nie tylko wiedzącym — ma być obecnym. Jego jasnowidzenie i wrażliwość mają być wdrożone w realny kontakt z ludźmi. To jest pełna realizacja talentów duchowych przez wcielenie ich w służbę.
+    </div>
+  </div>
+</div>
+
+<!-- ======================== PRZEZNACZENIE DUSZY ======================== -->
+<div class="section">
+  <div class="section-label">Centrum Gwiazdy Dawida · Vuv · Byk</div>
+  <h2>6–6 · Przeznaczenie Duszy</h2>
+
+  <div class="card pd">
+    <div class="card-head">
+      <div class="card-num">6–6</div>
+      <div>
+        <div class="card-title">Przeznaczenie Duszy — Vuv · Vuv</div>
+        <div class="card-heb">Byk · węzeł · myśl jako siła kreacyjna · naczynie dla Boga</div>
+      </div>
+    </div>
+    <div class="tag-row">
+      <span class="tag cel">naczynie dla twórczej siły Boga</span>
+      <span class="tag cel">kreacja z myśli</span>
+      <span class="tag cel">boska manifestacja</span>
+      <span class="tag talent">nieograniczona kreatywność</span>
+    </div>
+    <div class="divider"></div>
+    <p>Vuv (6) to Byk — litera wymienna, symbol węzła, energii kreacji tworzącej coś z niczego. Cecha charakterystyczna: <strong>Myśl jako siła kreacyjna</strong>. Podwójna 6–6 jako Przeznaczenie Duszy to maksymalna koncentracja tej energii — wszystkie doświadczenia życiowe prowadzą dokładnie w to jedno miejsce.</p>
+    <p><strong>„Stań się naczyniem, do którego spłynie twórcza siła Boga, mająca się zamanifestować w naszym świecie."</strong> To jest Przeznaczenie Duszy 6–6 wg Ngana — dosłownie. Aleksander nie musi „dojść do" swojego Przeznaczenia przez wielki wysiłek woli. Musi stać się przejrzysty — usunąć blokady, które nie pozwalają Boskiej sile twórczej przez niego przepływać. Im mniej ego, tym więcej kreacji.</p>
+    <p><strong>Niezwykła kreatywność w każdej dziedzinie, którą wybierze.</strong> „Jesteś bardzo kreatywny w każdej dziedzinie, którą wybierzesz, o której myślisz lub marzysz" — to opis Ngana. Artyzm i estetyczne postrzeganie rzeczywistości. Myśl Aleksandra ma w sobie moc kreacyjną — to, na czym skupia uwagę, zaczyna się manifestować. Jest to zarówno dar, jak i odpowiedzialność.</p>
+    <p><strong>Karma 6–6 jako cień Przeznaczenia: brak elastyczności.</strong> Kiedy 6–6 działa w blokadzie — pojawia się potrzeba gwarancji przed zaangażowaniem. „Zrobię to, gdy będę wiedział, że zadziała." Ale kreacja z definicji jest wejściem w nieznane. PD 6–6 wymaga skoku wiary.</p>
+    <p><strong>Słuchanie impulsów duszy to klucz — twórcze impulsy to głos Boga.</strong> Aleksander rozpoznaje te momenty, gdy coś „przychodzi" — pomysł, obraz, słowo, intuicja. To nie jest przypadek. To jest Vuv w akcji. Nieograniczona wolna wola jako przestrzeń do tworzenia — nic nie blokuje ekspresji, gdy jest otwartość na przepływ.</p>
+    <div class="insight gold">
+      <strong>Przeznaczenie Duszy w jednym zdaniu:</strong> Aleksander Antoni Komaniecki przyszedł na świat jako naczynie dla Boskiej siły twórczej — i cała jego droga życiowa jest procesem oczyszczania z karmicznych blokad (lęk przed zmianą, nieuziemienie duchowe, zamknięcie w wewnętrznym świecie), które nie pozwalają tej sile swobodnie przepływać przez niego ku ludziom i światu.
+    </div>
+  </div>
+</div>
+
+<!-- ======================== KLUCZOWE INTERAKCJE ======================== -->
+<div class="section">
+  <div class="section-label">Dynamika wykresu</div>
+  <h2>Kluczowe interakcje między aspektami</h2>
+
+  <h3>Jednolity trójkąt fizyczny — 12–3 × 3</h3>
+  <p>To najważniejsza cecha całego wykresu. Gdy karma, talenty i cele fizyczne mają tę samą wartość — całe ziemskie życie jest jednym spójnym przesłaniem. <strong>Lamed-Gimel mówi: zdobywaj wiedzę i dziel się nią.</strong> Aleksander nie ma alternatywnego aspektu fizycznego, który mógłby go odciągnąć od tej drogi — każda materialna ścieżka, która otwiera się przed nim, jest wariantem tego samego tematu. Nauczanie, komunikacja, ekspansja wiedzy są wpisane nie jako opcja, lecz jako nieuchronność.</p>
+
+  <h3>Karma fizyczna (12–3) a Karma duchowa (5–5)</h3>
+  <p>Te dwie karmy tworzą lustrzaną parę. Karma fizyczna (12–3) mówi: blokujesz ekspresję z lęku przed oceną. Karma duchowa (5–5) mówi: nie wierzysz w realność swoich darów duchowych. <strong>Obydwie karmy opierają się na tej samej głębokiej strukturze: lęk przed pełnym wyrażeniem siebie.</strong> Przepracowanie jednej automatycznie uzdrawia drugą — gdy Aleksander pozwoli sobie na pełną fizyczną ekspresję wiedzy, karma duchowa traci grip. I odwrotnie: gdy zakorzenił zdolności duchowe, wiedza fizyczna staje się głębsza.</p>
+
+  <h3>Karma duchowa (5–5) a Talenty duchowe (11–2)</h3>
+  <p>Klasyczna opozycja w trójkącie duchowym. 5–5 blokuje: „czy moje zdolności są prawdziwe?" 11–2 odpowiada: posiadasz talent do formułowania i przekazywania głębokiej filozofii. <strong>Talent jest dokładnie tym, czego potrzeba do przepracowania karmy.</strong> Kiedy Aleksander zaczyna budować struktury prawdy (11–2) i dzielić się nimi — karma 5–5 traci pole działania. Właśnie w tym akcie — formułowania, przekazywania, porządkowania wiedzy — duch Aleksandra przestaje wątpić w siebie.</p>
+
+  <h3>Talenty duchowe (11–2) a Cele duchowe (8–8)</h3>
+  <p>Talent daje narzędzie: zdolność budowania i przekazywania prawdy. Cel nadaje temu kierunek: ta prawda ma służyć innym, poprzez głęboki kontakt i empatyczną obecność. <strong>Caf (11) buduje wiedzę, Ches (8) zanurza ją w relacji.</strong> Bez 8–8 Aleksander mógłby budować doskonałe systemy, które pozostają intelektualnymi konstrukcjami. Z 8–8 te systemy stają się żywą terapią — doświadczeniem transformacji dla drugiego człowieka.</p>
+
+  <h3>Cele duchowe (8–8) a Przeznaczenie (6–6)</h3>
+  <p>Cel duchowy (8–8) mówi: wyjdź ku ludziom z uziemioną duchowością. Przeznaczenie (6–6) mówi: stań się naczyniem kreacji. Te dwie energie razem opisują misję: <strong>Aleksander ma być twórczym naczyniem działającym w żywym kontakcie z ludźmi.</strong> Nie artystą w wieży z kości słoniowej — lecz kimś, kogo twórczość dotyka i zmienia drugiego człowieka w bezpośrednim spotkaniu. Każda sesja terapeutyczna, każdy wykład, każde słowo pisane to ta właśnie misja w akcji.</p>
+
+  <h3>Trójkąt fizyczny (12–3) a Przeznaczenie (6–6)</h3>
+  <p>12–3 pcha w kierunku wiedzy i komunikacji. 6–6 mówi: ta wiedza ma być boską twórczością, nie tylko intelektualnym przekazem. <strong>Aleksander ma być nie tylko nauczycielem, lecz kanałem.</strong> Różnica jest subtelna, lecz decydująca: nauczyciel dysponuje wiedzą. Kanał jest przejrzysty i pozwala przez siebie przepłynąć czemuś większemu. Gdy te dwie energie łączą się — to, co Aleksander przekazuje, niesie w sobie coś nieuchwytnego, co dotyka słuchacza głębiej niż sam intelekt.</p>
+</div>
+
+<!-- ======================== SYNTEZA ======================== -->
+<div class="synthesis-box">
+  <div class="section-label" style="text-align:center">Synteza</div>
+  <h2>Główny temat życia</h2>
+  <p>Aleksander Antoni Komaniecki niesie jeden z najbardziej spójnych kontraktów w sferze fizycznej — cały trójkąt materialny zdominowany przez 12–3. Jest nauczycielem-misjonarzem. Wiedza, ekspansja i komunikacja są wpisane w samo DNA jego ziemskiego życia.</p>
+  <p>Paradoks tego Kontraktu: <strong>ta sama dusza, która ma być naczyniem Bożej kreacji (6–6 PD), przez długą część życia nosi karmę blokady ekspresji (12–3) i wątpienia w swoje dary duchowe (5–5).</strong> Jak wielki instrument, który jest zestrojony, ale zawory są przymknięte. Cała historia tego życia to proces świadomego ich otwierania.</p>
+  <p>Kluczem jest wyjście ku ludziom — nie tylko wiedza dla siebie, nie tylko wewnętrzna praca — lecz głęboki, emocjonalny kontakt (8–8), w którym talenty filozoficzne (11–2) stają się żywym darem dla drugiego człowieka. Wtedy karma obu trójkątów traci moc, a Przeznaczenie może swobodnie działać.</p>
+  <p>Aleksander ma 56 lat. Jest w środku swojego czasu — nie w przygotowaniu, nie po nim. Trójkąt duchowy jest teraz jego główną areną. Każde działanie podjęte z otwartości na ludzi i na przepływ twórczy jest dosłownie żywym Przeznaczeniem.</p>
+</div>
+
+<!-- ======================== ZALECENIA PRAKTYCZNE ======================== -->
+<div class="section">
+  <div class="section-label">Rozdział 10 · Ngan</div>
+  <h2>Zalecenia praktyczne</h2>
+
+  <h3>Dla 12–3 (Lamed–Gimel) — karma i cały trójkąt fizyczny</h3>
+  <ul class="rec-list">
+    <li>Wyleczenie emocjonalnej traumy związanej z brakiem uznania — procesowanie starych wzorców niegodności i niewystarczalności.</li>
+    <li><strong>Regularne działanie mimo lęku.</strong> Karma 12–3 rozładowuje się nie przez rozumienie jej, lecz przez ruch. Każdy krok podjęty pomimo wewnętrznego oporu ją przepracowuje.</li>
+    <li>Wyznaczanie granic w przekazywaniu wiedzy — uważaj na ryzyko fanatyzmu (nadmierne inwestowanie w jeden projekt kosztem reszty). Lamed wymaga balansu.</li>
+    <li><strong>Zaakceptować rolę nauczyciela bez umniejszania siebie.</strong> „Mam coś wartościowego do przekazania" — to jest prawda 12–3 w talentach. Afirmacja tej roli jest antidotum na karmę.</li>
+    <li>Ćwiczenia ekspresji twórczej: pisanie, mówienie, nagrywanie głosu — Gimel (3) potrzebuje kanałów ujścia.</li>
+    <li>Praca z ciałem jako narzędziem uziemienia (dla Lamed inicjowanego przez Wodę — praca z emocjami przez ciało: ruch, oddech, dotyk).</li>
+    <li><strong>Buduj projekty etapami — od małej formy.</strong> Intuicja rzeźbiarza jest właściwą strategią. Nie startuj od dużego wybuchu — zacznij od małego kroku i stopniowo rozwijaj.</li>
+    <li>Dzielenie się wiedzą jako praktyka uzdrowienia karmy: każde przekazanie czegoś wartościowego innemu człowiekowi jest krokiem ku wyzwoleniu z karmicznej blokady 12–3.</li>
+  </ul>
+
+  <h3>Dla 5–5 (Heh–Heh) — karma duchowa</h3>
+  <ul class="rec-list">
+    <li>Ćwiczenia uziemienia energii duchowych: medytacja uziemiająca, praca z oddechem, kontakt z naturą, czas w ciszy bez poszukiwania odpowiedzi.</li>
+    <li><strong>Zaufać własnym przeczuciom i intuicjom bez natychmiastowego kwestionowania ich.</strong> Prowadź dziennik intuicji — zapisuj impulsy, sprawdzaj ich trafność z czasem.</li>
+    <li>Praca nad mową jako narzędziem prawdy: ćwicz mówienie wprost, bez owijania w bawełnę, bez manipulacji przez selekcję faktów.</li>
+    <li>Przyjąć do wiadomości: rozproszenie i brak motywacji w sferze duchowej to sygnał karmy, nie cecha charakteru. Nie brać go za „ja" — traktować jak pogodę.</li>
+    <li><strong>Małe, konkretne praktyki duchowe zamiast wielkich poszukiwań.</strong> 5–5 w karmie łatwo ulega rozproszeniu w przestrzeni nieskończonych możliwości. Wybierz jedną praktykę i wykonuj ją regularnie.</li>
+    <li>Rytuały zakorzenienia — stałe godziny, stałe miejsce, stałe działania, które tworzą fizyczną ramę dla pracy duchowej.</li>
+  </ul>
+
+  <h3>Dla 11–2 (Caf–Beth) — talenty duchowe</h3>
+  <ul class="rec-list">
+    <li>Angażuj się w pisanie i formułowanie własnej filozofii — artykuły, książki, wykłady, nagrania. Talent 11–2 potrzebuje formy wyjścia.</li>
+    <li>Uczyć się przez przekazywanie: najgłębsze zrozumienie Aleksandra pojawia się w momencie, gdy próbuje to wytłumaczyć innemu człowiekowi.</li>
+    <li><strong>Budowanie systemu wiedzy krok po kroku — odporność na presję natychmiastowych wyników.</strong> Caf uczy cierpliwości transformacji. Każdy etap jest konieczny.</li>
+    <li>Ćwiczenie emocjonalnej odporności (Beth/2 w redukcji): regularna praca z emocjami, by mądrość nie pozostawała czysto intelektualna, lecz była zakorzeniona w przeżytym doświadczeniu.</li>
+    <li>Tworzenie materiałów dydaktycznych w różnych formatach: pisanie, video, audio, demonstracja live — wieloperspektywowość jest naturalnym wyrazem 11–2.</li>
+  </ul>
+
+  <h3>Dla 8–8 (Ches–Ches) — cele duchowe</h3>
+  <ul class="rec-list">
+    <li><strong>Ćwiczenie pełnej obecności emocjonalnej w relacjach</strong> — nie tylko analityczna obserwacja, lecz żywe zaangażowanie. Cel 8–8 realizuje się w kontakcie, nie w izolacji.</li>
+    <li>Pracować nad adaptacją do rozmówcy bez gubienia własnego centrum: kameleon Ches jest efektywny tylko wtedy, gdy jest w sobie zakorzeniony.</li>
+    <li>Rozwijanie i stosowanie zdolności jasnowidzenia jako praktycznego narzędzia terapeutycznego — nie traktować ich jako dziwactwa, lecz jako zawodowy zasób.</li>
+    <li><strong>Oczyścić nerki</strong> — organ Ches. Podwójne 8–8 oznacza szczególną wrażliwość w tym obszarze. Regularny ruch, odpowiednie nawodnienie, unikanie stresu.</li>
+    <li>Praca z blokiem przed emocjonalnością innych: każdy moment, gdy cudzje emocje wywołują chęć odcięcia się, to jest punkt pracy dla celu 8–8.</li>
+    <li>Esencja Bacha Walnut — ochrona wrażliwości podczas adaptacji do nowych warunków i ludzi (dla Ches jako ameba).</li>
+  </ul>
+
+  <h3>Dla 6–6 (Vuv–Vuv) — Przeznaczenie Duszy</h3>
+  <ul class="rec-list">
+    <li><strong>Angażuj się codziennie w akt twórczy — jakikolwiek.</strong> Pisanie, mówienie, tworzenie, organizowanie — każdy akt twórczy jest dosłownie żywym Przeznaczeniem Duszy.</li>
+    <li>Zapisuj twórcze impulsy i pomysły natychmiast po pojawieniu się. 6–6 generuje intensywny przepływ — bez zapisywania energia się ulatnia.</li>
+    <li><strong>Usuń potrzebę gwarancji przed działaniem.</strong> Karma 6–6 to blokada przez konieczność pewności. Przeznaczenie realizuje się przez skok bez siatki.</li>
+    <li>Ustalaj priorytety spośród projektów — wielość pomysłów jest darem, ale bez wyboru rozmywa się. Wybierz 2–3 projekty i doprowadź je do końca.</li>
+    <li>Medytacja na pytanie: „co chce się przeze mnie wyrazić?" — i słuchanie odpowiedzi bez cenzurowania jej logiką. Impulsy duszy to głos Boga w tym systemie.</li>
+    <li><strong>Ufaj estetycznemu postrzeganiu jako kompasowi.</strong> 6–6 daje wyczucie piękna i proporcji. To, co Aleksander uznaje za piękne i znaczące, jest kierunkiem jego Przeznaczenia.</li>
+    <li>Prowadzenie dziennika twórczego — nie pamiętnika, lecz przestrzeni dla myśli-kreacyjnych. Vuv mówi: myśl jest siłą kreacyjną, zapisana myśl jest pierwszym aktem manifestacji.</li>
+  </ul>
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  Odczyt sporządzony na podstawie: Nicolas David Ngan, <em>„Your Soul Contract Decoded"</em> / <em>„Numerologiczny Plan Duszy"</em>.<br>
+  System oryginalny: Frank Alper — Duchowa Numerologia Mojżesza (lata 80. XX w.).<br>
+  Dane obliczone z aktu urodzenia: Komaniecki Aleksander Antoni · 09.11.1969 · 26 dźwięków fonetycznych.<br>
+  <em>Obliczenia zweryfikowane: KONTRAKT_Aleksander_Antoni_Komaniecki.xml (31.03.2026).</em><br>
+  Tel: +48 791 322 978 · komanieckialek@gmail.com
+</div>
+
+</div>
+</body>
+</html>

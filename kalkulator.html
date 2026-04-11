@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bezpłatny Odczyt Numerologiczny — Aleksander Komaniecki</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Montserrat', sans-serif; background: #06060f; color: #e0d8c8; line-height: 1.8; font-size: 15px; }
+.page { max-width: 860px; margin: 0 auto; padding: 20px 24px 60px; }
+
+/* ---- HERO ---- */
+.hero { text-align: center; padding: 36px 0 28px; border-bottom: 1px solid #141428; margin-bottom: 32px; }
+.hero .eyebrow { font-size: 10px; letter-spacing: 6px; text-transform: uppercase; color: #c0a040; margin-bottom: 12px; font-family: 'Montserrat', sans-serif; }
+.hero h1 { font-family: 'Cormorant Garamond', serif; font-size: 2.2em; font-weight: 300; color: #f0e8d5; line-height: 1.2; margin-bottom: 8px; }
+.hero .sub { font-family: 'Cormorant Garamond', serif; font-style: italic; color: #9080a0; font-size: 1.05em; margin-bottom: 20px; }
+
+/* ---- FORMULARZ ---- */
+.form-box { background: #0c0c1e; border: 1px solid #1e1e38; border-radius: 16px; padding: 28px 28px; max-width: 600px; margin: 0 auto; }
+.form-box h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.4em; font-weight: 300; color: #d8d0e8; text-align: center; margin-bottom: 6px; }
+.form-box .form-sub { text-align: center; font-size: 12px; color: #605870; margin-bottom: 20px; letter-spacing: 1px; }
+.field { margin-bottom: 16px; }
+.field label { display: block; font-size: 10px; letter-spacing: 4px; text-transform: uppercase; color: #6666aa; margin-bottom: 8px; }
+.field input { width: 100%; background: #12122a; border: 1px solid #4a4a7a; border-radius: 8px; padding: 14px 16px; color: #e0d8c8; font-family: 'Cormorant Garamond', serif; font-size: 1.1em; outline: none; transition: border-color .2s, box-shadow .2s; }
+.field input:focus { border-color: #8888cc; box-shadow: 0 0 0 3px rgba(102,102,170,.2); }
+.field input::placeholder { color: #6a6090; }
+.field small { display: block; margin-top: 6px; font-size: 11px; color: #605878; }
+.btn-calc { width: 100%; background: linear-gradient(135deg, #4a3a8a, #2a2060); border: none; border-radius: 8px; padding: 20px; color: #e0d8f8; font-family: 'Montserrat', sans-serif; font-size: 14px; letter-spacing: 4px; text-transform: uppercase; cursor: pointer; transition: opacity .2s, transform .1s; margin-top: 8px; }
+.btn-calc:active { transform: scale(.99); }
+.btn-calc:hover { opacity: .85; }
+.form-note { text-align: center; margin-top: 16px; font-size: 11px; color: #403555; }
+
+/* ---- WYNIKI (ukryte na start) ---- */
+#wyniki { display: none; margin-top: 40px; }
+
+/* ---- SEKCJA LABEL ---- */
+.sec-label { font-size: 10px; letter-spacing: 5px; text-transform: uppercase; margin-bottom: 8px; font-family: 'Montserrat', sans-serif; }
+.sec-label.nch { color: #4466aa; }
+.sec-label.pd  { color: #6666aa; }
+.sec-label.gold { color: #c0a040; }
+h2.sec-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6em; font-weight: 300; color: #c8d0e0; border-bottom: 1px solid #1a2030; padding-bottom: 12px; margin-bottom: 28px; }
+h2.sec-title.pd { color: #d0c8e8; border-bottom-color: #201830; }
+
+.section { margin-bottom: 40px; }
+
+/* ---- KARTY ---- */
+.card { background: #0c1020; border: 1px solid #1a2438; border-radius: 12px; padding: 18px 22px; margin-bottom: 12px; }
+.card.dz  { border-left: 4px solid #4070c0; }
+.card.pd-fiz { border-left: 4px solid #6666aa; }
+.card.rok { border-left: 4px solid #40a080; }
+.card-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 18px; }
+.card-num  { font-family: 'Cormorant Garamond', serif; font-size: 2em; font-weight: 400; color: #6088d0; letter-spacing: 3px; min-width: 70px; }
+.card-num.pd { color: #9090e0; }
+.card-title { font-size: 1em; color: #8090a8; font-family: 'Cormorant Garamond', serif; }
+.card-sub   { font-size: 11px; color: #506080; font-style: italic; margin-top: 2px; font-family: 'Montserrat', sans-serif; }
+h3.card-h3 { font-size: 10px; font-weight: 400; color: #6088d0; margin: 20px 0 8px; text-transform: uppercase; letter-spacing: 3px; font-family: 'Montserrat', sans-serif; }
+h3.card-h3.pd { color: #8080c0; }
+p.card-p { font-size: 14px; color: #b0b8c8; line-height: 1.75; margin-bottom: 10px; }
+p.card-p.pd { color: #b0a8c8; }
+.card-znani { font-size: 12px; color: #405060; border-top: 1px solid #141c28; margin-top: 14px; padding-top: 10px; }
+
+/* ---- LO SHU ---- */
+.loshu-wrap { display: flex; justify-content: center; margin: 16px 0 12px; }
+.loshu { display: grid; grid-template-columns: repeat(3, 110px); grid-template-rows: repeat(3, 90px); gap: 6px; }
+.ls-cell { background: #0d1020; border: 1px solid #1e2840; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; }
+.ls-cell.filled { border-color: #2a4080; background: #0f1535; }
+.ls-cell.empty  { opacity: .3; }
+.ls-pos  { font-size: 9px; color: #304060; letter-spacing: 1px; font-family: 'Montserrat', sans-serif; }
+.ls-num  { font-family: 'Cormorant Garamond', serif; font-size: 1.8em; color: #6088d0; letter-spacing: 2px; }
+.ls-cell.empty .ls-num { color: #1e2a3a; }
+.ls-lbl  { font-size: 9px; color: #304868; text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; font-family: 'Montserrat', sans-serif; }
+
+/* ---- STRZAŁY ---- */
+.strzaly-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin: 12px 0; }
+.strzala-item { background: #0d1020; border: 1px solid #1a2438; border-radius: 8px; padding: 14px 16px; }
+.strzala-item.sila  { border-left: 3px solid #4070c0; }
+.strzala-item.slabs { border-left: 3px solid #803030; }
+.st-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #405878; margin-bottom: 4px; font-family: 'Montserrat', sans-serif; }
+.st-label.sila  { color: #406090; }
+.st-label.slabs { color: #804040; }
+.st-nazwa { font-size: 14px; color: #b0b8c8; font-family: 'Cormorant Garamond', serif; }
+.st-nums  { font-size: 11px; color: #506070; margin-top: 2px; font-family: 'Montserrat', sans-serif; }
+.st-opis  { font-size: 13px; color: #8090a0; margin-top: 8px; line-height: 1.6; font-family: 'Cormorant Garamond', serif; }
+.brak-strzal { font-size: 13px; color: #505868; font-style: italic; padding: 12px 0; }
+
+/* ---- BLUR / ZAMGLONE ---- */
+.blurred-section { position: relative; margin-bottom: 36px; }
+.blurred-content { user-select: none; pointer-events: none; }
+.blur-card-wrap { filter: blur(4px); opacity: .65; }
+.blur-overlay { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; background: linear-gradient(to bottom, transparent 0%, #06060f66 25%, #06060fbb 55%, #06060f 80%); border-radius: 12px; z-index: 10; padding: 60px 20px 40px; }
+
+/* ---- NAGŁÓWKI ZAMGLONYCH SEKCJI (czytelne) ---- */
+.locked-header { margin-bottom: 10px; margin-top: 28px; padding: 14px 18px; background: #0a0a18; border: 1px solid #1e1e38; border-left: 3px solid #3a2a5a; border-radius: 10px; display: flex; align-items: flex-start; gap: 14px; }
+.locked-header:first-child { margin-top: 0; }
+.lock-icon { font-size: 18px; opacity: .7; padding-top: 2px; flex-shrink: 0; }
+.locked-header-text {}
+.locked-sup { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: #5a4a7a; margin-bottom: 5px; font-family: 'Montserrat', sans-serif; }
+.locked-title { font-family: 'Cormorant Garamond', serif; font-size: 1.25em; font-weight: 300; color: #c0b8d8; line-height: 1.3; margin-bottom: 5px; }
+.locked-desc { font-family: 'Cormorant Garamond', serif; font-size: 12.5px; color: #6a5a80; font-style: italic; line-height: 1.6; }
+.blur-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6em; font-weight: 300; color: #d0c8e0; text-align: center; margin-bottom: 10px; }
+.blur-sub { font-size: 13px; color: #8070a0; text-align: center; margin-bottom: 30px; line-height: 1.6; }
+.btn-cta { display: inline-block; background: linear-gradient(135deg, #c0a040, #a08030); border: none; border-radius: 8px; padding: 16px 36px; color: #06060f; font-family: 'Montserrat', sans-serif; font-size: 12px; letter-spacing: 3px; text-transform: uppercase; font-weight: 500; cursor: pointer; text-decoration: none; transition: opacity .2s; }
+.btn-cta:hover { opacity: .85; }
+.btn-note { font-size: 11px; color: #605870; margin-top: 12px; text-align: center; }
+
+/* ---- PLACEHOLDER dla zamglonych sekcji ---- */
+.blurred-placeholder { }
+.blur-card { background: #0c1020; border: 1px solid #1a2438; border-radius: 10px; padding: 16px 20px; margin-bottom: 8px; }
+.blur-line { height: 10px; background: #14182a; border-radius: 4px; margin-bottom: 7px; }
+.blur-line.short { width: 60%; }
+.blur-line.med   { width: 80%; }
+.blur-line.full  { width: 100%; }
+.blur-line.head  { height: 16px; width: 50%; margin-bottom: 10px; background: #1a1e30; }
+.blur-line.tiny  { height: 8px; width: 40%; background: #101520; }
+
+/* ---- PODGLĄD FONETYCZNY ---- */
+.fon-preview { margin-top: 10px; background: #080810; border: 1px solid #1a1a30; border-radius: 6px; padding: 12px 16px; display: none; }
+.fon-row { display: flex; gap: 12px; align-items: baseline; margin-bottom: 6px; flex-wrap: wrap; }
+.fon-row:last-child { margin-bottom: 0; }
+.fon-czlon { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: #404060; min-width: 90px; font-family: 'Montserrat', sans-serif; }
+.fon-seq { font-family: 'Cormorant Garamond', serif; font-size: 1em; color: #8080c0; }
+.fon-seq span { display: inline-block; margin: 0 2px; padding: 1px 4px; border: 1px solid #2a2a50; border-radius: 3px; font-size: 0.9em; }
+.fon-info { font-size: 11px; color: #404055; margin-top: 4px; }
+
+/* ---- GWIAZDA DAWIDA ---- */
+.gwiazda-wrap { margin: 0 auto; max-width: 580px; }
+.gwiazda-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+.gw-cell { background: #0c1020; border: 1px solid #1a2438; border-radius: 10px; padding: 16px 14px; text-align: center; min-height: 110px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; }
+.gw-cell.spacer { background: transparent; border: none; }
+.gw-cell.open  { border-color: #2a4070; background: #0d1428; }
+.gw-cell.locked { border-color: #1a1a2a; background: #090910; opacity: .7; }
+.gw-cell.pd-center { border-color: #3a3020; background: #0d0c10; }
+.gw-pos   { font-size: 9px; color: #304060; letter-spacing: 1px; text-transform: uppercase; font-family: 'Montserrat', sans-serif; }
+.gw-label { font-size: 10px; letter-spacing: 2px; text-transform: uppercase; color: #506080; font-family: 'Montserrat', sans-serif; margin: 2px 0; }
+.gw-cell.open .gw-label { color: #6090b8; }
+.gw-para  { font-family: 'Cormorant Garamond', serif; font-size: 1.5em; color: #3a4a60; letter-spacing: 2px; font-weight: 400; }
+.gw-cell.open .gw-para { color: #8090d0; }
+.gw-cell.pd-center .gw-para { color: #907040; font-size: 1.8em; }
+.gw-status { font-size: 9px; margin-top: 4px; font-family: 'Montserrat', sans-serif; letter-spacing: 1px; }
+.open-badge { color: #406060; }
+.lock-badge { color: #403848; }
+.gwiazda-legenda { display: flex; gap: 28px; justify-content: center; margin-top: 16px; font-size: 11px; font-family: 'Montserrat', sans-serif; }
+.leg-open { color: #4070a0; }
+.leg-lock { color: #403848; }
+
+/* ---- URWANE KARTY (fade na dole) ---- */
+.card-partial { position: relative; overflow: hidden; max-height: 230px; }
+.card-partial::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom, transparent, #0c1020); pointer-events: none; }
+.card.pd-fiz.card-partial::after { background: linear-gradient(to bottom, transparent, #0c1020); }
+
+.strzala-partial { position: relative; overflow: hidden; max-height: 68px; }
+.strzala-partial::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 36px; background: linear-gradient(to bottom, transparent, #0d1020); pointer-events: none; }
+
+/* ---- BLUR TAIL — rozmyte zdanie na końcu karty ---- */
+.blur-tail { filter: blur(3.5px); user-select: none; pointer-events: none; font-size: 13px; color: #8898b8; font-family: 'Cormorant Garamond', serif; line-height: 1.75; margin-top: 14px; padding-top: 10px; border-top: 1px solid #141c2a; opacity: .85; }
+.blur-tail.pd { color: #9090c8; border-top-color: #1a1430; }
+
+/* ---- KALKULATOR META ---- */
+.calc-meta { background: #080810; border: 1px solid #141428; border-radius: 8px; padding: 16px 20px; margin-bottom: 40px; font-size: 12px; color: #505870; display: flex; gap: 28px; flex-wrap: wrap; }
+.calc-meta b { color: #9090b8; }
+
+/* ---- DIVIDER ---- */
+.divider { border: none; border-top: 1px solid #141428; margin: 60px 0; }
+
+/* ---- FOOTER ---- */
+.footer { margin-top: 80px; padding-top: 24px; border-top: 1px solid #141428; font-size: 12px; color: #404050; text-align: center; font-style: italic; line-height: 2; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HERO -->
+<div class="hero">
+  <div class="eyebrow">Numerologia · Kontrakt Duszy &amp; Droga Życia</div>
+  <h1>Twój Bezpłatny Odczyt</h1>
+  <div class="sub">Wprowadź imię i datę urodzenia — odkryj pierwszą warstwę swojego planu numerologicznego</div>
+</div>
+
+<!-- FORMULARZ -->
+<div class="form-box">
+  <h2>Rozpocznij swój odczyt</h2>
+  <div class="form-sub">Imię i nazwisko z aktu urodzenia · Data urodzenia</div>
+  <div class="field">
+    <label style="font-size:12px; letter-spacing:2px; color:#9090cc;">Imię (lub imiona) z aktu urodzenia</label>
+    <input type="text" id="inp-imie" placeholder="Wpisz imię, np. Anna lub Anna Maria" autocomplete="off" oninput="podgladFonetyczny()">
+    <small>Jeśli masz dwa imiona — wpisz oba, np. Anna Maria</small>
+  </div>
+  <div class="field">
+    <label style="font-size:12px; letter-spacing:2px; color:#9090cc;">Nazwisko rodowe z aktu urodzenia</label>
+    <input type="text" id="inp-nazwisko" placeholder="Wpisz nazwisko, np. Kowalska" autocomplete="off" oninput="podgladFonetyczny()">
+    <small>Nazwisko rodowe (panieńskie), dokładnie jak w akcie urodzenia</small>
+  </div>
+  <div class="fon-preview" id="fon-preview"></div>
+  <div class="field" style="margin-top:20px">
+    <label>Data urodzenia</label>
+    <input type="date" id="inp-data">
+  </div>
+  <button class="btn-calc" onclick="oblicz()">Rozpocznij odczyt</button>
+  <div class="form-note">Dane nie są zapisywane ani wysyłane nigdzie.</div>
+</div>
+
+<!-- WYNIKI -->
+<div id="wyniki">
+
+  <!-- META -->
+  <div class="calc-meta" id="meta-box"></div>
+
+  <hr class="divider">
+
+  <!-- ===== SEKCJA NCH ===== -->
+  <div class="section">
+    <div class="sec-label nch">Numerologia Chińska · Droga Życia</div>
+    <h2 class="sec-title" id="dz-tytul"></h2>
+    <div class="card dz" id="karta-dz"></div>
+  </div>
+
+  <!-- LO SHU -->
+  <div class="section">
+    <div class="sec-label nch">Numerologia Chińska · Mapa Urodzeniowa</div>
+    <h2 class="sec-title">Kwadrat Lo Shu</h2>
+    <div class="loshu-wrap">
+      <div class="loshu" id="loshu-grid"></div>
+    </div>
+  </div>
+
+  <!-- ROK OSOBISTY -->
+  <div class="section">
+    <div class="sec-label nch">Numerologia Chińska · Czas</div>
+    <h2 class="sec-title" id="rok-tytul"></h2>
+    <div class="card rok" id="karta-rok"></div>
+  </div>
+
+  <!-- STRZAŁY -->
+  <div class="section">
+    <div class="sec-label nch">Numerologia Chińska · Strzały Siły i Słabości</div>
+    <h2 class="sec-title">Strzały w Twoim wykresie</h2>
+    <div id="strzaly-box"></div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ===== SEKCJA PD WIDOCZNA ===== -->
+  <div class="section">
+    <div class="sec-label pd">Kontrakt Duszy · Trójkąt Fizyczny</div>
+    <h2 class="sec-title pd">Karma i Talenty Fizyczne</h2>
+    <div class="card pd-fiz" id="karta-kf"></div>
+    <div class="card pd-fiz" id="karta-tf"></div>
+  </div>
+
+  <div class="section">
+    <div class="sec-label pd">Kontrakt Duszy · Trójkąt Fizyczny · Cele</div>
+    <h2 class="sec-title pd" id="cf-tytul"></h2>
+    <div class="card pd-fiz" id="karta-cf"></div>
+  </div>
+
+  <!-- ===== GWIAZDA DAWIDA — MAPA ODCZYTU ===== -->
+  <div class="section">
+    <div class="sec-label pd">Kontrakt Duszy · Pełna Mapa</div>
+    <h2 class="sec-title pd">Twoja Gwiazda Dawida</h2>
+    <div class="gwiazda-wrap">
+      <div class="gwiazda-grid">
+
+        <!-- Wiersz 1: KF (lewo) | puste | TD (prawo) -->
+        <div class="gw-cell open" id="gw-kf">
+          <div class="gw-pos">▼ Trójkąt Fizyczny</div>
+          <div class="gw-label">Karma Fizyczna</div>
+          <div class="gw-para" id="gw-kf-para">—</div>
+          <div class="gw-status open-badge">widoczne</div>
+        </div>
+        <div class="gw-cell spacer"></div>
+        <div class="gw-cell locked">
+          <div class="gw-pos">▲ Trójkąt Duchowy</div>
+          <div class="gw-label">Talenty Duchowe</div>
+          <div class="gw-para">?</div>
+          <div class="gw-status lock-badge">🔒 pełny odczyt</div>
+        </div>
+
+        <!-- Wiersz 2: TF | PD | CD -->
+        <div class="gw-cell open" id="gw-tf">
+          <div class="gw-label">Talenty Fizyczne</div>
+          <div class="gw-para" id="gw-tf-para">—</div>
+          <div class="gw-status open-badge">widoczne</div>
+        </div>
+        <div class="gw-cell locked pd-center">
+          <div class="gw-label">Przeznaczenie Duszy</div>
+          <div class="gw-para">?</div>
+          <div class="gw-status lock-badge">🔒 pełny odczyt</div>
+        </div>
+        <div class="gw-cell locked">
+          <div class="gw-label">Cele Duchowe</div>
+          <div class="gw-para">?</div>
+          <div class="gw-status lock-badge">🔒 pełny odczyt</div>
+        </div>
+
+        <!-- Wiersz 3: puste | CF | KD -->
+        <div class="gw-cell spacer"></div>
+        <div class="gw-cell open" id="gw-cf">
+          <div class="gw-label">Cele Fizyczne</div>
+          <div class="gw-para" id="gw-cf-para">—</div>
+          <div class="gw-status open-badge">widoczne</div>
+        </div>
+        <div class="gw-cell locked">
+          <div class="gw-label">Karma Duchowa</div>
+          <div class="gw-para">?</div>
+          <div class="gw-status lock-badge">🔒 pełny odczyt</div>
+        </div>
+
+      </div>
+      <div class="gwiazda-legenda">
+        <span class="leg-open">■ widoczne w bezpłatnym odczycie</span>
+        <span class="leg-lock">■ dostępne w pełnym odczycie</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SEKCJA ZAMGLONA ===== -->
+  <div class="blurred-section">
+    <div class="blurred-content">
+
+      <!-- 1. Trójkąt Duchowy -->
+      <div class="locked-header">
+        <div class="lock-icon">🔒</div>
+        <div class="locked-header-text">
+          <div class="locked-sup">Kontrakt Duszy · Trójkąt Duchowy · 3 karty</div>
+          <div class="locked-title">Karma Duchowa · Talenty Duchowe · Cele Duchowe</div>
+          <div class="locked-desc">Lustrzane odbicie Trójkąta Fizycznego — pokazuje wzorce karmiczne na poziomie ducha i ścieżkę duchowego rozwoju w tym wcieleniu.</div>
+        </div>
+      </div>
+      <div class="blur-card-wrap">
+        <div class="blur-card">
+          <div class="blur-line head"></div><div class="blur-line full"></div><div class="blur-line med"></div><div class="blur-line full"></div><div class="blur-line short"></div><div class="blur-line full"></div><div class="blur-line med"></div>
+        </div>
+        <div class="blur-card">
+          <div class="blur-line head"></div><div class="blur-line full"></div><div class="blur-line full"></div><div class="blur-line med"></div><div class="blur-line full"></div><div class="blur-line short"></div>
+        </div>
+        <div class="blur-card">
+          <div class="blur-line head"></div><div class="blur-line full"></div><div class="blur-line full"></div><div class="blur-line med"></div><div class="blur-line full"></div><div class="blur-line short"></div>
+        </div>
+      </div>
+
+      <!-- 2. Przeznaczenie Duszy -->
+      <div class="locked-header" style="border-left-color:#6a4a20;">
+        <div class="lock-icon">🔒</div>
+        <div class="locked-header-text">
+          <div class="locked-sup" style="color:#6a4a20;">Kontrakt Duszy · Centrum Gwiazdy Dawida</div>
+          <div class="locked-title">Przeznaczenie Duszy — Twoja Misja Życiowa</div>
+          <div class="locked-desc">Centralny punkt Gwiazdy Dawida, wynikający ze wszystkich sześciu aspektów. Odpowiada na pytanie: po co tu jesteś i co jest Twoją najgłębszą misją?</div>
+        </div>
+      </div>
+      <div class="blur-card-wrap">
+        <div class="blur-card">
+          <div class="blur-line head" style="width:40%; height:32px;"></div><div class="blur-line full"></div><div class="blur-line full"></div><div class="blur-line full"></div><div class="blur-line med"></div><div class="blur-line full"></div><div class="blur-line short"></div><div class="blur-line full"></div><div class="blur-line med"></div>
+        </div>
+      </div>
+
+      <!-- 3. Zbieżności -->
+      <div class="locked-header" style="border-left-color:#6a5a20;">
+        <div class="lock-icon">🔒</div>
+        <div class="locked-header-text">
+          <div class="locked-sup" style="color:#6a5820;">Synteza · Zbieżności PD + NCH</div>
+          <div class="locked-title">Kluczowe Zbieżności — gdzie obie metody mówią to samo</div>
+          <div class="locked-desc">Tam gdzie Kontrakt Duszy i Droga Życia wskazują na tę samą energię — wzorzec jest potwierdzony z dwóch stron. To Twoje największe atuty i najważniejsze lekcje życiowe.</div>
+        </div>
+      </div>
+      <div class="blur-card-wrap">
+        <div class="blur-card"><div class="blur-line head" style="width:55%;"></div><div class="blur-line full"></div><div class="blur-line full"></div><div class="blur-line med"></div></div>
+        <div class="blur-card"><div class="blur-line head" style="width:50%;"></div><div class="blur-line full"></div><div class="blur-line med"></div><div class="blur-line full"></div><div class="blur-line short"></div></div>
+        <div class="blur-card"><div class="blur-line head" style="width:45%;"></div><div class="blur-line full"></div><div class="blur-line full"></div><div class="blur-line med"></div></div>
+      </div>
+
+      <!-- 4. Piramidy -->
+      <div class="locked-header" style="border-left-color:#2a4a5a;">
+        <div class="lock-icon">🔒</div>
+        <div class="locked-header-text">
+          <div class="locked-sup" style="color:#2a5a6a;">Numerologia Chińska · Etapy Życia · 4 karty</div>
+          <div class="locked-title">Piramidy — 4 Szczyty Twojego Życia</div>
+          <div class="locked-desc">Cztery etapy życia z własną energią, wyzwaniami i darami. Dowiesz się, na jakim etapie jesteś teraz, kiedy zacznie się kolejny i czego możesz się spodziewać.</div>
+        </div>
+      </div>
+      <div class="blur-card-wrap">
+        <div class="blur-card"><div class="blur-line head"></div><div class="blur-line full"></div><div class="blur-line med"></div><div class="blur-line full"></div><div class="blur-line short"></div></div>
+        <div class="blur-card"><div class="blur-line head"></div><div class="blur-line full"></div><div class="blur-line med"></div><div class="blur-line full"></div><div class="blur-line short"></div></div>
+        <div class="blur-card"><div class="blur-line head"></div><div class="blur-line full"></div><div class="blur-line med"></div></div>
+        <div class="blur-card"><div class="blur-line head"></div><div class="blur-line full"></div><div class="blur-line med"></div><div class="blur-line full"></div><div class="blur-line short"></div></div>
+      </div>
+
+      <!-- 5. Miesiąc + prognoza -->
+      <div class="locked-header" style="border-left-color:#2a4a5a;">
+        <div class="lock-icon">🔒</div>
+        <div class="locked-header-text">
+          <div class="locked-sup" style="color:#2a5a6a;">Numerologia Chińska · Czas Aktualny</div>
+          <div class="locked-title">Miesiąc Osobisty + Prognoza Lat do Końca Cyklu</div>
+          <div class="locked-desc">Miesięczna energia nakłada się na roczną jak drobna fala na większą. Dostaniesz prognozę każdego miesiąca i roku aż do zamknięcia aktualnego cyklu 9-letniego.</div>
+        </div>
+      </div>
+      <div class="blur-card-wrap">
+        <div class="blur-card"><div class="blur-line head" style="width:30%;"></div><div class="blur-line full"></div><div class="blur-line med"></div><div class="blur-line short"></div></div>
+        <div class="blur-card">
+          <div class="blur-line head" style="width:60%;"></div><div class="blur-line full"></div><div class="blur-line full"></div><div class="blur-line med"></div><div class="blur-line short"></div><div class="blur-line full"></div><div class="blur-line med"></div><div class="blur-line short"></div><div class="blur-line full"></div><div class="blur-line med"></div>
+        </div>
+      </div>
+
+      <!-- 6. Liczby brakujące -->
+      <div class="locked-header" style="border-left-color:#2a4a5a;">
+        <div class="lock-icon">🔒</div>
+        <div class="locked-header-text">
+          <div class="locked-sup" style="color:#2a5a6a;">Numerologia Chińska · Lekcje Duszy</div>
+          <div class="locked-title">Liczby Brakujące — Lekcje Karmiczne Tego Wcielenia</div>
+          <div class="locked-desc">Cyfry nieobecne w Twojej dacie urodzenia wskazują obszary, gdzie dusza ma pracę do wykonania. Każda brakująca liczba niesie konkretny wzorzec i lekcję.</div>
+        </div>
+      </div>
+      <div class="blur-card-wrap">
+        <div class="blur-card"><div class="blur-line head" style="width:25%;"></div><div class="blur-line full"></div><div class="blur-line full"></div><div class="blur-line med"></div><div class="blur-line short"></div></div>
+        <div class="blur-card"><div class="blur-line head" style="width:25%;"></div><div class="blur-line full"></div><div class="blur-line med"></div><div class="blur-line short"></div></div>
+      </div>
+
+      <!-- 7. Strzały pełne -->
+      <div class="locked-header" style="border-left-color:#2a4a5a;">
+        <div class="lock-icon">🔒</div>
+        <div class="locked-header-text">
+          <div class="locked-sup" style="color:#2a5a6a;">Numerologia Chińska · Strzały — Pełna Analiza</div>
+          <div class="locked-title">Strzały Siły i Słabości — Szczegółowe Interpretacje</div>
+          <div class="locked-desc">W bezpłatnym odczycie widzisz tylko nazwy. Pełna analiza wyjaśnia jak każda strzała objawia się w codziennym życiu, kiedy jest aktywna i jak świadomie z nią pracować.</div>
+        </div>
+      </div>
+      <div class="blur-card-wrap">
+        <div class="blur-card"><div class="blur-line head"></div><div class="blur-line full"></div><div class="blur-line full"></div><div class="blur-line med"></div><div class="blur-line full"></div><div class="blur-line short"></div></div>
+      </div>
+
+      <!-- 8. Synteza -->
+      <div class="locked-header" style="border-left-color:#6a5a20;">
+        <div class="lock-icon">🔒</div>
+        <div class="locked-header-text">
+          <div class="locked-sup" style="color:#6a5820;">Portret Energetyczny · Synteza Całości</div>
+          <div class="locked-title">Kim jest Twoja Dusza — Portret w 360°</div>
+          <div class="locked-desc">Końcowa synteza łączy wszystkie elementy w jeden spójny obraz — kto jesteś, z czym przyszedłeś/aś, dokąd zmierzasz i jak to osiągnąć w tym wcieleniu.</div>
+        </div>
+      </div>
+      <div class="blur-card-wrap">
+        <div class="blur-card"><div class="blur-line full"></div><div class="blur-line full"></div><div class="blur-line full"></div><div class="blur-line med"></div><div class="blur-line full"></div><div class="blur-line short"></div><div class="blur-line full"></div><div class="blur-line med"></div><div class="blur-line full"></div><div class="blur-line short"></div></div>
+      </div>
+
+      <!-- 9. Zalecenia -->
+      <div class="locked-header" style="border-left-color:#6a5a20;">
+        <div class="lock-icon">🔒</div>
+        <div class="locked-header-text">
+          <div class="locked-sup" style="color:#6a5820;">Zalecenia Praktyczne · Co Robić</div>
+          <div class="locked-title">Konkretne Wskazówki na Każdy Obszar Życia</div>
+          <div class="locked-desc">Co rozwijać, czego unikać, jakie praktyki wspierają Twoją energię, na co zwracać uwagę w relacjach — nie tylko analiza, ale gotowe wskazówki do działania.</div>
+        </div>
+      </div>
+      <div class="blur-card-wrap">
+        <div class="blur-card"><div class="blur-line head" style="width:40%;"></div><div class="blur-line full"></div><div class="blur-line med"></div><div class="blur-line full"></div><div class="blur-line short"></div></div>
+        <div class="blur-card"><div class="blur-line head" style="width:45%;"></div><div class="blur-line full"></div><div class="blur-line med"></div><div class="blur-line short"></div></div>
+      </div>
+
+      <!-- 10. Dokument HTML -->
+      <div class="locked-header" style="border-left-color:#6a5a20;">
+        <div class="lock-icon">🔒</div>
+        <div class="locked-header-text">
+          <div class="locked-sup" style="color:#6a5820;">Dokument · Twój Osobisty Odczyt</div>
+          <div class="locked-title">Kompletny Dokument HTML — do Zachowania na Zawsze</div>
+          <div class="locked-desc">Wszystkie moduły zebrane w jednym pliku — możesz go otworzyć w przeglądarce w dowolnym momencie, wydrukować lub podzielić się z bliskimi.</div>
+        </div>
+      </div>
+      <div class="blur-card-wrap">
+        <div class="blur-card"><div class="blur-line head" style="width:60%;"></div><div class="blur-line full"></div><div class="blur-line med"></div></div>
+      </div>
+
+    </div><!-- /blurred-content -->
+
+    <div class="blur-overlay">
+      <div class="blur-title">To dopiero pierwsza warstwa</div>
+      <div class="blur-sub">
+        Widzisz teraz: Drogę Życia, Kwadrat Lo Shu, Rok Osobisty, Strzały i Trójkąt Fizyczny (KF · TF · CF).<br><br>
+        <strong style="color:#c8c0d8; font-family:'Cormorant Garamond',serif; font-size:1.05em;">Pełny odczyt osobisty zawiera jeszcze 8 modułów:</strong><br><br>
+        <span style="color:#9080b0; font-size:13px; line-height:2.2;">
+          ★ Trójkąt Duchowy — Karma, Talenty i Cele Duchowe (3 karty)<br>
+          ★ Przeznaczenie Duszy — Twoja misja życiowa (centrum Gwiazdy)<br>
+          ★ Kluczowe Zbieżności NCH + PD — gdzie wzorce się potwierdzają<br>
+          ★ 4 Piramidy — etapy Twojego życia z konkretną energią każdego<br>
+          ★ Miesiąc osobisty + prognoza lat do końca cyklu<br>
+          ★ Liczby brakujące — lekcje karmiczne<br>
+          ★ Synteza całości — portret energetyczny w 360°<br>
+          ★ Zalecenia praktyczne + pełny dokument HTML do zachowania
+        </span>
+      </div>
+      <a class="btn-cta" id="cta-link" href="#" onclick="zamowOdczyt(event)">Zamów pełny odczyt osobisty</a>
+      <div class="btn-note">Czas realizacji: 48h · Przygotowywany osobiście przez Aleksandra · 150–300 zł</div>
+    </div>
+  </div><!-- /blurred-section -->
+
+</div><!-- /wyniki -->
+
+<!-- FOOTER -->
+<div class="footer">
+  <p>Aleksander Komaniecki · tel. +48 791 322 978 · komanieckialek@gmail.com</p>
+  <p>Numerologia Chińska wg Zbigniewa Królickiego · Kontrakt Duszy wg Nicolasa Davida Ngana i Franka Alpera</p>
+</div>
+
+<!-- PRZYCISK ZWIŃ -->
+<div id="btn-zwij-wrap" style="display:none; text-align:center; padding: 20px 0 32px;">
+  <button onclick="zwijnPanel()" style="background:none; border:1px solid #2a2a48; border-radius:8px; padding:10px 28px; color:#6060a0; font-family:'Montserrat',sans-serif; font-size:11px; letter-spacing:3px; text-transform:uppercase; cursor:pointer; transition:border-color .2s, color .2s;">
+    ▲ &nbsp;Zwiń odczyt
+  </button>
+</div>
+
+</div><!-- /page -->
+
+<script>
+// ======================================================
+// DANE INTERPRETACYJNE
+// ======================================================
+
+const DZ_DATA = {
+  1: { nazwa: "Niezależność", mocne: "Urodzony lider i pionier — masz silną wolę, ambicję i oryginalność myślenia. Naturalnie przyciągasz uwagę i potrafisz wyznaczać kierunek tam, gdzie inni się wahają. Twoja niezależność i energia są źródłem siły i inspiracji dla otoczenia.", slabe: "Skłonność do egocentryzmu i niecierpliwości może utrudniać długotrwałą współpracę. Trudność z przyjmowaniem porażek bywa kosztowna — warto rozwijać pokorę i otwartość na innych.", zdrowie: "Serce, układ krążenia, głowa i oczy.", znani: "Nikola Tesla, Charlie Chaplin, George Washington" },
+  2: { nazwa: "Współpraca", mocne: "Masz wyjątkowy dar mediacji i budowania mostów między ludźmi. Twoja empatia i fenomenalna intuicja czynią z Ciebie naturalnego doradcę i przyjaciela. Jesteś wierny/a i wrażliwy/a na potrzeby innych.", slabe: "Nadwrażliwość i tendencja do pesymizmu mogą Cię przytłaczać. Nie jesteś stworzony/a do przywództwa z pierwszego planu — Twoja siła leży we wspieraniu i harmonizowaniu.", zdrowie: "Choroby psychosomatyczne — Twoje ciało silnie reaguje na emocje.", znani: "Mozart, Bill Clinton, Meg Ryan" },
+  3: { nazwa: "Twórczość", mocne: "Obdarzony/a niezliczonymi talentami, bogatą wyobraźnią i naturalnym darem komunikacji. Ekstrawertyczny/a i charyzmatyczny/a — łatwo Ci inspirować innych i wyrażać siebie przez słowo, sztukę czy muzykę.", slabe: "Trudność z konsekwencją i doprowadzaniem spraw do końca bywa Twoją piętą achillesową. Problemy finansowe mogą wynikać z rozproszenia energii na zbyt wiele projektów naraz.", zdrowie: "Układ krążenia, kości, stawy, nerwy — dbaj o regularność.", znani: "David Bowie, Jodie Foster, Shania Twain" },
+  4: { nazwa: "Budowanie", mocne: "Sumienność, praktyczność i doskonały zmysł organizacyjny to Twoje największe atuty. Rzadko się mylisz — myślisz systematycznie i budujesz trwałe fundamenty. Jesteś wytrwały/a i niezawodny/a.", slabe: "Upór i mała elastyczność mogą blokować Twój rozwój. Skłonność do narzucania własnej woli innym powoduje frustrację — zarówno u Ciebie, jak i w otoczeniu.", zdrowie: "Układ trawienny, wątroba, płuca, krtań.", znani: "Arnold Schwarzenegger, Oprah Winfrey, Paul McCartney" },
+  5: { nazwa: "Wolność", mocne: "Szybkie myślenie, dynamizm i towarzyskość otwierają przed Tobą wiele drzwi. Jesteś dyplomatyczny/a, błyskotliwy/a i pełen/na życia — naturalnie przyciągasz różnorodne doświadczenia i ludzi.", slabe: "Ciągłe napięcia, brak stałości i skłonność do powierzchowności mogą nie pozwolić Ci zakorzenić się w tym, co ważne. Zazdrość i zmienność są wyzwaniami do przepracowania.", zdrowie: "Szczególna opieka nad układem nerwowym, mięśniowym i krążeniem.", znani: "Angelina Jolie, Steven Spielberg, Abraham Lincoln" },
+  6: { nazwa: "Odpowiedzialność", mocne: "Mądrość, tolerancja i głęboka troska o innych to Twoje wyróżniki. Szybko odnajdujesz swoje powołanie i działasz z autentycznym idealizmem. Twoja obecność stabilizuje i harmonizuje otoczenie.", slabe: "Nadopiekuńczość i oczekiwanie uznania za pomoc mogą prowadzić do frustracji i depresji. Naucz się dawać bez oczekiwania — i dbać równie mocno o siebie.", zdrowie: "Układ moczowy, nerki, trawienie, gardło.", znani: "Albert Einstein, Thomas Edison, Michael Jackson" },
+  7: { nazwa: "Analiza", mocne: "Głęboki umysł filozoficzny, trafność analiz i silna introspekcja to Twoje dary. Cenisz niezależność — zarówno myślową, jak i finansową. Potrafisz dostrzec to, czego inni nie widzą.", slabe: "Skłonność do samotności, konserwatyzm i perfekcjonizm utrudniają Ci bliskie relacje. Inni mogą odbierać Cię jako trudnego/ą lub zamkniętego/ą.", zdrowie: "Układ nerwowy, stan psychiczny, układ kostny. Regularny odpoczynek jest kluczowy.", znani: "Marilyn Monroe, Antonio Banderas, Księżna Diana" },
+  8: { nazwa: "Materializm", mocne: "Wytrwałość, konsekwencja i znajomość wartości pieniądza to Twoje naturalne atuty. Jesteś hojny/a, stanowczy/a i potrafisz zbudować trwały dobrobyt. Twoja siła emanuje na zewnątrz.", slabe: "Możesz sprawiać wrażenie zimnej, zdystansowanej osoby. Pracoholizm i skłonność do tyranizowania bliskich to pułapki, na które warto uważać.", zdrowie: "Żołądek, jelita, serce, układ krążenia.", znani: "Barbra Streisand, Edgar Allan Poe, Nelson Rockefeller" },
+  9: { nazwa: "Humanitaryzm", mocne: "Otwartość, głęboki humanizm i intuicja na poziomie mądrości to Twoje wyróżniki. Jesteś doskonałym/ą terapeutą, lekarzem lub opiekunem — naturalnie rozumiesz cierpienie i pragniesz ulżyć innym.", slabe: "Cierpisz, gdy świat nie jest tak altruistyczny jak Ty. Skłonność do zaniedbywania własnych potrzeb i ciągła potrzeba zewnętrznego potwierdzenia to Twoje wyzwania.", zdrowie: "Nerki, gardło, układ krążenia, narządy płciowe.", znani: "Mahatma Gandhi, Carl Jung, Henry Ford, Albert Schweitzer" },
+  11: { nazwa: "Idealizm", mocne: "Ponadprzeciętne talenty, wysoka intuicja i naturalne powołanie do nauczania — jesteś przewodnikiem dla innych. Twoja wizja przekracza to, co widzą zwykli ludzie.", slabe: "Nerwowość, stres i trudność z odróżnieniem rzeczywistości od fantazji mogą Cię wyczerpywać. 11 to liczba mistrzowska — wymaga wyjątkowej dyscypliny wewnętrznej.", zdrowie: "Zdrowie psychiczne i równowaga nerwowa. Medytacja jest dla Ciebie niezbędna.", znani: "Barack Obama, Madonna, Edgar Cayce" },
+  22: { nazwa: "Genialność", mocne: "Praktyczny geniusz z wielką charyzmą — masz dar przekuwania wielkich marzeń w rzeczywistość. To rzadka i potężna liczba mistrzowska.", slabe: "Skłonność do agresji, hamowania emocji i dyskomfort w dużych grupach. Niesiesz ogromny ciężar potencjału — wymaga to równie ogromnej odpowiedzialności.", zdrowie: "Równowaga psychiczna i regularny wypoczynek są kluczowe.", znani: "Bill Gates, Tina Turner, Dean Martin" }
+};
+
+const ROK_DATA = {
+  1: { opis: "Rok nowych początków — to, co zaczniesz teraz, zostanie z Tobą na długo. Działaj z energią i entuzjazmem. Zasiewaj ziarno projektów, które chcesz pielęgnować przez następny cykl 9 lat." },
+  2: { opis: "Rok cierpliwości i wu-wei — siej, nie zbieraj. Pielęgnuj relacje z bliskimi, nie narzucaj tempa. To czas subtelnych ruchów i budowania zaufania, nie wielkich gestów." },
+  3: { opis: "Rok lekkości — czas na zabawę, przyjaciół i hobby. Odpoczywaj i pozwól sobie na przyjemność. To nie jest dobry moment na poważne decyzje życiowe — czas płynie łagodnie." },
+  4: { opis: "Rok ciężkiej pracy — postaw konkretny cel i konsekwentnie do niego dąż. Wysiłek przyniesie efekty. Bez jasnego celu rok będzie wyjątkowo wymagający i frustrujący." },
+  5: { opis: "Rok zmian i niespodzianek — oczekuj nieoczekiwanego. To właściwy czas, by zmienić to, co wymaga zmiany. Bądź elastyczny/a i otwarty/a na nowe kierunki życia." },
+  6: { opis: "Rok domu i rodziny — poświęć czas bliskim, zadbaj o swój dom i relacje. Rok neutralny, sprzyjający stabilizacji. Dobry czas na pomoc innym i zacieśnianie więzi." },
+  7: { opis: "Rok mądrości i nauki — czas na medytacje, edukację i rozwój duchowy. Materialne sprawy schodzą na drugi plan. Wsłuchaj się w siebie głębiej niż zwykle." },
+  8: { opis: "Rok nagród — ciężka praca jest sowicie wynagradzana. Wszystkie sprawy finansowe i materialne są aktywne. Zaplanuj też regularny odpoczynek, by nie stracić energii." },
+  9: { opis: "Rok bilansu — czas podsumowań i zamykania cyklu. Ostatnie 3 miesiące: zacznij planować nowy rozdział życia. Puść to, co minęło — otwórz się na nowe." }
+};
+
+const PD_DATA = {
+  1:  { heb: "Aleph", klucz: "Duchowość", karma: "Wzorzec karmiczny związany z nadużywaniem władzy i unikaniem duchowości. Niestabilność i wewnętrzne rozdarcie pojawiają się automatycznie.", talent: "Naturalny uzdrowiciel o wrodzonej jedności i mocy. Stabilność wewnętrzna i głęboka duchowość to Twoje dary.", cel: "Właściwe korzystanie z własnej mocy i dążenie do kolektywnej świadomości — być źródłem jedności, nie podziału." },
+  2:  { heb: "Beth", klucz: "Emocje", karma: "Wzorzec nadwrażliwości i braku równowagi emocjonalnej — od skrajności do skrajności.", talent: "Odporność emocjonalna i obiektywizm. Naturalny doradca w prawie, polityce lub mediacji.", cel: "Mądrość i odporność emocjonalna — zbudowanie trwałego, zrównoważonego centrum w sobie." },
+  3:  { heb: "Gimel", klucz: "Komunikacja", karma: "Poczucie niegodności, nieśmiałość i blokady w wyrażaniu uczuć. Problemy finansowe jako echo trudności z własną wartością.", talent: "Nauczyciel prosto z duszy — komunikacja, pisanie, śpiew i kreatywność wypływają naturalnie. Silna intuicja.", cel: "Nauczanie, wolność finansowa i przebudzenie seksualne — wyrażanie siebie bez lęku." },
+  4:  { heb: "Daled", klucz: "Obfitość", karma: "Brak zaufania do Wszechświata, egocentryzm i tendencja do izolacji.", talent: "Syn/córka natury o ponadprzeciętnej inteligencji. Naturalny dar dzielenia się wiedzą i budowania wspólnoty.", cel: "Promieniowanie na świat tym, kim naprawdę jesteś — pełne i ufne wyrażenie swojej istoty." },
+  5:  { heb: "Heh", klucz: "Prawda", karma: "Strach przed mówieniem prawdy, manipulacja i brak uziemienia. Trudność ze stanowczym wyrażaniem własnego zdania.", talent: "Pionier z silną intuicją i mocą mowy. Kreatywne pisanie i nauczanie jako naturalne pola wyrazu.", cel: "Nauczyciel-pionier wyrażający prawdę — być głosem autentyczności dla siebie i innych." },
+  6:  { heb: "Vuv", klucz: "Kreatywność", karma: "Zablokowana kreatywność i skłonność do uzależnień jako odpowiedź na wewnętrzną frustrację.", talent: "Niezwykła kreatywność, zdolności biznesowe, muzyczne i artystyczne. Potencjał do tworzenia piękna w materii.", cel: "Uwolnienie zablokowanej kreatywności — pozwolenie sobie na pełne twórcze wyrażenie." },
+  7:  { heb: "Zain", klucz: "Moderacja", karma: "Ukrywanie się, kontrolowanie i życie w krainie snów. Niezdecydowanie jako maska przed byciem zauważonym/ą.", talent: "Katalizator i moderator grup — łączysz ludzi, trafiasz do serc, wyrażasz obiektywną prawdę.", cel: "Być łącznikiem między ludźmi — wyrażać obiektywną prawdę z odwagą." },
+  8:  { heb: "Ches", klucz: "Jasnowidzenie", karma: "Przywiązanie, nieuziemienie i trudność z głębokimi zobowiązaniami. Słabe granice jako źródło cierpienia.", talent: "Jasnowidzenie, naturalne pielęgnowanie i instynkt służby. Dar głębokiej troski o innych.", cel: "Uziemić się i nawiązywać autentyczne, głębokie więzi — być obecnym/ą i zaangażowanym/ą." },
+  9:  { heb: "Tet", klucz: "Moc", karma: "Opieranie się własnej mocy i rola ofiary. Brak granic jako wzorzec powtarzający się przez wcielenia.", talent: "Jedna z najpotężniejszych liczb — nie do powstrzymania. Genialny uzdrowiciel, medium, wielka siła i wiara.", cel: "Odzyskać i wyrazić moc z uczciwością — przestać być ofiarą, stać się świadomym źródłem siły." },
+  10: { heb: "Yod", klucz: "Służba", karma: "Negowanie Boga, nadmierna krytyczność i nadużywanie władzy duchowej.", talent: "Manifestacja Ducha w materii, potencjał uzdrowiciela i ekspresja wokalna. Naturalna równowaga yin-yang.", cel: "Świadome panowanie nad sobą i służba innym — być mostem między niebem a ziemią." },
+  11: { heb: "Caf", klucz: "Asymilacja", karma: "Tendencja do unikania celów i trudność przyswajania wiedzy — od śmierci do życia.", talent: "Logiczny umysł, otwartość na idee i zdolność do tworzenia solidnych struktur prawdy.", cel: "Stworzyć strukturę prawdy — firmę, filozofię, metodę, która trwa i służy innym." },
+  12: { heb: "Lamed", klucz: "Równowaga", karma: "Nauka zrównoważonego rozwoju przez poczucie winy i ciągłe ograniczenia.", talent: "Chłonność, miłość i matkowanie. Dostrzegasz piękno nawet w najniższych wibracjach.", cel: "Równowaga emocjonalna, duchowa i seksualna — harmonia wszystkich wymiarów życia." },
+  13: { heb: "Mem", klucz: "Miłość Matki", karma: "Serce zamknięte na miłość i zaniedbywanie potrzeb innych — ochrona przed bólem.", talent: "Bezwarunkowa miłość, nauczyciel i doradca duchowy. Twoja obecność jest jak spokojna, głęboka woda.", cel: "Stać się kochającą i mądrą osobą — otwarte serce jako dar dla świata." },
+  14: { heb: "Nun", klucz: "Relacje", karma: "Upartość i intensywność relacji prowadząca do wypalenia. Tendencja do wykorzystywania lub bycia wykorzystywanym/ą.", talent: "Silne zdolności parapsychiczne, wnikliwość i otwarty umysł. Widzisz więcej niż inni.", cel: "Odkryć, kim naprawdę jesteś i w pełni to zaakceptować — tożsamość jako fundament." },
+  15: { heb: "Samech", klucz: "Bóg wewnętrzny", karma: "Niepewność siebie i kręcenie się w kółko. Zagubienie celu jako wzorzec powtarzający się.", talent: "Wysokie częstotliwości duchowe i naturalna łagodna ścieżka duchowa. Spacer z Bogiem.", cel: "Odnaleźć Boga wewnątrz i na zewnątrz — żyć z głębią duchową na co dzień." },
+  16: { heb: "Ayen", klucz: "Uziemienie", karma: "Kłamstwo i odmowa zaakceptowania duchowości. Intensywne karmiczne relacje z ludźmi.", talent: "Autentyczność i zdolność do dotarcia do innych jako prawdziwa, nieudawana istota ludzka.", cel: "Przybliżyć Ducha do ziemskiego wymiaru — zakorzenić duchowość w codziennym życiu." },
+  17: { heb: "Peh", klucz: "Ekspresja", karma: "Tłumiona ekspresja emocjonalna i strach przed byciem niegodnym/ą miłości.", talent: "Ścieżka duchowej inicjacji — wyrażanie siebie popycha Cię ku Bogu. Naturalny nauczyciel.", cel: "Być Ustami Boga — nauczać innych poprzez odważne, autentyczne wyrażanie siebie." },
+  18: { heb: "Tzaddi", klucz: "Decyzja", karma: "Poczucie niegodności i ciągła niepewność co do podążania za duchem. Zostawianie niedokończonych projektów.", talent: "Wysoko rozwinięta energia duchowa i zdolności biznesowe lub koordynacyjne.", cel: "Podążać za Duchem do końca — kończyć projekty z determinacją i wiarą." },
+  19: { heb: "Kof", klucz: "Przestrzeń", karma: "Nadużywanie darów duchowych i nadmierne osądzanie siebie.", talent: "Orientacja na służbę i tworzenie przestrzeni dla innych. Naturalny pisarz i energia żartownisia.", cel: "Tworzyć sprzyjającą przestrzeń dla siebie i innych — nauczyć się śmiać, zwłaszcza z siebie." },
+  20: { heb: "Resch", klucz: "Ruch", karma: "Sztywność przekonań i niestabilność — od wojny do pokoju wewnętrznego.", talent: "Wielka wewnętrzna siła, kreatywna energia i elastyczność. Naturalny odkrywca.", cel: "Odblokować moc i kreatywność — być w ciągłym ruchu wewnętrznym i zewnętrznym." },
+  21: { heb: "Shin", klucz: "Ogień Boski", karma: "Pochłonięcie własną ważnością i zablokowana energia. Tendencja do robienia wszystkiego najtrudniejszą drogą.", talent: "Wielka wewnętrzna siła i powołanie do służby Bogu. Wytrzymałość, która pokonuje każdą przeszkodę.", cel: "Odblokować moc i kreatywność — służyć Bogu poprzez wyrażanie swojego unikalnego powołania." },
+  22: { heb: "Tau", klucz: "Dopełnienie", karma: "Wielka wewnętrzna udręka i zablokowanie połączenia ze Źródłem — od brzydoty do piękna.", talent: "Humanitarna postawa, głęboka filozofia i wiara w łaskę Wszechświata. Dobroczynca.", cel: "Ponowne połączenie ze Źródłem — powrót do Boga jako cel i dopełnienie duszy." }
+};
+
+const STRZALY_SILY_DEF = [
+  { nums: [1,5,9], nazwa: "Strzała Determinacji",           opis: "Zdecydowanie, przedsiębiorczość i cierpliwość — wytrwałość w realizacji celów." },
+  { nums: [3,5,7], nazwa: "Strzała Współczucia",            opis: "Silna wiara, własna filozofia i spokój w dojrzałości. Talenty muzyczne i mistyczne." },
+  { nums: [3,6,9], nazwa: "Strzała Intelektu",              opis: "Dobra pamięć, sprawność umysłowa — cenisz dom i bliskie relacje." },
+  { nums: [2,5,8], nazwa: "Strzała Równowagi Emocjonalnej", opis: "Zrównoważenie emocjonalne i naturalny talent do uzdrawiania. Doprowadzasz sprawy do końca." },
+  { nums: [1,4,7], nazwa: "Strzała Praktyczności",          opis: "Praca fizyczna i manualna — gotowość do ciężkiej pracy nad tym, w co wierzysz." },
+  { nums: [1,2,3], nazwa: "Strzała Planowania",             opis: "Patrzysz daleko w przyszłość — znakomity/a negocjator/ka i strateg." },
+  { nums: [4,5,6], nazwa: "Strzała Siły Woli",              opis: "Niezwykła determinacja i zdolność do mobilizowania ogromnych pokładów siły." },
+  { nums: [7,8,9], nazwa: "Strzała Działania",              opis: "Musisz działać — nie znosisz ograniczeń. Dobra ekspresja pisemna i werbalna." }
+];
+
+const STRZALY_SLABS_DEF = [
+  { nums: [1,5,9], nazwa: "Strzała Niezdecydowania",    opis: "Trudność wyrażania indywidualności — ale sympatyczny/a i troskliwy/a wobec innych." },
+  { nums: [3,5,7], nazwa: "Strzała Sceptycyzmu",        opis: "Wolisz widzieć i dotknąć niż przyjąć na wiarę. Konserwatysta/ka w sprawach wiary." },
+  { nums: [3,6,9], nazwa: "Strzała Słabej Pamięci",     opis: "Bystry umysł — paradoksalnie podatny na zaniki pamięci z wiekiem." },
+  { nums: [2,5,8], nazwa: "Strzała Wrażliwości",        opis: "Ogromna wrażliwość ukryta za maską. Niskie poczucie własnej wartości jako wyzwanie." },
+  { nums: [1,4,7], nazwa: "Strzała Niepraktyczności",   opis: "Świat logiki i emocji — zupełna niepraktyczność, idealny/a do teorii i abstrakcji." },
+  { nums: [4,5,6], nazwa: "Strzała Frustracji",         opis: "Ciągłe rozczarowania z własnej winy — subiektywne wyobrażenia o innych." },
+  { nums: [7,8,9], nazwa: "Strzała Wahania",            opis: "Brak motywacji i konsekwencji — gdy zdecydujesz się działać: możesz być pionierem/ką." }
+];
+
+// ======================================================
+// OBLICZENIA NCH
+// ======================================================
+
+function reduceWithMaster(n) {
+  while (n !== 11 && n !== 22 && n > 9) {
+    n = String(n).split('').reduce((a, b) => a + parseInt(b), 0);
+  }
+  return n;
+}
+
+function reduceSingle(n) {
+  while (n > 9) {
+    n = String(n).split('').reduce((a, b) => a + parseInt(b), 0);
+  }
+  return n;
+}
+
+function calcDZ(dateStr) {
+  const digits = dateStr.replace(/-/g, '').split('').map(Number);
+  const sum = digits.reduce((a, b) => a + b, 0);
+  return reduceWithMaster(sum);
+}
+
+function calcLoShu(dateStr) {
+  const digits = dateStr.replace(/-/g, '').split('').map(Number).filter(d => d !== 0);
+  const counts = {};
+  for (let i = 1; i <= 9; i++) counts[i] = digits.filter(d => d === i).length;
+  return counts;
+}
+
+function calcRokOsobisty(dateStr) {
+  const [year, month, day] = dateStr.split('-');
+  const currentYear = new Date().getFullYear();
+  const str = day + month + String(currentYear);
+  const sum = str.split('').map(Number).reduce((a, b) => a + b, 0);
+  return reduceSingle(sum);
+}
+
+function calcStrzaly(counts) {
+  const linie = [
+    [1,5,9], [3,5,7], [3,6,9], [2,5,8], [1,4,7], [1,2,3], [4,5,6], [7,8,9]
+  ];
+  const sila  = [];
+  const slabs = [];
+  linie.forEach(line => {
+    const obecne  = line.every(n => counts[n] > 0);
+    const brakuje = line.every(n => counts[n] === 0);
+    if (obecne)  sila.push(line);
+    if (brakuje) slabs.push(line);
+  });
+  return { sila, slabs };
+}
+
+// ======================================================
+// OBLICZENIA PD — KONWERSJA FONETYCZNA
+// ======================================================
+
+function tokenize(imie) {
+  imie = imie.toUpperCase().trim();
+  const tokens = [];
+  let i = 0;
+  while (i < imie.length) {
+    const c  = imie[i];
+    const c2 = imie[i+1] || '';
+    const t2 = c + c2;
+
+    if (c === ' ' || c === '-') { i++; continue; }
+
+    // Dwuznaki polskie (sprawdzamy PIERWSZE)
+    if (t2 === 'SZ') { tokens.push({val:21,sym:'SZ',heb:'Shin'});   i+=2; continue; }
+    if (t2 === 'CZ') { tokens.push({val:8, sym:'CZ',heb:'Ches'});   i+=2; continue; }
+    if (c  === 'D' && c2 === 'Ż') { tokens.push({val:18,sym:'DŻ',heb:'Tzaddi'}); i+=2; continue; }
+    if (t2 === 'DZ') { tokens.push({val:4,sym:'D',heb:'Daled'}); tokens.push({val:7,sym:'Z',heb:'Zain'}); i+=2; continue; }
+    if (t2 === 'RZ') { tokens.push({val:20,sym:'R',heb:'Resch'}); tokens.push({val:7,sym:'Z',heb:'Zain'}); i+=2; continue; }
+
+    // Ogólne kombinacje tabeli 3
+    if (t2 === 'AH') { tokens.push({val:5, sym:'AH',heb:'Heh'});    i+=2; continue; }
+    if (t2 === 'CH') { tokens.push({val:8, sym:'CH',heb:'Ches'});   i+=2; continue; }
+    if (t2 === 'TH') { tokens.push({val:22,sym:'TH',heb:'Tau'});    i+=2; continue; }
+    if (t2 === 'SH') { tokens.push({val:21,sym:'SH',heb:'Shin'});   i+=2; continue; }
+    if (t2 === 'TA') { tokens.push({val:22,sym:'TA',heb:'Tau'});    i+=2; continue; }
+    if (t2 === 'TZ') { tokens.push({val:18,sym:'TZ',heb:'Tzaddi'}); i+=2; continue; }
+    if (t2 === 'WH') { tokens.push({val:16,sym:'WH',heb:'Ayen'});   i+=2; continue; }
+
+    // Pojedyncze litery (z polskimi)
+    const singleMap = {
+      'A':1,'Ą':1,
+      'B':2,
+      'C':11,'Ć':11,
+      'D':4,
+      'E':5,'Ę':5,
+      'F':18,
+      'G':3,
+      'H':5,
+      'I':10,
+      'J':10,
+      'K':19,
+      'L':12,
+      'Ł':15,
+      'M':13,
+      'N':14,'Ń':14,
+      'O':6,'Ó':6,
+      'P':17,
+      'Q':19,
+      'R':20,
+      'S':15,'Ś':15,
+      'T':9,
+      'U':6,
+      'V':6,
+      'W':15,
+      'X':16,
+      'Y':16,
+      'Z':7,'Ź':7,'Ż':7
+    };
+    const hebMap = {
+      1:'Aleph',2:'Beth',3:'Gimel',4:'Daled',5:'Heh',6:'Vuv',7:'Zain',8:'Ches',
+      9:'Tet',10:'Yod',11:'Caf',12:'Lamed',13:'Mem',14:'Nun',15:'Samech',16:'Ayen',
+      17:'Peh',18:'Tzaddi',19:'Kof',20:'Resch',21:'Shin',22:'Tau'
+    };
+    if (singleMap[c] !== undefined) {
+      const v = singleMap[c];
+      tokens.push({val:v, sym:c, heb:hebMap[v]});
+    }
+    i++;
+  }
+  return tokens;
+}
+
+function reduceMax22(n) {
+  while (n > 22) {
+    n = String(n).split('').reduce((a, b) => a + parseInt(b), 0);
+  }
+  return n;
+}
+
+function calcPD(imie) {
+  const tokens = tokenize(imie);
+  const kolejnosc = ['KF','TF','CF','CD','TD','KD'];
+  const aspekty   = {KF:[],TF:[],CF:[],CD:[],TD:[],KD:[]};
+
+  tokens.forEach((t, idx) => {
+    aspekty[kolejnosc[idx % 6]].push(t.val);
+  });
+
+  const wyniki = {};
+  for (const [klucz, vals] of Object.entries(aspekty)) {
+    if (vals.length === 0) { wyniki[klucz] = {vals:[], sum:0, left:0, right:0, para:'0–0'}; continue; }
+    const sum   = vals.reduce((a, b) => a + b, 0);
+    const left  = reduceMax22(sum);
+    const right = reduceSingle(left);
+    wyniki[klucz] = { vals, sum, left, right, para: left + '–' + right };
+  }
+
+  // PD = suma wszystkich lewych
+  const sumLewych = Object.values(wyniki).reduce((a, r) => a + r.left, 0);
+  const pdLeft  = reduceMax22(sumLewych);
+  const pdRight = reduceSingle(pdLeft);
+  wyniki.PD = { left: pdLeft, right: pdRight, para: pdLeft + '–' + pdRight };
+
+  wyniki._tokens = tokens;
+  return wyniki;
+}
+
+// ======================================================
+// RENDEROWANIE
+// ======================================================
+
+function renderDZ(dz, dataStr) {
+  const d = DZ_DATA[dz];
+  if (!d) return;
+  document.getElementById('dz-tytul').textContent = `Droga Życia ${dz} — ${d.nazwa}`;
+  document.getElementById('karta-dz').innerHTML = `
+    <div class="card-head">
+      <div class="card-num">${dz}</div>
+      <div><div class="card-title">${d.nazwa}</div><div class="card-sub">Droga Życia · system Zbigniewa Królickiego</div></div>
+    </div>
+    <h3 class="card-h3">Mocne strony</h3>
+    <p class="card-p">${d.mocne}</p>
+    <h3 class="card-h3">Słabe strony i cień</h3>
+    <p class="card-p">${d.slabe}</p>
+    <h3 class="card-h3">Zdrowie</h3>
+    <p class="card-p">${d.zdrowie}</p>
+    <div class="card-znani">Znane osoby z DŻ${dz}: ${d.znani}</div>
+    <div class="blur-tail">W pełnym odczycie Droga Życia analizowana jest w połączeniu z Trójkątem Duchowym i Przeznaczeniem Duszy — razem tworzą spójny obraz wzorca karmicznego, który niesiesz przez całe życie. Dowiesz się też, jak Twoja DŻ${dz} wchodzi w rezonans z aktualnym etapem piramid i co oznacza dla Twoich relacji...</div>
+  `;
+}
+
+function renderLoShu(counts) {
+  // Kolejność w siatce (wierszami): 3,6,9 / 2,5,8 / 1,4,7
+  const etykiety = {1:'Ekspresja',2:'Intuicja',3:'Umysł',4:'Praca',5:'Centrum',6:'Dom',7:'Doświadcz.',8:'Metoda',9:'Ideał'};
+  const uklad = [3,6,9, 2,5,8, 1,4,7];
+  let html = '';
+  uklad.forEach(n => {
+    const cnt   = counts[n] || 0;
+    const cls   = cnt > 0 ? 'filled' : 'empty';
+    const wyswietl = cnt > 0 ? String(n).repeat(cnt) : '—';
+    html += `<div class="ls-cell ${cls}">
+      <div class="ls-pos">${n}</div>
+      <div class="ls-num">${wyswietl}</div>
+      <div class="ls-lbl">${etykiety[n]}</div>
+    </div>`;
+  });
+  document.getElementById('loshu-grid').innerHTML = html;
+}
+
+function renderRok(rok) {
+  const d = ROK_DATA[rok];
+  if (!d) return;
+  const rok_biezacy = new Date().getFullYear();
+  document.getElementById('rok-tytul').textContent = `Rok Osobisty ${rok} — ${rok_biezacy}`;
+  document.getElementById('karta-rok').innerHTML = `
+    <div class="card-head">
+      <div class="card-num" style="color:#50b090">${rok}</div>
+      <div><div class="card-title">Rok ${rok_biezacy}</div><div class="card-sub">Rok osobisty · cykl 9-letni</div></div>
+    </div>
+    <p class="card-p">${d.opis}</p>
+    <div style="margin-top:18px; padding:12px 16px; background:#08100e; border:1px solid #143020; border-left:3px solid #2a6040; border-radius:8px; font-size:12px; color:#608060; font-family:'Montserrat',sans-serif; letter-spacing:0.5px;">
+      W pełnym odczycie: energia każdego roku cyklu od <b style="color:#80a880">${rok_biezacy}</b> do zamknięcia roku&nbsp;9 &mdash; plus miesiąc osobisty i kluczowe momenty przełomowe.
+    </div>
+    <div class="blur-tail">Rok ${rok_biezacy} to rok ${rok} w Twoim cyklu — pozostało jeszcze ${9 - rok} ${9 - rok === 1 ? 'rok' : (9 - rok < 5 ? 'lata' : 'lat')} do zamknięcia cyklu. W pełnym odczycie każdy z nich ma swój opis, wyzwania i rekomendacje działań — razem tworzą mapę drogową najbliższych...</div>
+  `;
+}
+
+function calcMiesiacOsobisty(rok, miesiac) {
+  const sum = String(rok).split('').map(Number).reduce((a,b)=>a+b,0) + miesiac;
+  let n = sum; while(n>9) n=String(n).split('').map(Number).reduce((a,b)=>a+b,0); return n;
+}
+
+function renderStrzaly(counts, dz) {
+  const { sila, slabs } = calcStrzaly(counts);
+  let html = '<div class="strzaly-grid">';
+
+  if (sila.length > 0) {
+    sila.forEach(line => {
+      const def = STRZALY_SILY_DEF.find(s => s.nums.join() === line.join());
+      if (!def) return;
+      html += `<div class="strzala-item sila">
+        <div class="st-label sila">Strzała siły</div>
+        <div class="st-nazwa">${def.nazwa}</div>
+        <div class="st-nums">${line.join(' · ')}</div>
+        <div class="st-opis">${def.opis}</div>
+        <div class="blur-tail" style="border-top-color:#1a2c1a; color:#7aaa88; margin-top:10px; padding-top:8px; font-size:12px;">W pełnym odczycie ta strzała analizowana jest w połączeniu z Twoją Drogą Życia i aktualnym etapem piramid — razem pokazują kiedy i jak ta energia szczytuje w Twoim życiu...</div>
+      </div>`;
+    });
+  }
+
+  if (slabs.length > 0) {
+    slabs.forEach(line => {
+      const def = STRZALY_SLABS_DEF.find(s => s.nums.join() === line.join());
+      if (!def) return;
+      html += `<div class="strzala-item slabs">
+        <div class="st-label slabs">Strzała słabości</div>
+        <div class="st-nazwa">${def.nazwa}</div>
+        <div class="st-nums">${line.join(' · ')}</div>
+        <div class="st-opis">${def.opis}</div>
+        <div class="blur-tail" style="border-top-color:#2a1414; color:#aa8888; margin-top:10px; padding-top:8px; font-size:12px;">Pełny odczyt pokazuje konkretne techniki przepracowania tej strzały dopasowane do Twojej Drogi Życia ${dz} — kiedy wzorzec słabnie, kiedy szczytuje i co robić gdy...</div>
+      </div>`;
+    });
+  }
+
+  html += '</div>';
+
+  if (sila.length === 0 && slabs.length === 0) {
+    html = '<div class="brak-strzal">Brak pełnych strzał w Twoim wykresie — chart zrównoważony.</div>';
+  }
+
+  document.getElementById('strzaly-box').innerHTML = html;
+}
+
+function renderKF(pd) {
+  const kf = pd.KF;
+  if (!kf || kf.left === 0) return;
+  const d   = PD_DATA[kf.left];
+  if (!d) return;
+  document.getElementById('karta-kf').classList.add('card-partial');
+  const gEl = document.getElementById('gw-kf-para');
+  if (gEl) gEl.textContent = kf.para;
+  document.getElementById('karta-kf').innerHTML = `
+    <div class="card-head">
+      <div class="card-num pd">${kf.para}</div>
+      <div><div class="card-title" style="color:#9090b0">${d.heb} · Karma Fizyczna</div><div class="card-sub">${d.klucz}</div></div>
+    </div>
+    <h3 class="card-h3 pd">Wzorzec karmiczny</h3>
+    <p class="card-p pd">${d.karma}</p>
+    <h3 class="card-h3 pd">Droga przepracowania</h3>
+    <p class="card-p pd">${d.talent} Głębsza praca z tym wzorcem otwiera
+  `;
+}
+
+function renderTF(pd) {
+  const tf = pd.TF;
+  if (!tf || tf.left === 0) return;
+  const d   = PD_DATA[tf.left];
+  if (!d) return;
+  document.getElementById('karta-tf').classList.add('card-partial');
+  const gElTf = document.getElementById('gw-tf-para');
+  if (gElTf) gElTf.textContent = tf.para;
+  document.getElementById('karta-tf').innerHTML = `
+    <div class="card-head">
+      <div class="card-num pd">${tf.para}</div>
+      <div><div class="card-title" style="color:#9090b0">${d.heb} · Talenty Fizyczne</div><div class="card-sub">${d.klucz}</div></div>
+    </div>
+    <h3 class="card-h3 pd">Naturalne dary</h3>
+    <p class="card-p pd">${d.talent}</p>
+    <h3 class="card-h3 pd">Jak wyrażać ten dar</h3>
+    <p class="card-p pd">Kiedy w pełni rozwiniesz ten aspekt,
+  `;
+}
+
+function renderCF(pd) {
+  const cf = pd.CF;
+  if (!cf || cf.left === 0) return;
+  const d   = PD_DATA[cf.left];
+  if (!d) return;
+  document.getElementById('cf-tytul').textContent = `Cele Fizyczne — ${cf.para} ${d.heb}`;
+  const gElCf = document.getElementById('gw-cf-para');
+  if (gElCf) gElCf.textContent = cf.para;
+  document.getElementById('karta-cf').innerHTML = `
+    <div class="card-head">
+      <div class="card-num pd">${cf.para}</div>
+      <div><div class="card-title" style="color:#9090b0">${d.heb} · Cele Fizyczne</div><div class="card-sub">${d.klucz}</div></div>
+    </div>
+    <h3 class="card-h3 pd">Wzorzec karmiczny</h3>
+    <p class="card-p pd">${d.karma}</p>
+    <h3 class="card-h3 pd">Naturalne talenty</h3>
+    <p class="card-p pd">${d.talent}</p>
+    <h3 class="card-h3 pd">Kierunek celu</h3>
+    <p class="card-p pd">${d.cel}</p>
+    <div class="blur-tail pd">Cele Fizyczne to dopiero jedna trzecia Twojego Kontraktu Duszy. W pełnym odczycie poznasz Trójkąt Duchowy (Karma Duchowa, Talenty Duchowe, Cele Duchowe) oraz Przeznaczenie Duszy — centralny punkt Gwiazdy Dawida, który łączy wszystkie sześć aspektów w jeden spójny wzorzec duszy. Zobaczysz też, jak CF ${cf.para} rezonuje z Twoją Drogą Życia i aktualnym etapem...</div>
+  `;
+}
+
+// ======================================================
+// PODGLĄD FONETYCZNY (live)
+// ======================================================
+
+function formatSeq(tokens) {
+  return tokens.map(t => `<span title="${t.heb} = ${t.val}">${t.sym}</span>`).join('');
+}
+
+function podgladFonetyczny() {
+  const imie     = document.getElementById('inp-imie').value.trim();
+  const nazwisko = document.getElementById('inp-nazwisko').value.trim();
+  const preview  = document.getElementById('fon-preview');
+
+  if (!imie && !nazwisko) { preview.style.display = 'none'; return; }
+
+  const tokImie     = imie     ? tokenize(imie)     : [];
+  const tokNazwisko = nazwisko ? tokenize(nazwisko)  : [];
+  const wszystkie   = [...tokImie, ...tokNazwisko];
+
+  let html = '';
+  if (tokImie.length > 0) {
+    html += `<div class="fon-row">
+      <div class="fon-czlon">Imię (${tokImie.length})</div>
+      <div class="fon-seq">${formatSeq(tokImie)}</div>
+    </div>`;
+  }
+  if (tokNazwisko.length > 0) {
+    html += `<div class="fon-row">
+      <div class="fon-czlon">Nazwisko (${tokNazwisko.length})</div>
+      <div class="fon-seq">${formatSeq(tokNazwisko)}</div>
+    </div>`;
+  }
+  if (wszystkie.length > 0) {
+    html += `<div class="fon-info">Łącznie: ${wszystkie.length} dźwięków fonetycznych · kolejność: imię → nazwisko</div>`;
+  }
+
+  preview.innerHTML = html;
+  preview.style.display = 'block';
+}
+
+// ======================================================
+// GŁÓWNA FUNKCJA
+// ======================================================
+
+function oblicz() {
+  const imie     = document.getElementById('inp-imie').value.trim();
+  const nazwisko = document.getElementById('inp-nazwisko').value.trim();
+  const data     = document.getElementById('inp-data').value;
+
+  if (!imie || !nazwisko || !data) {
+    alert('Uzupełnij imię, nazwisko oraz datę urodzenia.');
+    return;
+  }
+
+  // Kolejność jak w akcie urodzenia: nazwisko najpierw, potem imię
+  const pelneImie = nazwisko + ' ' + imie;
+
+  // Obliczenia NCH
+  const dz     = calcDZ(data);
+  const counts = calcLoShu(data);
+  const rok    = calcRokOsobisty(data);
+
+  // Obliczenia PD (imię + nazwisko w kolejności)
+  const pd = calcPD(pelneImie);
+
+  // Meta
+  const [y,m,d_] = data.split('-');
+  document.getElementById('meta-box').innerHTML =
+    `<span>Imię: <b>${imie}</b></span>` +
+    `<span>Nazwisko: <b>${nazwisko}</b></span>` +
+    `<span>Data urodzenia: <b>${d_}.${m}.${y}</b></span>` +
+    `<span>Droga Życia: <b>${dz}</b></span>` +
+    `<span>KF–TF–CF: <b>${pd.KF.para} / ${pd.TF.para} / ${pd.CF.para}</b></span>`;
+
+  // Aktualizuj CTA z imieniem
+  const ctaLink = document.getElementById('cta-link');
+  const temat   = encodeURIComponent('Zamówienie pełnego odczytu — ' + pelneImie);
+  const tresc   = encodeURIComponent(`Dzień dobry,\n\nchcę zamówić pełny odczyt numerologiczny.\n\nImię: ${imie}\nNazwisko: ${nazwisko}\nData urodzenia: ${d_}.${m}.${y}\n\nDroga Życia: ${dz}\n\nPozdrawiam`);
+  ctaLink.href  = `mailto:komanieckialek@gmail.com?subject=${temat}&body=${tresc}`;
+
+  // Render
+  renderDZ(dz, data);
+  renderLoShu(counts);
+  renderRok(rok);
+  renderStrzaly(counts, dz);
+  renderKF(pd);
+  renderTF(pd);
+  renderCF(pd);
+
+  // Pokaż wyniki
+  document.getElementById('wyniki').style.display = 'block';
+  document.getElementById('btn-zwij-wrap').style.display = 'block';
+
+  // Wyślij wysokość do strony nadrzędnej (iframe resize)
+  setTimeout(function() {
+    var h = document.body.scrollHeight;
+    window.parent.postMessage({ kalkulatorHeight: h }, '*');
+  }, 300);
+  setTimeout(function() {
+    var h = document.body.scrollHeight;
+    window.parent.postMessage({ kalkulatorHeight: h }, '*');
+  }, 1200);
+}
+
+function zamowOdczyt(e) {
+  e.preventDefault();
+  // Wyślij sygnał do strony nadrzędnej — przewiń do #kontakt
+  var sent = false;
+  try {
+    window.parent.postMessage({ scrollTo: 'kontakt' }, '*');
+    if (window.parent !== window) sent = true;
+  } catch(err) {}
+  // Fallback: jeśli otwarte samodzielnie (nie w iframe), idź do kontaktu bezpośrednio
+  if (!sent || window.parent === window) {
+    window.location.href = 'mailto:komanieckialek@gmail.com?subject=Zam%C3%B3wienie%20pe%C5%82nego%20odczytu%20numerologicznego';
+  }
+}
+
+function zwijnPanel() {
+  window.parent.postMessage({ zwijnPanel: 'skrocony' }, '*');
+}
+
+// Demo — auto-wypełnienie dla Aleksandra (blokuje edycję formularza)
+window.addEventListener('DOMContentLoaded', function() {
+  const p = new URLSearchParams(window.location.search);
+  if (p.get('demo') === 'aleksander') {
+    document.getElementById('inp-imie').value = 'Aleksander Antoni';
+    document.getElementById('inp-nazwisko').value = 'Komaniecki';
+    document.getElementById('inp-data').value = '1969-11-09';
+    podgladFonetyczny();
+    setTimeout(oblicz, 100);
+    // Zablokuj formularz — to jest pokaz, nie interaktywny kalkulator
+    setTimeout(function() {
+      document.getElementById('inp-imie').setAttribute('readonly', true);
+      document.getElementById('inp-nazwisko').setAttribute('readonly', true);
+      document.getElementById('inp-data').setAttribute('readonly', true);
+      var btn = document.querySelector('.btn-calc');
+      if (btn) btn.style.display = 'none';
+      var formBox = document.querySelector('.form-box');
+      if (formBox) {
+        var note = document.createElement('div');
+        note.style.cssText = 'text-align:center; font-size:11px; color:#403555; margin-top:8px; font-family:Montserrat,sans-serif; letter-spacing:1px;';
+        note.textContent = 'To jest odczyt pokazowy — wprowadź swoje dane w formularzu poniżej';
+        formBox.appendChild(note);
+      }
+    }, 200);
+  }
+});
+
+// Wysyłaj wysokość przy każdej zmianie rozmiaru
+if (window.ResizeObserver) {
+  new ResizeObserver(function() {
+    window.parent.postMessage({ kalkulatorHeight: document.body.scrollHeight }, '*');
+  }).observe(document.body);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,781 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kontrakt Duszy — Aleksander Antoni Komaniecki</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Georgia', serif;
+    background: #0a0a12;
+    color: #e8e0d0;
+    line-height: 1.75;
+    font-size: 16px;
+  }
+  .page {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 40px 30px 80px;
+  }
+  /* ---- HEADER ---- */
+  .header {
+    text-align: center;
+    padding: 60px 0 40px;
+    border-bottom: 1px solid #2a2a40;
+    margin-bottom: 50px;
+  }
+  .header .title-small {
+    font-size: 12px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    color: #8888aa;
+    margin-bottom: 16px;
+  }
+  .header h1 {
+    font-size: 2.4em;
+    font-weight: normal;
+    color: #f0e8d0;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+  .header .subtitle {
+    font-size: 1em;
+    color: #9988aa;
+    font-style: italic;
+    margin-bottom: 24px;
+  }
+  .header .meta {
+    display: inline-flex;
+    gap: 40px;
+    font-size: 13px;
+    color: #8888aa;
+    border: 1px solid #2a2a40;
+    padding: 12px 30px;
+    border-radius: 4px;
+  }
+  .header .meta span { color: #c8c0b0; }
+
+  /* ---- GWIAZDA DAWIDA --- */
+  .star-section {
+    background: #0f0f1e;
+    border: 1px solid #2a2a40;
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+  .star-section h2 {
+    font-size: 1.1em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #8888aa;
+    margin-bottom: 30px;
+  }
+  .star-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 10px;
+    max-width: 600px;
+    margin: 0 auto;
+  }
+  .aspect-card {
+    background: #14142a;
+    border: 1px solid #2a2a40;
+    border-radius: 8px;
+    padding: 14px 12px;
+    font-size: 13px;
+  }
+  .aspect-card.highlight-physical {
+    border-color: #6050a0;
+    background: #1a1830;
+  }
+  .aspect-card.highlight-spiritual {
+    border-color: #407060;
+    background: #141e1a;
+  }
+  .aspect-card.highlight-destiny {
+    border-color: #c0902a;
+    background: #1e1810;
+  }
+  .aspect-card .asp-label {
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #666688;
+    margin-bottom: 6px;
+  }
+  .aspect-card .asp-number {
+    font-size: 1.4em;
+    font-weight: bold;
+    color: #d0c8f0;
+    margin-bottom: 4px;
+  }
+  .aspect-card.highlight-spiritual .asp-number { color: #a0e0c0; }
+  .aspect-card.highlight-destiny .asp-number { color: #f0c060; font-size: 1.8em; }
+  .aspect-card .asp-hebrew {
+    font-size: 11px;
+    color: #8888aa;
+    margin-bottom: 4px;
+  }
+  .aspect-card .asp-keyword {
+    font-size: 12px;
+    color: #c0b8d8;
+    font-style: italic;
+  }
+  .aspect-card.highlight-spiritual .asp-keyword { color: #80c0a0; }
+  .aspect-card.highlight-destiny .asp-keyword { color: #d0a040; }
+  .center-cell {
+    grid-column: 2;
+    grid-row: 2;
+  }
+
+  /* ---- SECTIONS ---- */
+  .section {
+    margin-bottom: 50px;
+  }
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 30px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #2a2a40;
+  }
+  .section-num {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    font-weight: bold;
+    flex-shrink: 0;
+  }
+  .section-num.physical { background: #2a2050; color: #c0b0f0; border: 2px solid #6050a0; }
+  .section-num.spiritual { background: #102018; color: #80e0b0; border: 2px solid #407060; }
+  .section-num.destiny { background: #201808; color: #f0c060; border: 2px solid #c0902a; }
+  .section-header h2 {
+    font-size: 1.4em;
+    font-weight: normal;
+    color: #e8e0d0;
+  }
+  .section-header .section-sub {
+    font-size: 0.85em;
+    color: #8888aa;
+    margin-top: 4px;
+  }
+
+  /* ---- LAYER CARDS ---- */
+  .layer {
+    background: #0f0f1e;
+    border: 1px solid #1e1e30;
+    border-left: 3px solid #2a2a50;
+    border-radius: 0 8px 8px 0;
+    padding: 20px 24px;
+    margin-bottom: 16px;
+  }
+  .layer.karma { border-left-color: #803030; }
+  .layer.talent { border-left-color: #306030; }
+  .layer.goal { border-left-color: #305080; }
+  .layer.extra { border-left-color: #806030; }
+  .layer-label {
+    font-size: 10px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .layer.karma .layer-label { color: #c07070; }
+  .layer.talent .layer-label { color: #70c070; }
+  .layer.goal .layer-label { color: #7090c0; }
+  .layer.extra .layer-label { color: #c0a060; }
+  .layer p { color: #d0c8c0; font-size: 0.95em; }
+  .layer ul {
+    padding-left: 18px;
+    color: #d0c8c0;
+    font-size: 0.95em;
+  }
+  .layer ul li { margin-bottom: 6px; }
+  .layer .quote {
+    font-style: italic;
+    color: #f0e8c0;
+    border-left: 2px solid #806030;
+    padding-left: 14px;
+    margin-top: 10px;
+    font-size: 1.05em;
+  }
+  .highlight-box {
+    background: #1a1808;
+    border: 1px solid #c0902a;
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 20px 0;
+    color: #f0e8c0;
+    font-style: italic;
+    font-size: 1.05em;
+    line-height: 1.8;
+  }
+  .tag-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .tag {
+    font-size: 11px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    letter-spacing: 0.5px;
+  }
+  .tag.karma { background: #2a1010; color: #e09090; border: 1px solid #502020; }
+  .tag.talent { background: #101a10; color: #90d090; border: 1px solid #204020; }
+  .tag.extra { background: #1a1408; color: #d0a860; border: 1px solid #403010; }
+
+  /* ---- SYNTHESIS ---- */
+  .synthesis {
+    background: #0c0c18;
+    border: 1px solid #2a2a50;
+    border-radius: 12px;
+    padding: 40px;
+    margin-bottom: 50px;
+  }
+  .synthesis h2 {
+    font-size: 1.2em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: #c0b0d8;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  .synthesis-block {
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #1e1e30;
+  }
+  .synthesis-block:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+  .synthesis-block h3 {
+    font-size: 1em;
+    color: #f0c060;
+    margin-bottom: 10px;
+    font-weight: normal;
+  }
+  .synthesis-block p { color: #c8c0b8; font-size: 0.95em; }
+
+  /* ---- TABLE ---- */
+  table { width: 100%; border-collapse: collapse; font-size: 0.88em; margin-top: 16px; }
+  th {
+    background: #14142a;
+    color: #9088b8;
+    font-size: 10px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #2a2a40;
+  }
+  td { padding: 10px 12px; border-bottom: 1px solid #1a1a28; color: #c8c0b0; vertical-align: top; }
+  tr:hover td { background: #10101e; }
+  td strong { color: #e0d8c8; }
+
+  /* ---- FOOTER ---- */
+  .footer {
+    text-align: center;
+    padding: 40px 0 20px;
+    border-top: 1px solid #1e1e30;
+    font-size: 12px;
+    color: #555566;
+    font-style: italic;
+  }
+
+  /* ---- RESPONSIVE ---- */
+  @media (max-width: 600px) {
+    .star-grid { grid-template-columns: 1fr 1fr; }
+    .header .meta { flex-direction: column; gap: 10px; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="title-small">Kontrakt Duszy</div>
+    <h1>Aleksander Antoni Komaniecki</h1>
+    <div class="subtitle">Odczyt według systemu Nicolasa Davida Ngana / Frank Alper — Duchowa Numerologia Mojżesza</div>
+    <div class="meta">
+      <div>Data urodzenia: <span>09.11.1969</span></div>
+      <div>Liczba dźwięków: <span>26 (pełna Gwiazda Dawida)</span></div>
+      <div>Opracowanie: <span>31.03.2026</span></div>
+    </div>
+  </div>
+
+  <!-- GWIAZDA DAWIDA -->
+  <div class="star-section">
+    <h2>Gwiazda Dawida — mapa kontraktu</h2>
+    <div class="star-grid">
+      <!-- Wiersz 1: Talenty duchowe (góra-środek) -->
+      <div></div>
+      <div class="aspect-card highlight-spiritual">
+        <div class="asp-label">Talenty duchowe</div>
+        <div class="asp-number">11-2</div>
+        <div class="asp-hebrew">Caf–Beth</div>
+        <div class="asp-keyword">Budowniczy prawdy</div>
+      </div>
+      <div></div>
+
+      <!-- Wiersz 2: Karma duch. | Przeznaczenie | Cele duch. -->
+      <div class="aspect-card highlight-spiritual">
+        <div class="asp-label">Karma duchowa</div>
+        <div class="asp-number">5-5</div>
+        <div class="asp-hebrew">Heh–Heh</div>
+        <div class="asp-keyword">Otworzyć umysł</div>
+      </div>
+      <div class="aspect-card highlight-destiny center-cell">
+        <div class="asp-label">Przeznaczenie Duszy</div>
+        <div class="asp-number">6-6</div>
+        <div class="asp-hebrew">Vuv–Vuv</div>
+        <div class="asp-keyword">Naczynie twórczej siły Boga</div>
+      </div>
+      <div class="aspect-card highlight-spiritual">
+        <div class="asp-label">Cele duchowe</div>
+        <div class="asp-number">8-8</div>
+        <div class="asp-hebrew">Ches–Ches</div>
+        <div class="asp-keyword">Uziemić i służyć</div>
+      </div>
+
+      <!-- Wiersz 3: Karma fiz. | — | Cele fiz. -->
+      <div class="aspect-card highlight-physical">
+        <div class="asp-label">Karma fizyczna</div>
+        <div class="asp-number">12-3</div>
+        <div class="asp-hebrew">Lamed–Gimel</div>
+        <div class="asp-keyword">Od biedy do bogactwa</div>
+      </div>
+      <div class="aspect-card highlight-physical" style="grid-column:2;">
+        <div class="asp-label">Talenty fizyczne</div>
+        <div class="asp-number">12-3</div>
+        <div class="asp-hebrew">Lamed–Gimel</div>
+        <div class="asp-keyword">Nauczyciel i komunikator</div>
+      </div>
+      <div class="aspect-card highlight-physical">
+        <div class="asp-label">Cele fizyczne</div>
+        <div class="asp-number">12-3</div>
+        <div class="asp-hebrew">Lamed–Gimel</div>
+        <div class="asp-keyword">Wiedza i równowaga</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SEKCJA 1: TRÓJKĄT FIZYCZNY — 12-3 -->
+  <!-- ============================================================ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num physical">12-3</div>
+      <div>
+        <h2>Trójkąt fizyczny — Lamed–Gimel</h2>
+        <div class="section-sub">Karma fizyczna · Talenty fizyczne · Cele fizyczne &nbsp;|&nbsp; dominuje do ok. 35 r.ż.</div>
+      </div>
+    </div>
+
+    <p style="color:#a09898; font-style:italic; margin-bottom:20px; font-size:0.93em;">
+      Masz <strong style="color:#d0c0f0">12-3 we wszystkich trzech pozycjach trójkąta fizycznego</strong> — jest to zjawisko wyjątkowo rzadkie i niezwykle potężne. Oznacza, że przez całe pierwsze pół życia operujesz na jednej bardzo silnej częstotliwości. Lamed (12) to Liczba Mistrzowska, Gimel (3) to Liczba Mistrzowska. Dwie Liczby Mistrzowskie połączone razem w trójce aspektów.
+    </p>
+
+    <div class="layer karma">
+      <div class="layer-label">Karma fizyczna — co do przepracowania</div>
+      <ul>
+        <li><strong>Syndrom niegodności:</strong> Głębokie poczucie, że nie zasługujesz na sukces, miłość, pieniądze — syndrom "od biedy do bogactwa" (Gimel). Oczekiwanie porażki jako domyślne nastawienie.</li>
+        <li><strong>Nieśmiałość i niewidoczność:</strong> Możesz być dosłownie niewidoczny energetycznie — unikasz ekspozycji, nie doceniasz własnych umiejętności nauczania.</li>
+        <li><strong>Stagnacja mimo energii:</strong> Masz nadmiar energii, ale strach przed porażką sprawia, że nie ruszasz się z miejsca. Poczucie zamknięcia w martwym punkcie.</li>
+        <li><strong>Nierównowaga fizyczne–duchowe:</strong> Trudność z wypośrodkowaniem tych dwóch sfer — albo za bardzo w fizyczności, albo za bardzo "w głowie". Karma 12 to nauka tej równowagi.</li>
+        <li><strong>Trudności z wyrażaniem uczuć:</strong> Nie wiesz co czujesz — trudność w artykułowaniu emocji, blokady wewnętrzne (ewentualnie seksualne).</li>
+        <li><strong>Poczucie winy i potrzeba akceptacji:</strong> Ciągłe szukanie aprobaty z zewnątrz zamiast zakorzenienia we własnej wartości (Lamed/12).</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag karma">niegodność</span>
+        <span class="tag karma">syndrom męczennika</span>
+        <span class="tag karma">nieśmiałość</span>
+        <span class="tag karma">strach przed porażką</span>
+        <span class="tag karma">blokady emocjonalne</span>
+      </div>
+    </div>
+
+    <div class="layer talent">
+      <div class="layer-label">Talenty fizyczne — twoje naturalne dary</div>
+      <ul>
+        <li><strong>Nauczyciel z powołania:</strong> Energia nauczyciela który naucza prosto z duszy — pisanie, publiczne wystąpienia, śpiew. Komunikacja przez kanał (Gimel = kanał).</li>
+        <li><strong>Silna motywacja i chłonność:</strong> Ogromne pragnienie wiedzy, uczenia się i dzielenia się tym co wiesz. Zawsze chcesz "matkować" — opiekować się i pomnażać w innych.</li>
+        <li><strong>Zdolność dzielenia się miłością:</strong> Lamed to miłość i piękno — potrafisz dostrzec piękno nawet w najniższych wibracjach i przekazać to innym.</li>
+        <li><strong>Kreatywność i intuicja:</strong> Wiele pomysłów z wnętrza, zdolność urzeczywistniania koncepcji. Intuicyjny i kreatywny — mędrzec i nauczyciel.</li>
+        <li><strong>Uwaga — ryzyko fanatyzmu:</strong> Gdy masz 12-3 zarówno w talentach jak i celach fizycznych (a u ciebie jest też w karmie!) — istnieje ryzyko wkładania całej energii w jeden cel. Balans jest kluczowy.</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag talent">nauczyciel</span>
+        <span class="tag talent">komunikacja</span>
+        <span class="tag talent">kreatywność</span>
+        <span class="tag talent">intuicja</span>
+        <span class="tag talent">miłość bezwarunkowa</span>
+        <span class="tag talent">wiedza</span>
+      </div>
+    </div>
+
+    <div class="layer goal">
+      <div class="layer-label">Cele fizyczne — ku czemu dąży twoja dusza</div>
+      <ul>
+        <li>Zdobyć jak najwięcej wiedzy i podzielić się nią ze światem</li>
+        <li>Osiągnąć równowagę emocjonalną, duchową i seksualną</li>
+        <li>Stać się nauczycielem o pełnym autorytecie — "od biedy do bogactwa" w szerokim sensie</li>
+        <li>Rozwinąć ekspresję: mowa, pisanie, nauczanie jako kanał miłości</li>
+      </ul>
+    </div>
+
+    <div class="layer extra">
+      <div class="layer-label">Dodatkowe warstwy — Brama, Kierunek, Organ (Rozdziały 5 i 6)</div>
+      <ul>
+        <li><strong>Brama — Prawe ucho (3/Gimel):</strong> W karmie = niezdolność do prawdziwego słuchania; przerywanie jako obrona "starej filozofii ekspresji", żeby cudze słowa nie wywoływały poczucia niegodności. Szum w uszach jako fizyczny sygnał. Lekcja: otwórz się na słuchanie innych — to nie atak na ciebie.</li>
+        <li><strong>Kierunek — Głębia (3/Gimel):</strong> W karmie = niezdolność do wniknięcia w głąb siebie i wyrażenia tego co tam jest — frustracja. W talencie = zdolność do wyciągania nieznanych uczuć z głębi i dzielenia się nimi ze światem.</li>
+        <li><strong>Organ — Woreczek żółciowy (12/Lamed):</strong> Musisz radzić sobie z "żółcią" — wewnętrznym gniewem, bólem, trudnymi emocjami. Dopóki nie przepracujesz tej "żółci", blokuje ona przepływ energii w obszarze fizycznym. Przepracowanie → lekkość.</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      Esencja 12-3 w całym trójkącie fizycznym: Jesteś tutaj, żeby stać się nauczycielem który naucza z głębi siebie — nie z podręcznika, nie z ego, ale z przeżytej prawdy. Droga prowadzi przez przepracowanie poczucia niegodności, otwarcie się na słuchanie innych i wydobycie tego co w środku na zewnątrz.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SEKCJA 2: KARMA DUCHOWA — 5-5 -->
+  <!-- ============================================================ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num spiritual">5-5</div>
+      <div>
+        <h2>Karma duchowa — Heh–Heh</h2>
+        <div class="section-sub">Dominuje od ok. 42 r.ż. &nbsp;|&nbsp; Baran · prawa stopa</div>
+      </div>
+    </div>
+
+    <p style="color:#a09898; font-style:italic; margin-bottom:20px; font-size:0.93em;">
+      Podwójna 5 w karmie duchowej — jedyna podwójna liczba w twoim trójkącie duchowym. Bardzo nieuchwytna energia — "nie można jej zobaczyć", nie ma substancji i formy. To czyni ją paradoksalnie najtrudniejszą do przepracowania.
+    </p>
+
+    <div class="layer karma">
+      <div class="layer-label">Co oznacza 5-5 w karmie duchowej</div>
+      <ul>
+        <li><strong>Brak motywacji do nieuchwytnego:</strong> Jesteś świadomy swoich duchowych zdolności i intuicji, ale brakuje ci siły żeby zaryzykować i uwierzyć, że są prawdziwe. "Wiem, że to mam, ale co z tego..."</li>
+        <li><strong>Rozproszenie i nieuziemienie:</strong> Przez większość czasu możesz czuć się rozproszony — wiele impulsów, wiele kierunków, brak zakorzenienia. Energia Barana w wersji niekontrolowanej.</li>
+        <li><strong>Strach przed mówieniem prawdy:</strong> Energia 5 wiąże się silnie z mową — główna lekcja to wyrażanie własnej, autentycznej prawdy pomimo strachu. Kiedy nie wyrażasz prawdy — tracisz energię.</li>
+        <li><strong>Pokusa nadużycia władzy:</strong> Przy nieuziemionej 5 pojawia się pokusa osiągnięcia wpływu w niewłaściwy sposób — przez manipulację zamiast prawdziwej komunikacji.</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag karma">rozproszenie</span>
+        <span class="tag karma">nieuziemienie</span>
+        <span class="tag karma">strach przed prawdą</span>
+        <span class="tag karma">brak motywacji</span>
+      </div>
+    </div>
+
+    <div class="layer talent">
+      <div class="layer-label">Ukryty potencjał — gdy 5-5 jest aktywna</div>
+      <ul>
+        <li>Wielkie pokłady mądrości i energii — są w tobie, umysł musi się tylko naprawdę otworzyć na duszę</li>
+        <li>Energie pioniera — możliwość otwierania nowych szlaków w duchowej eksploracji</li>
+        <li>Silna intuicja — gdy ją zaakceptujesz i zaufasz jej, staje się twoją największą siłą</li>
+        <li>Zdolność do działania jako medium/kanał — automatyczne/kreatywne pisanie, terapia, przekaz</li>
+      </ul>
+    </div>
+
+    <div class="layer extra">
+      <div class="layer-label">Organ — Prawa stopa (5/Heh)</div>
+      <p>W pozycji karmicznej: strach przed krytyką, jeśli spróbujesz być wierny swojej prawdzie. Prawa stopa symbolizuje wkraczanie naprzód — lekcja polega na tym, żeby mimo strachu przed oceną iść naprzód i deklarować siebie jako autentyczną, pozytywną osobę.</p>
+    </div>
+
+    <div class="highlight-box">
+      Esencja 5-5 w karmie duchowej: Masz w sobie ogromną moc mowy i pionierskiej odwagi — ale część ciebie jej nie ufa. Kluczem jest nie czekanie aż "poczujesz się gotowy", tylko aktywne, świadome otwieranie umysłu na to co wielowymiarowe. Twoja intuicja ma rację. Zaufaj jej.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SEKCJA 3: TALENTY DUCHOWE — 11-2 -->
+  <!-- ============================================================ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num spiritual">11-2</div>
+      <div>
+        <h2>Talenty duchowe — Caf–Beth</h2>
+        <div class="section-sub">Klucz do przepracowania karmy duchowej &nbsp;|&nbsp; "od śmierci do życia" + "od głupoty do mądrości"</div>
+      </div>
+    </div>
+
+    <p style="color:#a09898; font-style:italic; margin-bottom:20px; font-size:0.93em;">
+      Caf (11) — podwójna litera, od śmierci do życia. Beth (2) — podwójna litera, od głupoty do mądrości. To energia budowniczego: ktoś kto buduje solidne struktury prawdy krok po kroku, z odpornością (2) i analitycznym umysłem (11).
+    </p>
+
+    <div class="layer talent">
+      <div class="layer-label">Twoje talenty duchowe — budowniczy filozoficznej prawdy</div>
+      <ul>
+        <li><strong>Ukryta zdolność do formułowania prawdy:</strong> Masz wrodzoną zdolność do uczenia się podstaw filozofii, formułowania uniwersalnej prawdy i przedstawiania jej światu z różnych perspektyw. To jest prawdopodobnie ukryte nawet przed tobą samym.</li>
+        <li><strong>Wysoka inteligencja i analityczny umysł:</strong> Caf + Beth = otwarcie się na wszystkie pomysły i koncepcje, tworzenie solidnej struktury. Logiczny realista z wielkim pragnieniem uczenia się.</li>
+        <li><strong>Odporność na niepowodzenia:</strong> Beth (2) obdarza cię zdolnością zniesienia poczucia porażki — możesz dzielić się wiedzą na dziesiątki różnych sposobów, nie zniechęcając się trudnościami.</li>
+        <li><strong>Dążenie do przekazywania wyższej prawdy:</strong> Możesz być nauczycielem przekazującym wiedzę na temat wyższych poziomów prawdy i zrozumienia — liczba 2 daje ci narzędzia do dzielenia się nią na wiele sposobów.</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag talent">budowniczy prawdy</span>
+        <span class="tag talent">analityczny umysł</span>
+        <span class="tag talent">odporność</span>
+        <span class="tag talent">nauczyciel wyższej prawdy</span>
+        <span class="tag talent">filozofia</span>
+      </div>
+    </div>
+
+    <div class="layer extra">
+      <div class="layer-label">Brama i Kierunek dla 11 i 2 (Rozdziały 5)</div>
+      <ul>
+        <li><strong>Brama — Lewe oko (11/Caf):</strong> Odmawiasz spojrzenia na świat takim, jakim jest naprawdę. Widzisz tylko przez pryzmat własnej wizji — zbyt wrażliwa dusza, żeby zaakceptować inną prawdę. Lekcja: naucz się właściwie patrzeć na rzeczywistość zanim zaczniesz czerpać z tego talentu.</li>
+        <li><strong>Kierunek — Zachód (11/Caf):</strong> Archetyp Maga, szamana, uzdrowiciela. Energia introspekcji, zagłębiania się w siebie w celu znalezienia darów uzdrawiania. Kolor: czarny. Żywioł: Ziemia. Emocja: strach. To twoja naturalna domena gdy talenty są aktywne.</li>
+        <li><strong>Kierunek — Wysokość (2/Beth):</strong> W talencie = zdolność do obiektywnego spojrzenia z wyższej perspektywy — energia Mądrości. Osiągnięcie może zająć dużo czasu.</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      Esencja 11-2 w talentach duchowych: Jesteś budowniczym — nie improwizatorem. Twoja droga do wyrażenia prawdy duchowej prowadzi przez budowanie solidnych, przemyślanych struktur wiedzy, jeden krok na raz. Mag i szaman ukryty w analityku.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SEKCJA 4: CELE DUCHOWE — 8-8 -->
+  <!-- ============================================================ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num spiritual">8-8</div>
+      <div>
+        <h2>Cele duchowe — Ches–Ches</h2>
+        <div class="section-sub">Jasnowidzenie · Rak · Prawa dłoń &nbsp;|&nbsp; uziemić i służyć społeczeństwu</div>
+      </div>
+    </div>
+
+    <p style="color:#a09898; font-style:italic; margin-bottom:20px; font-size:0.93em;">
+      Ches (8) to energia Raka — jasnowidzenie, płynność, adaptacja. Podwójna 8 w celach duchowych oznacza bardzo konkretne zadanie: wyjść z wnętrza i zanieść swoje dary do społeczeństwa.
+    </p>
+
+    <div class="layer karma">
+      <div class="layer-label">Wyzwanie 8-8 w celach duchowych</div>
+      <ul>
+        <li><strong>Życie tylko w sobie:</strong> Jesteś świadomy swojej duchowej istoty, ale masz tendencję do nieprzejmowania się życiem w społeczeństwie. Emocje innych mogą denerwować i chcesz się od nich odcinać.</li>
+        <li><strong>Opór wobec emocji:</strong> Stale narażony na trudności wynikające z twojej ludzkiej, emocjonalnej natury — ciągłe opieranie się własnym emocjom zamiast ich rozumienia.</li>
+        <li><strong>Nieuziemienie (8 ogólne):</strong> Absorpcja energii innych, słabo postawione granice, trudności z zaangażowaniem w głębsze więzi.</li>
+      </ul>
+    </div>
+
+    <div class="layer goal">
+      <div class="layer-label">Ku czemu prowadzą cię cele duchowe</div>
+      <ul>
+        <li><strong>Uziemić duchowe talenty:</strong> Rozszerzyć i zakorzenić wszystkie duchowe dary — jasnowidzenie, empatię, intuicję — w konkretnej, codziennej rzeczywistości.</li>
+        <li><strong>Służyć społeczeństwu:</strong> Przestać żyć tylko w sobie i zrozumieć własne uczucia. Twoja misja to bycie kameleonem — dostosowywanie się do różnych ludzi i niesienie im pomocy z przestrzeni ich potrzeb, nie twoich.</li>
+        <li><strong>Kompatybilność z innymi:</strong> Zdolność do bycia "kompatybilnym" z innymi ludźmi — jak kameleon, możesz zmieniać kolory, aby naprawdę dotrzeć do każdego.</li>
+      </ul>
+      <div class="tag-row">
+        <span class="tag talent">jasnowidzenie</span>
+        <span class="tag talent">służba</span>
+        <span class="tag talent">uziemienie</span>
+        <span class="tag talent">kameleon empatyczny</span>
+        <span class="tag talent">troska</span>
+      </div>
+    </div>
+
+    <div class="layer extra">
+      <div class="layer-label">Organ — Prawa dłoń (8/Ches)</div>
+      <p>Prawa dłoń wyciągnięta do innych — otwarta na przyjmowanie i dzielenie się darami. To obraz celów duchowych w ciele: konkretny, fizyczny gest wyciągnięcia się ku innym. Gdy cele duchowe są aktywowane — ręka jest wyciągnięta, dar płynie w obu kierunkach.</p>
+    </div>
+
+    <div class="highlight-box">
+      Esencja 8-8 w celach duchowych: Masz wszystko co potrzeba żeby służyć innym na głębokim poziomie — ale musisz wyjść z bezpiecznego wnętrza. Uziemienie, ciało, kontakt, emocje — to nie jest przeszkoda na ścieżce duchowej, to jest ścieżka duchowa.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SEKCJA 5: PRZEZNACZENIE DUSZY — 6-6 -->
+  <!-- ============================================================ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num destiny">6-6</div>
+      <div>
+        <h2>Przeznaczenie Duszy — Vuv–Vuv</h2>
+        <div class="section-sub">Centrum Gwiazdy Dawida &nbsp;|&nbsp; Byk · kreacja z niczego · prawa nerka</div>
+      </div>
+    </div>
+
+    <p style="color:#a09898; font-style:italic; margin-bottom:20px; font-size:0.93em;">
+      Vuv (6) to Litera Wymienna, symbol Byka — kreacja z niczego, węzeł energii. 6-6 w Przeznaczeniu Duszy oznacza czystą, skoncentrowaną energię kreacji. To nie jest jedno z siedmiu zadań — to jest serce całego kontraktu.
+    </p>
+
+    <div class="layer karma">
+      <div class="layer-label">Wyzwanie 6-6 — co blokuje Przeznaczenie</div>
+      <ul>
+        <li><strong>Zablokowana kreatywność:</strong> Poczucie niemożności wyrażenia pełnego potencjału twórczego — frustracja, ewentualnie skłonność do uzależnień jako ucieczka.</li>
+        <li><strong>Brak elastyczności i ryzyko:</strong> Ekscytujesz się czymś, ale potrzebujesz gwarancji sukcesu zanim się w to zaangażujesz. Trudniej podejmować ryzyko w sferze wartości niematerialnych.</li>
+        <li><strong>Skupienie bez przepływu:</strong> 6 to skupienie i koncentracja — ale bez przepływu staje się sztywnością. Kreacja wymaga zarówno skupienia jak i otwartości.</li>
+      </ul>
+    </div>
+
+    <div class="layer goal">
+      <div class="layer-label">Przeznaczenie Duszy 6-6 — ostateczny cel</div>
+      <div class="quote">
+        "Stań się naczyniem, do którego spłynie twórcza siła Boga, mająca się zamanifestować w naszym świecie."
+      </div>
+      <p style="margin-top: 14px;">To nie jest metafora. To dosłowny opis mechanizmu: ty nie tworzysz z ego — ty stajesz się naczyniarem. Twórcza siła Boga przepływa <em>przez</em> ciebie i <em>przez</em> ciebie manifestuje się w świecie. Twoją pracą jest być na tyle czystym, uziemionym i otwartym, żeby ten przepływ był możliwy.</p>
+      <div class="tag-row">
+        <span class="tag talent">kreacja</span>
+        <span class="tag talent">manifestacja</span>
+        <span class="tag talent">naczynie</span>
+        <span class="tag talent">przepływ</span>
+        <span class="tag talent">twórcza siła Boga</span>
+      </div>
+    </div>
+
+    <div class="layer extra">
+      <div class="layer-label">Organ — Prawa nerka (6/Vuv)</div>
+      <p>Prawa nerka = rozróżnianie własnej prawdy. W Przeznaczeniu Duszy oznacza to: zdolność do rozróżniania i wybierania tego co jest twoją prawdą — fundamentalny warunek, żeby kreacja płynęła autentycznie. Nerka filtruje — to co przepuszczasz, to co zatrzymujesz.</p>
+    </div>
+
+    <div class="highlight-box">
+      Esencja 6-6 jako Przeznaczenie Duszy: Wszystkie inne aspekty twojego kontraktu — nauczanie (12-3), otwieranie umysłu (5-5), budowanie prawdy (11-2), służba i uziemienie (8-8) — są drogą do jednego: stania się naczyniem. Gdy jesteś zakorzeniony, otwarty, uziemiony i twórczy jednocześnie — przepływa przez ciebie coś co nie pochodzi od ciebie. To jest twoje przeznaczenie.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SEKCJA 6: SZCZEGÓŁOWE PRZESŁANIE Z ROZDZIAŁU 8 — PD 12-3 -->
+  <!-- ============================================================ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num physical" style="font-size:0.85em; width:50px; border-radius:8px;">PD 12-3</div>
+      <div>
+        <h2>Przeznaczenie Duszy z perspektywy 12-3</h2>
+        <div class="section-sub">Perspektywa cyklu inkarnacyjnego — wyjątkowe przesłanie</div>
+      </div>
+    </div>
+
+    <div class="layer extra">
+      <div class="layer-label">Co 12-3 mówi o twoim miejscu w cyklu inkarnacyjnym</div>
+      <ul>
+        <li><strong>2–3 wcielenia do końca cyklu:</strong> Z perspektywy 12-3 w Przeznaczeniu Duszy — zbliżasz się do końca cyklu inkarnacyjnego. Zostały ci 2, maksymalnie 3 wcielenia na Ziemi. To nie jest powód do lęku — to wyjaśnia intensywność, z jaką twoja dusza podchodzi do tego życia.</li>
+        <li><strong>Pamięć komórkowa duszy:</strong> Wszystko co zrobisz i osiągniesz w tym życiu zostanie zachowane w pamięci komórkowej twojej duszy i zaniesione dalej. Dlatego tak ważne jest, aby "dokonać jak najwięcej".</li>
+        <li><strong>Wewnętrzna pilność:</strong> Poczucie, że nigdy nie masz wystarczająco dużo czasu — zawsze się spieszysz i spóźniasz. To nie jest twoja wada. To jest echо twojej duszy, która czuje wagę tej inkarnacji.</li>
+        <li><strong>Świadoma osobowość:</strong> Twój rozwój polega na ukształtowaniu świadomej osobowości, która dostosowuje się do prawie całej prawdy duszy i istnienia.</li>
+      </ul>
+    </div>
+
+    <div class="highlight-box">
+      Twoja dusza wybrała to życie wiedząc, że jest blisko końca cyklu. Intensywność z jaką czujesz potrzebę działania, uczenia się, odkrywania — to nie jest neurotyczna nadaktywność. To jest impuls duszy, która wie że czas jest cenny i chce jak najpełniej wyrazić swoją prawdę.
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- SYNTEZA -->
+  <!-- ============================================================ -->
+  <div class="synthesis">
+    <h2>Synteza — Kontrakt Duszy Aleksandra</h2>
+
+    <div class="synthesis-block">
+      <h3>Wzorzec dominujący: trójkąt fizyczny jako fundament</h3>
+      <p>12-3 we wszystkich trzech pozycjach fizycznych tworzy niezwykle silny fundament: jesteś tutaj przede wszystkim jako nauczyciel, komunikator, dzielący się wiedzą z głębi siebie. Gimel (3) i Lamed (12) — obie Liczby Mistrzowskie — działają razem jak nadajnik i odbiornik. Wszystko co nabywasz, masz po to żeby przekazać dalej.</p>
+    </div>
+
+    <div class="synthesis-block">
+      <h3>Napięcie centralne: duchowa wiedza vs. fizyczna manifestacja</h3>
+      <p>Twój trójkąt duchowy (5-5, 11-2, 8-8) pracuje nad pytaniem: jak zabrać ze sobą to co duchowe i zakorzenić to w świecie fizycznym? Karma duchowa (5-5) mówi: otworzyć umysł. Talenty duchowe (11-2) mówią: budować struktury prawdy. Cele duchowe (8-8) mówią: wyjść do ludzi i służyć. To jest spirala: im bardziej przepracujesz 5-5, tym bardziej aktywuje się 11-2, tym bardziej możliwe staje się 8-8.</p>
+    </div>
+
+    <div class="synthesis-block">
+      <h3>Klucz integracyjny: ciało, emocje, uziemienie</h3>
+      <p>Woreczek żółciowy (gniew/ból), prawa stopa (odwaga w wkraczaniu naprzód), prawa dłoń (wyciąganie do innych), prawa nerka (rozróżnianie własnej prawdy) — ciało jest mapą. To co jest przepracowane w ciele, otwiera odpowiednią warstwę duchową. Nie ma drogi na skróty przez głowę.</p>
+    </div>
+
+    <div class="synthesis-block">
+      <h3>Przeznaczenie: naczynie, nie autor</h3>
+      <p>6-6 w centrum Gwiazdy Dawida to ostateczne zadanie: nie chodzi o to żebyś był wielkim nauczycielem czy terapeutą ze swego ego — chodzi o to żebyś był wystarczająco czysty, zakorzeniony i otwarty, żeby twórcza siła Boga przepływała przez ciebie. Nauczanie (12-3), otwartość umysłu (5-5), budowanie struktury (11-2) i uziemienie w służbie (8-8) — to wszystko jest przygotowaniem naczynia.</p>
+    </div>
+  </div>
+
+  <!-- ============================================================ -->
+  <!-- TABELA ZBIORCZA -->
+  <!-- ============================================================ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num destiny" style="font-size:1em; border-radius:6px; width:auto; padding:0 12px;">≡</div>
+      <div>
+        <h2>Tabela zbiorcza — wszystkie warstwy</h2>
+      </div>
+    </div>
+    <table>
+      <tr>
+        <th>Aspekt</th>
+        <th>Para</th>
+        <th>Rozdz. 4 — ogólne</th>
+        <th>Rozdz. 7/8 — specyficzne</th>
+        <th>Brama / Organ / Kierunek</th>
+      </tr>
+      <tr>
+        <td><strong>Karma fizyczna</strong></td>
+        <td>12-3</td>
+        <td>Niegodność, syndrom męczennika; nauka równowagi fizyczno-duchowej</td>
+        <td>Strach przed porażką, stagnacja mimo energii; nie możesz znaleźć równowagi</td>
+        <td>Prawe ucho (słuchanie) · Głębia (wgląd) · Woreczek żółciowy (gniew)</td>
+      </tr>
+      <tr>
+        <td><strong>Talenty fizyczne</strong></td>
+        <td>12-3</td>
+        <td>Nauczyciel, komunikator, kreatywność, dzielenie się miłością</td>
+        <td>Silna motywacja; zdolność do miłości; uwaga na fanatyzm</td>
+        <td>Prawe ucho (elastyczność) · Głębia (ekspresja) · Woreczek żółciowy (lekkość)</td>
+      </tr>
+      <tr>
+        <td><strong>Cele fizyczne</strong></td>
+        <td>12-3</td>
+        <td>Wiedza, równowaga emocjonalna/seksualna, nauczanie</td>
+        <td>Zdobyć jak najwięcej wiedzy</td>
+        <td>–</td>
+      </tr>
+      <tr>
+        <td><strong>Karma duchowa</strong></td>
+        <td>5-5</td>
+        <td>Strach przed prawdą, nadużycie władzy, nieuziemienie</td>
+        <td>Brak motywacji do nieuchwytnego; rozproszenie; nie ryzykujesz wiary w swoje zdolności</td>
+        <td>Prawa stopa (odwaga wkraczania naprzód)</td>
+      </tr>
+      <tr>
+        <td><strong>Talenty duchowe</strong></td>
+        <td>11-2</td>
+        <td>Budowniczy struktury prawdy, logiczny umysł, odporność; od śmierci do życia</td>
+        <td>Ukryta zdolność do formułowania filozoficznej prawdy i przekazywania jej na wiele sposobów</td>
+        <td>Lewe oko (nowe spojrzenie) · Zachód/Mag · Wysokość/Mądrość</td>
+      </tr>
+      <tr>
+        <td><strong>Cele duchowe</strong></td>
+        <td>8-8</td>
+        <td>Uziemienie, jasnowidzenie, wyjście do ludzi, głębokie więzi</td>
+        <td>Uziemić talenty duchowe; przestać żyć tylko w sobie; służyć społeczeństwu jak kameleon</td>
+        <td>Prawa dłoń (wyciągnięcie do innych)</td>
+      </tr>
+      <tr>
+        <td><strong>Przeznaczenie Duszy</strong></td>
+        <td>6-6</td>
+        <td>Kreacja z niczego; Byk; zablokowana kreatywność → pełny twórczy potencjał</td>
+        <td>"Stać się naczyniem, do którego spłynie twórcza siła Boga" + 2-3 wcielenia do końca cyklu</td>
+        <td>Prawa nerka (rozróżnianie własnej prawdy)</td>
+      </tr>
+    </table>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Źródło: Nicolas David Ngan, <em>Numerologiczny Plan Duszy</em> (oryg. <em>Your Soul Contract Decoded</em>)<br>
+    System oryginalny: Frank Alper, lata 80. XX w. — Duchowa Numerologia Mojżesza<br>
+    Baza wiedzy: WIEDZA_00 — WIEDZA_06 &nbsp;|&nbsp; Data odczytu: 31.03.2026
+  </div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kompilacja PD + NCH — Aleksander Komaniecki</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Georgia', serif; background: #080810; color: #e0d8c8; line-height: 1.8; font-size: 16px; }
+  .page { max-width: 900px; margin: 0 auto; padding: 40px 28px 100px; }
+
+  /* HEADER */
+  .header { text-align: center; padding: 70px 0 50px; border-bottom: 1px solid #202030; margin-bottom: 60px; }
+  .header .eyebrow { font-size: 11px; letter-spacing: 5px; text-transform: uppercase; color: #8888bb; margin-bottom: 20px; }
+  .header h1 { font-size: 2.4em; font-weight: normal; color: #f0e8d5; line-height: 1.25; margin-bottom: 10px; }
+  .header .sub { font-style: italic; color: #9090a8; font-size: 1em; margin-bottom: 28px; }
+  .header .meta { display: inline-flex; gap: 36px; font-size: 12px; color: #707090; border: 1px solid #202030; padding: 11px 28px; border-radius: 4px; }
+  .header .meta b { color: #b0b0c8; }
+
+  /* SEKCJE */
+  .section { margin-bottom: 70px; }
+  .section-label { font-size: 10px; letter-spacing: 5px; text-transform: uppercase; color: #8888bb; margin-bottom: 8px; }
+  h2 { font-size: 1.5em; font-weight: normal; color: #d0d0e0; border-bottom: 1px solid #202030; padding-bottom: 12px; margin-bottom: 28px; }
+  h3 { font-size: 0.85em; font-weight: normal; color: #a0a0c0; margin: 24px 0 10px; text-transform: uppercase; letter-spacing: 2px; }
+  p { margin-bottom: 14px; color: #b8b8c8; }
+
+  /* SYSTEMY — DWIE KOLUMNY */
+  .dual { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+  .dual-pd { background: #0e0c18; border: 1px solid #302858; border-radius: 8px; padding: 18px 20px; border-top: 3px solid #7060c0; }
+  .dual-nch { background: #080e18; border: 1px solid #1e3050; border-radius: 8px; padding: 18px 20px; border-top: 3px solid #4070c0; }
+  .dual-label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; margin-bottom: 8px; }
+  .dual-pd .dual-label { color: #7060c0; }
+  .dual-nch .dual-label { color: #4070c0; }
+  .dual-num { font-size: 1.4em; font-weight: bold; letter-spacing: 2px; margin-bottom: 6px; }
+  .dual-pd .dual-num { color: #9088d0; }
+  .dual-nch .dual-num { color: #6088d0; }
+  .dual-desc { font-size: 14px; color: #a8a8c0; line-height: 1.7; }
+
+  /* KARTY ZBIEŻNOŚCI */
+  .conv { background: #0c0c16; border: 1px solid #282838; border-radius: 12px; padding: 28px 30px; margin-bottom: 24px; position: relative; }
+  .conv-stars { position: absolute; top: 20px; right: 24px; font-size: 18px; letter-spacing: 3px; }
+  .conv h3 { margin-top: 0; color: #c8c0d8; font-size: 1em; text-transform: none; letter-spacing: 0; font-weight: normal; margin-bottom: 14px; }
+  .conv-arrow { text-align: center; font-size: 22px; color: #c0a030; margin: 10px 0; opacity: 0.7; }
+
+  /* SIŁA POTWIERDZENIA */
+  .conf-box { background: #0e0e08; border: 1px solid #3a3010; border-radius: 8px; padding: 14px 18px; margin-top: 14px; border-left: 3px solid #c0a030; }
+  .conf-box .conf-label { font-size: 9px; letter-spacing: 4px; text-transform: uppercase; color: #907020; margin-bottom: 6px; }
+  .conf-box p { color: #c8c0a0; font-size: 14px; margin: 0; }
+
+  /* INSIGHTY */
+  .insight { background: #0a0c14; border: 1px solid #1a2030; border-radius: 8px; padding: 16px 20px; margin: 16px 0; font-size: 15px; color: #b8b8c8; border-left: 3px solid #4070c0; }
+  .insight.gold { border-left-color: #a08030; color: #c8c0a0; background: #0c0c08; }
+  .insight.purple { border-left-color: #7060c0; color: #c0b8d8; background: #0c0a14; }
+  .insight.green { border-left-color: #408050; color: #a8c0b0; background: #080e0a; }
+
+  /* TABELA PODSUMOWANIA */
+  table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+  th { background: #0c0c18; color: #7070a0; font-weight: normal; font-size: 10px; letter-spacing: 3px; text-transform: uppercase; padding: 10px 14px; text-align: left; border-bottom: 1px solid #1e1e30; }
+  td { padding: 10px 14px; border-bottom: 1px solid #121220; color: #b0b0c0; vertical-align: top; }
+  tr:hover td { background: #0a0a14; }
+  .tag-pd { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 3px; background: #1a1430; color: #8070c0; border: 1px solid #302858; letter-spacing: 1px; margin-right: 4px; }
+  .tag-nch { display: inline-block; font-size: 10px; padding: 2px 8px; border-radius: 3px; background: #0e1828; color: #5080b0; border: 1px solid #1e3050; letter-spacing: 1px; margin-right: 4px; }
+  .stars-col { color: #c0a030; font-size: 16px; white-space: nowrap; }
+
+  /* UZUPEŁNIENIA */
+  .comp-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 20px 0; }
+  .comp-cell { background: #0a0a14; border: 1px solid #1a1a28; border-radius: 8px; padding: 16px 18px; }
+  .comp-cell .comp-label { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: #505070; margin-bottom: 8px; }
+  .comp-cell p { font-size: 14px; color: #a0a0b8; margin: 0; }
+
+  /* SYNTEZA */
+  .synthesis-box { background: #0a0a12; border: 1px solid #202030; border-radius: 14px; padding: 40px 36px; text-align: center; margin: 40px 0; }
+  .synthesis-box h2 { border: none; margin-bottom: 20px; }
+  .synthesis-box p { font-size: 1.05em; color: #c0c0d0; max-width: 660px; margin: 0 auto 16px; }
+  .synthesis-box .portret { font-size: 1.1em; color: #d0d0e0; font-style: italic; line-height: 2.2; margin-top: 24px; padding-top: 24px; border-top: 1px solid #1e1e30; }
+
+  /* LEGENDA SYSTEMÓW */
+  .legend { display: flex; gap: 24px; justify-content: center; margin: 24px 0 40px; }
+  .legend-item { display: flex; align-items: center; gap: 8px; font-size: 12px; color: #707090; }
+  .legend-dot { width: 10px; height: 10px; border-radius: 50%; }
+  .legend-dot.pd { background: #7060c0; }
+  .legend-dot.nch { background: #4070c0; }
+  .legend-dot.both { background: #c0a030; }
+
+  .footer { margin-top: 80px; padding-top: 24px; border-top: 1px solid #141420; font-size: 12px; color: #404050; text-align: center; font-style: italic; }
+  blockquote { border-left: 2px solid #2a2a4a; margin: 14px 0; padding: 8px 18px; font-style: italic; color: #9090a8; font-size: 0.95em; }
+  .divider { height: 1px; background: #181828; margin: 24px 0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<!-- HEADER -->
+<div class="header">
+  <div class="eyebrow">Numerologia · Kompilacja dwóch systemów</div>
+  <h1>Aleksander Komaniecki</h1>
+  <div class="sub">Plan Duszy (Nicolas David Ngan) + Numerologia Chińska (Zbigniew Królicki)</div>
+  <div class="meta">
+    <span><b>Data urodzenia:</b> 09.11.1969</span>
+    <span><b>Imię pełne:</b> Aleksander Antoni Komaniecki</span>
+    <span><b>Kompilacja:</b> 02.04.2026</span>
+  </div>
+</div>
+
+<!-- LEGENDA -->
+<div class="legend">
+  <div class="legend-item"><div class="legend-dot pd"></div> Plan Duszy (PD) — system hebrajski</div>
+  <div class="legend-item"><div class="legend-dot nch"></div> Numerologia Chińska (NCH) — system Lo Shu</div>
+  <div class="legend-item"><div class="legend-dot both"></div> Zbieżność obu systemów</div>
+</div>
+
+<!-- INTRO -->
+<div class="section">
+  <div class="section-label">Wstęp</div>
+  <h2>Dwie mapy tej samej duszy</h2>
+  <p>Plan Duszy (PD) i Numerologia Chińska (NCH) to dwa całkowicie niezależne systemy numerologiczne — różne podstawy obliczeniowe, różne tradycje, różne autorzy. PD bazuje na imieniu z aktu urodzenia i 22 literach alfabetu hebrajskiego (system Ngana). NCH bazuje na dacie urodzenia i kwadracie Lo Shu (system Królickiego).</p>
+  <p>Gdy oba systemy, opierając się na <em>różnych danych wejściowych</em>, wskazują na ten sam temat — prawdopodobieństwo trafności dramatically rośnie. To jak dwa niezależne pomiary wskazujące na ten sam punkt: każde potwierdzenie wzmacnia wiarygodność całości.</p>
+  <p>W odczycie Aleksandra odnajdujemy <strong>pięć silnych zbieżności</strong> — miejsc, gdzie oba systemy niezależnie opisują tę samą energię, wyzwanie lub talent. Każda z nich to mocny argument za tym, że numerologia dotyka czegoś realnego w strukturze ludzkiej osobowości i powołania.</p>
+  <div class="insight gold">Zasada kompilacji: im więcej niezależnych potwierdzień tego samego tematu — tym większa pewność, że to nie interpretacja, ale rzeczywista cecha energetyczna danego człowieka.</div>
+</div>
+
+<!-- PRZEGLĄD MAP -->
+<div class="section">
+  <div class="section-label">Oba odczyty — przegląd</div>
+  <h2>Kluczowe liczby obu systemów</h2>
+
+  <div class="dual">
+    <div class="dual-pd">
+      <div class="dual-label">Plan Duszy (PD) · system hebrajski</div>
+      <div class="dual-num">12–3 · 12–3 · 12–3</div>
+      <div class="dual-desc">Trójkąt fizyczny: <strong>Karma, Talenty i Cele fizyczne — wszystkie identyczne</strong><br>Lamed (12) · Gimel (3) · Waga · komunikacja · równoważenie</div>
+    </div>
+    <div class="dual-nch">
+      <div class="dual-label">Numerologia Chińska (NCH) · system Lo Shu</div>
+      <div class="dual-num">DŻ 9 · 111 · 6 · 999</div>
+      <div class="dual-desc">Droga Życia 9 (humanitaryzm) + trzy jedynki (komunikacja) + szóstka (troska) + trzy dziewiątki (idealizm)</div>
+    </div>
+  </div>
+  <div class="dual">
+    <div class="dual-pd">
+      <div class="dual-label">Trójkąt duchowy</div>
+      <div class="dual-num">5–5 · 11–2 · 8–8</div>
+      <div class="dual-desc">KD: Heh (5) — ulotna energia · TD: Caf (11) — idealizm, budowanie · CD: Ches (8) — nieuziemienie, granice</div>
+    </div>
+    <div class="dual-nch">
+      <div class="dual-label">Brakujące liczby i strzały słabości</div>
+      <div class="dual-num">brak: 2 · 3 · 4 · 5 · 7 · 8</div>
+      <div class="dual-desc">Plan Emocjonalny pusty (2–5–8) · Strzała Wrażliwości Emocjonalnej · Strzała Sceptycyzmu (3–5–7)</div>
+    </div>
+  </div>
+  <div class="dual">
+    <div class="dual-pd">
+      <div class="dual-label">Przeznaczenie Duszy</div>
+      <div class="dual-num">PD: 6–6</div>
+      <div class="dual-desc">Vuv (6) · Byk · troska, dom, miłość, relacje · centrum wszystkiego co robi</div>
+    </div>
+    <div class="dual-nch">
+      <div class="dual-label">Aktywny etap (piramida) + rok 2026</div>
+      <div class="dual-num">Szczyt 4: 9 · Rok: 3</div>
+      <div class="dual-desc">Od 45 r.ż. — pełna dojrzała misja (9) · Rok 2026 — odpoczynek i lekkość (3)</div>
+    </div>
+  </div>
+</div>
+
+<!-- ZBIEŻNOŚCI -->
+<div class="section">
+  <div class="section-label">Analiza główna</div>
+  <h2>Zbieżności — gdzie oba systemy mówią to samo</h2>
+
+  <!-- ZBIEŻNOŚĆ 1 -->
+  <div class="conv">
+    <div class="conv-stars">★★★</div>
+    <h3>1. Służba i troska o innych jako serce misji</h3>
+    <div class="dual" style="margin-top:0">
+      <div class="dual-pd">
+        <div class="dual-label">Plan Duszy mówi</div>
+        <div class="dual-num">PD = 6–6 (Vuv)</div>
+        <div class="dual-desc">Przeznaczenie Duszy = podwójna energia Vuv. Byk, myśl, troska, relacje, dom. Centrum kontraktu: <em>„całe życie zmierza do wyrażania troski przez relacje"</em>. Trójka fizyczna 12–3 we wszystkich aspektach: karma, talent i cel — wszystkie trzy zakorzenione w miłości i komunikacji (Lamed = Waga).</div>
+      </div>
+      <div class="dual-nch">
+        <div class="dual-label">NCH mówi</div>
+        <div class="dual-num">DŻ 9 + 6 w kwadracie</div>
+        <div class="dual-desc">Droga Życia 9 = humanitaryzm, bezinteresowna służba, terapeuta. Szóstka w planie mentalnym = ogromne umiłowanie rodziny i troski o innych. Królicki: <em>„znakomici adwokaci, lekarze, terapeuci, doradcy — wszędzie tam, gdzie potrzeba kontaktu z drugim człowiekiem"</em>.</div>
+      </div>
+    </div>
+    <div class="conv-arrow">↓</div>
+    <div class="conf-box">
+      <div class="conf-label">Siła potwierdzenia ★★★</div>
+      <p>PD obliczane z imienia, NCH z daty urodzenia — zupełnie inne dane wejściowe, ten sam wniosek. Aleksander nie wybrał zawodu terapeuty przypadkowo — oba systemy niezależnie wskazują, że <strong>troska o innych jest strukturalną cechą jego energii</strong>, wbudowaną głębiej niż charakteru czy wychowanie.</p>
+    </div>
+  </div>
+
+  <!-- ZBIEŻNOŚĆ 2 -->
+  <div class="conv">
+    <div class="conv-stars">★★★</div>
+    <h3>2. Słowo i komunikacja jako podstawowe narzędzie</h3>
+    <div class="dual" style="margin-top:0">
+      <div class="dual-pd">
+        <div class="dual-label">Plan Duszy mówi</div>
+        <div class="dual-num">12–3 wszędzie w fiz.</div>
+        <div class="dual-desc">Gimel (3) to litera komunikacji i ruchu. Wszystkie trzy aspekty fizyczne zawierają Gimel jako prawą liczbę pary — to oznacza, że <strong>komunikacja jest językiem, w którym wyraża się każde działanie w sferze fizycznej</strong>: karma, talent i cel. Lamed (12) wiąże się z żółcią — narządem głosu i wyrażania w tradycji hebrajskiej.</div>
+      </div>
+      <div class="dual-nch">
+        <div class="dual-label">NCH mówi</div>
+        <div class="dual-num">111 w kwadracie</div>
+        <div class="dual-desc">Trzy jedynki = wyjątkowy talent werbalny. Królicki: <em>„Mogą być albo wielkimi gadułami... lub też generują wybitne osiągnięcia estradowe. Generalnie szczęśliwi, otwarci, posiadają duże zdolności do wystąpień publicznych"</em>. Ekspresja przez słowo jest naturalnym medium — rzadka konfiguracja.</div>
+      </div>
+    </div>
+    <div class="conv-arrow">↓</div>
+    <div class="conf-box">
+      <div class="conf-label">Siła potwierdzenia ★★★</div>
+      <p>PD mówi: komunikacja jest wbudowana w KAŻDY aspekt fizyczny (karma·talent·cel = wszystkie 12–3). NCH mówi: trzy jedynki = rzadki, naturalny talent werbalny. <strong>Aleksander nie tylko potrafi mówić — musi mówić</strong>. To nie opcja, to kanał, przez który przepływa wszystko inne.</p>
+    </div>
+  </div>
+
+  <!-- ZBIEŻNOŚĆ 3 -->
+  <div class="conv">
+    <div class="conv-stars">★★★</div>
+    <h3>3. Wyzwanie emocjonalne — integracja bez emocjonalnego centrum</h3>
+    <div class="dual" style="margin-top:0">
+      <div class="dual-pd">
+        <div class="dual-label">Plan Duszy mówi</div>
+        <div class="dual-num">KD=5–5 · CD=8–8</div>
+        <div class="dual-desc">Karma duchowa 5–5 (Heh) = ulotna, nieuchwytna energia bez solidnej formy. Ngan: <em>„bardzo nieuchwytna energia, niemająca solidnej formy"</em>. Cel duchowy 8–8 (Ches) = podwójne nieuziemienie, niejasne granice emocjonalne. Oba aspekty duchowe sygnalizują trudność z zakotwiczaniem się emocjonalnie.</div>
+      </div>
+      <div class="dual-nch">
+        <div class="dual-label">NCH mówi</div>
+        <div class="dual-num">Brak 2 · 5 · 8 (plan pusty)</div>
+        <div class="dual-desc">Cały Plan Emocjonalny pusty — brak liczb 2 (intuicja), 5 (centrum równowagi) i 8 (metodyczność emocjonalna). Strzała Wrażliwości Emocjonalnej. Królicki: <em>„ogromna wrażliwość i otwartość wciąż dostarcza zmartw i cierpień... ukryty kompleks: niskie poczucie własnej wartości przez całe życie"</em>.</div>
+      </div>
+    </div>
+    <div class="conv-arrow">↓</div>
+    <div class="conf-box">
+      <div class="conf-label">Siła potwierdzenia ★★★</div>
+      <p>PD widzi to w linii duchowej (karma + cel duchowe), NCH widzi to w kwadracie (pusty plan emocjonalny). Różne systemy, różna perspektywa, ta sama diagnoza: <strong>człowiek o misji humanistycznej niosący emocje innych, bez uziemionego centrum emocjonalnego</strong>. To wyjaśnia paradoks: daje ludziom to, czego sam potrzebuje.</p>
+    </div>
+  </div>
+
+  <!-- ZBIEŻNOŚĆ 4 -->
+  <div class="conv">
+    <div class="conv-stars">★★</div>
+    <h3>4. Równoważenie jako archetyp — Waga i harmonia</h3>
+    <div class="dual" style="margin-top:0">
+      <div class="dual-pd">
+        <div class="dual-label">Plan Duszy mówi</div>
+        <div class="dual-num">Lamed = Waga</div>
+        <div class="dual-desc">Lamed (12) to hebrajski archetyp Wagi — sprawiedliwości, równoważenia, ważenia sił. Żółć (organ Lamed) w tradycji hebrajskiej wiązana z podejmowaniem decyzji i balansem. Trójka identycznych 12–3 we wszystkich aspektach fizycznych: Aleksander jest dosłownie <em>„maszyną do równoważenia"</em> na poziomie materialnym.</div>
+      </div>
+      <div class="dual-nch">
+        <div class="dual-label">NCH mówi</div>
+        <div class="dual-num">6 + brak 5 (centrum)</div>
+        <div class="dual-desc">Szóstka w planie mentalnym = umiłowanie harmonii i troski jako myślenie. Jednocześnie brak 5 (centrum kwadratu = równowaga emocjonalna) — osoba powołana do harmonizowania innych, ale bez własnego zakorzenionego centrum. Królicki: <em>„brak piątki = trudno przychodzi ustalanie celów, potrzeba zewnętrznej motywacji"</em>.</div>
+      </div>
+    </div>
+    <div class="conv-arrow">↓</div>
+    <div class="conf-box">
+      <div class="conf-label">Siła potwierdzenia ★★</div>
+      <p>Lamed z PD i konfiguracja 6+brak5 z NCH razem tworzą precyzyjny obraz: <strong>powołany do równoważenia innych (Waga/6), ale sam szuka własnego centrum (brak 5)</strong>. To paradoks terapeuty — uczy harmonii, sam ją buduje przez całe życie.</p>
+    </div>
+  </div>
+
+  <!-- ZBIEŻNOŚĆ 5 -->
+  <div class="conv">
+    <div class="conv-stars">★★</div>
+    <h3>5. Duchowy idealizm jako powołanie, nie cecha</h3>
+    <div class="dual" style="margin-top:0">
+      <div class="dual-pd">
+        <div class="dual-label">Plan Duszy mówi</div>
+        <div class="dual-num">TD = 11–2 (Caf)</div>
+        <div class="dual-desc">Talent duchowy 11–2 (Caf) = liczba mistrzowska „od śmierci do życia". Talent transformacyjny, idealistyczny, budujący nowe struktury tam gdzie były ruiny. Podwójne litery karmiczne Caf = zachód, lewe oko, Wenus. Talent do widzenia możliwości tam, gdzie inni widzą kres.</div>
+      </div>
+      <div class="dual-nch">
+        <div class="dual-label">NCH mówi</div>
+        <div class="dual-num">999 + DŻ 9</div>
+        <div class="dual-desc">Trzy dziewiątki = bardzo silny idealizm i troska o innych, w dojrzałym wieku w pełni wyrażony. DŻ 9 = romantyk, mistyk, wizjoner. Królicki: <em>„niepoprawni romantycy i mistycy. Mają wizję idealnego świata pełnej szczęśliwości i realizują ją bezinteresownie"</em>.</div>
+      </div>
+    </div>
+    <div class="conv-arrow">↓</div>
+    <div class="conf-box">
+      <div class="conf-label">Siła potwierdzenia ★★</div>
+      <p>PD wskazuje na talent transformacyjny (Caf 11), NCH na idealizm humanistyczny (DŻ 9 + 999). Oba systemy potwierdzają: <strong>Aleksander nie jest idealistą z charakteru — jest nim z energii</strong>. Duchowy idealizm to nie naiwność, to struktura jego powołania.</p>
+    </div>
+  </div>
+</div>
+
+<!-- TABELA PODSUMOWANIA ZBIEŻNOŚCI -->
+<div class="section">
+  <div class="section-label">Przegląd</div>
+  <h2>Mapa zbieżności — tabela</h2>
+  <table>
+    <tr>
+      <th>Temat</th>
+      <th>PD (system hebrajski)</th>
+      <th>NCH (system Lo Shu)</th>
+      <th style="text-align:center">Siła</th>
+    </tr>
+    <tr>
+      <td><strong>Służba i troska</strong></td>
+      <td><span class="tag-pd">PD=6–6</span><span class="tag-pd">12–3 fizyczne</span></td>
+      <td><span class="tag-nch">DŻ 9</span><span class="tag-nch">6 w kwadracie</span></td>
+      <td class="stars-col" style="text-align:center">★★★</td>
+    </tr>
+    <tr>
+      <td><strong>Komunikacja / słowo</strong></td>
+      <td><span class="tag-pd">Gimel(3) wszędzie</span><span class="tag-pd">Lamed+głos</span></td>
+      <td><span class="tag-nch">111 w kwadracie</span></td>
+      <td class="stars-col" style="text-align:center">★★★</td>
+    </tr>
+    <tr>
+      <td><strong>Wyzwanie emocjonalne</strong></td>
+      <td><span class="tag-pd">KD=5–5</span><span class="tag-pd">CD=8–8</span></td>
+      <td><span class="tag-nch">Plan emoc. pusty</span><span class="tag-nch">Strzała 2–5–8</span></td>
+      <td class="stars-col" style="text-align:center">★★★</td>
+    </tr>
+    <tr>
+      <td><strong>Równoważenie / Waga</strong></td>
+      <td><span class="tag-pd">Lamed=Waga</span></td>
+      <td><span class="tag-nch">6 harmonia</span><span class="tag-nch">brak 5 (centrum)</span></td>
+      <td class="stars-col" style="text-align:center">★★</td>
+    </tr>
+    <tr>
+      <td><strong>Duchowy idealizm</strong></td>
+      <td><span class="tag-pd">TD=11–2 Caf</span></td>
+      <td><span class="tag-nch">999</span><span class="tag-nch">DŻ 9 mistyk</span></td>
+      <td class="stars-col" style="text-align:center">★★</td>
+    </tr>
+  </table>
+  <div class="insight gold">Trzy zbieżności ★★★ to niezwykły wynik. Statystycznie — dwa niezależne systemy rzadko wskazują na identyczny temat przypadkowo. Gdy zbieżność jest troista lub pięciokrotna, mamy do czynienia z matematycznym potwierdzeniem energii, nie tylko interpretacją.</div>
+</div>
+
+<!-- UZUPEŁNIENIA -->
+<div class="section">
+  <div class="section-label">Gdzie systemy się uzupełniają</div>
+  <h2>Wzajemne uzupełnienia — co jeden widzi, drugi pomija</h2>
+  <p>Poza zbieżnościami, oba systemy wnoszą unikalne perspektywy — informacje, których drugi system nie dostarcza. To czyni kompilację cenniejszą niż każdy odczyt z osobna.</p>
+
+  <div class="comp-grid">
+    <div class="comp-cell">
+      <div class="comp-label">Tylko PD widzi</div>
+      <p><strong>Karma poprzednich wcieleń</strong> — wzorce automatyczne, powtarzające się bez wolnej woli (KF=12–3: karma komunikacji, Ches w CD=8–8: nieuziemienie jako wzorzec do przejścia). NCH nie ma kategorii karmy — opisuje talenty i lekcje, ale nie ich "poprzedni" wymiar.</p>
+    </div>
+    <div class="comp-cell">
+      <div class="comp-label">Tylko NCH widzi</div>
+      <p><strong>Czas i etapy życia</strong> — piramidy wskazują, że od 36. roku życia Aleksander jest w pełni swojej misji (szczyt 9 aktywny od 45 r.ż.). PD jest bezczasowy — opisuje energię całego życia bez informacji o tym, KIEDY dana energia dominuje.</p>
+    </div>
+    <div class="comp-cell">
+      <div class="comp-label">Tylko PD widzi</div>
+      <p><strong>Precyzja duchowej ścieżki</strong> — TD=11–2 (Caf) to konkretny talent transformacyjny: "od śmierci do życia". KD=5–5 (Heh) wskazuje dokładnie, jaka energia karmy duchowej blokuje. NCH mówi o sferze emocjonalnej ogólnie — PD precyzuje jej hebrajski archetyp.</p>
+    </div>
+    <div class="comp-cell">
+      <div class="comp-label">Tylko NCH widzi</div>
+      <p><strong>Praktyczne lekcje materialne</strong> — brak 4 (trudność z rutyną), brak 8 (problemy finansowe), brak 7 (poczucie bycia obserwowanym). PD skupia się na aspektach duchowych i fizycznych kontraktu, nie schodzi na poziom codziennych wyzwań praktycznych tak precyzyjnie jak NCH.</p>
+    </div>
+    <div class="comp-cell">
+      <div class="comp-label">Tylko PD widzi</div>
+      <p><strong>Wyjątkowość wykresu</strong> — trój-identyczne KF/TF/CF = 12–3 to rzadkość statystyczna. PD potrafi wskazać, że cały trójkąt fizyczny Aleksandra jest jednolity. NCH nie ma mechanizmu porównania "rzadkości" mapy w tej skali.</p>
+    </div>
+    <div class="comp-cell">
+      <div class="comp-label">Tylko NCH widzi</div>
+      <p><strong>Aktualny rok i miesiąc</strong> — rok osobisty 3 (lekkość, odpoczynek) i miesiąc 7 (nauka, refleksja) to dynamiczna warstwa NCH nieobecna w PD. PD to mapa stała — NCH dodaje wymiar czasu rzeczywistego.</p>
+    </div>
+  </div>
+</div>
+
+<!-- INTERPRETACJA SIŁY NUMEROLOGII -->
+<div class="section">
+  <div class="section-label">Metodologiczny wniosek</div>
+  <h2>Kiedy numerologia jest najsilniejsza</h2>
+  <p>Numerologia jest najsilniejsza dokładnie wtedy, gdy dwa lub więcej niezależnych systemów — obliczanych z różnych danych, różnymi metodami, w różnych tradycjach — wskazuje na ten sam temat.</p>
+
+  <div class="insight purple">
+    <strong>Przy jednym systemie:</strong> mamy interpretację jednego "języka" energii. Prawdopodobna, ale jednostronna.
+  </div>
+  <div class="insight" style="border-left-color: #5078b8;">
+    <strong>Przy dwóch systemach z jedną zbieżnością:</strong> możliwe przypadkowe pokrywanie się. Warto zanotować, ale nie wyciągać mocnych wniosków.
+  </div>
+  <div class="insight gold">
+    <strong>Przy dwóch systemach z trzema lub więcej zbieżnościami (jak u Aleksandra):</strong> prawdopodobieństwo przypadku dramatycznie spada. Mówimy o cechach energetycznych potwierdzonych niezależnie — na tym polega siła kompilacji.
+  </div>
+
+  <div class="divider"></div>
+
+  <h3>Trzy potwierdzenia ★★★ u Aleksandra</h3>
+  <p>Służba i troska, komunikacja i słowo, wyzwanie emocjonalne — wszystkie trzy mają potwierdzenie ★★★. Oznacza to, że te cechy nie są artefaktem jednego systemu ani jednej interpretacji. Są widoczne z dwóch stron jednocześnie: z imienia i z daty urodzenia, z 22 liter hebrajskich i z cyfr kwadratu Lo Shu.</p>
+  <blockquote>„Gdyby te cechy były wyłącznie kwestią wychowania lub środowiska, nie powinny pojawić się równocześnie w obu systemach. Fakt, że się pojawiają, wskazuje na coś głębszego — strukturę energetyczną, którą człowiek przynosi ze sobą."</blockquote>
+  <p>To właśnie jest moment, w którym numerologia przestaje być "ciekawostką" a staje się narzędziem, które można traktować poważnie — nie jako wyrocznię, ale jako mapę potwierdzonych tendencji.</p>
+</div>
+
+<!-- SYNTEZA -->
+<div class="synthesis-box">
+  <div class="section-label" style="text-align:center;margin-bottom:12px;">Synteza kompilacji</div>
+  <h2>Aleksander Komaniecki — portret z dwóch systemów</h2>
+  <p>Dwa niezależne systemy numerologiczne, obliczone z różnych danych i różnymi metodami, tworzą jeden spójny obraz: <strong>człowiek zbudowany do służby przez słowo i troskę</strong>, z misją humanistyczną jako strukturą życia (nie wyborem).</p>
+  <p>Tam gdzie PD widzi Lamed i Gimel — komunikacja, równoważenie, Waga — NCH widzi 111 i DŻ 9: wyjątkowy talent werbalny i humanitaryzm. Tam gdzie PD widzi 5–5 i 8–8 w sferze duchowej — ulotność, nieuziemienie — NCH widzi pusty Plan Emocjonalny i Strzałę Wrażliwości. Ten sam opis, dwa różne języki.</p>
+  <p>Uzupełnienie jest równie ważne: NCH dodaje czasowość (piramidy potwierdzają, że misja jest w pełni aktywna od 36. roku życia), PD dodaje precyzję karmiczną (wzorzec nieuziemienia to nie przypadek — to konkretna karma do przepracowania).</p>
+  <div class="portret">
+    Służba przez słowo.<br>
+    Troska jako struktura, nie wybór.<br>
+    Równoważenie innych — przy własnym centrum w budowie.<br><br>
+    Dwa systemy. Jeden człowiek. Ten sam obraz.
+  </div>
+</div>
+
+<div class="footer">
+  Plan Duszy: Nicolas David Ngan, „Your Soul Contract Decoded" &nbsp;|&nbsp; Numerologia Chińska: Zbigniew Królicki, „Feng Shui Nieba i Ziemi. Numerologia Chińska"<br>
+  Kompilacja: Aleksander Komaniecki, ur. 09.11.1969 &nbsp;|&nbsp; 02.04.2026<br><br>
+  Aleksander Komaniecki &nbsp;|&nbsp; tel. +48 791 322 978 &nbsp;|&nbsp; komanieckialek@gmail.com
+</div>
+
+</div>
+</body>
+</html>
