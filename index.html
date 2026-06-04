@@ -113,6 +113,11 @@ nav .inner {
   transition: opacity .2s;
 }
 .nav-cta:hover { opacity: .85; }
+.nav-burger {
+  display: none; background: none; border: none;
+  color: var(--sand); font-size: 26px; line-height: 1;
+  cursor: pointer; padding: 4px 8px;
+}
 
 /* ══════════════════════════════════
    HERO
@@ -769,7 +774,24 @@ footer .inner {
   .about-photo { aspect-ratio: 4/3; }
   .szkolenia-grid { grid-template-columns: 1fr; }
   .kontakt-grid { grid-template-columns: 1fr; }
-  .nav-links { display: none; }
+  .nav-burger { display: block; }
+  nav .inner { position: relative; }
+  .nav-links {
+    position: absolute; top: 64px; left: 0; right: 0;
+    flex-direction: column; gap: 0;
+    background: var(--navy, #1a1c2e);
+    padding: 6px 0; margin: 0;
+    max-height: 0; overflow: hidden; opacity: 0; pointer-events: none;
+    transition: max-height .28s ease, opacity .2s ease;
+    box-shadow: 0 10px 28px rgba(0,0,0,.35);
+    z-index: 60;
+  }
+  .nav-links.open { max-height: 520px; opacity: 1; pointer-events: auto; }
+  .nav-links li { width: 100%; }
+  .nav-links a {
+    display: block; padding: 13px 22px; font-size: 15px;
+    border-bottom: 1px solid rgba(255,255,255,.06);
+  }
   .stab { padding: 12px 16px; font-size: 12px; }
 }
 </style>
@@ -780,7 +802,7 @@ footer .inner {
 <nav>
   <div class="inner">
     <div class="nav-logo">Aleksander <span>Komaniecki</span></div>
-    <ul class="nav-links">
+    <ul class="nav-links" onclick="if(event.target.closest('a'))this.classList.remove('open')">
       <li><a href="#o-mnie"><span style="color:rgba(245,240,232,.3);font-size:10px;margin-right:4px;">01</span>O mnie</a></li>
       <li><a href="#metoda"><span style="color:rgba(245,240,232,.3);font-size:10px;margin-right:4px;">02</span>Metoda</a></li>
       <li><a href="#uslugi"><span style="color:rgba(245,240,232,.3);font-size:10px;margin-right:4px;">03</span>Usługi</a></li>
@@ -790,6 +812,7 @@ footer .inner {
       <li><a href="refleksologia/"><span style="color:rgba(245,240,232,.3);font-size:10px;margin-right:4px;">07</span>Refleksologia</a></li>
       <li><a href="#kontakt"><span style="color:rgba(245,240,232,.3);font-size:10px;margin-right:4px;">08</span>Kontakt</a></li>
     </ul>
+    <button class="nav-burger" aria-label="Otwórz menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
     <a href="#kontakt" class="nav-cta">Umów się</a>
   </div>
 </nav>
