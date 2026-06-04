@@ -4506,141 +4506,282 @@
                       "wyj":  "Homeostaza to naturalna równowaga między systemami organizmu — stan, do którego refleksologia pomaga ciału powrócić."
                   }
               ],
-    "pytania_egz":  {
-                        "value":  [
-                                      {
-                                          "q":  "Omów teorię 10 stref ciała i wyjaśnij zasadę powiązania organu z refleksem.",
-                                          "rozdzial":  "r2",
-                                          "wskazowka":  "10 stref, 5 na połowę, prawa stopa = prawa połowa, duży palec = strefa 1 + głowa.",
-                                          "odpowiedz":  "Ciało dzieli się na 10 podłużnych stref biegnących od czubka głowy do końcówek palców u nóg — po 5 na każdą połowę ciała, licząc od dużego palca. Każda strefa odpowiada jednemu palcowi dłoni i stopy; duży palec to strefa pierwsza i sięga aż do czubka głowy. Podstawowa zasada brzmi: organ lub gruczoł leżący w danej strefie ma zawsze swój refleks w tej samej strefie stopy. Dodatkowo prawa stopa odpowiada prawej połowie ciała, a lewa — lewej (dlatego serce i śledziona mają refleks tylko na lewej stopie, a wątroba i woreczek żółciowy tylko na prawej). Obrazowo strefy przypomina „piernikowy człowiek” pokrojony na pionowe paski."
-                                      },
-                                      {
-                                          "q":  "Wymień i opisz cztery główne linie pomocnicze na stopie.",
-                                          "rozdzial":  "r2",
-                                          "wskazowka":  "Linia przepony (splotu słonecznego), linia pasa (talii), linia pięty, ścięgno.",
-                                          "odpowiedz":  "Cztery główne linie orientacyjne to: (1) linia przepony, zwana też linią splotu słonecznego — przebiega u podstawy poduszki stopy i oddziela refleksy klatki piersiowej od jamy brzusznej; (2) linia pasa (talii) — wyznaczana od piątej kości śródstopia w poprzek stopy, dzieli górną część brzucha od dolnej; (3) linia pięty — na zakończeniu miękkiego podbicia, gdzie stopa przechodzi w piętę, oddziela refleksy miednicy; (4) ścięgno — wyczuwalne jak naciągnięty sznur przy odchyleniu dużego palca, biegnące między linią przepony a pięty (oś pracy m.in. dla przewodów moczowych). Dodatkowym punktem rozpoznawczym jest śródstopie, a refleksy kręgosłupa biegną po wewnętrznej krawędzi stopy (strefa pierwsza)."
-                                      },
-                                      {
-                                          "q":  "Opisz podstawową technikę pracy kciuka i wyjaśnij, dlaczego odchylamy tylko pierwszy staw.",
-                                          "rozdzial":  "r4",
-                                          "wskazowka":  "Chodzenie tylko do przodu, zewnętrzny narożnik, ~45°; 3 powody odchylania pierwszego stawu.",
-                                          "odpowiedz":  "Podstawowa technika kciuka polega na drobnym, ciągłym ruchu „gąsienicy” — kciuk porusza się ZAWSZE tylko do przodu, nigdy do tyłu ani na bok, zginając się w pierwszym stawie pod kątem ok. 45°. Pracujemy zewnętrznym narożnikiem (krawędzią) kciuka, a nie opuszką płasko ani paznokciem. Odchylamy wyłącznie pierwszy staw i nie za wysoko z trzech powodów: (1) by uniknąć przeciążeń i zmęczenia osoby wykonującej zabieg; (2) by pacjent nie odczuł nieprzyjemnego ucisku paznokci; (3) by nie pominąć miejsc, które powinny zostać pobudzone. Pozostałe palce służą jako dźwignia. Delikatny refleks bywa „chodzony” w kilku kierunkach (góra, dół, w poprzek)."
-                                      },
-                                      {
-                                          "q":  "Czym różni się technika zaczepno-wycofująca od podstawowej i kiedy ją stosujemy?",
-                                          "rozdzial":  "r4",
-                                          "wskazowka":  "Nacisk i wycofanie; małe głębokie refleksy: przysadka, esica, zastawka krętniczo-kątnicza.",
-                                          "odpowiedz":  "Technika zaczepno-wycofująca (zwana „metodą trzmiela” lub „główki szpilki”) różni się tym, że kciuk nie „chodzi” po rejonie, lecz wykonuje ruch jak ukłucie żądła: znajduje punkt, naciska zewnętrznym narożnikiem i wycofuje się w poprzek refleksu, nie wychodząc poza pracowany punkt. Stosujemy ją do małych, głębiej położonych refleksów wymagających ucisku z dokładnością „główki szpilki” — przede wszystkim do przysadki mózgowej, zagięcia okrężnicy esowatej (esicy) oraz zastawki krętniczo-kątniczej. To także jedyne wyjątki od zasady, że refleksologia nie jest masażem ze zmiennym kątem pracy."
-                                      },
-                                      {
-                                          "q":  "Przedstaw budowę i znaczenie kręgosłupa w refleksologii oraz dlaczego pracujemy na nim w każdym zabiegu.",
-                                          "rozdzial":  "r5",
-                                          "wskazowka":  "5 grup kręgów, 31 par nerwów, refleks na wewn. krawędzi stopy, stały element zabiegu.",
-                                          "odpowiedz":  "Kręgosłup to oś szkieletu okrywająca rdzeń kręgowy; składa się z pięciu grup kręgów: szyjnych (7), piersiowych (12), lędźwiowych (5) oraz kości krzyżowej i ogonowej. Kręgi oddzielają dyski amortyzujące wstrząsy, a z kręgosłupa wychodzi 31 par nerwów łączących organy, gruczoły i sploty — dlatego „struktura zarządza funkcją”. Refleks kręgosłupa biegnie po wewnętrznej krawędzi stopy (strefa pierwsza). Na refleksach kręgosłupa pracujemy w KAŻDYM zabiegu, na całym jego przebiegu — bo napięcia mięśni i kręgów uciskają nerwy zawiadujące narządami (np. wątrobą, nerkami), ograniczając przepływ informacji i krwi. Miejsca pomocnicze to biodro-nerw kulszowy, biodro-kolano-noga, boczne strony karku i refleksy ramion."
-                                      },
-                                      {
-                                          "q":  "Opisz pracę na refleksach układu sercowo-naczyniowego i zasady ostrożności.",
-                                          "rozdzial":  "r6",
-                                          "wskazowka":  "Lewa stopa, śródstopie, ramię, nadnercze; skrzepy — rejony równoległe; paraliż — przeciwna półkula.",
-                                          "odpowiedz":  "Główny refleks serca pracujemy w poprzek kości śródstopia LEWEJ stopy, od linii przepony w górę do podstawy palców, najczulej między 1. a 2. palcem; sięgamy też do refleksów ramienia oraz kręgów szyjnych i piersiowych. Ponieważ układ krwionośny zasila całe ciało i nie ma jednego refleksu, generalnie pracujemy na wszystkich refleksach, poprawiając krążenie. Miejsce pomocnicze przy niedomaganiach serca to nadnercze (adrenalina), a przy problemach z sercem pracujemy też na lewym ramieniu/ręce (ból promieniuje). Zasady ostrożności: nadciśnienie → praca na przeponie; skrzepów NIGDY nie ruszamy bezpośrednio — tylko w rejonach równoległych; przy paraliżu/wylewie pracujemy na czubku dużego palca po PRZECIWNEJ stronie ciała (przeciwna półkula mózgu)."
-                                      },
-                                      {
-                                          "q":  "Omów układ limfatyczny i wskaż główne miejsca pracy refleksologa.",
-                                          "rozdzial":  "r7",
-                                          "wskazowka":  "Limfa, węzły, śledziona, grasica; pachwina (kostka), wierzch stopy, migdałki (duży palec).",
-                                          "odpowiedz":  "Układ limfatyczny to sieć naczyń z zastawkami, traktowana jako część układu sercowo-naczyniowego. Limfa, bezbarwna ciecz z plazmy krwi, oczyszcza tkanki i niesie obumarłe komórki oraz bakterie do węzłów chłonnych — „bastionów obronnych”. Śledziona to największe skupisko tkanki limfatycznej (filtruje krew, magazynuje żelazo, ważna przy anemii), migdały produkują przeciwciała, a grasica jest szczególnie ważnym refleksem u dzieci. Refleksolog pracuje przede wszystkim na: pachwinie — odpowiadającej połączeniu stopy z nogą w kostce; klatce piersiowej i płucach — na WIERZCHU stopy (praca łatwiejsza i skuteczniejsza), reprezentującym piersi i płuca; migdałkach — wokół dużego palca na wysokości 1/3 od podstawy (miejsce pomocnicze: małe palce); oraz grasicy — poniżej refleksu tarczycy."
-                                      },
-                                      {
-                                          "q":  "Opisz refleksy narządów zmysłu i techniki pracy na oczach i uszach.",
-                                          "rozdzial":  "r8",
-                                          "wskazowka":  "Oczy/uszy u podstawy małych palców; nerki jako pomoc dla oczu; smak/zapach 1/3 dużego palca.",
-                                          "odpowiedz":  "Pięć narządów zmysłu to skóra, oczy, uszy, nos i język. Refleksy oczu i uszu leżą u podstawy małych palców obu stóp, w tych samych strefach. Pracuje się je inną techniką niż większość refleksów: chodzeniem po „grzebieniu” palców (przy poduszce śródstopia) zewnętrzną krawędzią kciuka, w poprzek; przy bolesnym punkcie skuteczna jest praca palcem wskazującym z lekką rotacją. Najlepsze efekty daje praca na podstawie palców, nie na samym dużym palcu. Miejscem pomocniczym dla oczu są refleksy nerek (3. strefa — stąd „podkrążone oczy wskazują na nerki”). Refleksy zapachu i smaku znajdują się w środkowej 1/3 dużego palca, a dla skóry kluczowe są gruczoły tarczycy i nadnercza. Praca na oczach wzmacnia widzenie, ale nie zastępuje okularów."
-                                      },
-                                      {
-                                          "q":  "Omów układ oddechowy i sposób pracy na płucach i zatokach.",
-                                          "rozdzial":  "r9",
-                                          "wskazowka":  "Płuca: linia przepony→palce, spód i wierzch; zatoki: wszystkie palce; przepona przy stresie.",
-                                          "odpowiedz":  "Układ oddechowy tworzą nos, gardło, krtań, tchawica, oskrzela, płuca, przepona i zatoki; prawe płuco ma 3 płaty, lewe 2. Wdech następuje, gdy przepona się kurczy (zwiększa pojemność klatki), a wydech — gdy wraca. Refleksy płuc i klatki piersiowej leżą od linii przepony w górę do podstawy palców, na spodzie (kciuk w wyżłobieniach między kośćmi śródstopia) i na wierzchu stopy (palcem wskazującym; miejsce czułe). Oskrzela pracujemy w rejonie między dużym a następnym palcem. Refleksy zatok są we WSZYSTKICH palcach i odpowiadają całej głowie z wyłączeniem oczu, uszu i zębów; ich rejony pomocnicze to zastawka krętniczo-kątnicza (tylko prawa noga), przysadka i nadnercze. Przepona to kluczowy refleks przy napięciach i stresach."
-                                      },
-                                      {
-                                          "q":  "Opisz drogę pokarmu przez układ trawienny oraz lokalizację głównych refleksów.",
-                                          "rozdzial":  "r10",
-                                          "wskazowka":  "Usta→żołądek→jelita→odbyt; żołądek lewa, wątroba prawa, esica lewa, zastawka prawa.",
-                                          "odpowiedz":  "Pokarm przechodzi drogą: jama ustna → gardło → przełyk → żołądek → jelito cienkie → jelito grube (okrężnica) → odbytnica → odbyt; narządy pomocnicze to gruczoły ślinowe, wątroba, woreczek żółciowy i trzustka. Refleksolog pracuje „śladem pokarmu” od ust (¾ od czubka dużego palca) w dół. Żołądek ma ~85% refleksów na lewej stopie (poniżej linii przepony, powyżej linii pasa); przełyk — lewa stopa; dwunastnica — prawa; wątroba i woreczek żółciowy — prawa stopa (woreczek czasem skuteczniejszy na wierzchu); trzustka — głównie lewa stopa. Zastawka krętniczo-kątnicza (z wyrostkiem) leży na zewnętrznej krawędzi spodu prawej stopy między 4. a 5. rejonem, a esica — na wewnętrznej stronie lewej stopy (to samo miejsce co pęcherz). Refleks chroniczny między ścięgnem Achillesa a kostką jest wspólny dla prostaty, macicy, odbytnicy i nerwu kulszowego."
-                                      },
-                                      {
-                                          "q":  "Wyjaśnij, dlaczego refleksologia nie jest masażem i jakie są wyjątki.",
-                                          "rozdzial":  "r10",
-                                          "wskazowka":  "Praca w rejonach techniką kciuka ze zmiennym kątem; wyjątki: esica i zastawka krętniczo-kątnicza.",
-                                          "odpowiedz":  "Refleksologia nie jest masażem, ponieważ nie polega na rozcieraniu czy ugniataniu tkanek, lecz na precyzyjnej pracy techniką kciuka („chodzeniu”) w ściśle określonych rejonach, zwykle ze zmiennym kątem pracy w każdym powtórzeniu i bez znaczenia kierunku w obrębie rejonu jelit. Kciuk zawsze porusza się tylko do przodu, zginając się w pierwszym stawie. Istnieją dwa wyjątki, gdzie pracuje się techniką zaczepno-wycofującą (nacisk i wycofanie): zagięcie okrężnicy esowatej (esica) na lewej stopie oraz zastawka krętniczo-kątnicza na prawej stopie. Poza tym do delikatnych, małych refleksów (np. przysadka) także stosuje się ucisk punktowy, a nie masaż."
-                                      },
-                                      {
-                                          "q":  "Omów układ moczowy i wyjaśnij związek nadciśnienia z pracą nerek.",
-                                          "rozdzial":  "r11",
-                                          "wskazowka":  "Nerki/moczowody/pęcherz/cewka; nadciśnienie „cichy zabójca”; praca: przepona + nerki + gruczoły.",
-                                          "odpowiedz":  "Układ moczowy (nerki, moczowody, pęcherz, cewka) pracuje całą dobę, utrzymując równowagę wodną i kwasowo-zasadową oraz wydalając produkty odpadowe. Nerki to główne filtry — filtrują ~1 l krwi na minutę (ponad 60 l/h), a dorosły wydala ~1,5 l moczu dziennie. Refleksy są na obu stopach: pęcherz na wewnętrznej krawędzi przy linii pięty, nerka w centrum stopy, przewody moczowe wzdłuż wewnętrznej strony ścięgna; na refleksach nerki pracujemy zawsze w obu kierunkach. Nadciśnienie nazywane jest „cichym zabójcą” związanym z chorobą nerek — podwyższone ciśnienie uszkadza nerki i obniża ich zdolność filtrowania, a uszkodzone nerki podnoszą ciśnienie. Dlatego pracujemy na rejonie przepony/splotu słonecznego (relaks) oraz pomocniczo na nerkach i wszystkich gruczołach wewnętrznego wydzielania."
-                                      },
-                                      {
-                                          "q":  "Omów gruczoły wewnętrznego wydzielania i rolę przysadki jako gruczołu głównego.",
-                                          "rozdzial":  "r12",
-                                          "wskazowka":  "Bezprzewodowe, hormony, „termostaty”; przysadka „dyrygent”; refleks na dużym palcu.",
-                                          "odpowiedz":  "Gruczoły wewnętrznego wydzielania to małe, bezprzewodowe gruczoły wydzielające hormony wprost do krwi i limfy; razem z układem nerwowym sterują czynnościami organizmu niczym „termostaty”. Refleksolog koncentruje się na przysadce mózgowej, przytarczyczkach, tarczycy, nadnerczach, gruczołach rozrodczych i trzustce. Przysadka, wielkości ziarenka grochu, jest gruczołem głównym — „dyrygentem orkiestry” — bo produkuje hormony kontrolujące pozostałe gruczoły (tarczycę, nadnercza, gruczoły płciowe, wzrost). Jej refleks leży w środku powierzchni dużego palca; jest doskonały do usuwania gorączki i pomocny przy omdleniach, szczególnie ważny u dzieci. Pracuje się go techniką zaczepno-wycofującą, najlepiej w układzie: prawa ręka–prawa noga, lewa ręka–lewa noga."
-                                      },
-                                      {
-                                          "q":  "Wyjaśnij rolę nadnerczy i adrenaliny oraz znaczenie refleksu nadnercza.",
-                                          "rozdzial":  "r12",
-                                          "wskazowka":  "Rdzeń → adrenalina (walcz/uciekaj); pomoc przy sercu, astmie; refleks między linią pasa a przepony.",
-                                          "odpowiedz":  "Nadnercza to para gruczołów leżących nad każdą nerką. Ich kora wytwarza około 50 hormonów (m.in. system kortyzonu regulujący przemianę cukru i przeciwdziałający stanom zapalnym, hormony kontroli elektrolitów oraz hormony płciowe). Rdzeń nadnerczy wytwarza ADRENALINĘ — hormon reakcji „walcz lub uciekaj”: w sytuacji stresu, strachu czy gniewu natychmiast podnosi ciśnienie, przyspiesza oddech, pobudza mięśnie i podnosi poziom cukru. Adrenalina jest ważnym składnikiem w leczeniu chorób serca i astmy (przy ataku astmy podaje się jej zastrzyk). Refleks nadnercza leży w pół drogi między linią pasa a linią przepony, po wewnętrznej stronie wystającego ścięgna; to miejsce bardzo czułe, więc nacisk łagodzimy."
-                                      },
-                                      {
-                                          "q":  "Opisz lokalizację refleksów układu rozrodczego i znaczenie rejonu chronicznego.",
-                                          "rozdzial":  "r13",
-                                          "wskazowka":  "Macica/prostata wewn. kostka, jajniki/jądra zewn. kostka; rejon chroniczny = ścięgno Achillesa.",
-                                          "odpowiedz":  "W układzie rozrodczym refleksolog pracuje przede wszystkim wokół kostek. Refleks macicy/prostaty leży na WEWNĘTRZNEJ stronie stopy, w połowie linii od kostki do krawędzi pięty — to miejsce punktowe i bardzo wrażliwe (wiele kostek ma tam wgniecenie). Refleks jajników/jąder leży analogicznie na ZEWNĘTRZNEJ stronie stopy. Przewody jajowe/nasienne pracuje się w rejonie stawu skokowego techniką obrotu kostki. Rejon chroniczny to okolica ścięgna Achillesa (~2 cm nad kostką) — najefektywniejsza przy stanach przewlekłych, wspólna dla prostaty, macicy, odbytnicy i nerwu kulszowego. Po usunięciu jajników funkcję estrogenu przejmują nadnercza, więc pracuje się jednocześnie na nadnerczu, tarczycy i przysadce; przy operacjach należy pracować przed i natychmiast po zabiegu, ze wzmożoną delikatnością."
-                                      },
-                                      {
-                                          "q":  "Opisz pełny przebieg zabiegu wg metody Budzanowskiej-Bratko.",
-                                          "rozdzial":  "r14",
-                                          "wskazowka":  "Jedna stopa A-Z, druga, powrót; przepona→palce→oko/ucho→pięta→kręgosłup→kostka; 30-40 min.",
-                                          "odpowiedz":  "Zabieg rozpoczynamy technikami relaksującymi, a następnie od refleksu przepony/splotu słonecznego. Pełny zabieg wykonujemy na jednej stopie od A do Z, potem na drugiej, a na końcu wracamy do pierwszej. Kolejność na stopie: (1) przepona → podstawa palców; (2) wszystkie palce (od dużego: kręgi szyjne, tarczyca, mózg, przysadka — potem małe palce); (3) oko i ucho; (4) przepona → linia pięty (główne refleksy organów); (5) rejon pięty (dolny kręgosłup, odbytnica, nerw kulszowy, esica na lewej stopie); (6) cały kręgosłup; (7) rejon kostki (refleksy rozrodcze). Kończymy technikami relaksu. Zabieg trwa 30-40 min (pierwszy do 60 min), z częstotliwością 2×/tydzień, potem 1×/tydzień. Nacisk dobieramy do osoby — celem jest „dobry ból”: boli, ale przyjemnie."
-                                      },
-                                      {
-                                          "q":  "Przedstaw zasady bezpieczeństwa i ograniczenia pracy refleksologa.",
-                                          "rozdzial":  "r14",
-                                          "wskazowka":  "Nie diagnozować, nie przepisywać leków, nie zmieniać insuliny, określać tylko rejon, kierować do lekarza.",
-                                          "odpowiedz":  "Refleksolog nie jest lekarzem i nie zastępuje lekarza — refleksologia jest dodatkiem wspierającym, a nie praktyką medyczną; jej celem jest pomoc ciału w osiągnięciu homeostazy. Nie wolno: stawiać diagnozy, przepisywać leków ani sugerować/weryfikować leków już przepisanych, ani prowadzić terapii ukierunkowanej na konkretną chorobę. Szczególnie ważne: NIGDY nie sugerować zmniejszenia dawki insuliny bez kontaktu z lekarzem rodzinnym. Gdy pacjent pyta o bolący refleks, określamy najwyżej rejon ciała (głowa, klatka piersiowa, jama brzuszna, miednica), nie konkretny narząd (narządy nakładają się). Nie łączymy pracy ze sprzedażą artykułów, a pacjenta z nieskonsultowanym problemem kierujemy do lekarza. Przedawkowanie zabiegu daje jedynie nieszkodliwe efekty oczyszczania."
-                                      },
-                                      {
-                                          "q":  "Omów refleksologię rąk — kiedy ją stosujemy i czym różni się od pracy na stopach.",
-                                          "rozdzial":  "r15",
-                                          "wskazowka":  "Praca pacjenta + wyjście gdy nie można na stopach; te same strefy; trudniejsze; kciuk=duży palec.",
-                                          "odpowiedz":  "Refleksologia rąk to rosnąca gałąź refleksologii, stosowana w dwóch sytuacjach: jako pole do samodzielnej, codziennej pracy pacjenta między sesjami oraz jako wyjście, gdy nie można pracować na stopach (urazy, utrata stopy, nadwrażliwość). Dłonie mają te same strefy i linie podziałowe co stopy, ale refleksy są trudniejsze do odnalezienia, bo leżą głębiej i nie mają tak stałego zabezpieczenia jak stopy. Praca odbywa się głównie techniką kciuka, a na wierzchu dłoni — palcami (z dobrym podparciem). Ważna jest przestrzeń „V” między kciukiem a palcem wskazującym, zawierająca refleksy karku, gardła i barku. Obowiązuje odpowiedniość: kciuk = duży palec stopy, przegub dłoni = kostka. Najlepsze efekty daje praca przy problemach karku, barków, piersi, płuc, zatok i kręgosłupa szyjnego."
-                                      },
-                                      {
-                                          "q":  "Wyjaśnij zasadę miejsc odpowiadających i podaj co najmniej cztery przykłady par.",
-                                          "rozdzial":  "r2",
-                                          "wskazowka":  "Dłoń↔podeszwa, łokieć↔kolano, kostka↔przegub, przedramię↔podudzie, kciuk↔duży palec.",
-                                          "odpowiedz":  "Zasada miejsc odpowiadających pozwala oddziaływać na odpowiednik organu lub stawu położony w innym miejscu ciała, gdy nie można pracować bezpośrednio na miejscu bolącym lub uszkodzonym (np. przy złamanej nodze pracujemy na odpowiadającym miejscu ręki). Wynika z tego, że części ciała z tej samej strefy są ze sobą powiązane. Przykładowe pary: dłoń ↔ podeszwa stopy, przedramię ↔ podudzie, łokieć ↔ kolano, kostka ↔ przegub (nadgarstek), kciuk ↔ duży palec stopy, ramię ↔ biodro/udo. W praktyce: myśląc o kostce wyobrażamy sobie przegub, a myśląc o kolanie — łokieć."
-                                      },
-                                      {
-                                          "q":  "Omów historię refleksologii od Fitzgeralda do Ingham.",
-                                          "rozdzial":  "r1",
-                                          "wskazowka":  "Egipt → Fitzgerald (terapia strefowa, 1917) → Riley → Ingham (stopy, 1938).",
-                                          "odpowiedz":  "Korzenie refleksologii sięgają starożytnego Egiptu (inskrypcja w grobowcu lekarskim — mastaba). Współczesna refleksologia wywodzi się z terapii strefowej dr. Williama H. Fitzgeralda, laryngologa, który na początku XX w. opisał uśmierzanie bólu przez ucisk części dłoni i palców; w 1917 r. wydał książkę „Terapia strefowa albo uśmierzanie bólu w domu”. Jego pracą zafascynował się dr Joe Shelby Riley, w którego gabinecie pracowała Eunice Ingham. To Ingham na początku lat 30. rozwinęła refleksologię STÓP, nanosząc wrażliwe punkty stopy na mapę ciała i pracując kciukiem; w 1938 r. wydała „Historie, które stopy mogą opowiedzieć”. Zmarła w 1974 r. w wieku 85 lat, a jej Metoda Ingham — kontynuowana przez Narodowy i Międzynarodowy Instytut Refleksologii — jest dziś przewodnią metodą na świecie."
-                                      },
-                                      {
-                                          "q":  "Omów rolę wątroby w organizmie i lokalizację jej refleksów.",
-                                          "rozdzial":  "r10",
-                                          "wskazowka":  "~1,5 kg, ponad 500 czynności, glikogen/cholesterol/żółć/odtruwanie; refleks prawa stopa.",
-                                          "odpowiedz":  "Wątroba to gąbczasty organ ważący ok. 1,5 kg, położony po prawej stronie ciała poniżej przepony; wykonuje ponad 500 czynności i ma właściwości samoregenerujące — „gdy wątroba zawiedzie, ciało umiera”. Buduje i magazynuje glikogen, który uwalnia jako glukozę przy potrzebie, produkuje cholesterol (poprzednik hormonów) i ok. 500 cc żółci dziennie, a jej komórki Kupffera oczyszczają krew jelitową, niszczą trucizny i drobnoustroje. Pomaga w trawieniu, krzepnięciu, metabolizmie, cyrkulacji, odtruwaniu i formowaniu krwi. Ponieważ leży po prawej stronie, jej refleksy są na PRAWEJ stopie, między linią pasa a linią przepony, zajmując dużą przestrzeń — pracujemy je dokładnie, jednakowym naciskiem, wraz z refleksem woreczka żółciowego."
-                                      },
-                                      {
-                                          "q":  "Wyjaśnij różnicę między hipoglikemią a hiperglikemią i sposób pracy refleksologa.",
-                                          "rozdzial":  "r12",
-                                          "wskazowka":  "Hipo = za mało cukru (często nadprodukcja insuliny); zawsze trzustka + wątroba; nie zmieniać insuliny.",
-                                          "odpowiedz":  "Hipoglikemia to nienormalnie niski poziom cukru we krwi — wynika z raptownego usuwania glukozy lub spadku jej produkcji, a częstą przyczyną jest nadprodukcja insuliny. Hiperglikemia to stan odwrotny — podwyższony poziom cukru, charakterystyczny dla cukrzycy. W obu przypadkach refleksolog zawsze pracuje na refleksach trzustki i wątroby — to dwa narządy regulujące poziom cukru (insulina i glikogen z trzustki, magazynowanie glikogenu w wątrobie). Praca polega głównie na poprawie krążenia na obu stopach. Obowiązuje tu krytyczna zasada bezpieczeństwa: nigdy nie sugerować zmiany ani zmniejszenia dawki insuliny bez konsultacji z lekarzem rodzinnym — wszelkie decyzje o lekach należą wyłącznie do lekarza."
-                                      }
-                                  ],
-                        "Count":  22
-                    }
+    "pytania_egz":  [
+                        {
+                            "q":  "Omów teorię 10 stref ciała i wyjaśnij zasadę powiązania organu z refleksem.",
+                            "rozdzial":  "r2",
+                            "wskazowka":  "10 stref, 5 na połowę, prawa stopa = prawa połowa, duży palec = strefa 1 + głowa.",
+                            "odpowiedz":  "Ciało dzieli się na 10 podłużnych stref biegnących od czubka głowy do końcówek palców u nóg — po 5 na każdą połowę ciała, licząc od dużego palca. Każda strefa odpowiada jednemu palcowi dłoni i stopy; duży palec to strefa pierwsza i sięga aż do czubka głowy. Podstawowa zasada brzmi: organ lub gruczoł leżący w danej strefie ma zawsze swój refleks w tej samej strefie stopy. Dodatkowo prawa stopa odpowiada prawej połowie ciała, a lewa — lewej (dlatego serce i śledziona mają refleks tylko na lewej stopie, a wątroba i woreczek żółciowy tylko na prawej). Obrazowo strefy przypomina „piernikowy człowiek” pokrojony na pionowe paski."
+                        },
+                        {
+                            "q":  "Wymień i opisz cztery główne linie pomocnicze na stopie.",
+                            "rozdzial":  "r2",
+                            "wskazowka":  "Linia przepony (splotu słonecznego), linia pasa (talii), linia pięty, ścięgno.",
+                            "odpowiedz":  "Cztery główne linie orientacyjne to: (1) linia przepony, zwana też linią splotu słonecznego — przebiega u podstawy poduszki stopy i oddziela refleksy klatki piersiowej od jamy brzusznej; (2) linia pasa (talii) — wyznaczana od piątej kości śródstopia w poprzek stopy, dzieli górną część brzucha od dolnej; (3) linia pięty — na zakończeniu miękkiego podbicia, gdzie stopa przechodzi w piętę, oddziela refleksy miednicy; (4) ścięgno — wyczuwalne jak naciągnięty sznur przy odchyleniu dużego palca, biegnące między linią przepony a pięty (oś pracy m.in. dla przewodów moczowych). Dodatkowym punktem rozpoznawczym jest śródstopie, a refleksy kręgosłupa biegną po wewnętrznej krawędzi stopy (strefa pierwsza)."
+                        },
+                        {
+                            "q":  "Opisz podstawową technikę pracy kciuka i wyjaśnij, dlaczego odchylamy tylko pierwszy staw.",
+                            "rozdzial":  "r4",
+                            "wskazowka":  "Chodzenie tylko do przodu, zewnętrzny narożnik, ~45°; 3 powody odchylania pierwszego stawu.",
+                            "odpowiedz":  "Podstawowa technika kciuka polega na drobnym, ciągłym ruchu „gąsienicy” — kciuk porusza się ZAWSZE tylko do przodu, nigdy do tyłu ani na bok, zginając się w pierwszym stawie pod kątem ok. 45°. Pracujemy zewnętrznym narożnikiem (krawędzią) kciuka, a nie opuszką płasko ani paznokciem. Odchylamy wyłącznie pierwszy staw i nie za wysoko z trzech powodów: (1) by uniknąć przeciążeń i zmęczenia osoby wykonującej zabieg; (2) by pacjent nie odczuł nieprzyjemnego ucisku paznokci; (3) by nie pominąć miejsc, które powinny zostać pobudzone. Pozostałe palce służą jako dźwignia. Delikatny refleks bywa „chodzony” w kilku kierunkach (góra, dół, w poprzek)."
+                        },
+                        {
+                            "q":  "Czym różni się technika zaczepno-wycofująca od podstawowej i kiedy ją stosujemy?",
+                            "rozdzial":  "r4",
+                            "wskazowka":  "Nacisk i wycofanie; małe głębokie refleksy: przysadka, esica, zastawka krętniczo-kątnicza.",
+                            "odpowiedz":  "Technika zaczepno-wycofująca (zwana „metodą trzmiela” lub „główki szpilki”) różni się tym, że kciuk nie „chodzi” po rejonie, lecz wykonuje ruch jak ukłucie żądła: znajduje punkt, naciska zewnętrznym narożnikiem i wycofuje się w poprzek refleksu, nie wychodząc poza pracowany punkt. Stosujemy ją do małych, głębiej położonych refleksów wymagających ucisku z dokładnością „główki szpilki” — przede wszystkim do przysadki mózgowej, zagięcia okrężnicy esowatej (esicy) oraz zastawki krętniczo-kątniczej. To także jedyne wyjątki od zasady, że refleksologia nie jest masażem ze zmiennym kątem pracy."
+                        },
+                        {
+                            "q":  "Przedstaw budowę i znaczenie kręgosłupa w refleksologii oraz dlaczego pracujemy na nim w każdym zabiegu.",
+                            "rozdzial":  "r5",
+                            "wskazowka":  "5 grup kręgów, 31 par nerwów, refleks na wewn. krawędzi stopy, stały element zabiegu.",
+                            "odpowiedz":  "Kręgosłup to oś szkieletu okrywająca rdzeń kręgowy; składa się z pięciu grup kręgów: szyjnych (7), piersiowych (12), lędźwiowych (5) oraz kości krzyżowej i ogonowej. Kręgi oddzielają dyski amortyzujące wstrząsy, a z kręgosłupa wychodzi 31 par nerwów łączących organy, gruczoły i sploty — dlatego „struktura zarządza funkcją”. Refleks kręgosłupa biegnie po wewnętrznej krawędzi stopy (strefa pierwsza). Na refleksach kręgosłupa pracujemy w KAŻDYM zabiegu, na całym jego przebiegu — bo napięcia mięśni i kręgów uciskają nerwy zawiadujące narządami (np. wątrobą, nerkami), ograniczając przepływ informacji i krwi. Miejsca pomocnicze to biodro-nerw kulszowy, biodro-kolano-noga, boczne strony karku i refleksy ramion."
+                        },
+                        {
+                            "q":  "Opisz pracę na refleksach układu sercowo-naczyniowego i zasady ostrożności.",
+                            "rozdzial":  "r6",
+                            "wskazowka":  "Lewa stopa, śródstopie, ramię, nadnercze; skrzepy — rejony równoległe; paraliż — przeciwna półkula.",
+                            "odpowiedz":  "Główny refleks serca pracujemy w poprzek kości śródstopia LEWEJ stopy, od linii przepony w górę do podstawy palców, najczulej między 1. a 2. palcem; sięgamy też do refleksów ramienia oraz kręgów szyjnych i piersiowych. Ponieważ układ krwionośny zasila całe ciało i nie ma jednego refleksu, generalnie pracujemy na wszystkich refleksach, poprawiając krążenie. Miejsce pomocnicze przy niedomaganiach serca to nadnercze (adrenalina), a przy problemach z sercem pracujemy też na lewym ramieniu/ręce (ból promieniuje). Zasady ostrożności: nadciśnienie → praca na przeponie; skrzepów NIGDY nie ruszamy bezpośrednio — tylko w rejonach równoległych; przy paraliżu/wylewie pracujemy na czubku dużego palca po PRZECIWNEJ stronie ciała (przeciwna półkula mózgu)."
+                        },
+                        {
+                            "q":  "Omów układ limfatyczny i wskaż główne miejsca pracy refleksologa.",
+                            "rozdzial":  "r7",
+                            "wskazowka":  "Limfa, węzły, śledziona, grasica; pachwina (kostka), wierzch stopy, migdałki (duży palec).",
+                            "odpowiedz":  "Układ limfatyczny to sieć naczyń z zastawkami, traktowana jako część układu sercowo-naczyniowego. Limfa, bezbarwna ciecz z plazmy krwi, oczyszcza tkanki i niesie obumarłe komórki oraz bakterie do węzłów chłonnych — „bastionów obronnych”. Śledziona to największe skupisko tkanki limfatycznej (filtruje krew, magazynuje żelazo, ważna przy anemii), migdały produkują przeciwciała, a grasica jest szczególnie ważnym refleksem u dzieci. Refleksolog pracuje przede wszystkim na: pachwinie — odpowiadającej połączeniu stopy z nogą w kostce; klatce piersiowej i płucach — na WIERZCHU stopy (praca łatwiejsza i skuteczniejsza), reprezentującym piersi i płuca; migdałkach — wokół dużego palca na wysokości 1/3 od podstawy (miejsce pomocnicze: małe palce); oraz grasicy — poniżej refleksu tarczycy."
+                        },
+                        {
+                            "q":  "Opisz refleksy narządów zmysłu i techniki pracy na oczach i uszach.",
+                            "rozdzial":  "r8",
+                            "wskazowka":  "Oczy/uszy u podstawy małych palców; nerki jako pomoc dla oczu; smak/zapach 1/3 dużego palca.",
+                            "odpowiedz":  "Pięć narządów zmysłu to skóra, oczy, uszy, nos i język. Refleksy oczu i uszu leżą u podstawy małych palców obu stóp, w tych samych strefach. Pracuje się je inną techniką niż większość refleksów: chodzeniem po „grzebieniu” palców (przy poduszce śródstopia) zewnętrzną krawędzią kciuka, w poprzek; przy bolesnym punkcie skuteczna jest praca palcem wskazującym z lekką rotacją. Najlepsze efekty daje praca na podstawie palców, nie na samym dużym palcu. Miejscem pomocniczym dla oczu są refleksy nerek (3. strefa — stąd „podkrążone oczy wskazują na nerki”). Refleksy zapachu i smaku znajdują się w środkowej 1/3 dużego palca, a dla skóry kluczowe są gruczoły tarczycy i nadnercza. Praca na oczach wzmacnia widzenie, ale nie zastępuje okularów."
+                        },
+                        {
+                            "q":  "Omów układ oddechowy i sposób pracy na płucach i zatokach.",
+                            "rozdzial":  "r9",
+                            "wskazowka":  "Płuca: linia przepony→palce, spód i wierzch; zatoki: wszystkie palce; przepona przy stresie.",
+                            "odpowiedz":  "Układ oddechowy tworzą nos, gardło, krtań, tchawica, oskrzela, płuca, przepona i zatoki; prawe płuco ma 3 płaty, lewe 2. Wdech następuje, gdy przepona się kurczy (zwiększa pojemność klatki), a wydech — gdy wraca. Refleksy płuc i klatki piersiowej leżą od linii przepony w górę do podstawy palców, na spodzie (kciuk w wyżłobieniach między kośćmi śródstopia) i na wierzchu stopy (palcem wskazującym; miejsce czułe). Oskrzela pracujemy w rejonie między dużym a następnym palcem. Refleksy zatok są we WSZYSTKICH palcach i odpowiadają całej głowie z wyłączeniem oczu, uszu i zębów; ich rejony pomocnicze to zastawka krętniczo-kątnicza (tylko prawa noga), przysadka i nadnercze. Przepona to kluczowy refleks przy napięciach i stresach."
+                        },
+                        {
+                            "q":  "Opisz drogę pokarmu przez układ trawienny oraz lokalizację głównych refleksów.",
+                            "rozdzial":  "r10",
+                            "wskazowka":  "Usta→żołądek→jelita→odbyt; żołądek lewa, wątroba prawa, esica lewa, zastawka prawa.",
+                            "odpowiedz":  "Pokarm przechodzi drogą: jama ustna → gardło → przełyk → żołądek → jelito cienkie → jelito grube (okrężnica) → odbytnica → odbyt; narządy pomocnicze to gruczoły ślinowe, wątroba, woreczek żółciowy i trzustka. Refleksolog pracuje „śladem pokarmu” od ust (¾ od czubka dużego palca) w dół. Żołądek ma ~85% refleksów na lewej stopie (poniżej linii przepony, powyżej linii pasa); przełyk — lewa stopa; dwunastnica — prawa; wątroba i woreczek żółciowy — prawa stopa (woreczek czasem skuteczniejszy na wierzchu); trzustka — głównie lewa stopa. Zastawka krętniczo-kątnicza (z wyrostkiem) leży na zewnętrznej krawędzi spodu prawej stopy między 4. a 5. rejonem, a esica — na wewnętrznej stronie lewej stopy (to samo miejsce co pęcherz). Refleks chroniczny między ścięgnem Achillesa a kostką jest wspólny dla prostaty, macicy, odbytnicy i nerwu kulszowego."
+                        },
+                        {
+                            "q":  "Wyjaśnij, dlaczego refleksologia nie jest masażem i jakie są wyjątki.",
+                            "rozdzial":  "r10",
+                            "wskazowka":  "Praca w rejonach techniką kciuka ze zmiennym kątem; wyjątki: esica i zastawka krętniczo-kątnicza.",
+                            "odpowiedz":  "Refleksologia nie jest masażem, ponieważ nie polega na rozcieraniu czy ugniataniu tkanek, lecz na precyzyjnej pracy techniką kciuka („chodzeniu”) w ściśle określonych rejonach, zwykle ze zmiennym kątem pracy w każdym powtórzeniu i bez znaczenia kierunku w obrębie rejonu jelit. Kciuk zawsze porusza się tylko do przodu, zginając się w pierwszym stawie. Istnieją dwa wyjątki, gdzie pracuje się techniką zaczepno-wycofującą (nacisk i wycofanie): zagięcie okrężnicy esowatej (esica) na lewej stopie oraz zastawka krętniczo-kątnicza na prawej stopie. Poza tym do delikatnych, małych refleksów (np. przysadka) także stosuje się ucisk punktowy, a nie masaż."
+                        },
+                        {
+                            "q":  "Omów układ moczowy i wyjaśnij związek nadciśnienia z pracą nerek.",
+                            "rozdzial":  "r11",
+                            "wskazowka":  "Nerki/moczowody/pęcherz/cewka; nadciśnienie „cichy zabójca”; praca: przepona + nerki + gruczoły.",
+                            "odpowiedz":  "Układ moczowy (nerki, moczowody, pęcherz, cewka) pracuje całą dobę, utrzymując równowagę wodną i kwasowo-zasadową oraz wydalając produkty odpadowe. Nerki to główne filtry — filtrują ~1 l krwi na minutę (ponad 60 l/h), a dorosły wydala ~1,5 l moczu dziennie. Refleksy są na obu stopach: pęcherz na wewnętrznej krawędzi przy linii pięty, nerka w centrum stopy, przewody moczowe wzdłuż wewnętrznej strony ścięgna; na refleksach nerki pracujemy zawsze w obu kierunkach. Nadciśnienie nazywane jest „cichym zabójcą” związanym z chorobą nerek — podwyższone ciśnienie uszkadza nerki i obniża ich zdolność filtrowania, a uszkodzone nerki podnoszą ciśnienie. Dlatego pracujemy na rejonie przepony/splotu słonecznego (relaks) oraz pomocniczo na nerkach i wszystkich gruczołach wewnętrznego wydzielania."
+                        },
+                        {
+                            "q":  "Omów gruczoły wewnętrznego wydzielania i rolę przysadki jako gruczołu głównego.",
+                            "rozdzial":  "r12",
+                            "wskazowka":  "Bezprzewodowe, hormony, „termostaty”; przysadka „dyrygent”; refleks na dużym palcu.",
+                            "odpowiedz":  "Gruczoły wewnętrznego wydzielania to małe, bezprzewodowe gruczoły wydzielające hormony wprost do krwi i limfy; razem z układem nerwowym sterują czynnościami organizmu niczym „termostaty”. Refleksolog koncentruje się na przysadce mózgowej, przytarczyczkach, tarczycy, nadnerczach, gruczołach rozrodczych i trzustce. Przysadka, wielkości ziarenka grochu, jest gruczołem głównym — „dyrygentem orkiestry” — bo produkuje hormony kontrolujące pozostałe gruczoły (tarczycę, nadnercza, gruczoły płciowe, wzrost). Jej refleks leży w środku powierzchni dużego palca; jest doskonały do usuwania gorączki i pomocny przy omdleniach, szczególnie ważny u dzieci. Pracuje się go techniką zaczepno-wycofującą, najlepiej w układzie: prawa ręka–prawa noga, lewa ręka–lewa noga."
+                        },
+                        {
+                            "q":  "Wyjaśnij rolę nadnerczy i adrenaliny oraz znaczenie refleksu nadnercza.",
+                            "rozdzial":  "r12",
+                            "wskazowka":  "Rdzeń → adrenalina (walcz/uciekaj); pomoc przy sercu, astmie; refleks między linią pasa a przepony.",
+                            "odpowiedz":  "Nadnercza to para gruczołów leżących nad każdą nerką. Ich kora wytwarza około 50 hormonów (m.in. system kortyzonu regulujący przemianę cukru i przeciwdziałający stanom zapalnym, hormony kontroli elektrolitów oraz hormony płciowe). Rdzeń nadnerczy wytwarza ADRENALINĘ — hormon reakcji „walcz lub uciekaj”: w sytuacji stresu, strachu czy gniewu natychmiast podnosi ciśnienie, przyspiesza oddech, pobudza mięśnie i podnosi poziom cukru. Adrenalina jest ważnym składnikiem w leczeniu chorób serca i astmy (przy ataku astmy podaje się jej zastrzyk). Refleks nadnercza leży w pół drogi między linią pasa a linią przepony, po wewnętrznej stronie wystającego ścięgna; to miejsce bardzo czułe, więc nacisk łagodzimy."
+                        },
+                        {
+                            "q":  "Opisz lokalizację refleksów układu rozrodczego i znaczenie rejonu chronicznego.",
+                            "rozdzial":  "r13",
+                            "wskazowka":  "Macica/prostata wewn. kostka, jajniki/jądra zewn. kostka; rejon chroniczny = ścięgno Achillesa.",
+                            "odpowiedz":  "W układzie rozrodczym refleksolog pracuje przede wszystkim wokół kostek. Refleks macicy/prostaty leży na WEWNĘTRZNEJ stronie stopy, w połowie linii od kostki do krawędzi pięty — to miejsce punktowe i bardzo wrażliwe (wiele kostek ma tam wgniecenie). Refleks jajników/jąder leży analogicznie na ZEWNĘTRZNEJ stronie stopy. Przewody jajowe/nasienne pracuje się w rejonie stawu skokowego techniką obrotu kostki. Rejon chroniczny to okolica ścięgna Achillesa (~2 cm nad kostką) — najefektywniejsza przy stanach przewlekłych, wspólna dla prostaty, macicy, odbytnicy i nerwu kulszowego. Po usunięciu jajników funkcję estrogenu przejmują nadnercza, więc pracuje się jednocześnie na nadnerczu, tarczycy i przysadce; przy operacjach należy pracować przed i natychmiast po zabiegu, ze wzmożoną delikatnością."
+                        },
+                        {
+                            "q":  "Opisz pełny przebieg zabiegu wg metody Budzanowskiej-Bratko.",
+                            "rozdzial":  "r14",
+                            "wskazowka":  "Jedna stopa A-Z, druga, powrót; przepona→palce→oko/ucho→pięta→kręgosłup→kostka; 30-40 min.",
+                            "odpowiedz":  "Zabieg rozpoczynamy technikami relaksującymi, a następnie od refleksu przepony/splotu słonecznego. Pełny zabieg wykonujemy na jednej stopie od A do Z, potem na drugiej, a na końcu wracamy do pierwszej. Kolejność na stopie: (1) przepona → podstawa palców; (2) wszystkie palce (od dużego: kręgi szyjne, tarczyca, mózg, przysadka — potem małe palce); (3) oko i ucho; (4) przepona → linia pięty (główne refleksy organów); (5) rejon pięty (dolny kręgosłup, odbytnica, nerw kulszowy, esica na lewej stopie); (6) cały kręgosłup; (7) rejon kostki (refleksy rozrodcze). Kończymy technikami relaksu. Zabieg trwa 30-40 min (pierwszy do 60 min), z częstotliwością 2×/tydzień, potem 1×/tydzień. Nacisk dobieramy do osoby — celem jest „dobry ból”: boli, ale przyjemnie."
+                        },
+                        {
+                            "q":  "Przedstaw zasady bezpieczeństwa i ograniczenia pracy refleksologa.",
+                            "rozdzial":  "r14",
+                            "wskazowka":  "Nie diagnozować, nie przepisywać leków, nie zmieniać insuliny, określać tylko rejon, kierować do lekarza.",
+                            "odpowiedz":  "Refleksolog nie jest lekarzem i nie zastępuje lekarza — refleksologia jest dodatkiem wspierającym, a nie praktyką medyczną; jej celem jest pomoc ciału w osiągnięciu homeostazy. Nie wolno: stawiać diagnozy, przepisywać leków ani sugerować/weryfikować leków już przepisanych, ani prowadzić terapii ukierunkowanej na konkretną chorobę. Szczególnie ważne: NIGDY nie sugerować zmniejszenia dawki insuliny bez kontaktu z lekarzem rodzinnym. Gdy pacjent pyta o bolący refleks, określamy najwyżej rejon ciała (głowa, klatka piersiowa, jama brzuszna, miednica), nie konkretny narząd (narządy nakładają się). Nie łączymy pracy ze sprzedażą artykułów, a pacjenta z nieskonsultowanym problemem kierujemy do lekarza. Przedawkowanie zabiegu daje jedynie nieszkodliwe efekty oczyszczania."
+                        },
+                        {
+                            "q":  "Omów refleksologię rąk — kiedy ją stosujemy i czym różni się od pracy na stopach.",
+                            "rozdzial":  "r15",
+                            "wskazowka":  "Praca pacjenta + wyjście gdy nie można na stopach; te same strefy; trudniejsze; kciuk=duży palec.",
+                            "odpowiedz":  "Refleksologia rąk to rosnąca gałąź refleksologii, stosowana w dwóch sytuacjach: jako pole do samodzielnej, codziennej pracy pacjenta między sesjami oraz jako wyjście, gdy nie można pracować na stopach (urazy, utrata stopy, nadwrażliwość). Dłonie mają te same strefy i linie podziałowe co stopy, ale refleksy są trudniejsze do odnalezienia, bo leżą głębiej i nie mają tak stałego zabezpieczenia jak stopy. Praca odbywa się głównie techniką kciuka, a na wierzchu dłoni — palcami (z dobrym podparciem). Ważna jest przestrzeń „V” między kciukiem a palcem wskazującym, zawierająca refleksy karku, gardła i barku. Obowiązuje odpowiedniość: kciuk = duży palec stopy, przegub dłoni = kostka. Najlepsze efekty daje praca przy problemach karku, barków, piersi, płuc, zatok i kręgosłupa szyjnego."
+                        },
+                        {
+                            "q":  "Wyjaśnij zasadę miejsc odpowiadających i podaj co najmniej cztery przykłady par.",
+                            "rozdzial":  "r2",
+                            "wskazowka":  "Dłoń↔podeszwa, łokieć↔kolano, kostka↔przegub, przedramię↔podudzie, kciuk↔duży palec.",
+                            "odpowiedz":  "Zasada miejsc odpowiadających pozwala oddziaływać na odpowiednik organu lub stawu położony w innym miejscu ciała, gdy nie można pracować bezpośrednio na miejscu bolącym lub uszkodzonym (np. przy złamanej nodze pracujemy na odpowiadającym miejscu ręki). Wynika z tego, że części ciała z tej samej strefy są ze sobą powiązane. Przykładowe pary: dłoń ↔ podeszwa stopy, przedramię ↔ podudzie, łokieć ↔ kolano, kostka ↔ przegub (nadgarstek), kciuk ↔ duży palec stopy, ramię ↔ biodro/udo. W praktyce: myśląc o kostce wyobrażamy sobie przegub, a myśląc o kolanie — łokieć."
+                        },
+                        {
+                            "q":  "Omów historię refleksologii od Fitzgeralda do Ingham.",
+                            "rozdzial":  "r1",
+                            "wskazowka":  "Egipt → Fitzgerald (terapia strefowa, 1917) → Riley → Ingham (stopy, 1938).",
+                            "odpowiedz":  "Korzenie refleksologii sięgają starożytnego Egiptu (inskrypcja w grobowcu lekarskim — mastaba). Współczesna refleksologia wywodzi się z terapii strefowej dr. Williama H. Fitzgeralda, laryngologa, który na początku XX w. opisał uśmierzanie bólu przez ucisk części dłoni i palców; w 1917 r. wydał książkę „Terapia strefowa albo uśmierzanie bólu w domu”. Jego pracą zafascynował się dr Joe Shelby Riley, w którego gabinecie pracowała Eunice Ingham. To Ingham na początku lat 30. rozwinęła refleksologię STÓP, nanosząc wrażliwe punkty stopy na mapę ciała i pracując kciukiem; w 1938 r. wydała „Historie, które stopy mogą opowiedzieć”. Zmarła w 1974 r. w wieku 85 lat, a jej Metoda Ingham — kontynuowana przez Narodowy i Międzynarodowy Instytut Refleksologii — jest dziś przewodnią metodą na świecie."
+                        },
+                        {
+                            "q":  "Omów rolę wątroby w organizmie i lokalizację jej refleksów.",
+                            "rozdzial":  "r10",
+                            "wskazowka":  "~1,5 kg, ponad 500 czynności, glikogen/cholesterol/żółć/odtruwanie; refleks prawa stopa.",
+                            "odpowiedz":  "Wątroba to gąbczasty organ ważący ok. 1,5 kg, położony po prawej stronie ciała poniżej przepony; wykonuje ponad 500 czynności i ma właściwości samoregenerujące — „gdy wątroba zawiedzie, ciało umiera”. Buduje i magazynuje glikogen, który uwalnia jako glukozę przy potrzebie, produkuje cholesterol (poprzednik hormonów) i ok. 500 cc żółci dziennie, a jej komórki Kupffera oczyszczają krew jelitową, niszczą trucizny i drobnoustroje. Pomaga w trawieniu, krzepnięciu, metabolizmie, cyrkulacji, odtruwaniu i formowaniu krwi. Ponieważ leży po prawej stronie, jej refleksy są na PRAWEJ stopie, między linią pasa a linią przepony, zajmując dużą przestrzeń — pracujemy je dokładnie, jednakowym naciskiem, wraz z refleksem woreczka żółciowego."
+                        },
+                        {
+                            "q":  "Wyjaśnij różnicę między hipoglikemią a hiperglikemią i sposób pracy refleksologa.",
+                            "rozdzial":  "r12",
+                            "wskazowka":  "Hipo = za mało cukru (często nadprodukcja insuliny); zawsze trzustka + wątroba; nie zmieniać insuliny.",
+                            "odpowiedz":  "Hipoglikemia to nienormalnie niski poziom cukru we krwi — wynika z raptownego usuwania glukozy lub spadku jej produkcji, a częstą przyczyną jest nadprodukcja insuliny. Hiperglikemia to stan odwrotny — podwyższony poziom cukru, charakterystyczny dla cukrzycy. W obu przypadkach refleksolog zawsze pracuje na refleksach trzustki i wątroby — to dwa narządy regulujące poziom cukru (insulina i glikogen z trzustki, magazynowanie glikogenu w wątrobie). Praca polega głównie na poprawie krążenia na obu stopach. Obowiązuje tu krytyczna zasada bezpieczeństwa: nigdy nie sugerować zmiany ani zmniejszenia dawki insuliny bez konsultacji z lekarzem rodzinnym — wszelkie decyzje o lekach należą wyłącznie do lekarza."
+                        },
+                        {
+                            "q":  "Opisz starożytne korzenie refleksologii i jej drogę do czasów współczesnych.",
+                            "rozdzial":  "r1",
+                            "wskazowka":  "Egipt (mastaba) → terapia strefowa → refleksologia stóp.",
+                            "odpowiedz":  "Pochodzenie refleksologii sięga starożytnego Egiptu — dowodem jest hieroglificzna inskrypcja w grobowcu lekarskim (mastaba) przedstawiająca pracę na stopach i dłoniach; formy oddziaływania na stopy znane były także w innych kulturach. Współczesna refleksologia wyrosła jednak z terapii strefowej dr. Williama Fitzgeralda z początku XX wieku, którą rozwinął dr Joe Shelby Riley, a następnie — w refleksologię STÓP — Eunice Ingham. To połączenie starożytnej intuicji z teorią stref dało metodę, która rozprzestrzeniła się na cały świat."
+                        },
+                        {
+                            "q":  "Przedstaw wkład Eunice Ingham w rozwój refleksologii.",
+                            "rozdzial":  "r1",
+                            "wskazowka":  "Lata 30., mapy stref stóp, praca kciukiem, 1938, instytuty.",
+                            "odpowiedz":  "Eunice Ingham na początku lat 30. XX wieku rozwinęła refleksologię stóp: nanosiła wrażliwe punkty stopy na mapę ciała i — w odróżnieniu od wcześniejszych metod z watą i plastrem — doszła do pracy własnymi palcami, głównie kciukiem. W 1938 r. wydała książkę „Historie, które stopy mogą opowiedzieć”, prowadziła seminaria w całym kraju do 80. roku życia i zmarła w 1974 r. w wieku 85 lat. Jej Metoda Ingham, kontynuowana przez Narodowy i Międzynarodowy Instytut Refleksologii, stała się przewodnią metodą refleksologii na świecie, a jej książki przetłumaczono na 8 języków."
+                        },
+                        {
+                            "q":  "Omów punkty orientacyjne i linie pomocnicze stopy wykorzystywane w refleksologii.",
+                            "rozdzial":  "r3",
+                            "wskazowka":  "Podstawa palców, wcięcie kości sześciennej, kostka, krawędzie; przepona, linia pasa, linia pięty, ścięgno.",
+                            "odpowiedz":  "Podstawowe punkty orientacyjne to: podstawa palców („korzenie”) — połączenie palców ze stopą; wcięcie kości sześciennej — miękkie wgłębienie po zewnętrznej stronie poniżej linii talii; kostka po stronie wewnętrznej i zewnętrznej; oraz krawędzie — wewnętrzna (od dużego palca) i zewnętrzna (od małego palca). Cztery linie porządkują stopę: linia przepony (splotu słonecznego) u podstawy poduszki, linia pasa wyznaczana od piątej kości śródstopia, linia pięty na zakończeniu miękkiego podbicia oraz ścięgno biegnące między przeponą a piętą. Refleksy kręgosłupa leżą na wewnętrznej krawędzi (strefa pierwsza), a kręgi karku u podstawy dużego palca."
+                        },
+                        {
+                            "q":  "Wymień i opisz techniki oraz zjawiska wyczuwalne podczas zabiegu (chodzenie na krzyż, kryształki, rotacja).",
+                            "rozdzial":  "r3",
+                            "wskazowka":  "Chodzenie na krzyż, kryształki, nacisk-wycofanie, rotacja, praca dźwigni.",
+                            "odpowiedz":  "Chodzenie „na krzyż” to praca w danym rejonie ze zmianą kierunków i rąk, by w pełni pokryć go refleksami. „Kryształki” to wyczuwalne pod kciukiem ziarenka („soli”) odłożone w niektórych partiach stóp, np. w rejonie karku i ramion — z praktyką wyrabia się czucie ich wykrywania. Technika nacisku i wycofania służy małym, dokładnym punktom (przysadka, zastawka krętniczo-kątnicza, esica). Praca dźwigni polega na ustawieniu palców z jednej strony i kciuka z drugiej. Rotacja to okrężne oddziaływanie z podtrzymaniem stopy drugą ręką, naprzemiennie w obu kierunkach — dla miejsc delikatnych i bolących."
+                        },
+                        {
+                            "q":  "Wyjaśnij pojęcie splotu słonecznego i rolę przepony w refleksologii.",
+                            "rozdzial":  "r3",
+                            "wskazowka":  "Splot = „mózg jamy brzusznej”; przepona = podłoga klatki / dach brzucha; refleks na linii przepony.",
+                            "odpowiedz":  "Splot słoneczny to „mózg jamy brzusznej” — ogromne skupisko nerwów leżące na końcu mostka w pobliżu przepony; działa jak „tablica rozdzielcza nerwów”. Na stopie jego refleks znajduje się na linii przepony, między pierwszym a drugim palcem, i jest głównym punktem relaksu układu nerwowego. Przepona to cienka warstwa mięśniowa stanowiąca „podłogę” dla klatki piersiowej i „dach” dla jamy brzusznej; jej linia orientacyjna biegnie u podstawy kości śródstopia. Refleks przepony/splotu słonecznego stosujemy na początku i na końcu zabiegu, szczególnie u osób pobudliwych i z wysokim ciśnieniem."
+                        },
+                        {
+                            "q":  "Omów układ kostny człowieka i znaczenie stopy jako jego części.",
+                            "rozdzial":  "r5",
+                            "wskazowka":  "206 kości, ¼ w stopach, 26/107/19; wapń, osteoblasty/kolagen; stopa = fundament.",
+                            "odpowiedz":  "Układ kostny to „chemiczna fabryka”: produkuje składniki krwi w szpiku i magazynuje minerały, głównie wapń (a także fosfor, miedź, kobalt); komórki kościotwórcze (osteoblasty) wytwarzają kolagen do odbudowy kości. Ciało ma 206 kości, a prawie ¼ z nich znajduje się w stopach — każda stopa to 26 kości, 107 wiązadeł i 19 mięśni. Stopy są „fundamentem domu”: ich nieprawidłowe ustawienie zaburza całą konstrukcję, w tym kręgosłup, i odwrotnie. Budowa stopy odpowiada budowie ręki (śródstopie ↔ śródręcze, kość stępu ↔ kość przegubu), co jest podstawą zasady miejsc odpowiadających."
+                        },
+                        {
+                            "q":  "Opisz układ mięśniowy i przyczyny jego zaburzeń istotne dla refleksologa.",
+                            "rozdzial":  "r5",
+                            "wskazowka":  "Mięśnie zależne/niezależne; funkcje; przyczyny zaburzeń; napięcia jak „opaska”.",
+                            "odpowiedz":  "Układ mięśniowy rozpatrujemy razem z kostnym, bo są integralnie powiązane. Mięśnie dzielą się na zależne (warunkowe) — sterowane wolą, jak ruch kończyn — oraz niezależne (bezwarunkowe), odpowiadające za perystaltykę jelit, przepływ żółci, pracę macicy czy kurczenie naczyń. Pełnią funkcje w poruszaniu się, utrzymaniu równowagi, mowie, oddychaniu i wydalaniu. Zaburzenia powodują: nadmierna lub nieprawidłowa aktywność, niedożywienie (brak białka) i zaburzenia cyrkulacji. Dla refleksologa istotne jest, że napięcia mięśni — wywołane stresem fizycznym i psychicznym — działają jak „opaska uciskowa” na nerwy kręgosłupa, ograniczając przepływ informacji i krwi do narządów."
+                        },
+                        {
+                            "q":  "Opisz budowę i pracę serca oraz drogę krwi przez płuca.",
+                            "rozdzial":  "r6",
+                            "wskazowka":  "~5/35 l/min, ⅓-⅔, 2 przedsionki/2 komory, prawa→płuca, lewa→ciało, mózg.",
+                            "odpowiedz":  "Serce to najsilniejszy mięsień ciała, wielkości pięści, pompujący ~5 l krwi na minutę w spoczynku i ~35 l/min przy wysiłku. Leży skośnie: ⅓ po prawej, ⅔ po lewej stronie linii środkowej, i składa się z czterech części — prawego i lewego przedsionka oraz prawej i lewej komory. Prawa strona pompuje krew z ciała do płuc, gdzie następuje wymiana dwutlenku węgla na tlen, a lewa rozsyła krew dotlenioną do całego krwiobiegu. Serce zatrzymuje dla siebie tylko ~5% krwi (naczynia wieńcowe), a mózg potrzebuje krwi i tlenu więcej niż samo serce."
+                        },
+                        {
+                            "q":  "Omów najważniejsze choroby układu krążenia i zasady ostrożności w pracy refleksologa.",
+                            "rozdzial":  "r6",
+                            "wskazowka":  "Angina, miażdżyca, nadciśnienie, żylaki; skrzepy — rejony równoległe; paraliż — przeciwna półkula.",
+                            "odpowiedz":  "Do chorób układu krążenia należą m.in. angina pectoris (niedokrwienie mięśnia sercowego z bólem promieniującym do lewej ręki), miażdżyca (odkładanie tłuszczu na ścianach arterii), nadciśnienie, zapalenie żył i żylaki oraz zawał. W pracy obowiązują ważne zasady ostrożności: skrzepów NIGDY nie ruszamy bezpośrednio — pracujemy w rejonach równoległych, co umożliwia naturalne rozmycie; przy zapaleniu żył nóg pracujemy na miejscach odpowiadających w rękach; przy nadciśnieniu głównym refleksem jest przepona; a przy paraliżu lub wylewie pracujemy na czubku dużego palca po PRZECIWNEJ stronie ciała, bo dana półkula mózgu kontroluje przeciwną stronę."
+                        },
+                        {
+                            "q":  "Omów elementy obronne układu limfatycznego: śledzionę, migdały i grasicę.",
+                            "rozdzial":  "r7",
+                            "wskazowka":  "Śledziona — żelazo/anemia; migdały — przeciwciała; grasica — odporność u dzieci.",
+                            "odpowiedz":  "Układ limfatyczny broni organizm dzięki węzłom chłonnym — „bastionom obronnym”, do których limfa niesie obumarłe komórki i bakterie. Śledziona to największe skupisko tkanki limfatycznej: produkuje komórki obronne, filtruje krew, magazynuje żelazo i pomaga w produkcji hemoglobiny — dlatego jest ważna przy anemii. Migdały produkują przeciwciała i działają jak filtry. Grasica, leżąca nad sercem, produkuje antyciała i kontroluje system odpornościowy w dzieciństwie; rozrasta się do dojrzewania, a potem maleje — stąd jej refleks (poniżej tarczycy) jest szczególnie ważny u dzieci."
+                        },
+                        {
+                            "q":  "Opisz pracę refleksologa na pachwinie i klatce piersiowej w układzie limfatycznym.",
+                            "rozdzial":  "r7",
+                            "wskazowka":  "Pachwina = kostka; wierzch stopy = płuca/piersi; migdałki — wokół dużego palca.",
+                            "odpowiedz":  "W układzie limfatycznym refleksolog pracuje na kilku kluczowych ośrodkach. Pachwinie odpowiada połączenie stopy z nogą w kostce — duże zgrupowanie tkanek i węzłów; stopę trzymamy pionowo i „chodzimy” palcami wskazującymi po refleksach pachwiny w obu kierunkach, wspierając się relaksacyjnym obrotem kostki. Rejon klatki piersiowej i płuc reprezentuje WIERZCH stopy (między linią przepony a podstawą palców) — praca tam jest łatwiejsza i skuteczniejsza. Migdałki pracujemy wokół dużego palca na wysokości 1/3 od podstawy (miejsce pomocnicze: małe palce), a grasicę poniżej refleksu tarczycy."
+                        },
+                        {
+                            "q":  "Omów budowę i działanie zmysłu wzroku oraz słuchu i równowagi.",
+                            "rozdzial":  "r8",
+                            "wskazowka":  "Oko jak aparat; ucho: 3 kosteczki ~22×, ślimak, ucho środkowe = równowaga, trąbka Eustachiusza.",
+                            "odpowiedz":  "Oko działa jak aparat fotograficzny: rogówka i soczewka załamują światło, źrenica pełni rolę przesłony, a siatkówka odbiera obraz, który nerwem wzrokowym trafia do mózgu. Ucho dzieli się na zewnętrzne, środkowe i wewnętrzne; dźwięk biegnie kanałem do błony bębenkowej, jest wzmacniany ~22 razy przez trzy kosteczki (kowadełko, młoteczek, strzemiączko), po czym w ślimaku zamienia się w impuls przekazywany nerwem słuchowym do mózgu. Za równowagę odpowiada ucho środkowe — kanały półkoliste z płynem śródchłonkowym rejestrują ruchy głowy. Trąbka Eustachiusza łączy ucho środkowe z gardłem i wyrównuje ciśnienie."
+                        },
+                        {
+                            "q":  "Opisz pracę na refleksach narządów zmysłu, w tym rolę skóry i nerek.",
+                            "rozdzial":  "r8",
+                            "wskazowka":  "Oczy/uszy u podstawy małych palców; nerki = pomoc dla oczu; skóra — tarczyca/nadnercze; smak/zapach 1/3 dużego palca.",
+                            "odpowiedz":  "Refleksy oczu i uszu leżą u podstawy małych palców obu stóp i pracuje się je chodzeniem po „grzebieniu” palców zewnętrzną krawędzią kciuka, a przy bolesnym punkcie — palcem wskazującym z lekką rotacją. Miejscem pomocniczym dla oczu są nerki (3. strefa), stąd powiedzenie o „podkrążonych oczach”. Refleksy zapachu i smaku znajdują się w środkowej 1/3 dużego palca. Skóra jako narząd zmysłu zależy pośrednio od pracy gruczołów — kluczowe są tarczyca i nadnercze oraz nerki; dlatego pracuje się na nich przy egzemie, łuszczycy czy nadmiernym wysuszeniu. Praca na oczach wzmacnia widzenie, ale nie zastępuje okularów."
+                        },
+                        {
+                            "q":  "Omów anatomię i mechanizm wymiany gazowej w układzie oddechowym.",
+                            "rozdzial":  "r9",
+                            "wskazowka":  "Elementy układu; 3/2 płaty; przepona kurczy/wraca; 300 mln–1 mld pęcherzyków, ~56 m².",
+                            "odpowiedz":  "Układ oddechowy tworzą nos, gardło, krtań, tchawica, oskrzela, płuca, przepona i zatoki. Powietrze biegnie: nos → gardło → krtań → tchawica → prawe i lewe oskrzela → pęcherzyki płucne, gdzie zachodzi wymiana tlenu i dwutlenku węgla; prawe płuco ma 3 płaty, lewe 2. Mechanizm oddychania opiera się na przeponie: przy wdechu kurczy się i obniża, zwiększając pojemność klatki (zassanie powietrza), a przy wydechu wraca, wypompowując powietrze. Liczba pęcherzyków wynosi od 300 mln do 1 mld, a powierzchnia wymiany sięga ~56 m²."
+                        },
+                        {
+                            "q":  "Wyjaśnij wpływ palenia na płuca i opisz pracę na refleksach zatok.",
+                            "rozdzial":  "r9",
+                            "wskazowka":  "Dym paraliżuje rzęski → rozedma; zatoki we wszystkich palcach, rejony pomocnicze.",
+                            "odpowiedz":  "Powietrze oczyszczają włoski w nosie i rzęski w oskrzelach. Dym papierosowy paraliżuje i zabija rzęski, przez co cząstki stałe i śluz zalegają i docierają do pęcherzyków, prowadząc do rozedmy płuc; tytoń zawiera ponadto kadm, składniki radioaktywne, środki owadobójcze i smołę. Refleksy zatok znajdują się we wszystkich palcach stopy i odpowiadają całej głowie — z wyłączeniem oczu, uszu i zębów. Pracujemy je podstawową techniką kciuka, podtrzymując czułe palce od spodu; rejony pomocnicze zatok to zastawka krętniczo-kątnicza (tylko prawa noga), przysadka i nadnercze."
+                        },
+                        {
+                            "q":  "Omów anatomię i funkcje układu moczowego.",
+                            "rozdzial":  "r11",
+                            "wskazowka":  "Nerki/moczowody/pęcherz/cewka; filtrowanie ~1 l/min; ~1,5 l moczu; 4 funkcje.",
+                            "odpowiedz":  "Układ moczowy składa się z nerek, moczowodów (przewodów moczowych), pęcherza i cewki moczowej; pracuje całą dobę, a wspomagają go płuca, skóra i jelita. Pełni cztery funkcje: utrzymuje prawidłową proporcję wody, wydala składniki odpadowe (m.in. azot), kontroluje zawartość soli we krwi i zachowuje równowagę kwasowo-zasadową. Nerki są głównymi filtrami — filtrują ~1 litr krwi na minutę (ponad 60 l/h), a dorosły wydala ~1,5 l moczu dziennie. Mocz z nerek spływa przewodami do pęcherza i jest wydalany cewką."
+                        },
+                        {
+                            "q":  "Omów problem kamieni nerkowych i infekcji pęcherza oraz sposób pracy refleksologa.",
+                            "rozdzial":  "r11",
+                            "wskazowka":  "Kamienie w przewodach = kolka; infekcje częstsze u kobiet; pomoc: nadnercza, kręgosłup, przytarczyczki.",
+                            "odpowiedz":  "Kamienie mogą formować się w nerkach, przewodach lub pęcherzu; zbudowane są głównie ze szczawianów i węglanów wapnia, fosforanów i soli kwasu moczowego. Najczęściej zatrzymują się w przewodach moczowych, gdzie powstaje najsilniejszy ból (kolka) — tam koncentrujemy pracę. Infekcje pęcherza są częstsze u kobiet z powodu krótszej cewki moczowej i łatwo przechodzą przewodami do nerek. W pracy traktujemy układ jako całość, ze szczególną uwagą na nerki; miejsca pomocnicze to nadnercza (stany zapalne), dolny odcinek kręgosłupa oraz przytarczyczki, które kontrolują poziom wapnia i wspomagają usuwanie kamieni."
+                        },
+                        {
+                            "q":  "Omów hormony i anatomię układu rozrodczego oraz lokalizację głównych refleksów.",
+                            "rozdzial":  "r13",
+                            "wskazowka":  "Androgeny/estrogeny; macica/prostata wewn. kostka, jajniki/jądra zewn.; przewody — staw skokowy.",
+                            "odpowiedz":  "Układ rozrodczy służy reprodukcji i produkcji hormonów: jądra wytwarzają androgeny (najsilniejszy testosteron — porost włosów, mutacja głosu, rozwój prostaty), a jajniki estrogeny regulujące rozwój i funkcjonowanie układu rozrodczego. Jądra i jajniki mają więc podwójną funkcję — produkcję komórek rozrodczych i hormonów. Refleks macicy/prostaty leży na wewnętrznej stronie stopy, w połowie linii od kostki do pięty (miejsce punktowe i bardzo wrażliwe), a refleks jajników/jąder analogicznie po stronie zewnętrznej. Przewody jajowe/nasienne pracuje się w rejonie stawu skokowego techniką obrotu kostki, a gruczoły piersiowe — na wierzchu stopy."
+                        },
+                        {
+                            "q":  "Omów postępowanie refleksologa przy ciąży, przekwitaniu i operacjach układu rozrodczego.",
+                            "rozdzial":  "r13",
+                            "wskazowka":  "Ciąża — ostrożnie, pomocna; po usunięciu jajników estrogen przejmują nadnercza; operacje — przed i po.",
+                            "odpowiedz":  "W ciąży zabiegi są pomocne przez cały okres — łagodzą obrzęki, poranne dolegliwości i napięcie, wspierają relaks; pracujemy jednak ostrożnie, a przy wątpliwościach kierujemy do lekarza. Przy przekwitaniu i gorących uderzeniach pracujemy na przeponie, narządach rozrodczych, wszystkich gruczołach i koniecznie na macicy. Po usunięciu jajników funkcję produkcji estrogenu przejmują nadnercza, dlatego pracujemy jednocześnie na nadnerczu, tarczycy i przysadce. Przy operacjach układu rozrodczego należy pracować przed i natychmiast po zabiegu, ze wzmożoną delikatnością wszystkich gruczołów, bo operacja jest dla systemu szokiem."
+                        },
+                        {
+                            "q":  "Wyjaśnij różnice w pracy na rękach względem stóp oraz rolę przestrzeni „V”.",
+                            "rozdzial":  "r15",
+                            "wskazowka":  "Inne podtrzymanie; przestrzeń V = kark/gardło/bark; refleksy trudniejsze; wierzch — palcami.",
+                            "odpowiedz":  "Ręka anatomicznie różni się od stopy, więc techniki podtrzymujące są inne; na właściwej dłoni pracujemy techniką kciuka, a na wierzchu — palcami, z dobrym podparciem. Refleksy na rękach są trudniejsze do odnalezienia, bo leżą głębiej, w dużym zgrupowaniu na małej powierzchni i bez stałego zabezpieczenia, jakie mają stopy. Szczególnie ważna jest przestrzeń „V” między kciukiem a palcem wskazującym, zawierająca refleksy karku, gardła i barku (między 1. a 2. rejonem) — pracuje się ją od spodu i od wierzchu. Linie rejonów na dłoni są takie same jak na stopach."
+                        },
+                        {
+                            "q":  "Omów zastosowania refleksologii rąk i zasadę odpowiedniości ręka–stopa.",
+                            "rozdzial":  "r15",
+                            "wskazowka":  "Samodzielna praca pacjenta + wyjście gdy nie można na stopach; kciuk=duży palec, przegub=kostka.",
+                            "odpowiedz":  "Refleksologia rąk ma dwa główne zastosowania: jest doskonałym polem do samodzielnej, codziennej pracy pacjenta między sesjami oraz wyjściem, gdy nie można pracować na stopach — z powodu urazu, utraty stopy, nadwrażliwości czy wstydu. Obowiązuje zasada odpowiedniości: kciuk dłoni odpowiada dużemu palcowi stopy, a przegub (nadgarstek) — kostce; jeśli noga jest zraniona, ręka służy jako rejon zastępczy. Najlepsze efekty praca na dłoniach daje przy problemach karku, barków, piersi i płuc, zatok oraz urazu kręgosłupa szyjnego. Zasada prowadzenia zabiegu jest jak u stóp: prawa ręka dla prawej strony ciała."
+                        },
+                        {
+                            "q":  "Opisz techniki relaksacyjne stosowane w zabiegu, w tym technikę przepony.",
+                            "rozdzial":  "r4",
+                            "wskazowka":  "Ugniatanie śródstopia, skręt kręgosłupa, obracanie kostki, rotacja palca; przepona — oddychanie, 50%, 4-5×.",
+                            "odpowiedz":  "Techniki relaksacyjne otwierają i kończą zabieg oraz przeplatają pracę między sekcjami refleksów. Należą do nich m.in.: ruch do tyłu i do przodu, ugniatanie śródstopia, skręt kręgosłupa, rozluźnianie i obracanie kostki oraz rotacja dużego palca. Szczególne znaczenie ma technika przepony — głębokie oddychanie: poduszki kciuków umieszczamy na refleksach przepony/splotu słonecznego obu stóp, prosimy pacjenta o głęboki wdech z naciskiem, a przy powolnym wydechu zwalniamy ucisk o ok. 50%, powtarzając całość 4-5 razy. Stosujemy ją przeważnie na zakończenie zabiegu; jest szczególnie skuteczna u osób pobudliwych i z wysokim ciśnieniem."
+                        },
+                        {
+                            "q":  "Omów czas trwania, częstotliwość i dobór siły nacisku w zabiegu.",
+                            "rozdzial":  "r14",
+                            "wskazowka":  "30-40 min (pierwszy 60); 2×/tydz potem 1×; nacisk = „dobry ból”, obserwacja twarzy.",
+                            "odpowiedz":  "Przeciętny zabieg trwa 30-40 minut, a pierwsze spotkanie do 60 minut; dobrze poświęcić ok. 10 minut na każdy segment i więcej czasu na układ najbardziej wymagający. Częstotliwość to zwykle 2 zabiegi w tygodniu przez kilka tygodni, potem 1 raz w tygodniu; profilaktycznie wystarczy raz w miesiącu lub co dwa tygodnie — nie trzeba być chorym, by skorzystać. Siłę nacisku dobieramy do osoby i miejsca: im bardziej czułe stopy, tym delikatniej, a na stopie silnie zbudowanej refleksy leżą głębiej. Obserwujemy twarz pacjenta — grymas oznacza za mocny nacisk; celem jest „dobry ból”: boli, ale przyjemnie."
+                        },
+                        {
+                            "q":  "Wyjaśnij, jak działa refleksologia i dlaczego nie może zaszkodzić.",
+                            "rozdzial":  "r2",
+                            "wskazowka":  "Obniża stres, usprawnia krążenie i impulsy, przywraca równowagę; brak przedawkowania.",
+                            "odpowiedz":  "Refleksologia działa na trzy sposoby: obniża stres i napięcie nerwowe (wg książki ok. 75% zachorowań wiąże się ze stresem, który działa jak „opaska zaciskająca” układ), usprawnia krążenie krwi i przepływ impulsów nerwowych oraz pomaga naturze przywrócić równowagę — czyli homeostazę. Przepracowane lub niewydolne gruczoły i części ciała mogą dzięki temu wrócić do normy. Co istotne, refleksologia nigdy nie prowadzi do przedawkowania i nie może uszkodzić organizmu — ewentualne objawy uboczne, jak przeczyszczenie czy katar, są jedynie nieszkodliwą oznaką oczyszczania. Należy pamiętać, że refleksy biegną przez strefy, ale nie są nerwami."
+                        }
+                    ]
 };
