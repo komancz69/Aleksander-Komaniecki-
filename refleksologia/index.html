@@ -80,6 +80,32 @@
 </style>
 </head>
 <body>
+<div id="gate" style="position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#6b5430,#8a6d3b);
+  display:flex;align-items:center;justify-content:center;padding:20px">
+  <div style="background:#fffdf8;border-radius:16px;box-shadow:0 8px 40px rgba(0,0,0,.25);
+    padding:32px 28px;max-width:340px;width:100%;text-align:center;font-family:'Segoe UI',system-ui,sans-serif">
+    <div style="font-size:2.4rem;margin-bottom:6px">🦶</div>
+    <h2 style="color:#8a6d3b;margin:0 0 4px;font-size:1.25rem">Refleksologia</h2>
+    <p style="color:#7a7468;font-size:.85rem;margin:0 0 18px">Materiał chroniony — podaj hasło dostępu</p>
+    <input id="gate-pass" type="password" placeholder="hasło" autofocus
+      style="width:100%;padding:12px;border:1px solid #e3ddcf;border-radius:9px;font-size:1rem;text-align:center;font-family:inherit"
+      onkeydown="if(event.key==='Enter')gateCheck()">
+    <div id="gate-err" style="color:#a8493f;font-size:.82rem;height:18px;margin:6px 0 0"></div>
+    <button onclick="gateCheck()"
+      style="width:100%;margin-top:10px;background:#8a6d3b;color:#fff;border:none;border-radius:9px;
+      padding:12px;font-size:.95rem;font-weight:600;cursor:pointer;font-family:inherit">Wejdź</button>
+  </div>
+</div>
+<script>
+  var GATE_HASLO="fitline";
+  function gateOK(){document.getElementById('gate').style.display='none';try{sessionStorage.setItem('refl_ok','1')}catch(e){}}
+  function gateCheck(){
+    var v=(document.getElementById('gate-pass').value||'').trim().toLowerCase();
+    if(v===GATE_HASLO){gateOK();}
+    else{document.getElementById('gate-err').textContent='Nieprawidłowe hasło';document.getElementById('gate-pass').value='';}
+  }
+  try{if(sessionStorage.getItem('refl_ok')==='1'){document.getElementById('gate').style.display='none';}}catch(e){}
+</script>
 <header>
   <div class="wrap">
     <h1>🦶 Refleksologia — nauka i ćwiczenia</h1>
