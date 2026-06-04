@@ -3688,6 +3688,822 @@
                       "poprawna":  1,
                       "rozdzial":  "r15",
                       "wyj":  "Na dłoni pracuje się przeważnie techniką kciuka („chodzimy” kciukiem w górę dłoni, w poprzek i pod kątem); palec wskazujący — na wierzchu."
+                  },
+                  {
+                      "q":  "Kiedy Eunice Ingham rozwinęła refleksologię stóp?",
+                      "opcje":  [
+                                    "Na początku lat 30. XX w.",
+                                    "W XIX wieku",
+                                    "Po 1974 r.",
+                                    "W 1902 r."
+                                ],
+                      "poprawna":  0,
+                      "rozdzial":  "r1",
+                      "wyj":  "Ingham rozwinęła teorię refleksologii stóp na początku lat 30. XX wieku, nanosząc wrażliwe punkty stopy na mapę ciała."
+                  },
+                  {
+                      "q":  "Które instytuty kontynuują nauczanie Metody Ingham?",
+                      "opcje":  [
+                                    "WHO i FDA",
+                                    "Narodowy i Międzynarodowy Instytut Refleksologii",
+                                    "Instytut Fitzgeralda",
+                                    "Akademia Byersa"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r1",
+                      "wyj":  "Nauczanie Metody Ingham kontynuują Narodowy i Międzynarodowy Instytut Refleksologii."
+                  },
+                  {
+                      "q":  "Kim z zawodu był William Fitzgerald?",
+                      "opcje":  [
+                                    "Filozofem",
+                                    "Lekarzem ogólnym i laryngologiem",
+                                    "Fizjoterapeutą",
+                                    "Chirurgiem kości"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r1",
+                      "wyj":  "Fitzgerald był lekarzem ogólnym i laryngologiem; w 1902 r. kierował oddziałem laryngologii i rozpoczął prace nad teorią strefową."
+                  },
+                  {
+                      "q":  "Jak wcześniej (przed pracą palcami) lokalizowano i traktowano punkty?",
+                      "opcje":  [
+                                    "Prądem",
+                                    "Watą i plastrem, z chodzeniem w „opatrunku”",
+                                    "Lodem",
+                                    "Olejkami"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r1",
+                      "wyj":  "Wcześniejsza metoda polegała na lokalizowaniu punktów, przykryciu watą i plastrem oraz chodzeniu z „opatrunkiem” — później Ingham doszła do pracy własnymi palcami."
+                  },
+                  {
+                      "q":  "Dlaczego refleksologia skupia się głównie na stopach?",
+                      "opcje":  [
+                                    "Bo są największe",
+                                    "Bo są najbardziej uczulone na dotyk i najlepiej zabezpieczone",
+                                    "Bo są najcieplejsze",
+                                    "Bo nie mają kości"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r2",
+                      "wyj":  "Stopy są najbardziej uczulone na dotyk i najlepiej osłonięte/zabezpieczone, dlatego są głównym polem pracy."
+                  },
+                  {
+                      "q":  "Co robią rejony pomocnicze?",
+                      "opcje":  [
+                                    "Blokują krążenie",
+                                    "Potęgują działanie przesyłane do rejonu dolegliwości",
+                                    "Zastępują lekarza",
+                                    "Diagnozują chorobę"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r2",
+                      "wyj":  "Rejony pomocnicze wysyłają wzmocnione impulsy, potęgując działanie przesyłane do rejonu dolegliwości i niwelując ból."
+                  },
+                  {
+                      "q":  "Do czego porównano stres w książce?",
+                      "opcje":  [
+                                    "Do ognia",
+                                    "Do „opaski zaciskającej” układ",
+                                    "Do wody",
+                                    "Do snu"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r2",
+                      "wyj":  "Stres porównano do „opaski zaciskającej” układ; wg książki ok. 75% zachorowań jest spowodowanych stresami."
+                  },
+                  {
+                      "q":  "Gdzie znajdują się refleksy kręgosłupa?",
+                      "opcje":  [
+                                    "Na wierzchu stopy",
+                                    "Na wewnętrznej krawędzi stopy (strefa pierwsza)",
+                                    "Na pięcie",
+                                    "Na małym palcu"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r2",
+                      "wyj":  "Refleksy kręgosłupa biegną po wewnętrznej krawędzi stopy (strefa pierwsza) — pracujemy na nich w każdym zabiegu."
+                  },
+                  {
+                      "q":  "Co to jest podstawa palców stopy („korzenie”)?",
+                      "opcje":  [
+                                    "Czubki palców",
+                                    "Miejsce połączenia palców ze stopą",
+                                    "Pięta",
+                                    "Kostka"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r3",
+                      "wyj":  "Podstawa palców („korzenie”) to miejsce połączenia palców ze stopą."
+                  },
+                  {
+                      "q":  "Od czego wyznacza się linię pasa na stopie?",
+                      "opcje":  [
+                                    "Od pięty",
+                                    "Od piątej kości śródstopia",
+                                    "Od dużego palca",
+                                    "Od kostki"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r3",
+                      "wyj":  "Linię pasa wyznacza się przesuwając palcem do piątej kości śródstopia, a od tego punktu prowadzi w poprzek stopy."
+                  },
+                  {
+                      "q":  "Przy jakich refleksach stosuje się chodzenie po krawędzi i technikę uciskowo-przesuwową kciuka?",
+                      "opcje":  [
+                                    "Wątroba",
+                                    "Oczy i uszy",
+                                    "Pęcherz",
+                                    "Kręgosłup"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r3",
+                      "wyj":  "Te techniki stosuje się przy refleksach oczu i uszu (na poduszkach stopy); to jedyne miejsce, gdzie używa się zewnętrznej krawędzi kciuka ruchem posuwistym."
+                  },
+                  {
+                      "q":  "Czym jest technika pracy dźwigni?",
+                      "opcje":  [
+                                    "Uciskiem pięty",
+                                    "Palce z jednej strony, kciuk z drugiej — delikatny kontakt z refleksem",
+                                    "Masażem okrężnym",
+                                    "Uderzaniem"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r3",
+                      "wyj":  "Praca dźwigni to ustawienie palców z jednej strony i kciuka z drugiej — siła oddziaływania daje delikatny, kontrolowany kontakt z refleksem."
+                  },
+                  {
+                      "q":  "Ile powodów uzasadnia odchylanie tylko pierwszego stawu kciuka?",
+                      "opcje":  [
+                                    "Jeden",
+                                    "Dwa",
+                                    "Trzy",
+                                    "Pięć"
+                                ],
+                      "poprawna":  2,
+                      "rozdzial":  "r4",
+                      "wyj":  "Trzy powody: unikać przeciążeń pracującego, nie uciskać paznokciem pacjenta i nie pomijać miejsc do pobudzenia."
+                  },
+                  {
+                      "q":  "Ile razy powtarza się cykl w technice przepony (głębokie oddychanie)?",
+                      "opcje":  [
+                                    "1 raz",
+                                    "4-5 razy",
+                                    "10 razy",
+                                    "20 razy"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r4",
+                      "wyj":  "Technikę przepony powtarza się 4-5 razy, stopniowo wydłużając czas ucisku, zwalniając go o ok. 50% przy wydechu."
+                  },
+                  {
+                      "q":  "Do czego służą pozostałe (niepracujące) palce podczas zabiegu?",
+                      "opcje":  [
+                                    "Do niczego",
+                                    "Jako dźwignia / podparcie",
+                                    "Do drapania",
+                                    "Do mierzenia"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r4",
+                      "wyj":  "Tylko jeden palec/kciuk wykonuje ruch chodzony; pozostałe palce służą jako dźwignia i podparcie (np. przy kręgosłupie, zatokach)."
+                  },
+                  {
+                      "q":  "W ilu kierunkach bywa „chodzony” delikatny refleks?",
+                      "opcje":  [
+                                    "Tylko w górę",
+                                    "W kilku: góra, dół, w poprzek",
+                                    "Tylko w dół",
+                                    "Po okręgu wyłącznie"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r4",
+                      "wyj":  "Delikatny refleks bywa chodzony w kilku kierunkach (góra, dół, w poprzek) — czasem ruch powrotny prawidłowo pobudza rejon."
+                  },
+                  {
+                      "q":  "Co jest stałą konstrukcją (oparciem) dla mięśni?",
+                      "opcje":  [
+                                    "Skóra",
+                                    "Kości (połączone przez ścięgna i wiązadła)",
+                                    "Limfa",
+                                    "Tłuszcz"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r5",
+                      "wyj":  "Kości stanowią stałą konstrukcję dla mięśni, które łączą się z nimi przez ścięgna i wiązadła."
+                  },
+                  {
+                      "q":  "Czym jest kaletka w stawie?",
+                      "opcje":  [
+                                    "Mięśniem",
+                                    "Wgłębieniem kostnym z mazią stawową",
+                                    "Nerwem",
+                                    "Kością palca"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r5",
+                      "wyj":  "Kaletka to wgłębienie kostne z mazią stawową; jej zapalenie w stawie dużego palca (zgrubienie) jest sygnałem rozpoznawczym dla refleksologa."
+                  },
+                  {
+                      "q":  "Jak budowa stopy odpowiada budowie ręki?",
+                      "opcje":  [
+                                    "Wcale",
+                                    "Śródstopie ↔ śródręcze, kość stępu ↔ kość przegubu",
+                                    "Pięta ↔ łokieć",
+                                    "Palce ↔ żebra"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r5",
+                      "wyj":  "Budowa stopy odpowiada budowie ręki: śródstopie ↔ śródręcze, a kość stępu ↔ kość przegubu."
+                  },
+                  {
+                      "q":  "Na jakie dwa rodzaje dzielą się mięśnie?",
+                      "opcje":  [
+                                    "Twarde i miękkie",
+                                    "Zależne (warunkowe) i niezależne (bezwarunkowe)",
+                                    "Górne i dolne",
+                                    "Czerwone i białe"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r5",
+                      "wyj":  "Mięśnie dzielą się na zależne (warunkowe, np. ruch kończyn) i niezależne (bezwarunkowe, np. perystaltyka, praca macicy)."
+                  },
+                  {
+                      "q":  "Ile par przedsionków i komór ma serce?",
+                      "opcje":  [
+                                    "1 przedsionek, 1 komora",
+                                    "2 przedsionki i 2 komory",
+                                    "3 przedsionki",
+                                    "4 komory bez przedsionków"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r6",
+                      "wyj":  "Serce ma cztery części: prawy i lewy przedsionek oraz prawą i lewą komorę."
+                  },
+                  {
+                      "q":  "Co robi prawa strona serca?",
+                      "opcje":  [
+                                    "Pompuje krew do całego ciała",
+                                    "Pompuje krew do płuc (wymiana CO₂ na tlen)",
+                                    "Filtruje mocz",
+                                    "Produkuje żółć"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r6",
+                      "wyj":  "Prawa strona serca pompuje krew z ciała do płuc, gdzie następuje wymiana CO₂ na tlen; lewa strona rozsyła krew dotlenioną."
+                  },
+                  {
+                      "q":  "Jak postępujemy przy zapaleniu żył nóg?",
+                      "opcje":  [
+                                    "Mocno na żyłach",
+                                    "Na miejscach odpowiadających w rękach/ramionach",
+                                    "Na pięcie",
+                                    "Na dużym palcu"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r6",
+                      "wyj":  "Przy zapaleniu żył kończyn dolnych pracujemy na miejscach odpowiadających w rękach i ramionach, a nie bezpośrednio na żyłach."
+                  },
+                  {
+                      "q":  "Gdzie pracujemy przy paraliżu prawej strony ciała?",
+                      "opcje":  [
+                                    "Czubek dużego palca prawej stopy",
+                                    "Czubek dużego palca LEWEJ stopy (przeciwna półkula)",
+                                    "Na pięcie prawej",
+                                    "Na kostce"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r6",
+                      "wyj":  "Przy paraliżu prawej strony pracujemy w rejonie mózgu (czubek dużego palca) na stopie LEWEJ — to przeciwna półkula mózgu."
+                  },
+                  {
+                      "q":  "Czym są węzły chłonne wg książki?",
+                      "opcje":  [
+                                    "Magazynami tłuszczu",
+                                    "„Bastionami obronnymi” przeciw bakteriom i wirusom",
+                                    "Gruczołami trawiennymi",
+                                    "Kośćmi"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r7",
+                      "wyj":  "Węzły chłonne to „bastiony obronne” — limfa niesie do nich obumarłe komórki i szkodliwe bakterie."
+                  },
+                  {
+                      "q":  "Gdzie najczęściej opuchną największe węzły chłonne?",
+                      "opcje":  [
+                                    "Na czubku głowy",
+                                    "Pachwiny, pierś, kark, pod pachą",
+                                    "Na stopach",
+                                    "Na plecach"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r7",
+                      "wyj":  "Największe węzły opuchają w pachwinach, piersi, karku i pod pachą."
+                  },
+                  {
+                      "q":  "Gdzie leży miejsce limfatycznego odsączania (przewód piersiowy)?",
+                      "opcje":  [
+                                    "Na pięcie",
+                                    "Między 1. a 2. palcem, nieco poniżej podstawy",
+                                    "Na kostce",
+                                    "Na małym palcu"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r7",
+                      "wyj":  "Rejon limfatyczny odsączania (przewód piersiowy) leży między 1. a 2. palcem, nieco poniżej podstawy."
+                  },
+                  {
+                      "q":  "Z czym anatomicznie wiąże się refleks pachwiny na stopie?",
+                      "opcje":  [
+                                    "Z dużym palcem",
+                                    "Z połączeniem stopy z nogą w kostce",
+                                    "Z piętą",
+                                    "Z wierzchem palców"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r7",
+                      "wyj":  "Miejscem odpowiadającym pachwinie jest połączenie stopy z nogą w kostce — duże zgrupowanie tkanek i węzłów chłonnych."
+                  },
+                  {
+                      "q":  "Które pięć narządów to narządy zmysłu?",
+                      "opcje":  [
+                                    "Serce, płuca, wątroba, nerki, śledziona",
+                                    "Skóra, oczy, uszy, nos, język",
+                                    "Mózg, rdzeń, nerwy, kości, mięśnie",
+                                    "Żołądek, jelita, trzustka, wątroba, woreczek"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r8",
+                      "wyj":  "Pięć narządów zmysłu: skóra (dotyk), oczy (wzrok), uszy (słuch+równowaga), nos (powonienie), język (smak)."
+                  },
+                  {
+                      "q":  "Gdzie odczuwamy smak słodki na języku?",
+                      "opcje":  [
+                                    "Na tyle",
+                                    "Na czubku",
+                                    "Na krawędziach",
+                                    "Pod językiem"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r8",
+                      "wyj":  "Smak słodki odczuwamy na czubku języka, gorzki — z tyłu, słony — na krawędziach."
+                  },
+                  {
+                      "q":  "Do czego porównano oko w książce?",
+                      "opcje":  [
+                                    "Do pompy",
+                                    "Do aparatu fotograficznego",
+                                    "Do filtra",
+                                    "Do magazynu"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r8",
+                      "wyj":  "Oko porównano do aparatu: rogówka i soczewka załamują światło, źrenica jest przesłoną, a siatkówka odbiera obraz."
+                  },
+                  {
+                      "q":  "Czy praca na refleksach oczu pozwoli odłożyć okulary?",
+                      "opcje":  [
+                                    "Tak, całkowicie",
+                                    "Nie — wzmacnia widzenie, ale nie zastępuje okularów",
+                                    "Tak, po tygodniu",
+                                    "Tylko u dzieci"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r8",
+                      "wyj":  "Praca na refleksach oczu wzmacnia widzenie i wydłuża czas zmiany okularów na mocniejsze, ale nie zastępuje okularów."
+                  },
+                  {
+                      "q":  "Jaka jest droga powietrza w układzie oddechowym?",
+                      "opcje":  [
+                                    "Nos → żołądek → płuca",
+                                    "Nos → gardło → krtań → tchawica → oskrzela → pęcherzyki",
+                                    "Usta → serce → płuca",
+                                    "Nos → nerki"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r9",
+                      "wyj":  "Droga powietrza: nos → gardło → krtań → tchawica → prawe i lewe oskrzela → pęcherzyki płucne (wymiana tlen/CO₂)."
+                  },
+                  {
+                      "q":  "Jaka jest powierzchnia płuc stykająca się z powietrzem?",
+                      "opcje":  [
+                                    "~6 m²",
+                                    "~56 m²",
+                                    "~560 m²",
+                                    "~1 m²"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r9",
+                      "wyj":  "Powierzchnia płuc stykająca się z powietrzem wynosi ~56 m²; liczba pęcherzyków to 300 mln–1 mld."
+                  },
+                  {
+                      "q":  "Co zalega w drogach oddechowych po sparaliżowaniu rzęsek dymem?",
+                      "opcje":  [
+                                    "Woda",
+                                    "Cząstki stałe i śluz → rozedma płuc",
+                                    "Tlen",
+                                    "Limfa"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r9",
+                      "wyj":  "Gdy dym paraliżuje rzęski, cząstki stałe i śluz zalegają i docierają do pęcherzyków, prowadząc do rozedmy płuc."
+                  },
+                  {
+                      "q":  "Czym (na spodzie stopy) pracujemy na refleksach płuc?",
+                      "opcje":  [
+                                    "Pięścią",
+                                    "Kciukiem w wyżłobieniach między kośćmi śródstopia",
+                                    "Paznokciem",
+                                    "Całą dłonią"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r9",
+                      "wyj":  "Na spodzie stopy pracujemy podstawową techniką kciuka w wyżłobieniach między kośćmi śródstopia (kolejno 1-2, 2-3, 3-4, 4-5)."
+                  },
+                  {
+                      "q":  "Gdzie zaczyna się trawienie?",
+                      "opcje":  [
+                                    "W żołądku",
+                                    "W jamie ustnej (ślina, ptyalina)",
+                                    "W jelicie cienkim",
+                                    "W wątrobie"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r10",
+                      "wyj":  "Trawienie zaczyna się w jamie ustnej dzięki ślinie i enzymowi ptyalinie, który rozkłada skrobię."
+                  },
+                  {
+                      "q":  "Które trzy pary to gruczoły ślinowe?",
+                      "opcje":  [
+                                    "Przyuszna, podżuchwowa, podjęzykowa",
+                                    "Tarczyca, przytarczyczki, grasica",
+                                    "Nerkowa, wątrobowa, trzustkowa",
+                                    "Górna, środkowa, dolna"
+                                ],
+                      "poprawna":  0,
+                      "rozdzial":  "r10",
+                      "wyj":  "Trzy pary gruczołów ślinowych to: przyuszna, podżuchwowa i podjęzykowa."
+                  },
+                  {
+                      "q":  "Co oczyszczają komórki Kupffera wątroby?",
+                      "opcje":  [
+                                    "Mocz",
+                                    "Krew jelitową (niszczą trucizny i drobnoustroje)",
+                                    "Powietrze",
+                                    "Limfę w kostce"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r10",
+                      "wyj":  "Komórki Kupffera oczyszczają krew jelitową, niszczą trucizny i drobnoustroje, magazynują witaminy i minerały."
+                  },
+                  {
+                      "q":  "Jaki kąt pracy stosuje się przy zagięciu okrężnicy esowatej?",
+                      "opcje":  [
+                                    "90°",
+                                    "ok. 45°",
+                                    "0°",
+                                    "180°"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r10",
+                      "wyj":  "Przy esicy pracujemy pod kątem ok. 45° techniką zaczepno-wycofującą, najpierw zmiękczając rejon pięty."
+                  },
+                  {
+                      "q":  "Z czym (poza prostatą i macicą) wspólny jest refleks chroniczny?",
+                      "opcje":  [
+                                    "Z sercem i płucami",
+                                    "Z odbytnicą i nerwem kulszowym",
+                                    "Z nerkami i pęcherzem",
+                                    "Z oczami i uszami"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r10",
+                      "wyj":  "Refleks chroniczny (przy ścięgnie Achillesa) jest wspólny dla prostaty, macicy, odbytnicy i nerwu kulszowego."
+                  },
+                  {
+                      "q":  "Jakie cztery czynności pełni układ moczowy?",
+                      "opcje":  [
+                                    "Tylko wydalanie moczu",
+                                    "Proporcja wody, wydalanie odpadów, zawartość soli we krwi, równowaga kwasowo-zasadowa",
+                                    "Trawienie i oddychanie",
+                                    "Produkcja hormonów płciowych"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r11",
+                      "wyj":  "Układ moczowy utrzymuje proporcję wody, wydala składniki odpadowe, kontroluje zawartość soli we krwi i równowagę kwasowo-zasadową."
+                  },
+                  {
+                      "q":  "Które narządy wspomagają układ moczowy w wydalaniu?",
+                      "opcje":  [
+                                    "Serce i mózg",
+                                    "Płuca, skóra i jelita",
+                                    "Oczy i uszy",
+                                    "Kości i mięśnie"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r11",
+                      "wyj":  "W wydalaniu produktów odpadowych układ moczowy wspomagają płuca, skóra i jelita."
+                  },
+                  {
+                      "q":  "W którym kierunku pracujemy na refleksach nerki?",
+                      "opcje":  [
+                                    "Tylko w górę",
+                                    "Zawsze w obu kierunkach",
+                                    "Tylko w dół",
+                                    "Po okręgu"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r11",
+                      "wyj":  "Na refleksach nerki pracujemy zawsze w obu kierunkach (po zewnętrznej stronie ścięgna)."
+                  },
+                  {
+                      "q":  "Gdzie biegną refleksy przewodów moczowych?",
+                      "opcje":  [
+                                    "Na pięcie",
+                                    "Wzdłuż wewnętrznej strony ścięgna, między ścięgnem a kręgosłupem",
+                                    "Na dużym palcu",
+                                    "Na wierzchu palców"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r11",
+                      "wyj":  "Przewody moczowe biegną na wewnętrznej stronie ścięgna, między ścięgnem a refleksami kręgosłupa."
+                  },
+                  {
+                      "q":  "Na ile grup dzielą się gruczoły wewnętrznego wydzielania?",
+                      "opcje":  [
+                                    "Dwie",
+                                    "Trzy",
+                                    "Pięć",
+                                    "Dziesięć"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r12",
+                      "wyj":  "Trzy grupy: (1) przysadka; (2) tarczyca, nadnercza i gruczoły rozrodcze; (3) przytarczyczki, trzustka, łożysko i błony żołądkowo-jelitowe."
+                  },
+                  {
+                      "q":  "Co wydzielają gruczoły wewnętrznego wydzielania?",
+                      "opcje":  [
+                                    "Żółć",
+                                    "Hormony (do krwi i limfy)",
+                                    "Mocz",
+                                    "Ślinę"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r12",
+                      "wyj":  "Gruczoły bezprzewodowe wydzielają hormony wchłaniane przez krew i limfę, sterujące czynnościami organizmu jak „termostaty”."
+                  },
+                  {
+                      "q":  "Do czego doskonały jest refleks przysadki w praktyce?",
+                      "opcje":  [
+                                    "Do trawienia",
+                                    "Do usuwania wysokiej temperatury i pomocy przy omdleniach",
+                                    "Do wzmocnienia kości",
+                                    "Do produkcji żółci"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r12",
+                      "wyj":  "Refleks przysadki jest doskonały do usuwania wysokiej temperatury (gorączki) i pomocny przy omdleniach; ważny u dzieci."
+                  },
+                  {
+                      "q":  "Jaki typ cukrzycy daje refleksologii najlepsze rezultaty?",
+                      "opcje":  [
+                                    "Wrodzona od dzieciństwa",
+                                    "Nabyta później (spowodowana szokiem/urazem)",
+                                    "Żaden",
+                                    "Tylko ciążowa"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r12",
+                      "wyj":  "Najlepsze rezultaty daje cukrzyca nabyta później (np. po szoku/urazie); cukrzyca dziedziczna od dzieciństwa wymaga długotrwałej pracy."
+                  },
+                  {
+                      "q":  "Co wytwarza kora nadnerczy?",
+                      "opcje":  [
+                                    "Tylko adrenalinę",
+                                    "Ok. 50 hormonów (kortyzon, kontrola elektrolitów, hormony płciowe)",
+                                    "Insulinę",
+                                    "Żółć"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r12",
+                      "wyj":  "Kora nadnerczy wytwarza ok. 50 hormonów w 3 grupach; adrenalinę produkuje natomiast rdzeń nadnerczy."
+                  },
+                  {
+                      "q":  "Jaką podwójną funkcję mają jądra i jajniki?",
+                      "opcje":  [
+                                    "Trawienie i oddychanie",
+                                    "Produkcja komórek rozrodczych i hormonów",
+                                    "Filtrowanie i magazynowanie",
+                                    "Tylko hormony"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r13",
+                      "wyj":  "Jądra i jajniki mają podwójną funkcję: produkcja komórek rozrodczych oraz produkcja hormonów płciowych."
+                  },
+                  {
+                      "q":  "Gdzie pracuje się na przewodach jajowych/nasiennych?",
+                      "opcje":  [
+                                    "Na pięcie",
+                                    "W rejonie stawu skokowego (połączenie stopy z nogą)",
+                                    "Na dużym palcu",
+                                    "Na wierzchu palców"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r13",
+                      "wyj":  "Przewody jajowe/nasienne pracuje się w miejscu połączenia stopy z nogą (staw skokowy), techniką obrotu kostki."
+                  },
+                  {
+                      "q":  "Co charakteryzuje refleks macicy/prostaty?",
+                      "opcje":  [
+                                    "Duża powierzchnia",
+                                    "Miejsce punktowe i bardzo wrażliwe (często z wgnieceniem w kostce)",
+                                    "Brak czucia",
+                                    "Tylko na wierzchu stopy"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r13",
+                      "wyj":  "Refleks macicy/prostaty to miejsce punktowe i bardzo wrażliwe — wiele kostek ma w tym miejscu małe wgniecenie."
+                  },
+                  {
+                      "q":  "Czego nie sprawdza i nie sprzedaje refleksolog podczas pracy?",
+                      "opcje":  [
+                                    "Stóp",
+                                    "Leków i żadnych artykułów",
+                                    "Paznokci",
+                                    "Czasu"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r14",
+                      "wyj":  "Refleksolog nie diagnozuje, nie przepisuje ani nie weryfikuje leków i nigdy nie łączy pracy ze sprzedażą artykułów."
+                  },
+                  {
+                      "q":  "Co sprawdzamy na pierwszej wizycie, oglądając stopy?",
+                      "opcje":  [
+                                    "Kolor oczu",
+                                    "Nagniotki, odciski, kostninę, wrastające paznokcie, zadrażnienia",
+                                    "Wzrost pacjenta",
+                                    "Temperaturę powietrza"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r14",
+                      "wyj":  "Na pierwszej wizycie oglądamy stopy pod kątem nagniotków, odcisków, kostniny, wrastających paznokci i zadrażnień."
+                  },
+                  {
+                      "q":  "Co stosujemy przy poceniu się stóp pacjenta?",
+                      "opcje":  [
+                                    "Olejek",
+                                    "Mąkę kukurydzianą lub puder dla niemowląt",
+                                    "Lód",
+                                    "Alkohol"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r14",
+                      "wyj":  "Przy poceniu stosuje się mąkę kukurydzianą lub puder dla niemowląt; ważne są też krótkie paznokcie."
+                  },
+                  {
+                      "q":  "Jaki dokument warto przygotować dla ochrony refleksologa?",
+                      "opcje":  [
+                                    "Receptę",
+                                    "Druk informujący, że refleksolog nie diagnozuje i nie przepisuje leków (z podpisem pacjenta)",
+                                    "Fakturę VAT",
+                                    "Skierowanie"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r14",
+                      "wyj":  "Warto przygotować druk informujący, że refleksolog nie diagnozuje ani nie przepisuje leków, z podpisem pacjenta — jako zabezpieczenie."
+                  },
+                  {
+                      "q":  "Jak należy pracować z osobą bardzo chorą/osłabioną?",
+                      "opcje":  [
+                                    "Bardzo mocno i długo",
+                                    "Bardzo delikatnie, krótkie sesje częściej",
+                                    "Wcale",
+                                    "Tylko na pięcie"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r14",
+                      "wyj":  "Osobę bardzo chorą lub osłabioną pracujemy bardzo delikatnie, krótkimi sesjami, ale częściej."
+                  },
+                  {
+                      "q":  "Czym pracujemy na właściwej dłoni (spodzie)?",
+                      "opcje":  [
+                                    "Pięścią",
+                                    "Techniką kciuka",
+                                    "Łokciem",
+                                    "Paznokciem"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r15",
+                      "wyj":  "Na spodzie dłoni pracujemy przeważnie techniką kciuka; na wierzchu — palcami, z dobrym podparciem."
+                  },
+                  {
+                      "q":  "Jakie obszary obejmuje podział dłoni (jak w stopach)?",
+                      "opcje":  [
+                                    "Tylko opuszki",
+                                    "Czubki palców, tył dłoni, właściwą dłoń, wierzchołek, krawędzie",
+                                    "Tylko nadgarstek",
+                                    "Tylko kciuk"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r15",
+                      "wyj":  "Dłoń dzieli się tak jak stopa: czubki palców, tył dłoni, właściwa dłoń, wierzchołek dłoni oraz wewnętrzna i zewnętrzna krawędź."
+                  },
+                  {
+                      "q":  "Dlaczego refleksy na dłoniach trudniej zlokalizować?",
+                      "opcje":  [
+                                    "Są większe",
+                                    "Leżą głębiej, na małej powierzchni, bez stałego zabezpieczenia jak stopy",
+                                    "Nie istnieją",
+                                    "Są na paznokciach"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r15",
+                      "wyj":  "Na dłoniach refleksy leżą głębiej i w dużym zgrupowaniu na małej powierzchni, a dłonie nie mają stałego zabezpieczenia jak stopy."
+                  },
+                  {
+                      "q":  "Na której stopie jest refleks wątroby i woreczka żółciowego (mapa)?",
+                      "opcje":  [
+                                    "Tylko lewej",
+                                    "Tylko prawej",
+                                    "Obu",
+                                    "Na wierzchu lewej"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r10",
+                      "wyj":  "Wątroba i woreczek żółciowy leżą po prawej stronie ciała — ich refleksy są tylko na prawej stopie, między przeponą a linią pasa."
+                  },
+                  {
+                      "q":  "Na której stopie znajdują się refleksy serca i śledziony (mapa)?",
+                      "opcje":  [
+                                    "Tylko prawej",
+                                    "Tylko lewej",
+                                    "Obu",
+                                    "Na pięcie"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r7",
+                      "wyj":  "Serce i śledziona leżą po lewej stronie ciała, więc ich refleksy są tylko na lewej stopie."
+                  },
+                  {
+                      "q":  "Na mapie — gdzie leży refleks przysadki?",
+                      "opcje":  [
+                                    "Na pięcie",
+                                    "W środku opuszka dużego palca",
+                                    "Na małym palcu",
+                                    "Na kostce"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r12",
+                      "wyj":  "Na mapie refleks przysadki leży w środku opuszka dużego palca, a kark/tarczyca u jego podstawy."
+                  },
+                  {
+                      "q":  "Co w indeksie schorzeń oznacza skrót „wszystkie gruczoły”?",
+                      "opcje":  [
+                                    "Tylko tarczycę",
+                                    "Przysadkę, tarczycę, przytarczyczki, nadnercza, trzustkę, narządy rozrodcze",
+                                    "Tylko nadnercza",
+                                    "Wątrobę i nerki"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r12",
+                      "wyj":  "„Wszystkie gruczoły” to skrót na: przysadka, tarczyca, przytarczyczki, nadnercza, trzustka i narządy rozrodcze."
+                  },
+                  {
+                      "q":  "Przy bólu gardła (indeks schorzeń) pracujemy m.in. na…",
+                      "opcje":  [
+                                    "nerkach i pęcherzu",
+                                    "układzie limfatycznym, palcach, dużym palcu, nadnerczu, kręgach szyjnych",
+                                    "sercu i płucach",
+                                    "oczach"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r7",
+                      "wyj":  "Przy bólu gardła indeks wskazuje: układ limfatyczny, wszystkie palce, duży palec, nadnercze i kręgi szyjne."
+                  },
+                  {
+                      "q":  "Czego refleksolog (nie-lekarz) NIGDY nie może robić?",
+                      "opcje":  [
+                                    "Relaksować stóp",
+                                    "Wystawiać diagnozy i przepisywać leków",
+                                    "Pracować na kręgosłupie",
+                                    "Obserwować twarzy pacjenta"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r14",
+                      "wyj":  "Nie-lekarzowi nie wolno: wystawiać diagnozy, przepisywać leków ani sugerować/weryfikować leków już przepisanych, ani prowadzić terapii konkretnej choroby."
+                  },
+                  {
+                      "q":  "Czym jest homeostaza (słownik)?",
+                      "opcje":  [
+                                    "Chorobą przewlekłą",
+                                    "Naturalną równowagą między systemami organizmu",
+                                    "Rodzajem ucisku",
+                                    "Mapą stopy"
+                                ],
+                      "poprawna":  1,
+                      "rozdzial":  "r2",
+                      "wyj":  "Homeostaza to naturalna równowaga między systemami organizmu — stan, do którego refleksologia pomaga ciału powrócić."
                   }
               ],
     "pytania_egz":  {
