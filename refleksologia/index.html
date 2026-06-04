@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Refleksologia — nauka i ćwiczenia</title>
+<style>
+  :root{
+    --bg:#f4f1ea; --paper:#fffdf8; --ink:#2c2a26; --muted:#7a7468;
+    --accent:#8a6d3b; --accent2:#b08d57; --line:#e3ddcf; --ok:#3d7a4e; --bad:#a8493f;
+    --shadow:0 2px 14px rgba(60,50,30,.08);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--ink);line-height:1.55}
+  header{background:linear-gradient(135deg,#6b5430,#8a6d3b);color:#fdfaf3;padding:22px 20px 16px}
+  header h1{margin:0 0 4px;font-size:1.5rem;font-weight:600;letter-spacing:.3px}
+  header p{margin:0;font-size:.85rem;opacity:.85}
+  .wrap{max-width:880px;margin:0 auto;padding:0 16px}
+  nav{display:flex;flex-wrap:wrap;gap:8px;max-width:880px;margin:14px auto 0;padding:0 16px}
+  nav button{flex:1 1 160px;border:none;border-radius:10px 10px 0 0;padding:12px 10px;font-size:.92rem;
+    font-weight:600;cursor:pointer;background:#e7e0d2;color:#6b6354;transition:.15s}
+  nav button .ic{display:block;font-size:1.25rem;margin-bottom:2px}
+  nav button.active{background:var(--paper);color:var(--accent)}
+  main{background:var(--paper);max-width:880px;margin:0 auto 40px;min-height:60vh;
+    border-radius:0 0 14px 14px;box-shadow:var(--shadow);padding:22px}
+  .disclaimer{background:#fcf6e8;border:1px solid #ecdfbe;border-radius:10px;padding:10px 14px;
+    font-size:.82rem;color:#7a6a45;margin-bottom:18px}
+  .disclaimer b{color:#8a6d3b}
+  h2{color:var(--accent);font-size:1.2rem;margin:.2em 0 .6em;border-bottom:2px solid var(--line);padding-bottom:6px}
+  h3{color:#6b5430;font-size:1.02rem;margin:1.1em 0 .3em}
+  .panel{display:none}
+  .panel.active{display:block;animation:fade .25s}
+  @keyframes fade{from{opacity:0;transform:translateY(4px)}to{opacity:1}}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:8px;margin:10px 0}
+  .chip{background:#f1ece0;border:1px solid var(--line);border-radius:8px;padding:9px 11px;
+    cursor:pointer;font-size:.9rem;transition:.12s;text-align:left}
+  .chip:hover{background:#e9e0cd;border-color:var(--accent2)}
+  .chip b{display:block;color:var(--accent);font-size:.78rem;margin-bottom:1px}
+  .fact{background:#f8f4ea;border-left:3px solid var(--accent2);padding:8px 12px;margin:6px 0;border-radius:0 7px 7px 0;font-size:.93rem}
+  textarea,input[type=text]{width:100%;border:1px solid var(--line);border-radius:9px;padding:11px;
+    font-family:inherit;font-size:.95rem;background:#fffdf8;resize:vertical}
+  .btn{background:var(--accent);color:#fff;border:none;border-radius:9px;padding:11px 18px;font-size:.92rem;
+    font-weight:600;cursor:pointer;margin-top:10px;transition:.15s}
+  .btn:hover{background:#75592e}
+  .btn.sec{background:#e7e0d2;color:#6b5430}
+  .btn.sec:hover{background:#dcd3bf}
+  .answer{margin-top:16px}
+  .answer-card{background:#f8f4ea;border:1px solid var(--line);border-radius:10px;padding:14px 16px;margin:10px 0}
+  .answer-card .src{font-size:.74rem;color:var(--muted);margin-top:8px;font-style:italic}
+  .reflx{display:inline-block;background:#ece3d0;border-radius:6px;padding:2px 8px;margin:2px 3px 2px 0;font-size:.85rem}
+  .muted{color:var(--muted);font-size:.86rem}
+  table{width:100%;border-collapse:collapse;margin:8px 0;font-size:.88rem}
+  th,td{text-align:left;padding:7px 9px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{color:var(--accent);font-size:.8rem;text-transform:uppercase;letter-spacing:.4px}
+  tr:hover td{background:#faf6ed}
+  .q-card{background:#f8f4ea;border:1px solid var(--line);border-radius:12px;padding:18px;margin:12px 0}
+  .q-num{font-size:.76rem;color:var(--accent2);font-weight:700;letter-spacing:.5px}
+  .q-text{font-size:1.05rem;font-weight:600;margin:6px 0 14px}
+  .opt{display:block;width:100%;text-align:left;background:#fffdf8;border:1.5px solid var(--line);
+    border-radius:9px;padding:11px 14px;margin:7px 0;cursor:pointer;font-size:.94rem;transition:.12s}
+  .opt:hover{border-color:var(--accent2);background:#fbf7ee}
+  .opt.correct{border-color:var(--ok);background:#eef6ef;color:#2c5d3a}
+  .opt.wrong{border-color:var(--bad);background:#f8edeb;color:#8a3a31}
+  .opt.disabled{cursor:default;pointer-events:none}
+  .explain{margin-top:10px;padding:10px 13px;background:#fcf6e8;border-radius:8px;font-size:.88rem;color:#6f6043}
+  .scorebar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
+    background:#f1ece0;border-radius:10px;padding:10px 16px;margin-bottom:14px}
+  .scorebar b{color:var(--accent);font-size:1.1rem}
+  .toolbar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+  select{border:1px solid var(--line);border-radius:8px;padding:9px;font-family:inherit;font-size:.9rem;background:#fffdf8}
+  .reveal{margin-top:12px}
+  details{background:#f8f4ea;border:1px solid var(--line);border-radius:9px;padding:8px 14px;margin:7px 0}
+  details summary{cursor:pointer;font-weight:600;color:var(--accent)}
+  details[open] summary{margin-bottom:8px}
+  .hint{font-size:.86rem;color:var(--muted)}
+  footer{text-align:center;font-size:.78rem;color:var(--muted);padding:0 0 30px}
+  .back{font-size:.84rem;color:var(--accent);cursor:pointer;display:inline-block;margin-bottom:8px}
+  .back:hover{text-decoration:underline}
+  mark{background:#f4e3b0;padding:0 2px;border-radius:3px}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>🦶 Refleksologia — nauka i ćwiczenia</h1>
+    <p>Metoda Ingham · oprac. Wanda Budzanowska-Bratko (1996) · Polski Instytut Refleksologii</p>
+  </div>
+</header>
+
+<nav>
+  <button data-tab="nauka" class="active"><span class="ic">📖</span>Nauka</button>
+  <button data-tab="pytania"><span class="ic">💬</span>Pytania (odpowiedź opisowa)</button>
+  <button data-tab="generator"><span class="ic">📝</span>Generator pytań egz.</button>
+  <button data-tab="testy"><span class="ic">✅</span>Testy wiedzy</button>
+</nav>
+
+<main>
+  <div class="disclaimer">
+    <b>⚠️ Uwaga:</b> Materiał edukacyjny. Refleksologia <b>nie diagnozuje i nie przepisuje leków</b> —
+    jest dodatkiem wspierającym homeostazę, nie zastępuje lekarza. Mapy oryginalne objęte prawem
+    autorskim © Wanda Bratko 1996.
+  </div>
+
+  <!-- ============ NAUKA ============ -->
+  <section id="nauka" class="panel active">
+    <div id="nauka-home">
+      <h2>Nauka — przeglądaj wiedzę</h2>
+      <p class="muted">Wybierz rozdział, indeks schorzeń, mapy stref, słownik lub zasady bezpieczeństwa.</p>
+      <h3>Rozdziały</h3>
+      <div class="grid" id="lista-rozdzialow"></div>
+      <h3>Materiały przekrojowe</h3>
+      <div class="grid">
+        <div class="chip" onclick="pokazSchorzenia()"><b>INDEKS</b>Schorzenia → refleksy</div>
+        <div class="chip" onclick="pokazMapy()"><b>MAPY</b>Refleks → narząd</div>
+        <div class="chip" onclick="pokazSlownik()"><b>SŁOWNIK</b>Pojęcia</div>
+        <div class="chip" onclick="pokazBezpieczenstwo()"><b>ZASADY</b>Bezpieczeństwo</div>
+      </div>
+    </div>
+    <div id="nauka-detal" style="display:none"></div>
+  </section>
+
+  <!-- ============ PYTANIA OPISOWE ============ -->
+  <section id="pytania" class="panel">
+    <h2>Pytania — odpowiedź opisowa</h2>
+    <p class="muted">Wpisz pytanie własnymi słowami (np. „gdzie jest refleks wątroby?”, „co robić przy
+      migrenie?”, „czym jest homeostaza?”). Aplikacja przeszuka bazę i odpowie opisowo.</p>
+    <textarea id="pyt-input" rows="3" placeholder="Twoje pytanie…"></textarea>
+    <div>
+      <button class="btn" onclick="odpowiedz()">Odpowiedz</button>
+      <button class="btn sec" onclick="losowePyt()">Przykładowe pytanie</button>
+    </div>
+    <div id="pyt-odp" class="answer"></div>
+  </section>
+
+  <!-- ============ GENERATOR PYTAŃ EGZAMINACYJNYCH ============ -->
+  <section id="generator" class="panel">
+    <h2>Generator pytań egzaminacyjnych</h2>
+    <p class="muted">Pytania otwarte (do rozwinięcia ustnie/pisemnie). Wybierz zakres i wygeneruj zestaw.
+      Każde pytanie ma podpowiedź z kluczowymi punktami odpowiedzi.</p>
+    <div class="toolbar">
+      <select id="gen-zakres"></select>
+      <select id="gen-ile">
+        <option value="3">3 pytania</option>
+        <option value="5" selected>5 pytań</option>
+        <option value="8">8 pytań</option>
+        <option value="999">Wszystkie</option>
+      </select>
+      <button class="btn" onclick="generujEgz()">Generuj</button>
+    </div>
+    <div id="gen-out"></div>
+  </section>
+
+  <!-- ============ TESTY WIEDZY ============ -->
+  <section id="testy" class="panel">
+    <h2>Testy wiedzy</h2>
+    <p class="muted">Krótkie pytania zamknięte (jedna poprawna odpowiedź z kilku). Wybierz odpowiedź —
+      od razu zobaczysz wynik i wyjaśnienie.</p>
+    <div class="toolbar">
+      <select id="test-zakres"></select>
+      <select id="test-ile">
+        <option value="5">5 pytań</option>
+        <option value="10" selected>10 pytań</option>
+        <option value="20">20 pytań</option>
+        <option value="999">Wszystkie</option>
+      </select>
+      <button class="btn" onclick="startTest()">Nowy test</button>
+    </div>
+    <div id="test-out"></div>
+  </section>
+</main>
+
+<footer>Refleksologia v1.0 · baza: wiedza.js · do użytku własnego i nauki</footer>
+
+<script src="wiedza.js"></script>
+<script>
+const W = window.WIEDZA;
+if(!W){document.querySelector('main').innerHTML =
+  '<h2>Błąd ładowania danych</h2><p>Nie znaleziono pliku <b>wiedza.js</b> obok index.html. '+
+  'Upewnij się, że oba pliki są w tym samym folderze.</p>';}
+
+/* ---------- Nawigacja zakładek ---------- */
+document.querySelectorAll('nav button').forEach(b=>{
+  b.onclick=()=>{
+    document.querySelectorAll('nav button').forEach(x=>x.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(x=>x.classList.remove('active'));
+    b.classList.add('active');
+    document.getElementById(b.dataset.tab).classList.add('active');
+  };
+});
+
+/* ---------- Pomocnicze ---------- */
+function esc(s){return (s||'').replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));}
+function rozdzialById(id){return W.rozdzialy.find(r=>r.id===id);}
+function shuffle(a){a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor((i+1)*pseudo());[a[i],a[j]]=[a[j],a[i]];}return a;}
+let _seed=Date.now()%100000;
+function pseudo(){_seed=(_seed*9301+49297)%233280;return _seed/233280;}
+
+/* ================= NAUKA ================= */
+function renderListaRozdzialow(){
+  const el=document.getElementById('lista-rozdzialow');
+  el.innerHTML=W.rozdzialy.map(r=>
+    `<div class="chip" onclick="pokazRozdzial('${r.id}')"><b>ROZDZIAŁ ${r.nr}</b>${esc(r.tytul)}</div>`).join('');
+}
+function naukaDetal(html){
+  document.getElementById('nauka-home').style.display='none';
+  const d=document.getElementById('nauka-detal');
+  d.style.display='block';
+  d.innerHTML='<span class="back" onclick="naukaHome()">← powrót</span>'+html;
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+function naukaHome(){
+  document.getElementById('nauka-detal').style.display='none';
+  document.getElementById('nauka-home').style.display='block';
+}
+function pokazRozdzial(id){
+  const r=rozdzialById(id);
+  let h=`<h2>Rozdział ${r.nr} — ${esc(r.tytul)}</h2>`+
+    `<p class="muted">strony ${esc(r.strony)}</p>`+
+    `<p>${esc(r.streszczenie)}</p><h3>Fakty do zapamiętania</h3>`+
+    r.fakty.map(f=>`<div class="fact">${esc(f)}</div>`).join('');
+  naukaDetal(h);
+}
+function pokazSchorzenia(){
+  let h=`<h2>Indeks schorzeń → refleksy</h2>`+
+    `<p class="muted">Mapa pracy refleksologa — NIE wskazania lecznicze. ${W.schorzenia.length} pozycji.</p>`+
+    `<input type="text" id="szukaj-sch" placeholder="filtruj schorzenie…" oninput="filtrujSch()">`+
+    `<table id="tab-sch"><thead><tr><th>Schorzenie</th><th>Refleksy do pracy</th></tr></thead><tbody>`+
+    W.schorzenia.map(s=>`<tr><td><b>${esc(s.nazwa)}</b></td><td>${esc(s.refleksy)}</td></tr>`).join('')+
+    `</tbody></table>`;
+  naukaDetal(h);
+}
+function filtrujSch(){
+  const q=document.getElementById('szukaj-sch').value.toLowerCase();
+  document.querySelectorAll('#tab-sch tbody tr').forEach(tr=>{
+    tr.style.display=tr.textContent.toLowerCase().includes(q)?'':'none';
+  });
+}
+function pokazMapy(){
+  let h=`<h2>Mapy stref — refleks → narząd</h2>`+
+    `<p class="muted">Opis słowny położenia refleksów (rysunki © Wanda Bratko 1996 — nie reprodukujemy).</p>`+
+    `<table><thead><tr><th>Refleks</th><th>Stopa</th><th>Lokalizacja</th></tr></thead><tbody>`+
+    W.mapy.map(m=>`<tr><td><b>${esc(m.refleks)}</b></td><td>${esc(m.stopa)}</td><td>${esc(m.lokalizacja)}</td></tr>`).join('')+
+    `</tbody></table>`;
+  naukaDetal(h);
+}
+function pokazSlownik(){
+  let h=`<h2>Słownik pojęć</h2>`+
+    W.slownik.map(s=>`<details><summary>${esc(s.termin)}</summary><div>${esc(s.definicja)}</div></details>`).join('');
+  naukaDetal(h);
+}
+function pokazBezpieczenstwo(){
+  let h=`<h2>Zasady bezpieczeństwa</h2>`+
+    `<p class="muted">Mają pierwszeństwo nad każdą inną treścią.</p>`+
+    W.bezpieczenstwo.map(b=>`<div class="fact">${esc(b)}</div>`).join('');
+  naukaDetal(h);
+}
+
+/* ================= PYTANIA OPISOWE (wyszukiwarka) ================= */
+const STOP=new Set(['i','w','na','do','z','ze','o','co','to','jest','są','jak','gdzie','czy','przy','dla',
+  'a','the','po','od','się','że','ma','być','lub','oraz','jakie','które','który','która','można','robić','działa','nad','pod','przed']);
+function tok(s){return (s.toLowerCase().match(/[a-ząćęłńóśźż0-9]+/g)||[]).filter(w=>w.length>2&&!STOP.has(w));}
+
+function buildIndex(){
+  const docs=[];
+  W.rozdzialy.forEach(r=>{
+    docs.push({typ:'streszczenie',txt:r.streszczenie,zrodlo:`Rozdział ${r.nr} — ${r.tytul}`,rid:r.id});
+    r.fakty.forEach(f=>docs.push({typ:'fakt',txt:f,zrodlo:`Rozdział ${r.nr} — ${r.tytul}`,rid:r.id}));
+  });
+  W.slownik.forEach(s=>docs.push({typ:'slownik',txt:s.termin+' '+s.definicja,wy:s.definicja,nazwa:s.termin,zrodlo:'Słownik pojęć'}));
+  W.mapy.forEach(m=>docs.push({typ:'mapa',txt:m.refleks+' '+m.lokalizacja+' '+m.stopa,
+    wy:`Refleks „${m.refleks}” — ${m.lokalizacja} (stopa: ${m.stopa}).`,zrodlo:'Mapy stref'}));
+  W.bezpieczenstwo.forEach(b=>docs.push({typ:'bezp',txt:b,zrodlo:'Zasady bezpieczeństwa'}));
+  return docs;
+}
+const IDX=W?buildIndex():[];
+
+function odpowiedz(){
+  const q=document.getElementById('pyt-input').value.trim();
+  const out=document.getElementById('pyt-odp');
+  if(!q){out.innerHTML='<p class="muted">Wpisz pytanie powyżej.</p>';return;}
+  const qt=tok(q);
+  if(!qt.length){out.innerHTML='<p class="muted">Zadaj pytanie pełnym zdaniem.</p>';return;}
+
+  // 1) Dopasowanie schorzenia po nazwie
+  const ql=q.toLowerCase();
+  const schHit=W.schorzenia.filter(s=>{
+    const n=s.nazwa.toLowerCase().replace(/\(.*?\)/g,'').trim();
+    return qt.some(t=>n.includes(t)) || ql.includes(n.split(' ')[0]);
+  }).slice(0,4);
+
+  // 2) Scoring dokumentów
+  const scored=IDX.map(d=>{
+    const dt=tok(d.txt); let sc=0;
+    qt.forEach(t=>{ if(dt.includes(t))sc+=2; else if(dt.some(w=>w.includes(t)||t.includes(w)))sc+=1; });
+    return {d,sc};
+  }).filter(x=>x.sc>0).sort((a,b)=>b.sc-a.sc);
+
+  let html='';
+  if(schHit.length){
+    html+=`<div class="answer-card"><b>Schorzenie w bazie:</b><br>`+
+      schHit.map(s=>`<div style="margin-top:6px"><b>${esc(s.nazwa)}</b> → `+
+        s.refleksy.split(',').map(r=>`<span class="reflx">${esc(r.trim())}</span>`).join('')+`</div>`).join('')+
+      `<div class="src">Źródło: Indeks schorzeń (s. 221–227). Mapa pracy, nie wskazanie lecznicze.</div></div>`;
+  }
+  if(scored.length){
+    const top=scored.slice(0,5);
+    html+=`<div class="answer-card"><b>Najtrafniejsze fragmenty wiedzy:</b>`;
+    top.forEach(x=>{
+      const d=x.d;
+      const tekst=d.wy?d.wy:(d.nazwa?`<b>${esc(d.nazwa)}:</b> ${esc(d.wy||d.txt)}`:esc(d.txt));
+      html+=`<div style="margin-top:10px">${highlight(tekst,qt)}<div class="src">Źródło: ${esc(d.zrodlo)}</div></div>`;
+    });
+    html+=`</div>`;
+  }
+  if(!html){
+    html=`<div class="answer-card">Nie znalazłem dopasowania. Spróbuj innych słów (np. nazwy narządu,
+      refleksu lub schorzenia). Możesz też przeglądać wiedzę w zakładce <b>Nauka</b>.</div>`;
+  }
+  out.innerHTML=html;
+}
+function highlight(txt,terms){
+  let h=txt;
+  terms.forEach(t=>{ if(t.length>3){const re=new RegExp('('+t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig');h=h.replace(re,'<mark>$1</mark>');} });
+  return h;
+}
+const PRZYKLADY=['Gdzie znajduje się refleks wątroby?','Co robić przy migrenie?','Czym jest homeostaza?',
+  'Gdzie jest refleks serca?','Jak pracować przy cukrzycy?','Co to jest zastawka krętniczo-kątnicza?',
+  'Gdzie są refleksy zatok?','Jakie zasady bezpieczeństwa obowiązują refleksologa?','Refleks przysadki mózgowej',
+  'Co przy bezsenności?','Ile stref ma ciało?','Gdzie jest refleks nerek?'];
+function losowePyt(){
+  document.getElementById('pyt-input').value=PRZYKLADY[Math.floor(pseudo()*PRZYKLADY.length)];
+  odpowiedz();
+}
+
+/* ================= GENERATOR PYTAŃ EGZAMINACYJNYCH ================= */
+function fillZakres(sel){
+  const el=document.getElementById(sel);
+  el.innerHTML='<option value="all">Wszystkie rozdziały</option>'+
+    W.rozdzialy.map(r=>`<option value="${r.id}">R${r.nr} — ${esc(r.tytul)}</option>`).join('');
+}
+function generujEgz(){
+  const zak=document.getElementById('gen-zakres').value;
+  const ile=parseInt(document.getElementById('gen-ile').value);
+  let pula=W.pytania_egz.filter(p=>zak==='all'||p.rozdzial===zak);
+  if(!pula.length){document.getElementById('gen-out').innerHTML='<p class="muted">Brak pytań dla tego zakresu — wybierz „Wszystkie”.</p>';return;}
+  pula=shuffle(pula).slice(0,ile);
+  document.getElementById('gen-out').innerHTML=pula.map((p,i)=>{
+    const r=rozdzialById(p.rozdzial);
+    return `<div class="q-card"><div class="q-num">PYTANIE ${i+1} · R${r?r.nr:'?'}</div>`+
+      `<div class="q-text">${esc(p.q)}</div>`+
+      `<details><summary>Podpowiedź / klucz</summary><div class="hint">${esc(p.wskazowka)}</div></details></div>`;
+  }).join('');
+  window.scrollTo({top:document.getElementById('gen-out').offsetTop-80,behavior:'smooth'});
+}
+
+/* ================= TESTY WIEDZY ================= */
+let testState=null;
+function startTest(){
+  const zak=document.getElementById('test-zakres').value;
+  const ile=parseInt(document.getElementById('test-ile').value);
+  let pula=W.testy.filter(t=>zak==='all'||t.rozdzial===zak);
+  if(!pula.length){document.getElementById('test-out').innerHTML='<p class="muted">Brak pytań dla tego zakresu.</p>';return;}
+  pula=shuffle(pula).slice(0,ile);
+  testState={pula,odp:new Array(pula.length).fill(null),done:0};
+  renderTest();
+}
+function renderTest(){
+  const {pula}=testState;
+  let h=`<div class="scorebar"><span>Pytań: <b>${pula.length}</b></span>`+
+    `<span>Odpowiedzi: <b id="t-done">${testState.done}</b>/${pula.length}</span>`+
+    `<span>Poprawne: <b id="t-score">${punkty()}</b></span></div>`;
+  pula.forEach((q,i)=>{
+    const r=rozdzialById(q.rozdzial);
+    h+=`<div class="q-card"><div class="q-num">PYTANIE ${i+1} · R${r?r.nr:'?'}</div>`+
+      `<div class="q-text">${esc(q.q)}</div><div id="opts-${i}">`+
+      q.opcje.map((o,j)=>`<button class="opt" onclick="odpTest(${i},${j})">${esc(o)}</button>`).join('')+
+      `</div><div id="exp-${i}"></div></div>`;
+  });
+  document.getElementById('test-out').innerHTML=h;
+}
+function odpTest(i,j){
+  if(testState.odp[i]!==null)return;
+  const q=testState.pula[i];
+  testState.odp[i]=j; testState.done++;
+  const box=document.getElementById('opts-'+i);
+  [...box.children].forEach((btn,k)=>{
+    btn.classList.add('disabled');
+    if(k===q.poprawna)btn.classList.add('correct');
+    if(k===j&&j!==q.poprawna)btn.classList.add('wrong');
+  });
+  document.getElementById('exp-'+i).innerHTML=
+    `<div class="explain">${j===q.poprawna?'✅ Dobrze! ':'❌ '}${esc(q.wyj)}</div>`;
+  document.getElementById('t-done').textContent=testState.done;
+  document.getElementById('t-score').textContent=punkty();
+  if(testState.done===testState.pula.length){
+    const sc=punkty(),tot=testState.pula.length;
+    const proc=Math.round(sc/tot*100);
+    document.querySelector('.scorebar').insertAdjacentHTML('beforeend',
+      `<span style="width:100%;text-align:center;color:${proc>=70?'#3d7a4e':'#a8493f'};font-weight:700">`+
+      `Wynik: ${sc}/${tot} (${proc}%) ${proc>=70?'— bardzo dobrze!':'— powtórz materiał.'}</span>`);
+  }
+}
+function punkty(){return testState?testState.odp.reduce((a,o,i)=>a+(o===testState.pula[i].poprawna?1:0),0):0;}
+
+/* ---------- Init ---------- */
+if(W){
+  renderListaRozdzialow();
+  fillZakres('gen-zakres'); fillZakres('test-zakres');
+  generujEgz(); startTest();
+}
+</script>
+</body>
+</html>
