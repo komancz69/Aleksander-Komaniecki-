@@ -418,7 +418,8 @@ function renderTest(){
   const {pula}=testState;
   let h=`<div class="scorebar"><span>Pytań: <b>${pula.length}</b></span>`+
     `<span>Odpowiedzi: <b id="t-done">${testState.done}</b>/${pula.length}</span>`+
-    `<span>Poprawne: <b id="t-score">${punkty()}</b></span></div>`;
+    `<span>Poprawne: <b id="t-score">${punkty()}</b></span>`+
+    `<button class="btn sec" onclick="eksportWynik()" style="padding:7px 13px;margin:0">📄 Zapisz wynik (PDF)</button></div>`;
   pula.forEach((q,i)=>{
     const r=rozdzialById(q.rozdzial);
     h+=`<div class="q-card"><div class="q-num">PYTANIE ${i+1} · R${r?r.nr:'?'}</div>`+
@@ -451,6 +452,55 @@ function odpTest(i,j){
   }
 }
 function punkty(){return testState?testState.odp.reduce((a,o,i)=>a+(o===testState.pula[i].poprawna?1:0),0):0;}
+
+function eksportWynik(){
+  if(!testState){return;}
+  const tot=testState.pula.length, done=testState.done, sc=punkty();
+  const proc=done?Math.round(sc/done*100):0;
+  const d=new Date();
+  const dd=String(d.getDate()).padStart(2,'0')+'.'+String(d.getMonth()+1).padStart(2,'0')+'.'+d.getFullYear()+
+    ' '+String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
+  let rows='';
+  testState.pula.forEach((q,i)=>{
+    const u=testState.odp[i];
+    const r=rozdzialById(q.rozdzial);
+    const stan = u===null ? '<span style="color:#999">— brak —</span>'
+      : (u===q.poprawna ? '<span style="color:#2c7a3f;font-weight:700">✓ dobrze</span>'
+                        : '<span style="color:#b1453a;font-weight:700">✗ źle</span>');
+    const tw = u===null ? '—' : esc(q.opcje[u]);
+    rows+=`<tr><td>${i+1}</td><td>R${r?r.nr:'?'}</td><td>${esc(q.q)}</td>`+
+      `<td>${tw}</td><td>${esc(q.opcje[q.poprawna])}</td><td>${stan}</td></tr>`;
+  });
+  const html=`<!DOCTYPE html><html lang="pl"><head><meta charset="UTF-8">
+  <title>Wynik testu — Refleksologia</title><style>
+    *{font-family:'Segoe UI',system-ui,sans-serif;color:#2c2a26}
+    body{margin:28px;font-size:12px}
+    h1{color:#8a6d3b;font-size:20px;margin:0 0 2px}
+    .sub{color:#777;font-size:12px;margin:0 0 14px}
+    .box{display:inline-block;border:1px solid #e3ddcf;border-radius:10px;padding:10px 18px;margin:0 8px 14px 0;background:#faf6ed}
+    .box b{font-size:20px;color:#8a6d3b;display:block}
+    table{width:100%;border-collapse:collapse;margin-top:8px}
+    th,td{border:1px solid #e3ddcf;padding:6px 8px;text-align:left;vertical-align:top}
+    th{background:#8a6d3b;color:#fff;font-size:11px}
+    tr:nth-child(even) td{background:#faf8f2}
+    .foot{margin-top:18px;color:#999;font-size:10px;border-top:1px solid #e3ddcf;padding-top:8px}
+    @media print{.noprint{display:none}}
+  </style></head><body>
+    <h1>🦶 Wynik testu — Refleksologia</h1>
+    <p class="sub">Metoda Ingham · oprac. Wanda Budzanowska-Bratko · ${dd}</p>
+    <div class="box">Wynik<b>${sc}/${done||tot}</b></div>
+    <div class="box">Skuteczność<b>${proc}%</b></div>
+    <div class="box">Pytań w teście<b>${tot}</b></div>
+    <button class="noprint" onclick="window.print()" style="float:right;background:#8a6d3b;color:#fff;border:none;border-radius:8px;padding:10px 16px;font-size:13px;cursor:pointer">🖨️ Drukuj / Zapisz PDF</button>
+    <table><thead><tr><th>#</th><th>Rozdz.</th><th>Pytanie</th><th>Twoja odpowiedź</th><th>Poprawna</th><th>Ocena</th></tr></thead>
+    <tbody>${rows}</tbody></table>
+    <p class="foot">Materiał edukacyjny. Refleksologia nie diagnozuje i nie przepisuje leków. © treść: Polski Instytut Refleksologii.</p>
+    <script>window.onload=function(){setTimeout(function(){window.print();},350);};<\/script>
+  </body></html>`;
+  const w=window.open('','_blank');
+  if(!w){alert('Pozwól na otwieranie okien (pop-up), aby zapisać wynik do PDF.');return;}
+  w.document.open(); w.document.write(html); w.document.close();
+}
 
 /* ---------- Init ---------- */
 if(W){
