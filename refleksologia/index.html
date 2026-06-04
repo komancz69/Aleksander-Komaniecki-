@@ -296,78 +296,146 @@ function pokazBezpieczenstwo(){
   naukaDetal(h);
 }
 
-/* ================= PYTANIA OPISOWE (wyszukiwarka) ================= */
-const STOP=new Set(['i','w','na','do','z','ze','o','co','to','jest','są','jak','gdzie','czy','przy','dla',
-  'a','the','po','od','się','że','ma','być','lub','oraz','jakie','które','który','która','można','robić','działa','nad','pod','przed']);
-function tok(s){return (s.toLowerCase().match(/[a-ząćęłńóśźż0-9]+/g)||[]).filter(w=>w.length>2&&!STOP.has(w));}
+/* ============ PYTANIA OPISOWE — odpowiedź wg SENSU pytania ============ */
+const STOP=new Set(['i','w','we','na','do','z','ze','o','u','co','to','jest','sa','jak','gdzie','czy','przy','dla',
+  'a','po','od','sie','ze','ma','maja','byc','lub','oraz','jakie','ktore','ktory','ktora','mozna','robic','dziala',
+  'nad','pod','przed','mi','mnie','ten','ta','te','tym','tego','jaki','jaka','powiedz','wyjasnij','opisz',
+  'znajduje','znajduja','lezy','leza','wystepuje','sluzy','jakis','jakies','oraz','czym','jakas']);
+function bezznak(s){return (s||'').toLowerCase()
+  .replace(/ą/g,'a').replace(/ć/g,'c').replace(/ę/g,'e').replace(/ł/g,'l').replace(/ń/g,'n')
+  .replace(/ó/g,'o').replace(/ś/g,'s').replace(/ż/g,'z').replace(/ź/g,'z');}
+function slowa(s){return (bezznak(s).match(/[a-z0-9]+/g)||[]);}
+// formy nieregularne → forma kanoniczna (żeby odmiana nie psuła dopasowania)
+const KAN={nerka:'nerka',nerki:'nerka',nerek:'nerka',nerkach:'nerka',nerkami:'nerka',nerkowy:'nerka',
+  oko:'oko',oka:'oko',oku:'oko',oczy:'oko',oczu:'oko',ocznych:'oko',
+  ucho:'ucho',ucha:'ucho',uchu:'ucho',uszy:'ucho',uszu:'ucho',
+  reka:'reka',reki:'reka',rece:'reka',rekach:'reka',
+  zab:'zab',zeby:'zab',zebow:'zab'};
+function kan(w){return KAN[w]||w;}
+function tresc(s){return slowa(s).filter(w=>w.length>2&&!STOP.has(w)).map(kan);}
+// dopasowanie po rdzeniu — wspólny prefiks ≥4 znaki i ≥ połowy dłuższego słowa
+// (łączy serc-e/-a, wątrob-a/-y; rozdziela zaparcia/zapalenie)
+function rdzen(a,b){if(a===b)return true;let p=0;const n=Math.min(a.length,b.length);
+  while(p<n&&a[p]===b[p])p++;return p>=4 && p*2>=Math.max(a.length,b.length);}
+function maTok(tok,w){return tok.some(t=>rdzen(t,w));}
+function keyTok(label){return Array.from(new Set(tresc(label)));}
 
+let ENT=[], CDOC=[];
 function buildIndex(){
-  const docs=[];
+  ENT=[]; CDOC=[];
+  W.mapy.forEach(m=>ENT.push({typ:'mapa',label:m.refleks,tok:keyTok(m.refleks),data:m}));
+  W.schorzenia.forEach(s=>ENT.push({typ:'schorzenie',label:s.nazwa,tok:keyTok(s.nazwa.replace(/\(.*?\)/g,'')),data:s}));
+  W.slownik.forEach(s=>ENT.push({typ:'termin',label:s.termin,tok:keyTok(s.termin),data:s}));
   W.rozdzialy.forEach(r=>{
+    ENT.push({typ:'rozdzial',label:r.tytul,tok:keyTok(r.tytul),data:r});
     const zr=`Rozdział ${r.nr} — ${r.tytul}`;
-    docs.push({typ:'streszczenie',txt:r.streszczenie,zrodlo:zr,rid:r.id});
-    r.fakty.forEach(f=>docs.push({typ:'fakt',txt:f,zrodlo:zr,rid:r.id}));
-    (r.kluczowe||[]).forEach(k=>docs.push({typ:'pojecie',txt:k.t+' '+k.o,wy:`<b>${k.t}:</b> ${k.o}`,zrodlo:zr,rid:r.id}));
-    (r.sekcje||[]).forEach(s=>docs.push({typ:'sekcja',txt:s.h+' '+s.txt,wy:`<b>${s.h}:</b> ${s.txt}`,zrodlo:zr,rid:r.id}));
-    (r.problemy||[]).forEach(p=>docs.push({typ:'problem',txt:p.nazwa+' '+(p.objawy||'')+' '+p.refleksy,
-      wy:`<b>${p.nazwa}</b> — objawy: ${p.objawy||'—'}. Refleksy: ${p.refleksy}.`,zrodlo:zr,rid:r.id}));
+    CDOC.push({typ:'streszczenie',txt:r.streszczenie,wy:esc(r.streszczenie),zrodlo:zr});
+    r.fakty.forEach(f=>CDOC.push({typ:'fakt',txt:f,wy:esc(f),zrodlo:zr}));
+    (r.kluczowe||[]).forEach(k=>CDOC.push({typ:'pojecie',txt:k.t+' '+k.o,wy:`<b>${esc(k.t)}</b> — ${esc(k.o)}`,zrodlo:zr}));
+    (r.sekcje||[]).forEach(s=>CDOC.push({typ:'sekcja',txt:s.h+' '+s.txt,wy:`<b>${esc(s.h)}.</b> ${esc(s.txt)}`,zrodlo:zr}));
   });
-  W.slownik.forEach(s=>docs.push({typ:'slownik',txt:s.termin+' '+s.definicja,wy:s.definicja,nazwa:s.termin,zrodlo:'Słownik pojęć'}));
-  W.mapy.forEach(m=>docs.push({typ:'mapa',txt:m.refleks+' '+m.lokalizacja+' '+m.stopa,
-    wy:`Refleks „${m.refleks}” — ${m.lokalizacja} (stopa: ${m.stopa}).`,zrodlo:'Mapy stref'}));
-  W.bezpieczenstwo.forEach(b=>docs.push({typ:'bezp',txt:b,zrodlo:'Zasady bezpieczeństwa'}));
-  return docs;
+  W.slownik.forEach(s=>CDOC.push({typ:'def',txt:s.termin+' '+s.definicja,wy:esc(s.definicja),zrodlo:'Słownik pojęć'}));
 }
-const IDX=W?buildIndex():[];
+if(W) buildIndex();
+
+function intencja(qRaw){
+  const s=bezznak(qRaw);
+  if(/\bile\b|jak duzo|jak wiele|ilosc/.test(s)) return 'liczba';
+  if(/gdzie|lokaliz|polozen|umiejscow|ktorej stopie|ktorym miejscu|po ktorej stronie/.test(s)) return 'lokalizacja';
+  if(/co to|czym jest|co oznacza|definicj|co znaczy|znaczenie|wyjasnij pojecie/.test(s)) return 'definicja';
+  if(/dlaczego|czemu|jak dziala|po co|z jakiego powodu|w jakim celu/.test(s)) return 'dlaczego';
+  if(/co robic|jak pracowac|jaki refleks|jakie refleks|co przy|pomoc|pomaga|na co przy|leczenie|wspomaga/.test(s)) return 'praca';
+  return 'ogolne';
+}
+function encjaTypu(qTok,typy){
+  let best=null,bm=0,bc=0;
+  ENT.forEach(e=>{ if(typy.indexOf(e.typ)<0||!e.tok.length)return;
+    const m=e.tok.filter(et=>maTok(qTok,et)).length; if(!m)return;
+    const cov=m/e.tok.length;
+    if(m>bm||(m===bm&&cov>bc)){bm=m;bc=cov;best=e;} });
+  return best;
+}
+function schorzeniaDla(qTok){
+  return W.schorzenia.map(s=>{
+    const st=keyTok(s.nazwa.replace(/\(.*?\)/g,''));
+    const m=st.filter(et=>maTok(qTok,et)).length;
+    return {s,m,cov:st.length?m/st.length:0};
+  }).filter(x=>x.m>0).sort((a,b)=> (b.m-a.m)||(b.cov-a.cov));
+}
+function scoreDoc(d,qTok,subjTok,locBoost){
+  const dt=tresc(d.txt); let s=0;
+  qTok.forEach(t=>{ if(maTok(dt,t)) s+=1; });
+  if(subjTok) subjTok.forEach(t=>{ if(maTok(dt,t)) s+=3; });
+  if(locBoost) ['refleks','stopa','krawedz','linia','palec','kostka','pieta','strona','wierzch','sciegno']
+    .forEach(w=>{ if(maTok(dt,w)) s+=1; });
+  return s;
+}
+function bestDoc(typy,qTok,subjTok,preferNum){
+  const arr=CDOC.filter(d=>typy.indexOf(d.typ)>=0).map(d=>{
+    let s=scoreDoc(d,qTok,subjTok,false);
+    if(preferNum&&/\d/.test(d.txt)) s+=2;
+    return {d,s};
+  }).filter(x=>x.s>0).sort((a,b)=>b.s-a.s);
+  return arr.length?arr[0]:null;
+}
+function card(tekst,zrodlo,extra){return `<div class="answer-card">${tekst}<div class="src">Źródło: ${esc(zrodlo)}</div>${extra||''}</div>`;}
+const DISC=`<div class="src">To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza.</div>`;
+function refleksyChip(str){return str.split(',').map(r=>`<span class="reflx">${esc(r.trim())}</span>`).join('');}
 
 function odpowiedz(){
   const q=document.getElementById('pyt-input').value.trim();
   const out=document.getElementById('pyt-odp');
   if(!q){out.innerHTML='<p class="muted">Wpisz pytanie powyżej.</p>';return;}
-  const qt=tok(q);
-  if(!qt.length){out.innerHTML='<p class="muted">Zadaj pytanie pełnym zdaniem.</p>';return;}
-
-  // 1) Dopasowanie schorzenia po nazwie
-  const ql=q.toLowerCase();
-  const schHit=W.schorzenia.filter(s=>{
-    const n=s.nazwa.toLowerCase().replace(/\(.*?\)/g,'').trim();
-    return qt.some(t=>n.includes(t)) || ql.includes(n.split(' ')[0]);
-  }).slice(0,4);
-
-  // 2) Scoring dokumentów
-  const scored=IDX.map(d=>{
-    const dt=tok(d.txt); let sc=0;
-    qt.forEach(t=>{ if(dt.includes(t))sc+=2; else if(dt.some(w=>w.includes(t)||t.includes(w)))sc+=1; });
-    return {d,sc};
-  }).filter(x=>x.sc>0).sort((a,b)=>b.sc-a.sc);
-
+  const qTok=tresc(q);
+  if(!qTok.length){out.innerHTML='<p class="muted">Zadaj pełne pytanie (z nazwą narządu, refleksu, schorzenia lub pojęcia).</p>';return;}
+  const intent=intencja(q);
   let html='';
-  if(schHit.length){
-    html+=`<div class="answer-card"><b>Schorzenie w bazie:</b><br>`+
-      schHit.map(s=>`<div style="margin-top:6px"><b>${esc(s.nazwa)}</b> → `+
-        s.refleksy.split(',').map(r=>`<span class="reflx">${esc(r.trim())}</span>`).join('')+`</div>`).join('')+
-      `<div class="src">Źródło: Indeks schorzeń (s. 221–227). Mapa pracy, nie wskazanie lecznicze.</div></div>`;
+
+  if(intent==='lokalizacja'){
+    const e=encjaTypu(qTok,['mapa']);
+    if(e){
+      const rows=W.mapy.filter(m=>keyTok(m.refleks).some(et=>maTok(qTok,et)));
+      const use=rows.length?rows:[e.data];
+      let body=`<b>📍 Gdzie pracować — ${esc(use.length>1?e.label:use[0].refleks)}</b>`;
+      use.slice(0,3).forEach(m=>{ body+=`<div style="margin-top:6px">• <b>${esc(m.refleks)}</b>: ${esc(m.lokalizacja)} <span class="muted">(stopa: ${esc(m.stopa)})</span></div>`; });
+      html+=card(body,'Mapy stref');
+      const det=bestDoc(['fakt','sekcja'],qTok,e.tok,true);
+      if(det&&det.s>=5) html+=card(`<b>Szczegół z rozdziału:</b><br>${det.d.wy}`,det.d.zrodlo);
+    }
   }
-  if(scored.length){
-    const top=scored.slice(0,5);
-    html+=`<div class="answer-card"><b>Najtrafniejsze fragmenty wiedzy:</b>`;
-    top.forEach(x=>{
-      const d=x.d;
-      const tekst=d.wy?d.wy:(d.nazwa?`<b>${esc(d.nazwa)}:</b> ${esc(d.wy||d.txt)}`:esc(d.txt));
-      html+=`<div style="margin-top:10px">${highlight(tekst,qt)}<div class="src">Źródło: ${esc(d.zrodlo)}</div></div>`;
-    });
-    html+=`</div>`;
+  else if(intent==='definicja'){
+    const e=encjaTypu(qTok,['termin']);
+    if(e) html+=card(`<b>${esc(e.label)}</b><br>${esc(e.data.definicja)}`,'Słownik pojęć');
+    else { const d=bestDoc(['pojecie','def','sekcja','fakt'],qTok,null); if(d) html+=card(d.d.wy,d.d.zrodlo); }
   }
+  else if(intent==='praca'){
+    const sch=schorzeniaDla(qTok);
+    if(sch.length){
+      let body=`<b>Refleksy do pracy</b>`;
+      sch.slice(0,3).forEach(x=>{ body+=`<div style="margin-top:8px"><b>${esc(x.s.nazwa)}</b> → ${refleksyChip(x.s.refleksy)}</div>`; });
+      html+=`<div class="answer-card">${body}${DISC}</div>`;
+    } else {
+      const d=bestDoc(['sekcja','fakt','pojecie'],qTok,null); if(d) html+=card(d.d.wy,d.d.zrodlo);
+    }
+  }
+  else { // liczba / dlaczego / ogolne — jeden spójny akapit
+    const e=encjaTypu(qTok,['mapa','schorzenie','termin','rozdzial']);
+    const d=bestDoc(['sekcja','fakt','pojecie','def','streszczenie'],qTok,e?e.tok:null,intent==='liczba');
+    if(d) html+=card(d.d.wy,d.d.zrodlo);
+    // „powiązane refleksy" tylko gdy temat to faktycznie schorzenie (nie przy pytaniach „ile")
+    if(intent!=='liczba'){
+      const sch=schorzeniaDla(qTok);
+      if(sch.length && sch[0].cov>=0.6)
+        html+=`<div class="answer-card"><b>Powiązane refleksy — ${esc(sch[0].s.nazwa)}:</b> ${refleksyChip(sch[0].s.refleksy)}${DISC}</div>`;
+    }
+  }
+
   if(!html){
-    html=`<div class="answer-card">Nie znalazłem dopasowania. Spróbuj innych słów (np. nazwy narządu,
-      refleksu lub schorzenia). Możesz też przeglądać wiedzę w zakładce <b>Nauka</b>.</div>`;
+    const d=bestDoc(['sekcja','fakt','pojecie','def','streszczenie'],qTok,null);
+    if(d) html=card(`<b>Najbliższa odpowiedź:</b><br>${d.d.wy}`,d.d.zrodlo);
+    else html=`<div class="answer-card">Nie znalazłem odpowiedzi. Spróbuj nazwać narząd, refleks, schorzenie lub pojęcie — np. „gdzie jest refleks nerek”, „co robić przy migrenie”, „czym jest homeostaza”, „dlaczego pracujemy na kręgosłupie”.</div>`;
   }
   out.innerHTML=html;
-}
-function highlight(txt,terms){
-  let h=txt;
-  terms.forEach(t=>{ if(t.length>3){const re=new RegExp('('+t.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','ig');h=h.replace(re,'<mark>$1</mark>');} });
-  return h;
 }
 const PRZYKLADY=['Gdzie znajduje się refleks wątroby?','Co robić przy migrenie?','Czym jest homeostaza?',
   'Gdzie jest refleks serca?','Jak pracować przy cukrzycy?','Co to jest zastawka krętniczo-kątnicza?',
