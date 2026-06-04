@@ -242,7 +242,22 @@ function pokazRozdzial(id){
   const r=rozdzialById(id);
   let h=`<h2>Rozdział ${r.nr} — ${esc(r.tytul)}</h2>`+
     `<p class="muted">strony ${esc(r.strony)}</p>`+
-    `<p>${esc(r.streszczenie)}</p><h3>Fakty do zapamiętania</h3>`+
+    `<p>${esc(r.streszczenie)}</p>`;
+  if(r.kluczowe&&r.kluczowe.length){
+    h+=`<h3>Kluczowe pojęcia</h3>`+
+      r.kluczowe.map(k=>`<div class="fact"><b>${esc(k.t)}</b> — ${esc(k.o)}</div>`).join('');
+  }
+  if(r.sekcje&&r.sekcje.length){
+    h+=`<h3>Treść rozdziału</h3>`+
+      r.sekcje.map(s=>`<div class="answer-card"><b>${esc(s.h)}</b><div style="margin-top:6px">${esc(s.txt)}</div></div>`).join('');
+  }
+  if(r.problemy&&r.problemy.length){
+    h+=`<h3>Problemy i refleksy do pracy</h3>`+
+      `<table><thead><tr><th>Problem</th><th>Objawy</th><th>Refleksy</th></tr></thead><tbody>`+
+      r.problemy.map(p=>`<tr><td><b>${esc(p.nazwa)}</b></td><td>${esc(p.objawy||'')}</td><td>${esc(p.refleksy)}</td></tr>`).join('')+
+      `</tbody></table>`;
+  }
+  h+=`<h3>Fakty do zapamiętania</h3>`+
     r.fakty.map(f=>`<div class="fact">${esc(f)}</div>`).join('');
   naukaDetal(h);
 }
@@ -289,8 +304,13 @@ function tok(s){return (s.toLowerCase().match(/[a-ząćęłńóśźż0-9]+/g)||[
 function buildIndex(){
   const docs=[];
   W.rozdzialy.forEach(r=>{
-    docs.push({typ:'streszczenie',txt:r.streszczenie,zrodlo:`Rozdział ${r.nr} — ${r.tytul}`,rid:r.id});
-    r.fakty.forEach(f=>docs.push({typ:'fakt',txt:f,zrodlo:`Rozdział ${r.nr} — ${r.tytul}`,rid:r.id}));
+    const zr=`Rozdział ${r.nr} — ${r.tytul}`;
+    docs.push({typ:'streszczenie',txt:r.streszczenie,zrodlo:zr,rid:r.id});
+    r.fakty.forEach(f=>docs.push({typ:'fakt',txt:f,zrodlo:zr,rid:r.id}));
+    (r.kluczowe||[]).forEach(k=>docs.push({typ:'pojecie',txt:k.t+' '+k.o,wy:`<b>${k.t}:</b> ${k.o}`,zrodlo:zr,rid:r.id}));
+    (r.sekcje||[]).forEach(s=>docs.push({typ:'sekcja',txt:s.h+' '+s.txt,wy:`<b>${s.h}:</b> ${s.txt}`,zrodlo:zr,rid:r.id}));
+    (r.problemy||[]).forEach(p=>docs.push({typ:'problem',txt:p.nazwa+' '+(p.objawy||'')+' '+p.refleksy,
+      wy:`<b>${p.nazwa}</b> — objawy: ${p.objawy||'—'}. Refleksy: ${p.refleksy}.`,zrodlo:zr,rid:r.id}));
   });
   W.slownik.forEach(s=>docs.push({typ:'slownik',txt:s.termin+' '+s.definicja,wy:s.definicja,nazwa:s.termin,zrodlo:'Słownik pojęć'}));
   W.mapy.forEach(m=>docs.push({typ:'mapa',txt:m.refleks+' '+m.lokalizacja+' '+m.stopa,
@@ -372,9 +392,13 @@ function generujEgz(){
   pula=shuffle(pula).slice(0,ile);
   document.getElementById('gen-out').innerHTML=pula.map((p,i)=>{
     const r=rozdzialById(p.rozdzial);
-    return `<div class="q-card"><div class="q-num">PYTANIE ${i+1} · R${r?r.nr:'?'}</div>`+
+    let c=`<div class="q-card"><div class="q-num">PYTANIE ${i+1} · R${r?r.nr:'?'} — ${r?esc(r.tytul):''}</div>`+
       `<div class="q-text">${esc(p.q)}</div>`+
-      `<details><summary>Podpowiedź / klucz</summary><div class="hint">${esc(p.wskazowka)}</div></details></div>`;
+      `<details><summary>💡 Podpowiedź (klucz)</summary><div class="hint">${esc(p.wskazowka)}</div></details>`;
+    if(p.odpowiedz){
+      c+=`<details><summary>✅ Wzorcowa odpowiedź</summary><div class="explain" style="line-height:1.6">${esc(p.odpowiedz)}</div></details>`;
+    }
+    return c+`</div>`;
   }).join('');
   window.scrollTo({top:document.getElementById('gen-out').offsetTop-80,behavior:'smooth'});
 }
