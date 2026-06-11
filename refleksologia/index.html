@@ -99,7 +99,8 @@
 </div>
 <script>
   var GATE_HASLO="fitline";
-  function gateOK(){document.getElementById('gate').style.display='none';try{sessionStorage.setItem('refl_ok','1')}catch(e){}}
+  function gateOK(){document.getElementById('gate').style.display='none';try{sessionStorage.setItem('refl_ok','1')}catch(e){}
+    var pi=document.getElementById('pyt-input'); if(pi){try{pi.focus();}catch(e){}}}
   function gateCheck(){
     var v=(document.getElementById('gate-pass').value||'').trim().toLowerCase();
     if(v===GATE_HASLO){gateOK();}
@@ -115,8 +116,8 @@
 </header>
 
 <nav>
-  <button data-tab="nauka" class="active"><span class="ic">📖</span>Nauka</button>
-  <button data-tab="pytania"><span class="ic">💬</span>Pytania (odpowiedź opisowa)</button>
+  <button data-tab="pytania" class="active"><span class="ic">💬</span>Zadaj pytanie</button>
+  <button data-tab="nauka"><span class="ic">📖</span>Nauka</button>
   <button data-tab="generator"><span class="ic">📝</span>Generator pytań egz.</button>
   <button data-tab="testy"><span class="ic">✅</span>Testy wiedzy</button>
   <button data-tab="qa"><span class="ic">📚</span>Q&amp;A z książki</button>
@@ -130,7 +131,7 @@
   </div>
 
   <!-- ============ NAUKA ============ -->
-  <section id="nauka" class="panel active">
+  <section id="nauka" class="panel">
     <div id="nauka-home">
       <h2>Nauka — przeglądaj wiedzę</h2>
       <p class="muted">Wybierz rozdział, indeks schorzeń, mapy stref, słownik lub zasady bezpieczeństwa.</p>
@@ -148,14 +149,16 @@
   </section>
 
   <!-- ============ PYTANIA OPISOWE ============ -->
-  <section id="pytania" class="panel">
-    <h2>Pytania — odpowiedź opisowa</h2>
-    <p class="muted">Wpisz pytanie własnymi słowami (np. „gdzie jest refleks wątroby?”, „co robić przy
-      migrenie?”, „czym jest homeostaza?”). Aplikacja przeszuka bazę i odpowie opisowo.</p>
-    <textarea id="pyt-input" rows="3" placeholder="Twoje pytanie…"></textarea>
-    <div>
+  <section id="pytania" class="panel active">
+    <h2>Zadaj pytanie o refleksologię</h2>
+    <p class="muted">Wpisz pytanie własnymi słowami (np. „gdzie jest refleks wątroby”, „na czym
+      pracować przy migrenie”, „za co odpowiada trzustka”) i naciśnij <b>Odpowiedz</b>.</p>
+    <textarea id="pyt-input" rows="2" placeholder="Wpisz pytanie i naciśnij Odpowiedz…"
+      onkeydown="if(event.key==='Enter'&&!event.shiftKey){event.preventDefault();odpowiedz();}"></textarea>
+    <div class="toolbar">
       <button class="btn" onclick="odpowiedz()">Odpowiedz</button>
-      <button class="btn sec" onclick="losowePyt()">Przykładowe pytanie</button>
+      <button class="btn sec" onclick="wyczyscPyt()">🧹 Wyczyść</button>
+      <button class="btn sec" onclick="losowePyt()">Przykład</button>
     </div>
     <div id="pyt-odp" class="answer"></div>
   </section>
@@ -494,6 +497,10 @@ const PRZYKLADY=['Gdzie znajduje się refleks wątroby?','Co robić przy migreni
 function losowePyt(){
   document.getElementById('pyt-input').value=PRZYKLADY[Math.floor(pseudo()*PRZYKLADY.length)];
   odpowiedz();
+}
+function wyczyscPyt(){
+  const i=document.getElementById('pyt-input');
+  i.value=''; document.getElementById('pyt-odp').innerHTML=''; i.focus();
 }
 
 /* ================= GENERATOR PYTAŃ EGZAMINACYJNYCH ================= */
