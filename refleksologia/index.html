@@ -118,6 +118,7 @@
   <button data-tab="pytania"><span class="ic">💬</span>Pytania (odpowiedź opisowa)</button>
   <button data-tab="generator"><span class="ic">📝</span>Generator pytań egz.</button>
   <button data-tab="testy"><span class="ic">✅</span>Testy wiedzy</button>
+  <button data-tab="qa"><span class="ic">📚</span>Q&amp;A z książki</button>
 </nav>
 
 <main>
@@ -192,6 +193,22 @@
       <button class="btn" onclick="startTest()">Nowy test</button>
     </div>
     <div id="test-out"></div>
+  </section>
+
+  <!-- ============ Q&A Z KSIĄŻKI (encyklopedia) ============ -->
+  <section id="qa" class="panel">
+    <h2>Pytania i odpowiedzi z książki</h2>
+    <p class="muted">Gotowe pytania i odpowiedzi opracowane wprost z materiału — uporządkowane
+      wg rozdziałów książki. Obejmują: z czego składa się dany układ, za co odpowiadają organy
+      i gruczoły, gdzie na stopie leżą refleksy, oraz na czym pracować przy konkretnych
+      schorzeniach (na podstawie tabel z książki). Rozwiń pytanie, by zobaczyć odpowiedź.</p>
+    <div class="toolbar">
+      <select id="qa-rozdzial"></select>
+      <select id="qa-kat"></select>
+      <input type="text" id="qa-szukaj" placeholder="szukaj w pytaniach…" oninput="renderQA()" style="flex:1 1 180px">
+    </div>
+    <div id="qa-licznik" class="muted" style="margin-bottom:8px"></div>
+    <div id="qa-out"></div>
   </section>
 </main>
 
@@ -571,11 +588,48 @@ function eksportWynik(){
   w.document.open(); w.document.write(html); w.document.close();
 }
 
+/* ================= Q&A Z KSIĄŻKI ================= */
+function initQA(){
+  const rs=document.getElementById('qa-rozdzial');
+  rs.innerHTML='<option value="all">Wszystkie rozdziały</option>'+
+    W.rozdzialy.map(r=>`<option value="${r.id}">R${r.nr} — ${esc(r.tytul)}</option>`).join('');
+  const kats=Array.from(new Set((W.qa||[]).map(x=>x.kat)));
+  const ks=document.getElementById('qa-kat');
+  ks.innerHTML='<option value="all">Wszystkie kategorie</option>'+
+    kats.map(k=>`<option value="${esc(k)}">${esc(k)}</option>`).join('');
+  rs.onchange=renderQA; ks.onchange=renderQA;
+  renderQA();
+}
+function renderQA(){
+  const qa=W.qa||[];
+  const rz=document.getElementById('qa-rozdzial').value;
+  const kt=document.getElementById('qa-kat').value;
+  const q=(document.getElementById('qa-szukaj').value||'').toLowerCase().trim();
+  let lista=qa.filter(x=>(rz==='all'||x.r===rz)&&(kt==='all'||x.kat===kt)&&
+    (!q||(x.q+' '+x.a).toLowerCase().includes(q)));
+  document.getElementById('qa-licznik').textContent=`Znaleziono: ${lista.length} z ${qa.length}`;
+  // grupuj wg rozdziału (kolejność książki)
+  const grupy={};
+  lista.forEach(x=>{(grupy[x.r]=grupy[x.r]||[]).push(x);});
+  const kolej=W.rozdzialy.map(r=>r.id).filter(id=>grupy[id]);
+  let html='';
+  if(!lista.length){ html='<p class="muted">Brak pasujących pytań. Zmień filtr lub frazę.</p>'; }
+  kolej.forEach(id=>{
+    const r=rozdzialById(id);
+    html+=`<h3>Rozdział ${r.nr} — ${esc(r.tytul)}</h3>`;
+    grupy[id].forEach(x=>{
+      html+=`<details><summary>${esc(x.q)} <span class="reflx" style="font-size:.72rem;background:#ece3d0">${esc(x.kat)}</span></summary>`+
+        `<div style="line-height:1.6;margin-top:6px">${esc(x.a)}</div></details>`;
+    });
+  });
+  document.getElementById('qa-out').innerHTML=html;
+}
+
 /* ---------- Init ---------- */
 if(W){
   renderListaRozdzialow();
   fillZakres('gen-zakres'); fillZakres('test-zakres');
-  generujEgz(); startTest();
+  generujEgz(); startTest(); initQA();
 }
 </script>
 </body>

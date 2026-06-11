@@ -4783,5 +4783,823 @@
                             "wskazowka":  "Obniża stres, usprawnia krążenie i impulsy, przywraca równowagę; brak przedawkowania.",
                             "odpowiedz":  "Refleksologia działa na trzy sposoby: obniża stres i napięcie nerwowe (wg książki ok. 75% zachorowań wiąże się ze stresem, który działa jak „opaska zaciskająca” układ), usprawnia krążenie krwi i przepływ impulsów nerwowych oraz pomaga naturze przywrócić równowagę — czyli homeostazę. Przepracowane lub niewydolne gruczoły i części ciała mogą dzięki temu wrócić do normy. Co istotne, refleksologia nigdy nie prowadzi do przedawkowania i nie może uszkodzić organizmu — ewentualne objawy uboczne, jak przeczyszczenie czy katar, są jedynie nieszkodliwą oznaką oczyszczania. Należy pamiętać, że refleksy biegną przez strefy, ale nie są nerwami."
                         }
-                    ]
+                    ],
+    "qa":  [
+               {
+                   "r":  "r1",
+                   "kat":  "Historia",
+                   "q":  "Skąd wywodzi się współczesna refleksologia?",
+                   "a":  "Korzenie sięgają starożytnego Egiptu (inskrypcja w grobowcu lekarskim — mastaba). Współczesna refleksologia wyrosła z terapii strefowej dr. Williama Fitzgeralda (pocz. XX w.), którą rozwinął dr Joe Shelby Riley, a w refleksologię stóp — Eunice Ingham."
+               },
+               {
+                   "r":  "r1",
+                   "kat":  "Historia",
+                   "q":  "Kto stworzył terapię strefową, a kto refleksologię stóp?",
+                   "a":  "Terapię strefową (zone therapy) stworzył dr William H. Fitzgerald (książka z 1917 r.). Refleksologię stóp rozwinęła Eunice Ingham na początku lat 30. XX w., pracując kciukiem i palcami; w 1938 r. wydała „Historie, które stopy mogą opowiedzieć”."
+               },
+               {
+                   "r":  "r1",
+                   "kat":  "Historia",
+                   "q":  "Czym jest Metoda Ingham?",
+                   "a":  "To przewodnia metoda refleksologii na świecie — refleksologia stóp oparta na mapowaniu wrażliwych punktów stopy na narządy ciała i pracy kciukiem. Kontynuują ją Narodowy i Międzynarodowy Instytut Refleksologii."
+               },
+               {
+                   "r":  "r2",
+                   "kat":  "Teoria",
+                   "q":  "Czym jest refleksologia?",
+                   "a":  "To nauka o refleksach w stopach i dłoniach, które mają bezpośrednie połączenie ze wszystkimi gruczołami, organami i częściami ciała; metoda „chodzenia” kciuka i palców po tych refleksach. Cel: pomóc ciału utrzymać równowagę (homeostazę)."
+               },
+               {
+                   "r":  "r2",
+                   "kat":  "Teoria",
+                   "q":  "Z ilu stref składa się ciało i co to znaczy?",
+                   "a":  "Ciało dzieli się na 10 podłużnych stref (po 5 na każdą połowę), biegnących od palców rąk/stóp do głowy. Każda strefa odpowiada jednemu palcowi. Zasada: organ leżący w danej strefie ma swój refleks w tej samej strefie stopy. Prawa stopa = prawa połowa ciała, lewa stopa = lewa połowa."
+               },
+               {
+                   "r":  "r2",
+                   "kat":  "Teoria",
+                   "q":  "Czym jest homeostaza?",
+                   "a":  "Naturalna równowaga (balans) między systemami organizmu — stan, do którego refleksologia pomaga ciału powrócić. To główny cel każdego zabiegu."
+               },
+               {
+                   "r":  "r2",
+                   "kat":  "Lokalizacja",
+                   "q":  "Jakie są cztery główne linie pomocnicze na stopie?",
+                   "a":  "(1) linia przepony (splotu słonecznego) — oddziela klatkę piersiową od brzucha; (2) linia pasa (talii) — od piątej kości śródstopia w poprzek; (3) linia pięty — u nasady pięty; (4) ścięgno — między przeponą a piętą. Refleksy kręgosłupa biegną po wewnętrznej krawędzi stopy."
+               },
+               {
+                   "r":  "r2",
+                   "kat":  "Teoria",
+                   "q":  "Na czym polega zasada miejsc odpowiadających?",
+                   "a":  "Gdy nie można pracować na zranionym miejscu, oddziałuje się na odpowiednik z tej samej strefy: dłoń↔podeszwa stopy, łokieć↔kolano, kostka↔przegub (nadgarstek), przedramię↔podudzie, kciuk↔duży palec stopy."
+               },
+               {
+                   "r":  "r2",
+                   "kat":  "Teoria",
+                   "q":  "Dlaczego refleksologia skupia się na stopach?",
+                   "a":  "Bo stopy są najbardziej uczulone na dotyk i najlepiej zabezpieczone, więc bolące refleksy są łatwiejsze do odnalezienia niż na dłoniach."
+               },
+               {
+                   "r":  "r3",
+                   "kat":  "Pojęcia",
+                   "q":  "Czym jest splot słoneczny?",
+                   "a":  "To „mózg jamy brzusznej” — ogromne skupisko nerwów na końcu mostka, w pobliżu przepony. Jego refleks leży na linii przepony, między 1. a 2. palcem, i jest głównym punktem relaksu układu nerwowego."
+               },
+               {
+                   "r":  "r3",
+                   "kat":  "Pojęcia",
+                   "q":  "Czym anatomicznie jest przepona?",
+                   "a":  "Cienka warstwa mięśniowa stanowiąca „podłogę” dla klatki piersiowej u podstawy płuc i „dach” dla jamy brzusznej. Jej linia orientacyjna biegnie u podstawy kości śródstopia."
+               },
+               {
+                   "r":  "r3",
+                   "kat":  "Pojęcia",
+                   "q":  "Co to są „kryształki” wyczuwane podczas zabiegu?",
+                   "a":  "Wyczuwalne pod kciukiem ziarenka („soli”) odłożone w niektórych partiach stóp, np. w rejonie karku i ramion. Z praktyką wyrabia się czucie ich wykrywania."
+               },
+               {
+                   "r":  "r3",
+                   "kat":  "Lokalizacja",
+                   "q":  "Gdzie znajdują się refleksy kręgów karku?",
+                   "a":  "U podstawy dużego palca, na wewnętrznej krawędzi stopy — w miejscu połączenia palca ze stopą (anatomicznie: połączenie kręgosłupa z podstawą karku)."
+               },
+               {
+                   "r":  "r4",
+                   "kat":  "Technika",
+                   "q":  "Na czym polega podstawowa technika kciuka?",
+                   "a":  "Kciuk porusza się drobnym, ciągłym ruchem „gąsienicy” — ZAWSZE tylko do przodu, nigdy do tyłu ani na bok, zginając się w pierwszym stawie pod kątem ok. 45° i pracując zewnętrznym narożnikiem (nie opuszką płasko, nie paznokciem)."
+               },
+               {
+                   "r":  "r4",
+                   "kat":  "Technika",
+                   "q":  "Czym jest technika zaczepno-wycofująca i kiedy ją stosujemy?",
+                   "a":  "To „metoda trzmiela / główki szpilki”: znaleźć punkt, nacisnąć i wycofać się w poprzek refleksu, nie wychodząc poza punkt. Stosujemy ją do małych, głębszych refleksów: przysadki, zagięcia esicy i zastawki krętniczo-kątniczej."
+               },
+               {
+                   "r":  "r4",
+                   "kat":  "Technika",
+                   "q":  "Do czego służy technika rotacji refleksu?",
+                   "a":  "Dla miejsc delikatnych i bolących: miejsce wyszukuje się uciskiem szpilkowym kciuka, a ręka podtrzymująca porusza stopą w kierunku kciuka, kilka razy, zwiększając nacisk."
+               },
+               {
+                   "r":  "r4",
+                   "kat":  "Technika",
+                   "q":  "Jakie są główne techniki relaksacyjne?",
+                   "a":  "Ruch do tyłu i do przodu, ugniatanie śródstopia, skręt kręgosłupa, rozluźnianie i obracanie kostki, rotacja dużego palca oraz technika przepony (głębokie oddychanie). Stosuje się je na początku, na końcu i między sekcjami zabiegu."
+               },
+               {
+                   "r":  "r4",
+                   "kat":  "Technika",
+                   "q":  "Jak wykonać technikę przepony (głębokie oddychanie)?",
+                   "a":  "Poduszki kciuków na refleksach przepony/splotu słonecznego obu stóp; pacjent robi głęboki wdech z naciskiem, przy powolnym wydechu zwalniamy ucisk o ok. 50%. Powtarzamy 4-5 razy, przeważnie na zakończenie zabiegu. Szczególnie skuteczna u osób pobudliwych i z wysokim ciśnieniem."
+               },
+               {
+                   "r":  "r5",
+                   "kat":  "Skład",
+                   "q":  "Z czego składa się układ kostny i jaką pełni rolę?",
+                   "a":  "To „chemiczna fabryka”: produkuje składniki krwi (w szpiku) i magazynuje minerały, głównie wapń (też fosfor, miedź, kobalt). Ciało ma 206 kości; osteoblasty produkują kolagen do odbudowy kości. Połączenia stawowe dzielą się na ruchome (z mazią) i nieruchome."
+               },
+               {
+                   "r":  "r5",
+                   "kat":  "Lokalizacja",
+                   "q":  "Ile kości ma stopa i jak odpowiada budowie ręki?",
+                   "a":  "Każda stopa ma 26 kości, 107 wiązadeł i 19 mięśni; prawie ¼ wszystkich 206 kości ciała jest w stopach. Budowa odpowiada ręce: śródstopie ↔ śródręcze, kość stępu ↔ kość przegubu."
+               },
+               {
+                   "r":  "r5",
+                   "kat":  "Funkcja",
+                   "q":  "Jak zbudowany jest mózg i którą stronę ciała kontroluje?",
+                   "a":  "Mózg ma dwie półkule: lewa kontroluje prawą stronę ciała, prawa — lewą (dlatego paraliż prawej strony → uszkodzenie lewej półkuli). Z mózgu wychodzi 12 par nerwów czaszkowych."
+               },
+               {
+                   "r":  "r5",
+                   "kat":  "Skład",
+                   "q":  "Z czego składa się kręgosłup?",
+                   "a":  "Z pięciu grup kręgów: szyjne (7), piersiowe (12), lędźwiowe (5) oraz kość krzyżowa i kość ogonowa. Kręgi oddziela dysk (poduszka amortyzująca wstrząsy), a z kręgosłupa wychodzi 31 par nerwów."
+               },
+               {
+                   "r":  "r5",
+                   "kat":  "Praca",
+                   "q":  "Dlaczego na refleksach kręgosłupa pracujemy w każdym zabiegu?",
+                   "a":  "Bo kręgosłup to oś układu nerwowego — 31 par nerwów łączy organy i gruczoły. Napięcia mięśni i kręgów uciskają nerwy zawiadujące narządami, ograniczając przepływ informacji i krwi. Refleks kręgosłupa (wewnętrzna krawędź stopy) pracujemy na całym przebiegu jako stały element zabiegu."
+               },
+               {
+                   "r":  "r5",
+                   "kat":  "Lokalizacja",
+                   "q":  "Gdzie znajduje się refleks kręgosłupa?",
+                   "a":  "Na wewnętrznej krawędzi stopy (strefa pierwsza), od podstawy pięty do czubka dużego palca. Każda stopa ma cztery skrzywienia odpowiadające czterem skrzywieniom kręgosłupa."
+               },
+               {
+                   "r":  "r5",
+                   "kat":  "Funkcja",
+                   "q":  "Jak dzielą się mięśnie?",
+                   "a":  "Na zależne (warunkowe) — sterowane wolą, np. ruch kończyn — oraz niezależne (bezwarunkowe), odpowiadające za perystaltykę jelit, przepływ żółci, pracę macicy i kurczenie naczyń."
+               },
+               {
+                   "r":  "r6",
+                   "kat":  "Skład",
+                   "q":  "Z czego składa się układ sercowo-naczyniowy?",
+                   "a":  "Z serca, arterii (tętnic) i żył, współpracujących z nerkami, wątrobą i płucami. Krew rozprowadza tlen i składniki życiowe oraz odbiera produkty zbędne (m.in. dwutlenek węgla)."
+               },
+               {
+                   "r":  "r6",
+                   "kat":  "Funkcja",
+                   "q":  "Za co odpowiada serce i jak pracuje?",
+                   "a":  "Serce to najsilniejszy mięsień ciała (wielkości pięści), pompuje ~5 l krwi/min w spoczynku i ~35 l/min przy wysiłku. Ma 2 przedsionki i 2 komory; prawa strona pompuje krew do płuc (wymiana CO₂ na tlen), lewa rozsyła krew dotlenioną. Dla siebie zatrzymuje tylko ~5% krwi (naczynia wieńcowe)."
+               },
+               {
+                   "r":  "r6",
+                   "kat":  "Lokalizacja",
+                   "q":  "Gdzie na stopie znajduje się refleks serca?",
+                   "a":  "Na LEWEJ stopie — w poprzek kości śródstopia, od linii przepony w górę do podstawy palców; najczulej między 1. a 2. palcem. (Serce leży ⅔ po lewej stronie ciała.)"
+               },
+               {
+                   "r":  "r6",
+                   "kat":  "Praca",
+                   "q":  "Na czym pracować przy problemach z sercem?",
+                   "a":  "Na refleksie serca (lewa stopa, śródstopie), refleksach lewego ramienia/ręki (ból promieniuje), kręgach szyjnych i piersiowych. Miejsce pomocnicze: nadnercze (adrenalina). Przy nadciśnieniu — przepona."
+               },
+               {
+                   "r":  "r6",
+                   "kat":  "Praca",
+                   "q":  "Jak postępować ze skrzepami i przy paraliżu?",
+                   "a":  "Skrzepów NIGDY nie ruszamy bezpośrednio — pracujemy w rejonach równoległych (miejsca odpowiadające). Przy paraliżu/wylewie pracujemy na czubku dużego palca po PRZECIWNEJ stronie ciała (przeciwna półkula mózgu)."
+               },
+               {
+                   "r":  "r7",
+                   "kat":  "Skład",
+                   "q":  "Z czego składa się układ limfatyczny i jaka jest jego rola?",
+                   "a":  "To sieć naczyń z licznymi zastawkami, traktowana jako część układu sercowo-naczyniowego. Limfa (bezbarwna ciecz z plazmy krwi) oczyszcza tkanki i broni organizm. Należą do niego węzły chłonne, śledziona, migdały i grasica."
+               },
+               {
+                   "r":  "r7",
+                   "kat":  "Funkcja",
+                   "q":  "Za co odpowiadają śledziona, migdały i grasica?",
+                   "a":  "Śledziona — największe skupisko tkanki limfatycznej; filtruje krew, magazynuje żelazo, ważna przy anemii. Migdały — produkują przeciwciała i działają jak filtry. Grasica — produkuje antyciała i kontroluje odporność w dzieciństwie (z wiekiem maleje)."
+               },
+               {
+                   "r":  "r7",
+                   "kat":  "Lokalizacja",
+                   "q":  "Gdzie pracuje refleksolog w układzie limfatycznym?",
+                   "a":  "Na pachwinie (odpowiada jej połączenie stopy z nogą w kostce), na klatce piersiowej i płucach (WIERZCH stopy — praca łatwiejsza i skuteczniejsza), na migdałkach (wokół dużego palca, 1/3 od podstawy; pomocniczo małe palce) i na grasicy (poniżej refleksu tarczycy)."
+               },
+               {
+                   "r":  "r7",
+                   "kat":  "Lokalizacja",
+                   "q":  "Co reprezentuje wierzch stopy w układzie limfatycznym?",
+                   "a":  "Płuca, klatkę piersiową i piersi. Praca na wierzchu jest łatwiejsza (mniej zgrubień naskórka) i daje większe efekty końcowe."
+               },
+               {
+                   "r":  "r8",
+                   "kat":  "Skład",
+                   "q":  "Jakie jest pięć narządów zmysłu?",
+                   "a":  "Skóra (dotyk), oczy (wzrok), uszy (słuch i równowaga), nos (powonienie) i język (smak)."
+               },
+               {
+                   "r":  "r8",
+                   "kat":  "Funkcja",
+                   "q":  "Za co odpowiada skóra jako narząd zmysłu?",
+                   "a":  "Odbiera dotyk, ucisk, temperaturę i ból; produkuje witaminę D, reguluje temperaturę ciała (termostat), chroni przed bakteriami i wydala ~500 cm³ wody. Dla stanu skóry kluczowe są gruczoły: tarczyca i nadnercze oraz nerki."
+               },
+               {
+                   "r":  "r8",
+                   "kat":  "Lokalizacja",
+                   "q":  "Gdzie na stopie są refleksy oczu i uszu?",
+                   "a":  "U podstawy małych palców obu stóp (te same strefy). Pracuje się je chodzeniem po „grzebieniu” palców zewnętrzną krawędzią kciuka; przy bolesnym punkcie — palcem wskazującym z lekką rotacją."
+               },
+               {
+                   "r":  "r8",
+                   "kat":  "Praca",
+                   "q":  "Jakie jest miejsce pomocnicze dla oczu?",
+                   "a":  "Refleksy nerek (3. strefa, ta sama co oczy) — stąd powiedzenie, że „podkrążone oczy wskazują na problemy nerkowe”."
+               },
+               {
+                   "r":  "r8",
+                   "kat":  "Lokalizacja",
+                   "q":  "Gdzie są refleksy smaku i zapachu?",
+                   "a":  "W środkowej 1/3 dużego palca (rejon środkowy głowy). Pracuje się je techniką kciuka i palca wskazującego: w górę, w dół i w poprzek."
+               },
+               {
+                   "r":  "r8",
+                   "kat":  "Funkcja",
+                   "q":  "Jak działa zmysł słuchu i równowagi?",
+                   "a":  "Dźwięk biegnie kanałem do błony bębenkowej i jest wzmacniany ~22× przez trzy kosteczki (kowadełko, młoteczek, strzemiączko), a w ślimaku zamienia się w impuls nerwowy. Za równowagę odpowiada ucho środkowe (kanały półkoliste z płynem śródchłonkowym); trąbka Eustachiusza wyrównuje ciśnienie."
+               },
+               {
+                   "r":  "r9",
+                   "kat":  "Skład",
+                   "q":  "Z czego składa się układ oddechowy?",
+                   "a":  "Z nosa, gardła, krtani, tchawicy, oskrzeli, płuc, przepony i zatok. Wymienia dwutlenek węgla na tlen."
+               },
+               {
+                   "r":  "r9",
+                   "kat":  "Funkcja",
+                   "q":  "Jaka jest droga powietrza i ile płatów mają płuca?",
+                   "a":  "Powietrze biegnie: nos → gardło → krtań → tchawica → prawe i lewe oskrzela → pęcherzyki płucne (wymiana tlen/CO₂). Prawe płuco ma 3 płaty, lewe 2. Liczba pęcherzyków: 300 mln–1 mld, powierzchnia wymiany ~56 m²."
+               },
+               {
+                   "r":  "r9",
+                   "kat":  "Lokalizacja",
+                   "q":  "Gdzie na stopie są refleksy płuc?",
+                   "a":  "Od linii przepony w górę do podstawy palców, w poprzek od środka do krawędzi — na spodzie (kciuk w wyżłobieniach między kośćmi śródstopia) i na wierzchu stopy (palcem wskazującym; miejsce czułe)."
+               },
+               {
+                   "r":  "r9",
+                   "kat":  "Lokalizacja",
+                   "q":  "Gdzie są refleksy zatok, nosa i gardła?",
+                   "a":  "Zatoki — we WSZYSTKICH palcach stopy (odpowiadają całej głowie z wyłączeniem oczu, uszu i zębów). Nos — na 1/3 poduszki dużego palca. Gardło — u podstawy dużego palca. Rejony pomocnicze zatok: zastawka krętniczo-kątnicza (tylko prawa noga), przysadka, nadnercze."
+               },
+               {
+                   "r":  "r9",
+                   "kat":  "Praca",
+                   "q":  "Dlaczego przepona jest tak ważnym refleksem?",
+                   "a":  "Bo bierze czynny udział w oddychaniu i jest kluczowym refleksem przy napięciach i stresach — głównie nim relaksujemy układ nerwowy. Pomocna przy zapaleniu płuc, oskrzeli, astmie i rozedmie."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Skład",
+                   "q":  "Z czego składa się układ pokarmowy (trawienny)?",
+                   "a":  "Z drogi pokarmu: jama ustna → gardło → przełyk → żołądek → jelito cienkie → jelito grube (okrężnica) → odbytnica → odbyt. Narządy pomocnicze to gruczoły ślinowe, wątroba, woreczek żółciowy i trzustka."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Funkcja",
+                   "q":  "Za co odpowiada żołądek?",
+                   "a":  "Za chemiczne trawienie pokarmu — ma ~35 mln gruczołów, produkuje ~2,8 l soków na dobę (kwas chlorowodorowy + pepsyny), pojemność ~1,89 l. Około 85% jego refleksów jest na lewej stopie."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Funkcja",
+                   "q":  "Za co odpowiada wątroba?",
+                   "a":  "Wykonuje ponad 500 czynności: buduje i magazynuje glikogen, produkuje cholesterol i żółć (~500 cc dziennie), a komórki Kupffera oczyszczają krew jelitową, niszczą trucizny i drobnoustroje. Pomaga w trawieniu, krzepnięciu, metabolizmie, cyrkulacji i odtruwaniu. „Gdy wątroba zawiedzie — ciało umiera”. Waży ok. 1,5 kg."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Funkcja",
+                   "q":  "Za co odpowiada woreczek żółciowy?",
+                   "a":  "Magazynuje i zagęszcza żółć (produkowaną przez wątrobę, ~500 cc dziennie), którą przesyła do dwunastnicy; żółć emulguje tłuszcze, umożliwiając ich trawienie i wchłanianie. Ma kształt gruszki i przylega do dolnej części wątroby."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Funkcja",
+                   "q":  "Za co odpowiada trzustka?",
+                   "a":  "Łączy pracę gruczołu zewnętrznego i wewnętrznego wydzielania: zewnętrznie produkuje enzymy trawienne (rozkład białek, skrobi, tłuszczów) i soki alkalizujące kwas żołądkowy, wewnętrznie — INSULINĘ i glikogen regulujące poziom cukru. Długość 152,4 mm, waga ~85 g."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Lokalizacja",
+                   "q":  "Gdzie na stopie są refleksy narządów trawiennych?",
+                   "a":  "Żołądek i przełyk — głównie lewa stopa (poniżej przepony, powyżej linii pasa). Wątroba i woreczek żółciowy — prawa stopa (woreczek czasem skuteczniejszy na wierzchu). Dwunastnica — prawa stopa. Trzustka — głównie lewa stopa. Refleks ust to ¾ od czubka dużego palca; gardło u jego podstawy."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Lokalizacja",
+                   "q":  "Gdzie jest refleks zastawki krętniczo-kątniczej i esicy?",
+                   "a":  "Zastawka krętniczo-kątnicza (z wyrostkiem robaczkowym) — na zewnętrznej krawędzi spodu PRAWEJ stopy, między 4. a 5. rejonem; technika zaczepno-wycofująca. Esica (zgięcie esowate) — na wewnętrznej stronie LEWEJ stopy, gdzie linia pięty przecina linię kręgosłupa; to samo miejsce co refleks pęcherza (najtrudniejsze miejsce)."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Lokalizacja",
+                   "q":  "Co to jest refleks chroniczny i gdzie leży?",
+                   "a":  "To miejsce na wewnętrznej stronie stopy, między ścięgnem Achillesa a kostką (~2 cm nad kostką). Jest wspólny dla refleksów prostaty, macicy, odbytnicy i nerwu kulszowego — używany przy stanach przewlekłych."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Technika",
+                   "q":  "Dlaczego refleksologia nie jest masażem?",
+                   "a":  "Bo pracujemy techniką kciuka w ściśle określonych rejonach, ze zmiennym kątem, a nie rozcieramy tkanek. Wyjątki, gdzie stosuje się technikę zaczepno-wycofującą, to esica i zastawka krętniczo-kątnicza."
+               },
+               {
+                   "r":  "r11",
+                   "kat":  "Skład",
+                   "q":  "Z czego składa się układ moczowy?",
+                   "a":  "Z nerek, moczowodów (przewodów moczowych), pęcherza i cewki moczowej. Pracuje całą dobę, utrzymując równowagę wodną i kwasowo-zasadową; wspomagają go płuca, skóra i jelita."
+               },
+               {
+                   "r":  "r11",
+                   "kat":  "Funkcja",
+                   "q":  "Za co odpowiadają nerki?",
+                   "a":  "To główne filtry organizmu — filtrują ~1 l krwi na minutę (ponad 60 l/h), utrzymują proporcję wody i soli we krwi oraz równowagę kwasowo-zasadową. Dorosły wydala ~1,5 l moczu dziennie."
+               },
+               {
+                   "r":  "r11",
+                   "kat":  "Lokalizacja",
+                   "q":  "Gdzie na stopie są refleksy układu moczowego?",
+                   "a":  "Na obu stopach: nerka — w centrum stopy (poniżej i powyżej ścięgna); pęcherz — na wewnętrznej krawędzi przy linii pięty; przewody moczowe — wzdłuż wewnętrznej strony ścięgna. Na refleksach nerki pracujemy ZAWSZE w obu kierunkach."
+               },
+               {
+                   "r":  "r11",
+                   "kat":  "Praca",
+                   "q":  "Na czym pracować przy kamieniach nerkowych i nadciśnieniu?",
+                   "a":  "Przy kamieniach — koncentracja na przewodach moczowych (tam najwięcej bólu), nerkach, pęcherzu, przeponie i przytarczyczkach (kontrolują wapń). Przy nadciśnieniu („cichy zabójca” związany z chorobą nerek) — przepona/splot słoneczny + nerki + wszystkie gruczoły."
+               },
+               {
+                   "r":  "r12",
+                   "kat":  "Skład",
+                   "q":  "Czym są gruczoły wewnętrznego wydzielania?",
+                   "a":  "To małe, bezprzewodowe gruczoły, które razem z układem nerwowym sterują czynnościami organizmu jak „termostaty”, wydzielając hormony wprost do krwi i limfy. Główne: przysadka, przytarczyczki, tarczyca, nadnercza, gruczoły rozrodcze i trzustka."
+               },
+               {
+                   "r":  "r12",
+                   "kat":  "Funkcja",
+                   "q":  "Za co odpowiada przysadka mózgowa?",
+                   "a":  "To gruczoł główny — „dyrygent orkiestry” (wielkości ziarenka grochu), który produkuje hormony kontrolujące pozostałe gruczoły, wzrost i rozwój płciowy. Jej refleks (środek dużego palca) jest doskonały do usuwania gorączki i pomocny przy omdleniach; ważny u dzieci."
+               },
+               {
+                   "r":  "r12",
+                   "kat":  "Funkcja",
+                   "q":  "Za co odpowiada tarczyca i przytarczyczki?",
+                   "a":  "Tarczyca reguluje przemianę materii, wzrost i wagę oraz produkuje jod; bywa zwana „trzecim jajnikiem” (refleks u podstawy dużego palca). Przytarczyczki (przeważnie 4) kontrolują wapń i fosfor → stan kości; pomocne przy kamieniach nerkowych."
+               },
+               {
+                   "r":  "r12",
+                   "kat":  "Funkcja",
+                   "q":  "Za co odpowiadają nadnercza i adrenalina?",
+                   "a":  "Kora nadnerczy wytwarza ~50 hormonów (kortyzon, kontrola elektrolitów, hormony płciowe), a rdzeń — ADRENALINĘ: w stresie (strach, gniew) uruchamia reakcję „walcz lub uciekaj”, podnosząc ciśnienie, oddech i cukier. Refleks leży w pół drogi między linią pasa a przepony, przy ścięgnie."
+               },
+               {
+                   "r":  "r12",
+                   "kat":  "Praca",
+                   "q":  "Na czym pracować przy cukrzycy i o czym pamiętać?",
+                   "a":  "Na refleksach trzustki (głównie lewa stopa) i wątroby, poprawiając krążenie na obu stopach; najlepsze efekty przy cukrzycy nabytej później. ⚠️ NIGDY nie sugerować zmniejszenia dawki insuliny bez kontaktu z lekarzem rodzinnym. Przy hipo- i hiperglikemii zawsze pracujemy na trzustce i wątrobie."
+               },
+               {
+                   "r":  "r13",
+                   "kat":  "Skład",
+                   "q":  "Z czego składa się układ rozrodczy?",
+                   "a":  "U kobiety: jajniki, jajowody, macica, szyjka, pochwa i gruczoły piersiowe; u mężczyzny: jądra, przewody, pęcherzyki nasienne, gruczoł prostaty i nasieniowód. Jądra i jajniki mają podwójną funkcję — produkcja komórek rozrodczych i hormonów."
+               },
+               {
+                   "r":  "r13",
+                   "kat":  "Funkcja",
+                   "q":  "Jakie hormony produkuje układ rozrodczy?",
+                   "a":  "Jądra — androgeny (najsilniejszy testosteron: porost włosów, mutacja głosu, rozwój prostaty). Jajniki — estrogeny regulujące wzrost, formowanie i funkcjonowanie układu rozrodczego."
+               },
+               {
+                   "r":  "r13",
+                   "kat":  "Lokalizacja",
+                   "q":  "Gdzie na stopie są refleksy układu rozrodczego?",
+                   "a":  "Refleks macicy/prostaty — na WEWNĘTRZNEJ stronie stopy, w połowie linii kostka↔pięta (miejsce punktowe, bardzo wrażliwe). Refleks jajników/jąder — analogicznie po stronie ZEWNĘTRZNEJ. Przewody jajowe/nasienne — w rejonie stawu skokowego (technika obrotu kostki)."
+               },
+               {
+                   "r":  "r13",
+                   "kat":  "Praca",
+                   "q":  "Na czym pracować przy przekwitaniu i po operacjach?",
+                   "a":  "Przy przekwitaniu — przepona, narządy rozrodcze, wszystkie gruczoły i koniecznie macica. Po usunięciu jajników funkcję estrogenu przejmują nadnercza, więc pracujemy na nadnerczu, tarczycy i przysadce. Przy operacjach układu rozrodczego pracować przed i natychmiast po zabiegu, ze wzmożoną delikatnością."
+               },
+               {
+                   "r":  "r14",
+                   "kat":  "Przebieg",
+                   "q":  "Jaka jest kolejność pełnego zabiegu?",
+                   "a":  "Na jednej stopie od A do Z: (1) przepona → podstawa palców; (2) wszystkie palce; (3) oko i ucho; (4) przepona → linia pięty; (5) rejon pięty; (6) cały kręgosłup; (7) rejon kostki (refleksy rozrodcze). Potem druga stopa, na końcu powrót do pierwszej. Zaczynamy i kończymy technikami relaksu."
+               },
+               {
+                   "r":  "r14",
+                   "kat":  "Przebieg",
+                   "q":  "Jak długo trwa zabieg i jak często go wykonywać?",
+                   "a":  "Przeciętnie 30-40 min (pierwszy do 60 min). Częstotliwość: 2 razy w tygodniu przez kilka tygodni, potem 1 raz w tygodniu; profilaktycznie raz w miesiącu lub co 2 tygodnie. Nacisk dobieramy do osoby — celem jest „dobry ból”: boli, ale przyjemnie."
+               },
+               {
+                   "r":  "r14",
+                   "kat":  "Bezpieczeństwo",
+                   "q":  "Czego refleksologowi (nie-lekarzowi) nie wolno robić?",
+                   "a":  "Nie wolno: wystawiać diagnozy, przepisywać leków ani sugerować/weryfikować leków już przepisanych, prowadzić terapii konkretnej choroby, ani łączyć pracy ze sprzedażą artykułów. Refleksologia jest dodatkiem wspierającym homeostazę — nie zastępuje lekarza."
+               },
+               {
+                   "r":  "r14",
+                   "kat":  "Bezpieczeństwo",
+                   "q":  "Co odpowiedzieć, gdy pacjent pyta, jaki narząd odpowiada bolącemu refleksowi?",
+                   "a":  "Określać najwyżej rejon ciała (głowa, klatka piersiowa, jama brzuszna, miednica), a NIE konkretny narząd — narządy nakładają się, więc wskazanie narządu byłoby diagnozą."
+               },
+               {
+                   "r":  "r15",
+                   "kat":  "Skład",
+                   "q":  "Kiedy stosujemy refleksologię rąk?",
+                   "a":  "Jako pole do samodzielnej, codziennej pracy pacjenta między sesjami oraz jako wyjście, gdy nie można pracować na stopach (urazy, utrata stopy, nadwrażliwość). Dłonie mają te same strefy i linie co stopy, ale refleksy są trudniejsze do odnalezienia."
+               },
+               {
+                   "r":  "r15",
+                   "kat":  "Lokalizacja",
+                   "q":  "Co zawiera przestrzeń „V” na dłoni i jakie są odpowiedniości?",
+                   "a":  "Przestrzeń „V” między kciukiem a palcem wskazującym zawiera refleksy karku, gardła i barku. Odpowiedniości: kciuk = duży palec stopy, przegub (nadgarstek) = kostka. Na wierzchu dłoni pracujemy palcami, nie kciukiem."
+               },
+               {
+                   "r":  "r6",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Angina Pectoris (dusznica bolesna)?",
+                   "a":  "Objawy: Silny ból w piersiach promieniujący do lewej ręki + duszenie; niedokrwienie mięśnia sercowego (spazm/zakrzepica naczyń wieńcowych). Refleksy do pracy: Serce/płuca, kręgi szyjne i piersiowe, esica okrężna, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r6",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Stwardnienie tętnicze?",
+                   "a":  "Objawy: Osłabienie i utrata elastyczności tkanki tętnicy; schorzenie wieku starszego. Refleksy do pracy: Wszystkie gruczoły, stopy w całości. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r6",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zaciśnięcie wieńcowe?",
+                   "a":  "Objawy: Zwężenia/przeszkody w tętnicach (stwardnienie, skrzepy, zatory) → ból kończyn, duszenie. Refleksy do pracy: Serce/płuca, kręgi szyjne i piersiowe, esica okrężna, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r6",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Podwyższony cholesterol?",
+                   "a":  "Objawy: Zagrożenie pracy serca; formowanie tłuszczu w naczyniach tętniczych. Refleksy do pracy: Tarczyca, wątroba. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r6",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Nadciśnienie (wysokie ciśnienie)?",
+                   "a":  "Objawy: Podwyższone ciśnienie utrzymujące się długo, nieodpowiednie do wieku. Refleksy do pracy: Przepona, nerki, przysadka mózgowa, nadnercze, tarczyca. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r6",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Niedociśnienie (niskie ciśnienie)?",
+                   "a":  "Objawy: Przedłużone zaniżone ciśnienie. Refleksy do pracy: Nadnercze, przysadka mózgowa, tarczyca. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r6",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zapalenie żył?",
+                   "a":  "Objawy: Zablokowanie żył skrzepem; ryzyko zatorów; kończyny dolne. Refleksy do pracy: Nadnercze, okrężnica (jelito grube), wątroba, miejsca odpowiadające: ręce, ramiona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r6",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Udar mózgowy?",
+                   "a":  "Objawy: Pęknięcie/zablokowanie naczyń w mózgu → utrata przytomności, paraliż. Refleksy do pracy: Czubek dużego palca po przeciwnej stronie do paraliżu, pozostałe palce + refleksy rejonów dotkniętych. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r6",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Częstoskurcz?",
+                   "a":  "Objawy: Podwyższone i raptowne bicie serca (≥150/min). Refleksy do pracy: Nadnercze, serce, układ kręgów szyjnych, klatka piersiowa, tarczyca. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r6",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Żylaki?",
+                   "a":  "Objawy: Powiększenie, pogrubienie, pękanie żył kończyn dolnych (osłabienie ścian). Refleksy do pracy: Okrężnica, wątroba, nadnercze, miejsca odpowiadające: ręce. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r7",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Spuchnięcia w kostkach?",
+                   "a":  "Objawy: Nadmierny płyn w tkance wokół kostek. Refleksy do pracy: Nerki, nadnercze, system limfatyczny, miejsca odpowiadające: nadgarstki. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r7",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Guzy piersiowe?",
+                   "a":  "Objawy: Większość łagodne; infekcja guzków limfatycznych. Refleksy do pracy: Klatka piersiowa/płuca, układ limfatyczny, przysadka mózgowa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r7",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Obrzęk / zatrzymanie płynu?",
+                   "a":  "Objawy: Nadmiar płynu wewnątrzkomórkowego w tkance. Refleksy do pracy: Układ limfatyczny, nerki, nadnercze. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r7",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zakażenia?",
+                   "a":  "Objawy: Zaatakowanie organizmu przez bakterie. Refleksy do pracy: Nadnercze, układ limfatyczny, miejsce/obszar zaatakowany. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r7",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Białaczka?",
+                   "a":  "Objawy: Nadmiar białych ciałek; rozrost tkanki limfatycznej, śledziony, gruczołów, szpiku. Refleksy do pracy: Wszystkie gruczoły, system limfatyczny, śledziona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r7",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Ból gardła?",
+                   "a":  "Objawy: Zapalenie gardła i migdałków. Refleksy do pracy: System limfatyczny, palce, duży palec, nadnercze, kręgi szyjne. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r7",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Migdałki?",
+                   "a":  "Objawy: Zapalenie migdałków, zmniejszenie objętości tkanki limfatycznej. Refleksy do pracy: Duży palec, system limfatyczny, pozostałe palce, nadnercze, kręgi szyjne. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r8",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Trądzik?",
+                   "a":  "Objawy: Krosty/wypryski, głównie w okresie dojrzewania. Refleksy do pracy: Wątroba, nadnercze, wszystkie gruczoły, nerki, jelita, tarczyca, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r8",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Egzema?",
+                   "a":  "Objawy: Wysypka, swędzenie, opuchnięcie, pęcherze, łuszczenie. Refleksy do pracy: Wątroba, nadnercze, wszystkie gruczoły, nerki, jelita, tarczyca, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r8",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Łuszczyca?",
+                   "a":  "Objawy: Chroniczna choroba skóry — czerwone placki z łuszczeniem; przyczyna nieznana. Refleksy do pracy: Tarczyca, nadnercze, wątroba, nerki, jelita, wszystkie gruczoły. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r8",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zaćma (katarakta)?",
+                   "a":  "Objawy: Zaćmienie krystaliczne na soczewce oka. Refleksy do pracy: Refleks oczny, kark, kręgi karku, wszystkie palce, przysadka, nerki. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r8",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Jaskra?",
+                   "a":  "Objawy: Podwyższenie ciśnienia w gałce ocznej. Refleksy do pracy: Refleks oczny, gardło/kark, wszystkie palce, nerki. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r8",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zapalenie spojówek?",
+                   "a":  "Objawy: Zaczerwienione oczy; zapalenie błony (zaraźliwe). Refleksy do pracy: Refleks oczny, wszystkie palce, kark, nerki. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r8",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Głuchota?",
+                   "a":  "Objawy: Kompletna albo częściowa utrata słuchu. Refleksy do pracy: Refleksy ucha, kręgi szyjne, bok karku, duży palec. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r8",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Szum w uszach?",
+                   "a":  "Objawy: Dzwonienie lub inne dźwięki w uszach. Refleksy do pracy: Uszy, kręgi szyjne, kark, duży palec. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r8",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zawroty głowy / zachwianie równowagi?",
+                   "a":  "Objawy: Brak równowagi, uczucie kręcenia w głowie. Refleksy do pracy: Bok karku, uszy, kręgi szyjne, duży palec. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r9",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Przerost migdałka gardłowego?",
+                   "a":  "Objawy: „Gardłowe migdałki” w tylnej części jamy nosowej; problemy w oddychaniu. Refleksy do pracy: Duży palec, przysadka mózgowa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r9",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Astma?",
+                   "a":  "Objawy: Spazm mięśni oskrzeli + nadmiar śluzu blokującego drogi oddechowe. Refleksy do pracy: Klatka piersiowa/płuca, nadnercze, zastawka krętniczo-kątnicza jelita, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r9",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zapalenie krtani?",
+                   "a":  "Objawy: Krtaniowa spazma (często u dzieci) utrudniająca oddychanie. Refleksy do pracy: Przepona, oskrzela, zastawka krętniczo-kątnicza jelita, płuca/klatka piersiowa, wszystkie palce. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r9",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Rozedma płuc?",
+                   "a":  "Objawy: Nadmierne rozszerzenie pęcherzyków i oskrzeli (nagromadzenie gazów). Refleksy do pracy: Nadnercze, zastawka krętniczo-kątnicza jelita, przepona, płuca/klatka piersiowa, układ limfatyczny. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r9",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Katar sienny / gorączka sienna?",
+                   "a":  "Objawy: Schorzenie alergiczne błon śluzowych nosa i dróg oddechowych z zapaleniem oczu. Refleksy do pracy: Zastawka krętniczo-kątnicza jelita, wszystkie palce, wszystkie gruczoły, jelito grube, płuca/klatka piersiowa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r9",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zapalenie opłucnej?",
+                   "a":  "Objawy: Zapalenie błony wyściełającej jamę piersiową i pokrywającej płuca. Refleksy do pracy: Układ limfatyczny, nadnercze, przepona, płuca/klatka piersiowa (góra i dół). To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r9",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zapalenie płuc?",
+                   "a":  "Objawy: Przyczyna: bakterie i wirusy. Refleksy do pracy: Płuca/klatka piersiowa, przepona, jelito cienkie, wszystkie gruczoły, układ limfatyczny. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r9",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zapalenie zatok?",
+                   "a":  "Objawy: Zapalenie kanałów zatok. Refleksy do pracy: Wszystkie palce, zastawka krętniczo-kątnicza jelita, nadnercze, płuca/klatka piersiowa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r9",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zapalenie migdałków?",
+                   "a":  "Objawy: Zapalenie migdałków (potocznie „świnka”). Refleksy do pracy: Duży palec, wszystkie palce, układ limfatyczny, kręgi szyjne, kręgosłup. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Biegunka?",
+                   "a":  "Objawy: Częste wodniste wypróżnianie; często z nieżytem żołądka. Refleksy do pracy: Jelito wstępujące, poprzeczne, przepona, wątroba, nadnercza. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Cukrzyca?",
+                   "a":  "Objawy: Zaburzenia metabolizmu węglowodanów, hiperglikemia, cukromocz (nieprawidłowa produkcja/wykorzystanie insuliny). Refleksy do pracy: Trzustka, wątroba, wszystkie gruczoły wewnętrznego wydzielania. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Hemoroidy?",
+                   "a":  "Objawy: Masa rozszerzonych i krętych żył w odbycie i odbytnicy. Refleksy do pracy: Przepona, nadnercza, odbytnica, okrężnica esowata, dół kręgosłupa, chroniczne miejsca powyżej tyłu pięty. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Hipoglikemia?",
+                   "a":  "Objawy: Niedobór cukru we krwi. Refleksy do pracy: Trzustka, wątroba, wszystkie gruczoły wewnętrznego wydzielania. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Kamienie żółciowe?",
+                   "a":  "Objawy: Kamienie uformowane w woreczku żółciowym lub przewodach żółci. Refleksy do pracy: Wątroba, woreczek żółciowy, tarczyca. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Marskość wątroby?",
+                   "a":  "Objawy: Przewlekłe zatracanie funkcjonujących komórek wątroby, zwiększony opór przepływu krwi. Refleksy do pracy: Wątroba, trzustka, wszystkie gruczoły wewnętrznego wydzielania. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Niestrawność?",
+                   "a":  "Objawy: Zaburzenia trawienia: zgaga, mdłości, wzdęcia, skurcze. Refleksy do pracy: Wątroba, woreczek żółciowy, żołądek, jelita, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Wrzody?",
+                   "a":  "Objawy: Otwarta owrzodzona błona śluzowa (wrzód dwunastnicy lub żołądka). Refleksy do pracy: Przepona, żołądek, dwunastnica, refleks korespondujący dla wrzodu. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zapalenie okrężnicy?",
+                   "a":  "Objawy: Zapalenie jelita grubego. Refleksy do pracy: Jelito grube, wątroba, nadnercza, kręgosłup, przepona, woreczek żółciowy. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zaparcia?",
+                   "a":  "Objawy: Trudne wypróżnianie. Refleksy do pracy: Wątroba, woreczek żółciowy, nadnercza, dół kręgosłupa, okrężnica esowata, zastawka krętniczo-kątnicza. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zapalenie uchyłka?",
+                   "a":  "Objawy: Zapalenie uchyłka w kanale jelita grubego → zatrzymanie stolca. Refleksy do pracy: Jelito grube, przepona, nadnercza, dół kręgosłupa, wątroba, woreczek żółciowy. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r10",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Żółtaczka?",
+                   "a":  "Objawy: Pożółknięcie skóry (pigmenty żółci) — zaburzenia kanałów żółciowych / funkcji wątroby. Refleksy do pracy: Wątroba. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r11",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Bezmocz?",
+                   "a":  "Objawy: Ustanie produkcji moczu przez nerki. Refleksy do pracy: Przewody moczowe, pęcherz, nerki, nadnercza, dół kręgosłupa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r11",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zapalenie pęcherza?",
+                   "a":  "Objawy: Zapalenie pęcherza (przeważnie infekcja bakteryjna). Refleksy do pracy: Przewody moczowe, pęcherz, nerki, nadnercza, dół kręgosłupa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r11",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Bolesne oddawanie moczu?",
+                   "a":  "Objawy: Trudności i bóle podczas oddawania moczu. Refleksy do pracy: Przewody moczowe, pęcherz, nerki, nadnercza, dół kręgosłupa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r11",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Nietrzymanie moczu?",
+                   "a":  "Objawy: Niezdolność kontrolowania wydalania moczu. Refleksy do pracy: Przewody moczowe, pęcherz, nerki, nadnercza, dół kręgosłupa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r11",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Kamienie nerkowe?",
+                   "a":  "Objawy: Kamyki uformowane w nerkach, przechodzące do przewodu moczowego → mocny ból (kolka). Refleksy do pracy: Przewody moczowe, pęcherz, nerki, przepona, przytarczyczki. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r11",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zapalenie nerek?",
+                   "a":  "Objawy: Stan zapalny nerek (może przejść w chroniczny). Refleksy do pracy: Nerki, nadnercza. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r11",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Urenia (mocznica)?",
+                   "a":  "Objawy: Zatrucie nagromadzeniem substancji azotowych we krwi. Refleksy do pracy: Nerki, nadnercza. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r13",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Histerektomia (usunięcie macicy)?",
+                   "a":  "Objawy: Operacja usuwająca macicę i czasem jajniki z jajowodami. Refleksy do pracy: Nadnercza, tarczyca, przysadka mózgowa, macica, jajniki, jajowody, przepona, chroniczna macica. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r13",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Impotencja?",
+                   "a":  "Objawy: Brak siły kopulacyjnej. Refleksy do pracy: System rozrodczy, wszystkie gruczoły, cały kręgosłup, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r13",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Niepłodność?",
+                   "a":  "Objawy: Niezdolność poczęcia. Refleksy do pracy: System rozrodczy, wszystkie gruczoły, cały kręgosłup, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r13",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Guzy w piersiach?",
+                   "a":  "Objawy: Opuchnięcie tkanek limfatycznych w piersi. Refleksy do pracy: Klatka piersiowa/płuca, układ limfatyczny, przysadka mózgowa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r13",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Przekwitanie (gorące uderzenia)?",
+                   "a":  "Objawy: Uderzenia gorąca przy zmianie etapu życia. Refleksy do pracy: Przepona, wszystkie gruczoły, układ rozrodczy, chroniczna macica. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r13",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Bolesne miesiączkowanie?",
+                   "a":  "Objawy: Bolesne/skąpe miesiączkowanie. Refleksy do pracy: Układ rozrodczy, dół kręgosłupa, wszystkie gruczoły, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r13",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Poranne nudności ciążowe?",
+                   "a":  "Objawy: Uczucie nudności w okresie ciąży. Refleksy do pracy: Wszystkie gruczoły, przepona, żołądek. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r13",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Cysty na jajnikach?",
+                   "a":  "Objawy: Ciało obce rosnące w jajniku. Refleksy do pracy: Układ rozrodczy, przysadka mózgowa, wszystkie gruczoły. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "r13",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Problemy prostaty?",
+                   "a":  "Objawy: Zapalenie/powiększenie gruczołu prostaty. Refleksy do pracy: Układ rozrodczy, pęcherz, dół kręgosłupa, przysadka, nadnercze, chroniczne miejsce prostaty. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               }
+           ]
 };
