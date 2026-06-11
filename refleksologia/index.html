@@ -72,6 +72,7 @@
   details{background:#f8f4ea;border:1px solid var(--line);border-radius:9px;padding:8px 14px;margin:7px 0}
   details summary{cursor:pointer;font-weight:600;color:var(--accent)}
   details[open] summary{margin-bottom:8px}
+  details.qa-skrypt{border-left:4px solid #3d7a4e;background:#f3f8f2}
   .hint{font-size:.86rem;color:var(--muted)}
   footer{text-align:center;font-size:.78rem;color:var(--muted);padding:0 0 30px}
   .back{font-size:.84rem;color:var(--accent);cursor:pointer;display:inline-block;margin-bottom:8px}
@@ -622,7 +623,10 @@ function eksportWynik(){
 /* ================= Q&A Z KSIĄŻKI ================= */
 const QA_SEK=[{id:'slownik',label:'Słownik pojęć'},
   {id:'mapy',label:'Mapy stref — lokalizacja refleksów'},
-  {id:'indeks',label:'Indeks schorzeń (A–Ż)'}];
+  {id:'indeks',label:'Indeks schorzeń (A–Ż)'},
+  {id:'skrypt',label:'📘 Skrypt PIR — ćwiczenia (układy i organy)'},
+  {id:'kregoslup',label:'📘 Skrypt PIR — tabela kręgosłupa (kręg → schorzenia)'},
+  {id:'funkcje',label:'📘 Skrypt PIR — funkcja → refleks'}];
 function qaLabel(id){const r=rozdzialById(id); if(r)return `Rozdział ${r.nr} — ${r.tytul}`;
   const s=QA_SEK.find(x=>x.id===id); return s?s.label:id;}
 function initQA(){
@@ -652,7 +656,9 @@ function renderQA(){
   kolej.forEach(id=>{
     html+=`<h3>${esc(qaLabel(id))}</h3>`;
     grupy[id].forEach(x=>{
-      html+=`<details><summary>${esc(x.q)} <span class="reflx" style="font-size:.72rem;background:#ece3d0">${esc(x.kat)}</span></summary>`+
+      const ze=x.src==='skrypt';
+      const badge=ze?`<span class="reflx" style="font-size:.7rem;background:#dceadb;color:#2c5d3a;border:1px solid #b9d4b6">📘 Skrypt PIR</span> `:'';
+      html+=`<details class="${ze?'qa-skrypt':''}"><summary>${esc(x.q)} ${badge}<span class="reflx" style="font-size:.72rem;background:#ece3d0">${esc(x.kat)}</span></summary>`+
         `<div style="line-height:1.6;margin-top:6px">${esc(x.a)}</div></details>`;
     });
   });

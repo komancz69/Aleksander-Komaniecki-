@@ -6554,6 +6554,909 @@
                    "kat":  "Praca przy schorzeniu",
                    "q":  "Na czym pracować przy: Żyły (zapalenie)?",
                    "a":  "Refleksy do pracy: nadnercza, okrężnica, wątroba, równoległe miejsca na ręce. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "1. kręg szyjny — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: ukrwienie głowy, przysadka mózgowa, skóra głowy, kości twarzy, mózg, ucho wewnętrzne i środkowe, wewnętrzny układ nerwowy. Powiązane problemy: bóle głowy, podniecenie nerwowe, „zimna głowa”, nadciśnienie, migrena, depresje, utrata pamięci, chroniczne zmęczenie, zachwianie równowagi. Praca: na refleksie odcinka szyjnego kręgosłupa (wewnętrzna krawędź dużego palca) + refleksy odpowiadające.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "2. kręg szyjny — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: oczy, nerw słuchowy, zatoki, kości skroniowe, język, czoło. Powiązane problemy: problemy zatok, alergie, zez, głuchota, dolegliwości wzroku, bóle uszu, omdlenia, częściowa utrata wzroku. Praca: refleks szyjnego odcinka kręgosłupa + refleksy oczu/uszu i zatok.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "3. kręg szyjny — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: policzki, małżowina uszna, kości twarzy, zęby, nerw trójdzielny. Powiązane problemy: nerwobóle, zapalenie nerwu, trądzik, wysypki uczuleniowe i alergiczne. Praca: refleks szyjnego odcinka kręgosłupa + refleksy twarzy/uszu.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "4. kręg szyjny — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: nos, wargi, jama ustna, trąbka Eustachiusza. Powiązane problemy: gorączka sienna, katar, utrata słuchu, przerost migdałka gardłowego. Praca: refleks szyjnego odcinka kręgosłupa + nos/gardło, ucho.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "5. kręg szyjny — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: struny głosowe, gruczoły szyjne, gardło. Powiązane problemy: zapalenie krtani, chrapanie, dolegliwości gardła, ropień okołomigdałkowy. Praca: refleks szyjnego odcinka kręgosłupa + gardło, układ limfatyczny.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "6. kręg szyjny — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: mięśnie karku, ramiona, migdały. Powiązane problemy: sztywny kark, bóle górnej części ramion, problemy migdałów, krztusiec (koklusz), zapalenie krtani. Praca: refleks szyjnego odcinka kręgosłupa + ramiona, migdałki.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "7. kręg szyjny — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: gruczoł tarczycy. Powiązane problemy: zapalenie kaletki, przeziębienie, problemy tarczycy. Praca: refleks 7. kręgu szyjnego (u podstawy dużego palca) + tarczyca.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "1. kręg piersiowy — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: ręce od łokcia w dół z dłońmi, nadgarstki, palce, przełyk, tchawica. Powiązane problemy: astma, kaszel, kłopoty z oddychaniem, płytki oddech, ból w dolnej części rąk i dłoni. Praca: refleks piersiowego odcinka kręgosłupa + klatka piersiowa/płuca, ramię.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "2. kręg piersiowy — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: serce łącznie z zastawkami, arterie główne. Powiązane problemy: problemy pracy serca, niektóre problemy klatki piersiowej, bóle górnej części pleców. Praca: refleks piersiowego odcinka kręgosłupa + serce (lewa stopa), kręgi szyjne i piersiowe.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "3. kręg piersiowy — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: płuca, przewody oskrzelowe, opłucna, klatka piersiowa, piersi. Powiązane problemy: oskrzela, opłucna, zapalenie płuc, przekwitanie, grypa. Praca: refleks piersiowego odcinka kręgosłupa + klatka piersiowa/płuca.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "4. kręg piersiowy — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: woreczek żółciowy i jego połączenia. Powiązane problemy: problemy woreczka żółciowego, żółtaczka, półpasiec. Praca: refleks piersiowego odcinka kręgosłupa + woreczek żółciowy i wątroba (prawa stopa).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "5. kręg piersiowy — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: wątroba, splot słoneczny, krew. Powiązane problemy: problemy wątroby, temperatura, niskie ciśnienie krwi, anemia, słaba cyrkulacja krwi, artretyzm. Praca: refleks piersiowego odcinka kręgosłupa + wątroba (prawa stopa), splot słoneczny.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "6. kręg piersiowy — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: żołądek. Powiązane problemy: problemy żołądkowe łącznie z zaburzeniami żołądkowo-nerwowymi, niestrawność, zgaga. Praca: refleks piersiowego odcinka kręgosłupa + żołądek (lewa stopa), przepona/splot słoneczny.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "7. kręg piersiowy — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: trzustka, dwunastnica. Powiązane problemy: wrzody, nieżyt żołądka i jego zapalenie. Praca: refleks piersiowego odcinka kręgosłupa + trzustka (lewa stopa), dwunastnica (prawa stopa).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "8. kręg piersiowy — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: śledziona, przepona. Powiązane problemy: czkawka, oporność (słaba odporność). Praca: refleks piersiowego odcinka kręgosłupa + śledziona (lewa stopa), przepona.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "9. kręg piersiowy — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: gruczoły nadnercza. Powiązane problemy: alergie, pokrzywka. Praca: refleks piersiowego odcinka kręgosłupa + nadnercza.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "10. kręg piersiowy — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: nerki. Powiązane problemy: problemy nerek, stwardnienie arterii, chroniczne zmęczenie, zapalenie nerek, zapalenie miedniczek nerkowych. Praca: refleks piersiowego odcinka kręgosłupa + nerki.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "11. kręg piersiowy — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: nerki i przewody moczowe. Powiązane problemy: problemy skóry (trądzik, wypryski), omdlenia, pieczenie. Praca: refleks piersiowego odcinka kręgosłupa + nerki, przewody moczowe.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "12. kręg piersiowy — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: jelito cienkie, cyrkulacja limfy. Powiązane problemy: reumatyzm, gazy, pewne objawy jałowości jelit. Praca: refleks piersiowego odcinka kręgosłupa + jelito cienkie, układ limfatyczny.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "1. kręg krzyżowy (lędźwiowy) — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: jelito grube, obręcze pachwinowe. Powiązane problemy: zaparcia, zapalenie okrężnicy, czerwonka, biegunka, objawy przepuklinowe. Praca: refleks dolnego odcinka kręgosłupa + jelito grube, pachwina.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "2. kręg krzyżowy (lędźwiowy) — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: wyrostek robaczkowy, jama brzuszna, uda. Powiązane problemy: skurcze, trudności oddychania, kwasica, żylaki. Praca: refleks dolnego odcinka kręgosłupa + zastawka krętniczo-kątnicza (prawa stopa).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "3. kręg krzyżowy (lędźwiowy) — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: układ rozrodczy, macica, pęcherz, kolana. Powiązane problemy: problemy pęcherza, miesiączkowe (bolesne, nieregularne), nocne moczenie, impotencja, bóle w kolanach. Praca: refleks dolnego odcinka kręgosłupa + układ rozrodczy (kostka), pęcherz.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "4. kręg krzyżowy (lędźwiowy) — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: gruczoł prostaty, dolne rejony pleców, nerw kulszowy. Powiązane problemy: rwa kulszowa, lumbago, trudności i bóle w oddawaniu moczu, bóle w dolnych częściach kręgosłupa. Praca: refleks dolnego odcinka kręgosłupa + prostata (kostka), rejon chroniczny (ścięgno Achillesa).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "5. kręg krzyżowy (lędźwiowy) — za co odpowiada i przy jakich problemach na nim pracujemy?",
+                   "a":  "Rejon oddziaływania: nogi poniżej kolan, kostki, stopy. Powiązane problemy: słaba cyrkulacja krwi w nogach, opuchnięcie kostek, słabość i bóle w kostkach, zimne stopy, słabość w nogach, kurcze. Praca: refleks dolnego odcinka kręgosłupa + biodro/kolano/noga, kostka.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "Kość krzyżowa — za co odpowiada i przy jakich problemach na niej pracujemy?",
+                   "a":  "Rejon oddziaływania: biodra, pośladki. Powiązane problemy: problemy krzyżowo-biodrowe, krzywizna kręgosłupa. Praca: refleks kości krzyżowej/ogonowej (przy wewnętrznej krawędzi pięty) + biodro.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "kregoslup",
+                   "kat":  "Kręgosłup",
+                   "q":  "Kość ogonowa — za co odpowiada i przy jakich problemach na niej pracujemy?",
+                   "a":  "Rejon oddziaływania: odbytnica, odbyt. Powiązane problemy: hemoroidy, swędzenie odbytu, bóle w dolnych partiach kręgosłupa w pozycji siedzącej. Praca: refleks kości ogonowej + esica i refleks chroniczny (odbytnica).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Co balansuje pracę hormonów i chemię organizmu?",
+                   "a":  "Wszystkie gruczoły (przysadka, tarczyca, przytarczyczki, nadnercza, trzustka, narządy rozrodcze) — praca na nich równoważy gospodarkę hormonalną.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Co odtruwa organizm i krew?",
+                   "a":  "Wątroba — refleks bezpośredni do odtruwania organizmu i oczyszczania krwi (refleks na prawej stopie).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Co filtruje zużyty produkt (oczyszcza)?",
+                   "a":  "Nerki — główne filtry organizmu; praca na refleksach nerek wspiera usuwanie produktów odpadowych.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Co odtruwa (wydala produkty zużyte z przewodu pokarmowego)?",
+                   "a":  "Jelita — praca na refleksach jelit wspiera odtruwanie i wydalanie.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Co relaksuje nerwy dla serca?",
+                   "a":  "Kręgi szyjne i piersiowe — praca na tym odcinku kręgosłupa rozluźnia nerwy zaopatrujące serce.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Co relaksuje stres i napięcia?",
+                   "a":  "Przepona i splot słoneczny — główny refleks relaksu układu nerwowego (na linii przepony, między 1. a 2. palcem).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Co wydziela enzymy dla sprawności arterii i żył?",
+                   "a":  "Trzustka — praca na refleksie trzustki (głównie lewa stopa) wspiera wydzielanie enzymów.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Co kontroluje cholesterol?",
+                   "a":  "Wątroba i tarczyca — praca na tych refleksach wspiera regulację cholesterolu.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Co pracuje dla centralnego układu nerwowego?",
+                   "a":  "Cały kręgosłup — refleks na wewnętrznej krawędzi stopy; pracujemy na nim w każdym zabiegu.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Co usprawnia cyrkulację krwi całego ciała?",
+                   "a":  "Całe stopy — dokładna praca na wszystkich refleksach poprawia krążenie w całym organizmie (układ krwionośny nie ma jednego refleksu).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Gdzie nabudowuje się gaz niebezpieczny dla pracy serca?",
+                   "a":  "Refleks esicy (zgięcie esowate, lewa stopa) — nadmiar gazów uciska przeponę i może dawać ból mylony z sercowym; praca na esicy odbarcza.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Co pracuje specjalnie dla mózgu?",
+                   "a":  "Wszystkie palce — szczególnie czubek dużego palca; praca na palcach wspiera rejon głowy i mózgu.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Który układ usuwa obce komórki?",
+                   "a":  "Układ limfatyczny — broni organizm; praca na pachwinie (kostka), klatce piersiowej (wierzch stopy) i migdałkach.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Co jest podstawowym filtrem krwi?",
+                   "a":  "Śledziona — największe skupisko tkanki limfatycznej; filtruje krew i magazynuje żelazo (refleks tylko na lewej stopie).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Co kontroluje nienormalny wzrost komórek?",
+                   "a":  "Przysadka mózgowa — gruczoł główny; refleks w środku dużego palca.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Co odpowiada za stan zapalny i walkę z infekcją?",
+                   "a":  "Nadnercza — produkują m.in. hormony przeciwzapalne i adrenalinę; refleks między linią pasa a przepony, przy ścięgnie.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Co odpowiada za nadmierną ilość śluzu?",
+                   "a":  "Zastawka krętniczo-kątnicza jelita (tylko prawa stopa) — kluczowy refleks przy nadmiarze śluzu (astma, zatoki, katar).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Gdzie pracować przy bólu w górnej części kręgosłupa?",
+                   "a":  "Na dolnej części kręgosłupa — wg zasady „przeciwnego końca”; uzupełniająco na całym kręgosłupie.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Jakie są refleksy pomocnicze dla nerwów?",
+                   "a":  "Kręgi szyjne — wspierają pracę nerwów; uzupełniająco cały kręgosłup i przepona.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Co pracuje dla sprawnego oddychania?",
+                   "a":  "Refleksy płuca i klatka piersiowa — od linii przepony do podstawy palców (spód i wierzch stopy).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "funkcje",
+                   "kat":  "Funkcja → refleks",
+                   "q":  "Co likwiduje bóle?",
+                   "a":  "Refleksy bezpośrednie miejsca bólu — z pamięcią o nadnerczach (działanie przeciwzapalne i przeciwbólowe).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Wprowadzenie",
+                   "q":  "Opisz historię refleksologii.",
+                   "a":  "Korzenie sięgają starożytnego Egiptu (malowidło w grobowcu lekarskim Ankhmabora, ok. 2300 p.n.e., z napisem „nie skrzywdź mnie” — „muszę postępować tak, abyś mnie wynagrodził”). Współczesna refleksologia wyrosła z terapii strefowej dr. Williama Fitzgeralda (1917), rozwiniętej przez dr. Joe Shelby Rileya, a w refleksologię stóp — przez Eunice Ingham (lata 30., „Stories the Feet Can Tell”, 1938). Metoda Ingham jest dziś przewodnia na świecie; kontynuują ją Narodowy i Międzynarodowy Instytut Refleksologii.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Wprowadzenie",
+                   "q":  "Co robi, a czego nie robi refleksologia? Czym NIE jest?",
+                   "a":  "ROBI: 1) obniża stresy i napięcia; 2) usprawnia krążenie krwi i odblokowuje zatory; 3) wycisza i usprawnia układ nerwowy; 4) likwiduje bóle; 5) w naturalny sposób przywraca balans biologiczny całego ciała (homeostazę). NIE robi: nie diagnozuje, nie przypisuje lekarstw, nie ogranicza się do pracy tylko na stopach w specyficznych przypadkach. NIE jest: masażem, akupresurą, ani refleksoterapią (ta to seria wykonywanych zabiegów).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Pojęcia",
+                   "q":  "Co to są miejsca bezpośrednie?",
+                   "a":  "To refleksy odpowiadające wprost choremu organowi — pracujemy na nich bezpośrednio (np. przy problemie wątroby — refleks wątroby na prawej stopie). To „punkt docelowy” oddziaływania.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Pojęcia",
+                   "q":  "Co to są miejsca równoległe (odpowiadające)?",
+                   "a":  "To odpowiedniki organu/stawu z tej samej strefy, używane gdy nie można pracować na miejscu zranionym lub uszkodzonym (np. złamana noga → pracujemy na odpowiadającym miejscu ręki; skrzep → rejon równoległy). Pary: dłoń↔podeszwa, łokieć↔kolano, kostka↔przegub, przedramię↔podudzie, kciuk↔duży palec.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Pojęcia",
+                   "q":  "Co to są miejsca pomocnicze?",
+                   "a":  "To dodatkowe refleksy, które potęgują działanie przesyłane do rejonu dolegliwości i niwelują ból. Najczęstsze: przepona/splot słoneczny (relaks), wszystkie gruczoły (równowaga hormonalna), nadnercza (stany zapalne, ból), cały kręgosłup (oś nerwowa).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Technika",
+                   "q":  "Na czym polega podtrzymanie i zabezpieczenie stopy?",
+                   "a":  "Podczas pracy jedna ręka „chodzi” po refleksach, a druga (podtrzymująca) trzyma i zabezpiecza stopę — utrzymuje ją w stałej, kontrolowanej pozycji, napina ścięgno jako linię orientacyjną i chroni przed szarpnięciem. Bez dobrego podtrzymania praca jest niedokładna.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Technika",
+                   "q":  "Na czym polega technika „od tyłu i prosto”?",
+                   "a":  "To technika relaksacyjna: dłonie po obu stronach stopy na wysokości śródstopia wykonują naprzemienne, raptowne ruchy w przód i w tył (do przodu i do tyłu). Ucisk dłoni ma wywoływać ruch stopy, a nie ślizgać się po jej powierzchni — rozluźnia stopę przed pracą.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Lokalizacja",
+                   "q":  "Wymień i opisz linie stopy.",
+                   "a":  "Cztery główne linie orientacyjne: linia przepony (splotu słonecznego) — pod poduszką stopy, oddziela klatkę piersiową od brzucha; linia pasa (talii) — od piątej kości śródstopia w poprzek; linia pięty — u nasady pięty (rejon miednicy); ścięgno — między przeponą a piętą. Kręgosłup biegnie po wewnętrznej krawędzi stopy.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Teoria",
+                   "q":  "Wyjaśnij mapę 10 stref podziału na stopach.",
+                   "a":  "Ciało dzieli się na 10 podłużnych stref (po 5 na każdą połowę), biegnących od palców do głowy; każda strefa odpowiada jednemu palcowi. Organ w danej strefie ma refleks w tej samej strefie stopy. Prawa stopa = prawa połowa ciała, lewa stopa = lewa połowa (serce i śledziona tylko po lewej; wątroba i woreczek żółciowy tylko po prawej).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Skład",
+                   "q":  "Wymień i opisz kości stopy.",
+                   "a":  "Każda stopa ma 26 kości, 107 wiązadeł i 19 mięśni (prawie ¼ wszystkich 206 kości ciała). Grupy: kość stępu (7 kości w tylnej części i pięcie, m.in. kość skokowa i piętowa), 5 kości śródstopia oraz 14 kości palców (paliczki). Budowa odpowiada ręce: śródstopie↔śródręcze, kość stępu↔kość przegubu.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Lokalizacja",
+                   "q":  "Wymień refleksy z mapy stopy (lista do opisu z pamięci).",
+                   "a":  "53 refleksy: 1.przysadka mózgowa, 2.mózg, 3.bok karku, 4.krąg szczytowy i obrotowy, 5.7. krąg szyjny, 6.gardło/tarczyca, 7.zatoki/głowa/mózg, 8.oczy/uszy, 9.ramię/ręka, 10.płuco/pierś, 11.płuco/pierś/serce, 12.przełyk, 13.odpowiednie do tarczycy, 14.grasica, 15.oskrzela, 16.przepona, 17.splot słoneczny, 18.wątroba, 19.woreczek żółciowy, 20.nadnercze, 21.dwunastnica, 22.nerki, 23.przewód moczowy, 24.pęcherz, 25.okrężnica wstępująca, 26.jelito grube poprzeczne, 27.okrężnica zstępująca, 28.jelito cienkie, 29.esica, 30.nerw kulszowy, 31.zastawka krętniczo-kątnicza, 32.wyrostek robaczkowy, 33.linia pasa, 34.żołądek, 35.śledziona, 36.trzustka, 37.prostata/macica/odbytnica (rwa kulszowa jeśli chroniczne), 38.macica/prostata, 39.limfa/pachwina/jajowody, 40.góra głowy/mózgu, 41.kręgi szyjne, 42.kręgi piersiowe, 43.kręgi lędźwiowe, 44.kość krzyżowa/ogonowa, 45.biodro/kolano/noga, 46.piersi/płuca, 47.ramię/ręka, 48.jajnik/jądro, 49.klatka piersiowa, 50.nerw kulszowy, 51.biodro/tył rwy kulszowej, 52.okolice miednicy, 53.okolica pleców.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Skład",
+                   "q":  "Z czego składa się stopa i jej kości? (do pracy refleksologa)",
+                   "a":  "Stopa to fundament ciała — jej nieprawidłowe ustawienie zaburza całą konstrukcję (i kręgosłup). 26 kości, 107 wiązadeł, 19 mięśni. Twardość naskórka i ułożenie kości wpływają na głębokość refleksów: na stopie silnie zbudowanej refleksy leżą głębiej (większy, ale ostrożny nacisk).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Skład",
+                   "q":  "Z czego składa się centralny układ nerwowy?",
+                   "a":  "Z mózgu i rdzenia kręgowego. Łączy wszystkie systemy ciała („instalacja przewodowa”). Lewa półkula mózgu kontroluje prawą stronę ciała, prawa — lewą; z mózgu wychodzi 12 par nerwów czaszkowych, a z kręgosłupa 31 par nerwów.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Mózg — podstawowe funkcje i miejsca pomocnicze do pracy.",
+                   "a":  "Funkcje: regulacja i kontrola czynności ciała, centrum świadomości, odczuwania (wzrok, słuch, węch, dotyk), myśli, rozumowania i pamięci. Refleks: czubek i powierzchnia dużego palca. Miejsca pomocnicze: cały kręgosłup, wszystkie palce, przysadka mózgowa; przy paraliżu — czubek dużego palca po PRZECIWNEJ stronie ciała.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Lokalizacja",
+                   "q":  "Kręgosłup jako połączenie ciała — opisz jego części w stopie.",
+                   "a":  "Kręgosłup biegnie po wewnętrznej krawędzi stopy, od czubka dużego palca do pięty: kręgi szyjne (u podstawy dużego palca), kręgi piersiowe (wzdłuż kości śródstopia), kręgi lędźwiowe (środek krawędzi), kość krzyżowa i ogonowa (przy pięcie). Pracujemy na całym kręgosłupie w każdym zabiegu; 31 par nerwów łączy go z organami.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Układ mięśniowy i jego napięcia — opisz.",
+                   "a":  "Mięśnie dzielą się na zależne (warunkowe, sterowane wolą) i niezależne (bezwarunkowe — perystaltyka, przepływ żółci, praca macicy, kurczenie naczyń). Napięcia mięśni — wywołane stresem fizycznym i psychicznym — działają jak „opaska uciskowa” na nerwy kręgosłupa, ograniczając przepływ informacji i krwi do narządów; relaksujemy je pracą na kręgosłupie i przeponie.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Schorzenia układu mięśniowego — na czym pracować?",
+                   "a":  "Przyczyny zaburzeń: nadmierna/nieprawidłowa aktywność, niedożywienie (brak białka), zaburzenia cyrkulacji. Praca: cały kręgosłup (rozluźnienie nerwów), przepona/splot słoneczny (relaks), wszystkie gruczoły, miejsce odpowiadające bolącemu mięśniowi oraz nadnercza (stany zapalne, ból).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Odciski, narośla kostne, ostrogi, złamania — jak traktować w pracy na stopach?",
+                   "a":  "Na zmianach skórnych (odciski, nagniotki, kostnina) i ostrogach pracujemy ostrożnie — wokół i delikatnie na nich. Ostrogi na pięcie: praca wokół ostrogi i przez chwilę na samej ostrodze. Złamania kostne: pracujemy na refleksach części złamanej oraz równocześnie na refleksach równoległych (korespondujących) — wspomaga zrost. Nie pracować agresywnie na świeżych ranach.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Serce — funkcja i praca na refleksie.",
+                   "a":  "Najsilniejszy mięsień ciała; pompuje ~5 l krwi/min w spoczynku, ~35 l/min przy wysiłku; ma 2 przedsionki i 2 komory. Refleks serca: na LEWEJ stopie, w poprzek śródstopia, najczulej między 1. a 2. palcem. Miejsce pomocnicze: nadnercze (adrenalina), kręgi szyjne i piersiowe; przy problemach z sercem pracujemy też na lewym ramieniu/ręce.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Lokalizacja",
+                   "q":  "Płuca — gdzie jest refleks?",
+                   "a":  "Od linii przepony w górę do podstawy palców, w poprzek od środka do krawędzi — na spodzie (kciuk w wyżłobieniach między kośćmi śródstopia) i na wierzchu stopy. Wierzch stopy reprezentuje płuca, klatkę piersiową i piersi (praca tam łatwiejsza i skuteczniejsza).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Lokalizacja",
+                   "q":  "Oskrzela — gdzie jest refleks?",
+                   "a":  "W rejonie między dużym a następnym palcem (spód lub wierzch stopy) — to droga oddechowa do płuc. Pracujemy wraz z refleksami płuc i klatki piersiowej.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Lokalizacja",
+                   "q":  "Zatoki — gdzie jest refleks?",
+                   "a":  "We wszystkich palcach stopy (opuszki); odpowiadają całej głowie z wyłączeniem oczu, uszu i zębów. Rejony pomocnicze: zastawka krętniczo-kątnicza (tylko prawa noga), przysadka, nadnercze.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Lokalizacja",
+                   "q":  "Przepona — gdzie jest refleks i po co?",
+                   "a":  "Na linii przepony (pod poduszką stopy), między 1. a 2. palcem leży splot słoneczny. To kluczowy refleks relaksu przy napięciach i stresach — pracujemy nim na początku i na końcu zabiegu, szczególnie u osób pobudliwych i z wysokim ciśnieniem.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Lokalizacja",
+                   "q":  "Nos i gardło — gdzie są refleksy?",
+                   "a":  "Nos — na 1/3 poduszki dużego palca (pomocne przy polipach, trzecim migdale). Gardło — u podstawy dużego palca (pomocne przy bólach gardła, zapaleniu migdałków, problemach trąbki Eustachiusza).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Schorzenia układu sercowo-naczyniowego — przegląd i praca.",
+                   "a":  "Angina pectoris, miażdżyca, nadciśnienie, niedociśnienie, zapalenie żył, żylaki, zawał, częstoskurcz, udar. Główne refleksy: serce (lewa stopa), kręgi szyjne i piersiowe, przepona; pomocniczo nadnercze. Układ krwionośny nie ma jednego refleksu — pracujemy na wszystkich, poprawiając krążenie.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Nadciśnienie i niskie ciśnienie — refleksy odpowiadające, pomocnicze, bezpośrednie.",
+                   "a":  "Nadciśnienie („cichy zabójca” związany z nerkami): bezpośrednio przepona/splot słoneczny; pomocnicze — nerki, przysadka, nadnercza, tarczyca (wszystkie gruczoły). Niskie ciśnienie: nadnercze, przysadka mózgowa, tarczyca. Efekt pracy: rozluźnienie układu nerwowego i poprawa regulacji ciśnienia.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Skrzepy — na czym pracować?",
+                   "a":  "NIGDY nie pracujemy bezpośrednio na skrzepie. Pracujemy w rejonach równoległych (miejsca odpowiadające), co umożliwia naturalne rozmycie; pomocniczo nadnercze, okrężnica (jelito grube), wątroba.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Zapalenie żył — na czym pracować?",
+                   "a":  "Bezpośrednio NIE na żyłach kończyn dolnych — pracujemy na miejscach odpowiadających w rękach i ramionach; pomocniczo nadnercze, okrężnica (jelito grube), wątroba. Efekt: wsparcie krążenia i działanie przeciwzapalne.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Żylaki — refleksy odpowiadające, pomocnicze i bezpośrednie.",
+                   "a":  "Bezpośrednio z ostrożnością; głównie miejsca odpowiadające na rękach. Pomocnicze: okrężnica (jelito grube), wątroba, nadnercze. Efekt: poprawa krążenia żylnego i odbarczenie.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Porażenie mózgowe — refleksy odpowiadające, pomocnicze i bezpośrednie.",
+                   "a":  "Cel: doprowadzić mózg do samonaprawy. Bezpośrednio: czubek dużego palca po PRZECIWNEJ stronie ciała do paraliżu (przeciwna półkula). Pomocnicze: cały kręgosłup, wszystkie palce, refleksy rejonów dotkniętych. Pracować bardzo delikatnie, krótkimi sesjami.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Układ limfatyczny — jego funkcje.",
+                   "a":  "Sieć naczyń z zastawkami (część układu sercowo-naczyniowego). Limfa oczyszcza tkanki i broni organizm: niesie obumarłe komórki i bakterie do węzłów chłonnych („bastionów obronnych”). Należą tu: węzły chłonne, śledziona, migdały i grasica.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Śledziona — funkcje, rola, z kim współpracuje.",
+                   "a":  "Największe skupisko tkanki limfatycznej; produkuje komórki obronne, filtruje krew (usuwa stare czerwone ciałka i bakterie), magazynuje żelazo i pomaga w produkcji hemoglobiny — ważna przy anemii. Współpracuje z układem limfatycznym i krwionośnym. Refleks tylko na lewej stopie (zewnętrzna strona, przy linii pasa).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Migdały / migdałki / przerost migdałka — rola i praca.",
+                   "a":  "Migdały produkują przeciwciała i działają jak filtry. Refleks migdałków: wokół dużego palca na wysokości 1/3 od podstawy; miejsce pomocnicze — małe palce. Przy przeroście/zapaleniu pracujemy też na układzie limfatycznym, kręgach szyjnych i nadnerczu.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Grasica — funkcje.",
+                   "a":  "Organ limfatyczny nad sercem; produkuje antyciała i kontroluje odporność w dzieciństwie (z wiekiem maleje). Refleks poniżej refleksu tarczycy, w górnej części klatki piersiowej — szczególnie ważny przy pracy z dziećmi.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca",
+                   "q":  "Praca w pachwinach, klatce piersiowej i płucach (układ limfatyczny).",
+                   "a":  "Pachwina: odpowiada jej połączenie stopy z nogą w kostce — „chodzimy” palcami wskazującymi w obu kierunkach, wspierając obrotem kostki. Klatka piersiowa i płuca: WIERZCH stopy między linią przepony a podstawą palców (praca łatwiejsza, skuteczniejsza). Między 1. a 2. palcem — rejon limfatycznego odsączania (przewód piersiowy).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Węzły limfatyczne — rola w pracy ciała.",
+                   "a":  "To „bastiony obronne” — limfa niesie do nich obumarłe komórki i bakterie. Największe opuchają w pachwinach, piersi, karku i pod pachą. W pracy uwzględniamy je przy infekcjach, obrzękach i stanach zapalnych (z nadnerczami).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Schorzenia układu limfatycznego — co z czym pracuje, jak się uzupełnia.",
+                   "a":  "Białaczka, guzy piersiowe, obrzęki, zakażenia, ból gardła, migdałki. Stała kombinacja: układ limfatyczny + nadnercza (stany zapalne) + miejsce zaatakowane; przy guzach piersi — klatka piersiowa/płuca + przysadka. Praca uzupełnia się: pachwina (kostka) ↔ klatka piersiowa (wierzch) ↔ migdałki (duży palec) ↔ grasica.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca",
+                   "q":  "Miejsca pomocnicze, bezpośrednie i odpowiadające w pracy układu limfatycznego.",
+                   "a":  "Bezpośrednie: pachwina (kostka), klatka piersiowa/płuca (wierzch stopy), migdałki (duży palec), śledziona (lewa stopa). Pomocnicze: nadnercza (infekcje, stany zapalne), nerki (obrzęki). Odpowiadające: spuchnięte kostki ↔ nadgarstki (ręce).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Skład",
+                   "q":  "Narządy zmysłu — wymień i opisz.",
+                   "a":  "Pięć zmysłów: skóra (dotyk), oczy (wzrok), uszy (słuch i równowaga), nos (powonienie, ~4000 zapachów), język (smak: słodki-czubek, gorzki-tył, słony-krawędzie, kwaśny). W uchu dźwięk wzmacniają 3 kosteczki (kowadełko, młoteczek, strzemiączko ~22×); za równowagę odpowiada ucho środkowe; trąbka Eustachiusza wyrównuje ciśnienie.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Zaburzenia wzroku i słuchu — praca na nich.",
+                   "a":  "Refleksy oczu i uszu: u podstawy małych palców obu stóp (chodzenie po „grzebieniu” palców zewnętrzną krawędzią kciuka; przy bolesnym punkcie — palec wskazujący z rotacją). Pomocnicze dla oczu: nerki (3. strefa). Przy uszach: gardło/kark, kręgi szyjne, trąbka Eustachiusza. Praca wzmacnia, ale nie zastępuje okularów.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Lokalizacja",
+                   "q":  "Refleksy zapachu i smaku — gdzie są?",
+                   "a":  "W środkowej 1/3 dużego palca (rejon środkowy głowy). Pracujemy techniką kciuka i palca wskazującego: w górę, w dół i w poprzek.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Skóra i jej problemy — na czym pracować?",
+                   "a":  "Skóra zależy od gruczołów (tarczyca, nadnercze) i nerek. Przy trądziku, egzemie, łuszczycy, suchości pracujemy na: wątrobie, nadnerczu, wszystkich gruczołach, nerkach, jelitach, tarczycy i przeponie. Efekt: wsparcie odtruwania i regulacji hormonalnej wpływającej na skórę.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Schorzenia / problemy narządu zmysłu — przegląd.",
+                   "a":  "Zaćma, jaskra, zapalenie spojówek, jęczmień (oczy); głuchota, szum w uszach, zawroty głowy (uszy/równowaga); problemy skóry. Wspólne refleksy: oczy/uszy (małe palce), kark i kręgi szyjne, wszystkie palce, nerki; dla skóry — tarczyca, nadnercze, wątroba, jelita.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Lokalizacja",
+                   "q":  "Miejsca pomocnicze: oczy, uszy, zatoki.",
+                   "a":  "Oczy — pomocniczo refleksy nerek (3. strefa) oraz kark i kręgi szyjne. Uszy — gardło/kark, kręgi szyjne, trąbka Eustachiusza. Zatoki — zastawka krętniczo-kątnicza (tylko prawa noga), przysadka, nadnercze.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Skład",
+                   "q":  "Z czego składa się układ oddechowy?",
+                   "a":  "Z nosa, gardła, krtani, tchawicy, oskrzeli, płuc, przepony i zatok. Droga powietrza: nos → gardło → krtań → tchawica → prawe i lewe oskrzela → pęcherzyki płucne (wymiana tlen/CO₂). Prawe płuco ma 3 płaty, lewe 2.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Lokalizacja",
+                   "q":  "Płuca i miejsca pomocnicze — gdzie pracować (na mapie)?",
+                   "a":  "Płuca: od linii przepony w górę do podstawy palców, spód i wierzch stopy. Miejsca pomocnicze: przepona (relaks oddychania), zastawka krętniczo-kątnicza (przy śluzie/astmie), przysadka i nadnercze. Wierzch stopy reprezentuje klatkę piersiową i piersi.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Schorzenia układu oddechowego — przegląd i praca.",
+                   "a":  "Astma, zapalenie krtani, rozedma, katar sienny, zapalenie opłucnej, zapalenie płuc, zapalenie zatok, zapalenie migdałków. Wspólne refleksy: klatka piersiowa/płuca, przepona, nadnercze, zastawka krętniczo-kątnicza (śluz), wszystkie palce (zatoki), układ limfatyczny. Efekt: udrożnienie oddychania i działanie przeciwzapalne.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Skład",
+                   "q":  "Co wchodzi w skład układu trawiennego (łącznie z zastawką krętniczo-kątniczą)?",
+                   "a":  "Droga pokarmu: jama ustna → gardło → przełyk → żołądek → jelito cienkie → jelito grube (okrężnica: wstępująca, poprzeczna, zstępująca, esica) → odbytnica → odbyt. Jelito ślepe z wyrostkiem robaczkowym i zastawka krętniczo-kątnicza (na granicy jelita cienkiego i grubego, refleks tylko na prawej stopie).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Skład",
+                   "q":  "Pomocnicze organy trawienia — wymień i opisz.",
+                   "a":  "Gruczoły ślinowe (przyuszna, podżuchwowa, podjęzykowa; enzym ptyalina rozkłada skrobię), wątroba (ponad 500 czynności, glikogen, cholesterol, żółć, odtruwanie), woreczek żółciowy (magazynuje żółć ~500 cc/dobę, emulguje tłuszcze) i trzustka (enzymy trawienne + insulina i glikogen).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Jama ustna — opisz funkcję.",
+                   "a":  "Tu zaczyna się trawienie: ślina (~98% wody) i enzym ptyalina rozkładają skrobię, a zęby rozdrabniają pokarm. Refleks ust: ¾ od czubka dużego palca; gruczoły ślinowe nieco poniżej i powyżej.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Przełyk — opisz i gdzie refleks.",
+                   "a":  "Przewód prowadzący pokarm z gardła do żołądka; leży po lewej stronie linii środkowej, więc refleks na LEWEJ stopie (od wewnętrznej krawędzi podstawy dużego palca w dół do linii przepony).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Żołądek — opisz funkcję i gdzie refleks.",
+                   "a":  "Trawienie chemiczne: ~35 mln gruczołów, ~2,8 l soków/dobę (kwas chlorowodorowy + pepsyny), pojemność ~1,89 l. Refleks: ~85% na lewej stopie, poniżej linii przepony, powyżej linii pasa.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Wątroba — opisz funkcję i gdzie refleks.",
+                   "a":  "Ponad 500 czynności: glikogen, cholesterol, żółć, odtruwanie (komórki Kupffera), udział w trawieniu, krzepnięciu, metabolizmie i cyrkulacji. „Gdy wątroba zawiedzie — ciało umiera”. Waży ~1,5 kg. Refleks na PRAWEJ stopie, między linią pasa a przepony.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Woreczek żółciowy — opisz funkcję i gdzie refleks.",
+                   "a":  "Magazynuje i zagęszcza żółć (z wątroby, ~500 cc/dobę), którą wysyła do dwunastnicy; żółć emulguje tłuszcze. Kształt gruszki, przy dolnej części wątroby. Refleks na PRAWEJ stopie (czasem skuteczniejszy na wierzchu).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Schorzenia układu trawiennego i pochodne do pracy w refleksach.",
+                   "a":  "Biegunka, zaparcia, niestrawność, wrzody, hemoroidy, kamienie żółciowe, zapalenie okrężnicy/uchyłka, żółtaczka, cukrzyca/hipoglikemia. Wspólne refleksy: żołądek, wątroba, woreczek żółciowy, jelita, trzustka, przepona/splot słoneczny (napięcia emocjonalne), zastawka krętniczo-kątnicza i esica (zaparcia, gazy), nadnercza. Wyjątki techniki (zaczepno-wycofująca): esica i zastawka.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Skład",
+                   "q":  "Co wchodzi w skład układu moczowego?",
+                   "a":  "Nerki, moczowody (przewody moczowe), pęcherz i cewka moczowa. Pracuje całą dobę, utrzymując równowagę wodną i kwasowo-zasadową; wspomagają go płuca, skóra i jelita.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Nerki — opisz i gdzie refleks.",
+                   "a":  "Główne filtry organizmu — filtrują ~1 l krwi/min (ponad 60 l/h); dorosły wydala ~1,5 l moczu/dobę. Refleks w centrum stopy (poniżej i powyżej ścięgna), na obu stopach. Na refleksach nerki pracujemy ZAWSZE w obu kierunkach.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Przewód moczowy — opisz i gdzie refleks.",
+                   "a":  "Łączy nerki z pęcherzem; tu najczęściej zatrzymują się kamienie (kolka, najwięcej bólu). Refleks na wewnętrznej stronie ścięgna, między ścięgnem a refleksami kręgosłupa.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Pęcherz — opisz i gdzie refleks.",
+                   "a":  "Magazynuje mocz przed wydaleniem cewką. Refleks na wewnętrznej krawędzi obu stóp, przy linii pięty (po lewej stronie to samo miejsce co esica).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca",
+                   "q":  "Miejsca pomocnicze w układzie moczowym.",
+                   "a":  "Nadnercza (stany zapalne), dolny odcinek kręgosłupa, przytarczyczki (kontrola wapnia → kamienie). Przy nadciśnieniu: przepona/splot słoneczny + nerki + wszystkie gruczoły.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Schorzenia układu moczowego — na czym pracować.",
+                   "a":  "Zapalenie pęcherza, kamienie nerkowe, bolesne/nietrzymanie moczu, zapalenie nerek, mocznica. Refleksy: przewody moczowe, pęcherz, nerki, nadnercza, dół kręgosłupa; przy kamieniach dodatkowo przepona i przytarczyczki. Infekcje pęcherza częstsze u kobiet (krótsza cewka) i łatwo przechodzą do nerek.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Skład",
+                   "q":  "Układ rozrodczy — co wchodzi w skład (kobieta)?",
+                   "a":  "Jajniki, jajowody, macica, szyjka macicy, pochwa i gruczoły piersiowe. Jajniki produkują komórki rozrodcze i estrogeny. Refleks macicy na wewnętrznej stronie stopy (połowa linii kostka↔pięta), jajników na zewnętrznej; jajowody w rejonie stawu skokowego.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Skład",
+                   "q":  "Układ rozrodczy — co wchodzi w skład (mężczyzna)?",
+                   "a":  "Jądra, system przewodów, pęcherzyki nasienne, gruczoł prostaty, nasieniowód, cewka moczowa. Jądra produkują plemniki i androgeny (testosteron). Refleks prostaty na wewnętrznej stronie stopy (połowa linii kostka↔pięta), jąder na zewnętrznej; rejon chroniczny prostaty przy ścięgnie Achillesa.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca",
+                   "q":  "Uwagi na temat ciąży i pracy na stopach.",
+                   "a":  "Zabiegi są pomocne przez cały okres — łagodzą obrzęki, poranne dolegliwości i napięcie, wspierają relaks (nawet w czasie porodu). Pracujemy jednak ostrożnie i delikatnie; przy wątpliwościach kierujemy do lekarza. Regularna praca zmniejsza uboczne dolegliwości ciąży.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Schorzenia układu rozrodczego i refleksy wspierające jego pracę.",
+                   "a":  "Histerektomia, niepłodność, impotencja, cysty jajników, guzy piersi, przekwitanie, bolesne miesiączkowanie, problemy prostaty. Refleksy: układ rozrodczy (kostki), wszystkie gruczoły, cały kręgosłup, przepona; rejon chroniczny (ścięgno Achillesa). Po usunięciu jajników estrogen przejmują nadnercza → praca na nadnerczu, tarczycy, przysadce.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca",
+                   "q":  "Miejsca pomocnicze w pracy układu rozrodczego.",
+                   "a":  "Tarczyca, przysadka i nadnercza (gospodarka hormonalna), cały kręgosłup i przepona; rejon chroniczny przy ścięgnie Achillesa (prostata/macica/odbytnica/nerw kulszowy); przy piersiach — układ limfatyczny i przysadka.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Przysadka mózgowa — co kontroluje (wymień 10)?",
+                   "a":  "Gruczoł główny („dyrygent”). Kontroluje m.in.: 1) podstawowy hormon, 2) wzrost układu kostnego, 3) wzrost i rozwój gruczołów płciowych, 4) dojrzewanie komórek rozrodczych, 5) wydzielanie mleczne (gruczoły sutkowe), 6) aktywność tarczycy, 7) wysepki Langerhansa w trzustce, 8) korę nadnerczy i przytarczyczki, 9) ciśnienie krwi, 10) wzrost komórek (łagodnych i złośliwych) oraz wzrost ciała. Refleks: środek dużego palca; pomocny przy gorączce i omdleniach.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Tarczyca — jej funkcje (wymień kilkanaście).",
+                   "a":  "Reguluje: przemianę materii (tempo spalania komórek), wzrost ciała, rozwój uzębienia, regenerację mięśni, aktywność fizyczną, sprawność umysłową, rozwój gruczołów rozrodczych i nadnerczy; produkuje jod (utlenianie tkanki skórnej), kontroluje wagę, stan podniecenia nerwowego, raptowne bicie serca, wysuszenie naskórka, poziom cholesterolu. Zwana „trzecim jajnikiem”. Refleks u podstawy dużego palca.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Przytarczyczki — ich rola i funkcje.",
+                   "a":  "Przeważnie 4 gruczoły w torebce tarczycy; kontrolują przemianę wapnia i fosforu → prawidłowy stan układu kostnego, oddziałują na tkanki nerwowe i mięśniowe. Nieprawidłowa praca → wypłukiwanie wapnia z kości (kruchość). Refleks wspomaga przy układzie nerwowym, mięśniowym i kamieniach nerkowych.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Nadnercza — rola i funkcje, za co odpowiadają.",
+                   "a":  "Para gruczołów nad nerkami. Kora: ~50 hormonów (system kortyzonu — przemiana cukru i przeciwdziałanie stanom zapalnym; kontrola elektrolitów; hormony płciowe). Rdzeń wytwarza ADRENALINĘ („walcz lub uciekaj”): podnosi ciśnienie, oddech, cukier, pobudza mięśnie. Ważne przy sercu, astmie, stanach zapalnych i bólu. Refleks między linią pasa a przepony, przy ścięgnie.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Trzustka — funkcje i rola.",
+                   "a":  "Gruczoł zewnętrznego i wewnętrznego wydzielania: zewnętrznie produkuje enzymy trawienne (białka, skrobia, tłuszcze) i soki alkalizujące kwas żołądkowy; wewnętrznie — INSULINĘ i glikogen regulujące poziom cukru. Refleksy głównie na lewej stopie; główny powód pracy — cukrzyca (NIGDY nie zmieniać insuliny bez lekarza). Przy hipo-/hiperglikemii pracujemy na trzustce i wątrobie.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Gruczoły płciowe jako hormony.",
+                   "a":  "Jądra i jajniki mają podwójną funkcję: produkcja komórek rozrodczych + hormonów. Jądra — androgeny (najsilniejszy testosteron: porost włosów, mutacja głosu, rozwój prostaty). Jajniki — estrogeny (wzrost, formowanie i regulacja układu rozrodczego). Kontrolowane przez przysadkę.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Szyszynka — rola.",
+                   "a":  "Gruczoł położony głęboko w centralnej części mózgu; jego funkcje nie są w pełni poznane. W pracy uwzględniamy go z refleksem przysadki/dużego palca.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Funkcja",
+                   "q":  "Grasica (jako gruczoł) — rola.",
+                   "a":  "Dwupłatowy gruczoł pod mostkiem; duża u dzieci, kurczy się z wiekiem. Produkuje antyciała i kontroluje rozwój systemu odpornościowego w dzieciństwie. Refleks poniżej tarczycy — szczególnie ważny u dzieci.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Praca",
+                   "q":  "Miejsca pomocnicze w pracy na gruczołach.",
+                   "a":  "Najlepsza kombinacja: prawa ręka–prawa noga, lewa ręka–lewa noga. Pomocniczo: przepona (relaks), cały kręgosłup, oraz wzajemne wspieranie gruczołów (przysadka steruje tarczycą, nadnerczami, gruczołami płciowymi). Przy gruczołach płciowych — tarczyca, przysadka, nadnercza.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Technika",
+                   "q":  "Technika relaksu „do przodu i do tyłu” — opisz.",
+                   "a":  "Dłonie po obu stronach stopy na wysokości śródstopia wykonują naprzemienne, raptowne ruchy w przód i w tył; ucisk ma poruszać stopą, nie ślizgać się po niej. Dodatkowo delikatne uderzenia stopy od wierzchu. Rozluźnia stopę.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Technika",
+                   "q":  "Rozluźnianie kostki — opisz.",
+                   "a":  "Dłonie z obu stron poniżej kostki wykonują naprzemienne, raptowne ruchy w przód i w tył (uchwyt porusza stopą, nie ślizga się), potem wolne obracanie pięty w dłoniach. Rozluźnia staw skokowy i rejon pachwiny.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Technika",
+                   "q":  "Ugniatanie śródstopia — opisz.",
+                   "a":  "Stopę obejmujemy jedną dłonią (palec wskazujący u podstawy palców), drugą zwiniętą w pięść przykładamy płasko do spodu i naprzemiennie ugniatamy śródstopie. Obie dłonie pracują równocześnie, w stałym kontakcie ze stopą — ulubiona technika kończąca zabieg.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Technika",
+                   "q":  "Rotacja palców — opisz.",
+                   "a":  "Kciukiem i palcami jednej ręki chwytamy podstawę palca, drugą obejmujemy palec na całej wysokości, lekko unosząc, i obracamy — najpierw kilka razy w jednym kierunku, potem tyle samo w przeciwnym. Rozluźnia palce (rejon głowy).",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Technika",
+                   "q":  "Skręty kręgosłupa — opisz.",
+                   "a":  "Obie dłonie skierowane do spodu, kciuki na refleksach kręgosłupa nieco poniżej linii pasa; dłoń od pięty w spoczynku, druga wykonuje drobne ruchy obrotowe w przód i w tył, przesuwając się ku dużemu palcowi. Relaksuje stopę i pracuje na refleksach macicy/prostaty.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Technika",
+                   "q":  "Relaksowanie napięć przepony — opisz.",
+                   "a":  "Pracujemy na wszystkich refleksach przepony od wewnętrznej krawędzi stopy poniżej śródstopia; kciuk lekko nachylony do góry, druga ręka obejmuje palce i przyciąga je w kierunku kciuka. Szczególnie skuteczne u osób pobudliwych i z wysokim ciśnieniem.",
+                   "src":  "skrypt"
+               },
+               {
+                   "r":  "skrypt",
+                   "kat":  "Technika",
+                   "q":  "„Górna” rotacja kostki — opisz.",
+                   "a":  "Dłoń ze złączonymi palcami kładziemy na wierzchu stopy, kciukiem obejmując krawędź ponad połączeniem stopy z nogą (rejon pachwiny); wierzch drugiej dłoni na śródstopiu, palce obejmują palce stopy; wykonujemy ruchy obrotowe po kilka razy w każdym kierunku. Pomaga też przy spuchniętych kostkach.",
+                   "src":  "skrypt"
                }
            ]
 };
