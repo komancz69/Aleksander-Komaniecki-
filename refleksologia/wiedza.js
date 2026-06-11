@@ -5600,6 +5600,960 @@
                    "kat":  "Praca przy schorzeniu",
                    "q":  "Na czym pracować przy: Problemy prostaty?",
                    "a":  "Objawy: Zapalenie/powiększenie gruczołu prostaty. Refleksy do pracy: Układ rozrodczy, pęcherz, dół kręgosłupa, przysadka, nadnercze, chroniczne miejsce prostaty. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Refleksologia?",
+                   "a":  "Nauka o refleksach w stopach, dłoniach i uszach odpowiadających narządom i częściom ciała; metoda chodzenia kciuka i palców po tych refleksach. Wyrównuje krążenie i pomaga ciału osiągnąć homeostazę. Nie jest masażem ani medycyną."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Refleks?",
+                   "a":  "Punkt lub mały obszar na stopie/dłoni odpowiadający konkretnemu narządowi, gruczołowi lub części ciała."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Homeostaza?",
+                   "a":  "Naturalna równowaga (balans) między systemami organizmu; stan, do którego refleksologia pomaga ciału powrócić. Cel każdego zabiegu."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Strefa (rejon)?",
+                   "a":  "Jeden z 10 podłużnych pasów dzielących ciało (po 5 na każdą połowę), biegnących od palców rąk/stóp do głowy."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Miejsce odpowiadające?",
+                   "a":  "Refleks na kończynie z tej samej strefy, używany gdy nie można pracować na zranionym miejscu (np. ręka zamiast nogi, łokieć zamiast kolana, przegub zamiast kostki)."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Linia przepony (splotu słonecznego)?",
+                   "a":  "Pozioma linia pod poduszką stopy, oddziela refleksy klatki piersiowej (powyżej) od jamy brzusznej (poniżej)."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Linia pasa (talii)?",
+                   "a":  "Pozioma linia w środku stopy, wyznaczana od piątej kości śródstopia; oddziela górną część brzucha od dolnej."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Linia pięty?",
+                   "a":  "Pozioma linia u nasady pięty, na zakończeniu miękkiego podbicia stopy; oddziela refleksy miednicy."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Splot słoneczny?",
+                   "a":  "„Mózg jamy brzusznej”, skupisko nerwów za żołądkiem; refleks na linii przepony między 1. a 2. palcem — główny punkt relaksu układu nerwowego."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Technika kciuka (gąsienicowanie)?",
+                   "a":  "Podstawowa technika: kciuk „idzie” drobnymi krokami tylko do przodu, zginając się w pierwszym stawie, pracując zewnętrznym narożnikiem."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Technika zaczepno-wycofująca?",
+                   "a":  "Nacisk i lekkie wycofanie (jak żądło pszczoły); dla punktów głębokich i małych: przysadka, esica, zastawka krętniczo-kątnicza."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Rotacja refleksu?",
+                   "a":  "Okrężne oddziaływanie z podtrzymaniem drugą ręką, na przemian w obu kierunkach; dla miejsc delikatnych i bolących."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Zastawka krętniczo-kątnicza?",
+                   "a":  "Zastawka między jelitem cienkim a grubym; refleks tylko na prawej stopie (zewnętrzna krawędź, między 4. a 5. strefą), ważny też dla wyrostka robaczkowego."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Esica (zgięcie esowate)?",
+                   "a":  "Końcowy odcinek okrężnicy; refleks tylko na lewej stopie — najtrudniejsze miejsce; to samo miejsce to refleks pęcherza moczowego."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Rejon chroniczny?",
+                   "a":  "Okolica ścięgna Achillesa (~2 cm nad kostką) wspólna dla refleksów prostaty, macicy, odbytnicy i nerwu kulszowego — przy stanach przewlekłych."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Wszystkie gruczoły?",
+                   "a":  "W indeksie schorzeń skrót na: przysadka, tarczyca, przytarczyczki, nadnercza, trzustka, narządy rozrodcze."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Kryształki?",
+                   "a":  "Wyczuwalne pod kciukiem „ziarenka soli” odłożone w niektórych partiach stóp (np. rejon karku i ramion)."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Metoda Budzanowskiej-Bratko?",
+                   "a":  "Polska adaptacja metody Ingham; student wykonuje pełny zabieg codziennie (inaczej niż program D.C. Byersa — jeden zabieg na dwa dni)."
+               },
+               {
+                   "r":  "slownik",
+                   "kat":  "Pojęcie",
+                   "q":  "Co to jest: Eunice Ingham (Ciotka Eunike)?",
+                   "a":  "1889-1974, twórczyni nowoczesnej refleksologii stref stóp; autorka „Stories the Feet Can Tell” (1938)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Głowa, zatoki, mózg?",
+                   "a":  "opuszki wszystkich palców (stopa: obie)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Przysadka mózgowa?",
+                   "a":  "środek opuszka dużego palca (stopa: obie)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Kark, kręgi szyjne, tarczyca?",
+                   "a":  "podstawa dużego palca (stopa: obie)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Oczy / uszy?",
+                   "a":  "podstawa palców 2-5 (stopa: obie)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Płuca / klatka piersiowa?",
+                   "a":  "pod palcami, nad linią przepony (stopa: obie)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Serce?",
+                   "a":  "pod palcami, w poprzek śródstopia (stopa: tylko lewa)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Przepona / splot słoneczny?",
+                   "a":  "linia przepony (stopa: obie)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Wątroba, woreczek żółciowy?",
+                   "a":  "między przeponą a linią pasa (stopa: tylko prawa)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Żołądek?",
+                   "a":  "między przeponą a linią pasa (stopa: głównie lewa (~85%))."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Śledziona?",
+                   "a":  "zewnętrzna strona, przy linii pasa (stopa: tylko lewa)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Nadnercze, nerka, trzustka?",
+                   "a":  "przy linii pasa, środek stopy (stopa: obie)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Zastawka krętniczo-kątnicza + wyrostek?",
+                   "a":  "dolne, zewnętrzna krawędź, między 4. a 5. strefą (stopa: tylko prawa)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Esica (zgięcie esowate)?",
+                   "a":  "dolny zewnętrzny róg, najtrudniejsze miejsce (stopa: tylko lewa)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Pęcherz, przewód moczowy?",
+                   "a":  "wewnętrzna krawędź, linia pięty (stopa: obie)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Kręgosłup (cały)?",
+                   "a":  "wewnętrzna krawędź, od palca do pięty (stopa: obie)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Macica / prostata?",
+                   "a":  "wewnętrzna kostka, pół linii kostka↔pięta (stopa: obie)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Jajnik / jądro?",
+                   "a":  "zewnętrzna kostka, pół linii kostka↔pięta (stopa: obie)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Chroniczne (prostata/macica/odbytnica/n. kulszowy)?",
+                   "a":  "ścięgno Achillesa, ~2 cm nad kostką (stopa: obie)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Nerw kulszowy?",
+                   "a":  "pasmo w poprzek pięty + zewnętrzna strona (stopa: obie)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Kolano / biodro / noga?",
+                   "a":  "przed kostką zewnętrzną, góra stopy (stopa: obie)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Piersi, ramiona, mięśnie pleców?",
+                   "a":  "wierzch stopy, między kośćmi śródstopia (stopa: obie)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Zatoki (dłoń)?",
+                   "a":  "opuszki wszystkich palców dłoni (stopa: dłonie)."
+               },
+               {
+                   "r":  "mapy",
+                   "kat":  "Lokalizacja refleksu",
+                   "q":  "Gdzie znajduje się refleks: Kark, gardło, bark (przestrzeń V)?",
+                   "a":  "między kciukiem a palcem wskazującym (stopa: dłonie)."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Alkoholizm?",
+                   "a":  "Refleksy do pracy: wątroba, trzustka, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Anemia?",
+                   "a":  "Refleksy do pracy: śledziona, wątroba. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Artretyzm?",
+                   "a":  "Refleksy do pracy: całe stopy, praca na refleksach dotkniętych schorzeniem. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Bezpłodność?",
+                   "a":  "Refleksy do pracy: układ rozrodczy, wszystkie gruczoły, cały kręgosłup, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Bezsenność?",
+                   "a":  "Refleksy do pracy: przepona, wszystkie gruczoły. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Ciąża?",
+                   "a":  "Refleksy do pracy: wszystkie gruczoły, cały kręgosłup, narządy rozrodcze, pęcherz, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Ciśnienie niskie?",
+                   "a":  "Refleksy do pracy: nadnercze, przysadka mózgowa, tarczyca. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Cholesterol (wysoki poziom)?",
+                   "a":  "Refleksy do pracy: tarczyca, wątroba. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Cuchnący oddech?",
+                   "a":  "Refleksy do pracy: żołądek, wątroba, jelito cienkie, duży palec. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Cysta (jajniki)?",
+                   "a":  "Refleksy do pracy: jajniki, przysadka mózgowa, wszystkie gruczoły, macica, jajowody. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Czkawka?",
+                   "a":  "Refleksy do pracy: przepona, żołądek. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Dzieciństwo (schorzenia)?",
+                   "a":  "Refleksy do pracy: wszystkie gruczoły, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Dna (skaza moczanowa)?",
+                   "a":  "Refleksy do pracy: nerki, refleksy miejsc dotkniętych chorobą. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Drżenie?",
+                   "a":  "Refleksy do pracy: cały kręgosłup, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Dysk (pęknięcie)?",
+                   "a":  "Refleksy do pracy: pracować na refleksach kręgosłupa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Energia (brak żywotności)?",
+                   "a":  "Refleksy do pracy: nadnercza, wszystkie gruczoły, tarczyca, przepona, cały kręgosłup. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Gardło?",
+                   "a":  "Refleksy do pracy: układ limfatyczny, wszystkie palce, duży palec, nadnercze, kręgi szyjne. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Gazy (bóle)?",
+                   "a":  "Refleksy do pracy: żołądek, przepona, jelito cienkie, wątroba. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Głowa (zawroty)?",
+                   "a":  "Refleksy do pracy: refleksy uszu, kark, kręgi szyjne, duży palec. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Głowa (bóle ogólne)?",
+                   "a":  "Refleksy do pracy: cały kręgosłup, przepona, wszystkie gruczoły, wszystkie palce. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Gruczoły?",
+                   "a":  "Refleksy do pracy: duży palec, przysadka mózgowa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Guz (nowotwór)?",
+                   "a":  "Refleksy do pracy: przysadka mózgowa, wszystkie gruczoły, refleks właściwy dla lokalizacji guza. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Influenza (grypa)?",
+                   "a":  "Refleksy do pracy: klatka piersiowa, płuca, przepona, jelito cienkie, wszystkie gruczoły, układ limfatyczny. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Infekcja?",
+                   "a":  "Refleksy do pracy: nadnercza, układ limfatyczny, miejsce dotknięte infekcją. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Jajniki?",
+                   "a":  "Refleksy do pracy: jajniki, przysadka mózgowa, wszystkie gruczoły, macica, przewody jajowe. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Jęczmień (na oku)?",
+                   "a":  "Refleksy do pracy: refleksy oka, kark, wszystkie palce. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Kolano opuchnięte?",
+                   "a":  "Refleksy do pracy: nerki, nadnercza, układ limfatyczny, miejsce odpowiadające — łokieć. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Kaletka (zapalenie)?",
+                   "a":  "Refleksy do pracy: refleksy kaletki, nadnercza, miejsce odpowiadające zaatakowanej kaletce. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Katarakta?",
+                   "a":  "Refleksy do pracy: refleksy oczu, karku, kręgów szyjnych, wszystkie palce, przysadka mózgowa, nerki. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Klatka piersiowa (ból)?",
+                   "a":  "Refleksy do pracy: jelito esowate, przepona, klatka piersiowa/płuca. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Kostnina (nagniotki, odciski)?",
+                   "a":  "Refleksy do pracy: wokół i dokładnie na nich. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Kość ogonowa?",
+                   "a":  "Refleksy do pracy: cały kręgosłup, nerki, biodra, ramiona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Krtań (zapalenie)?",
+                   "a":  "Refleksy do pracy: przepona, oskrzela, klatka piersiowa/płuca, zastawka krętniczo-kątnicza jelita, wszystkie palce. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Kolana?",
+                   "a":  "Refleksy do pracy: biodro/kolano, biodro/nerw kulszowy, dolna część kręgosłupa, miejsce odpowiadające — łokieć. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Kark (napięcia)?",
+                   "a":  "Refleksy do pracy: kark, kręgi szyjne, ramiona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Kręgosłup (skrzywienie)?",
+                   "a":  "Refleksy do pracy: czubek i podłoże stopy między dużym i drugim palcem, cały kręgosłup, 7. kręg szyjny. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Kręgosłup?",
+                   "a":  "Refleksy do pracy: wszystkie gruczoły, przepona, nerki, wątroba. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Lekomania, narkomania?",
+                   "a":  "Refleksy do pracy: wszystkie gruczoły, przepona, nerki, jelito cienkie, tarczyca, nadnercze, wątroba. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Macica (wycięcie)?",
+                   "a":  "Refleksy do pracy: nadnercze, tarczyca, przysadka mózgowa, macica, jajniki, przewody jajowe, przepona, okolice całej macicy. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Miażdżyca?",
+                   "a":  "Refleksy do pracy: tarczyca, wszystkie gruczoły, węzły chłonne, praca na całych stopach. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Moczenie nocne?",
+                   "a":  "Refleksy do pracy: nerki, przepona, moczowody, nadnercza, dolne kręgi kręgosłupa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Mózg (zapalenie)?",
+                   "a":  "Refleksy do pracy: duży palec, wszystkie palce, wszystkie gruczoły. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Migrena?",
+                   "a":  "Refleksy do pracy: cały kręgosłup, przepona, przysadka mózgowa, duży palec, jelita. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Migdały (zapalenie)?",
+                   "a":  "Refleksy do pracy: duży palec, układ limfatyczny, wszystkie palce, nadnercza, kręgi szyjne. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Niekontrolowane oddawanie moczu?",
+                   "a":  "Refleksy do pracy: przewody moczowe, pęcherz, nerki, nadnercza, dolne kręgi kręgosłupa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Nadmierna pobudliwość?",
+                   "a":  "Refleksy do pracy: przepona, wszystkie gruczoły. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Nudności, wymioty?",
+                   "a":  "Refleksy do pracy: wątroba, woreczek żółciowy, żołądek, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Nerwowość?",
+                   "a":  "Refleksy do pracy: przepona, wszystkie gruczoły, cały kręgosłup. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Nerki (zapalenie)?",
+                   "a":  "Refleksy do pracy: nerki, nadnercza. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Nerw (zapalenie)?",
+                   "a":  "Refleksy do pracy: kręgosłup, przepona, gruczoły korespondujące z refleksami nerwów. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Napięcie nerwów?",
+                   "a":  "Refleksy do pracy: przepona, wszystkie gruczoły, cały kręgosłup. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Nerw twarzowy (porażenie)?",
+                   "a":  "Refleksy do pracy: kręgi szyjne, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Obrzęki?",
+                   "a":  "Refleksy do pracy: układ limfatyczny, nerki, nadnercza. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Oczy (kondycja)?",
+                   "a":  "Refleksy do pracy: jelito grube, wątroba, nadnercza, dolna część kręgosłupa, przepona, woreczek żółciowy. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Okrężnica (zapalenie)?",
+                   "a":  "Refleksy do pracy: refleksy oczu, gardła/karku, wszystkie palce, nerki, górne kręgi kręgosłupa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Omdlenie?",
+                   "a":  "Refleksy do pracy: przysadka mózgowa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Opony mózgowe (zapalenie)?",
+                   "a":  "Refleksy do pracy: duży palec, cały kręgosłup, wszystkie gruczoły. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Opuchnięte nogi?",
+                   "a":  "Refleksy do pracy: układ limfatyczny, nerki, nadnercza. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Opłucna (zapalenie)?",
+                   "a":  "Refleksy do pracy: układ limfatyczny, nadnercza, przepona, klatka piersiowa/płuca. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Ostrogi na pięcie?",
+                   "a":  "Refleksy do pracy: pracuj wokół ostrogi i przez chwilę na samej ostrodze. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Oskrzela (zapalenie)?",
+                   "a":  "Refleksy do pracy: klatka piersiowa/płuca, zastawka krętniczo-kątnicza jelita, przepona i nadnercza. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Padaczka?",
+                   "a":  "Refleksy do pracy: przepona, okrężnica, krężnica, cały kręgosłup. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Piersi (guzy)?",
+                   "a":  "Refleksy do pracy: klatka piersiowa/płuca, układ limfatyczny, przysadka mózgowa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Pęcherz (problemy)?",
+                   "a":  "Refleksy do pracy: pęcherz, przewody moczowe, nerki, nadnercza, dolne kręgi kręgosłupa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Pęcherz (zapalenie)?",
+                   "a":  "Refleksy do pracy: pęcherz, przewody moczowe, nerki, nadnercza, dolne kręgi kręgosłupa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Przeziębienie?",
+                   "a":  "Refleksy do pracy: klatka piersiowa/płuca, nadnercza, jelito cienkie, układ limfatyczny, przysadka mózgowa, wszystkie palce. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Przepuklina?",
+                   "a":  "Refleksy do pracy: okolice pachwiny, okrężnica, nadnercza. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Przepuklina rozwarta (rozwór przełykowy)?",
+                   "a":  "Refleksy do pracy: przepona, żołądek, nadnercza. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Półpasiec?",
+                   "a":  "Refleksy do pracy: przepona, wszystkie gruczoły, cały kręgosłup. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Poranna choroba (nudności ciążowe)?",
+                   "a":  "Refleksy do pracy: wszystkie gruczoły, przepona, żołądek. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Paraliż (porażenie)?",
+                   "a":  "Refleksy do pracy: cały kręgosłup, mózg, refleksy odpowiadające. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Parkinson?",
+                   "a":  "Refleksy do pracy: cały kręgosłup, wszystkie gruczoły, przepona, klatka piersiowa/płuca. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Pocące ręce i stopy?",
+                   "a":  "Refleksy do pracy: wszystkie gruczoły, wątroba, jelito cienkie, nerki, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Prostata?",
+                   "a":  "Refleksy do pracy: pęcherz, dół kręgosłupa, gruczoły narządów rozrodczych, okolice chronicznej prostaty, nadnercza, przysadka mózgowa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Płuca (zapalenie)?",
+                   "a":  "Refleksy do pracy: przepona, jelito cienkie, klatka piersiowa/płuca, układ limfatyczny, wszystkie gruczoły. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Płuca (rozedma)?",
+                   "a":  "Refleksy do pracy: krężnica, nadnercza, klatka piersiowa/płuca, układ limfatyczny, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Porażenie (udar)?",
+                   "a":  "Refleksy do pracy: czubek dużego palca strony przeciwnej do paraliżu, pozostałe palce, refleksy porażenia. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Przegub ręki (uszkodzony)?",
+                   "a":  "Refleksy do pracy: miejsce odpowiadające — kostka, staw skokowy. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Ramiona?",
+                   "a":  "Refleksy do pracy: refleksy ramion, kręgi szyjne, biodro, kark. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Ręce (dłonie)?",
+                   "a":  "Refleksy do pracy: kręgi szyjne, wyższe kręgi piersiowe, ramię, biodro. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Ropotok?",
+                   "a":  "Refleksy do pracy: duży palec, wszystkie gruczoły. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Rwa kulszowa?",
+                   "a":  "Refleksy do pracy: biodro, nerw kulszowy, biodro-kolano, dolna część kręgosłupa, ramię, miejsce chroniczne nerwu kulszowego. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Schorzenie Brighta (nerki)?",
+                   "a":  "Refleksy do pracy: nerki. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Skurcze?",
+                   "a":  "Refleksy do pracy: biodro-kolano, biodro-nerw kulszowy, przytarczyczki, nadnercza, dół kręgosłupa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Skurcze (miesiączkowe)?",
+                   "a":  "Refleksy do pracy: macica, jajniki, przewody jajowe, przepona, dół kręgosłupa, wszystkie gruczoły. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Serce i kondycja?",
+                   "a":  "Refleksy do pracy: klatka piersiowa/płuca, przepona, kręgi szyjne, jelito esowate, kręgi piersiowe. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Staw biodrowy?",
+                   "a":  "Refleksy do pracy: staw biodrowy, nerw kulszowy, biodro-kolano, dolna część kręgosłupa, ramię. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Stwardnienie tętnic?",
+                   "a":  "Refleksy do pracy: wszystkie gruczoły, węzły chłonne, praca na całych stopach. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: MS (stwardnienie rozsiane)?",
+                   "a":  "Refleksy do pracy: cały kręgosłup, wszystkie gruczoły, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Schorzenia podróżne (morze, lot, auto)?",
+                   "a":  "Refleksy do pracy: refleksy uszu, przepona, kark, kręgosłup. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Smak?",
+                   "a":  "Refleksy do pracy: wszystkie palce, środek 1/3 dużego palca. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Spojówka (zapalenie)?",
+                   "a":  "Refleksy do pracy: refleksy oczu, wszystkie palce, kark, nerki. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Sucha wysuszona skóra?",
+                   "a":  "Refleksy do pracy: tarczyca, nadnercza. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Stopy (zimne i pocące)?",
+                   "a":  "Refleksy do pracy: wątroba, jelito cienkie, nerki, wszystkie gruczoły. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Skrzepy miesiączkowe?",
+                   "a":  "Refleksy do pracy: macica, jajniki, przewody jajowe, dolna część kręgosłupa, wszystkie gruczoły, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Tarczyca?",
+                   "a":  "Refleksy do pracy: przysadka mózgowa, nadnercza, tarczyca. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Tik twarzowy?",
+                   "a":  "Refleksy do pracy: kark, kręgi szyjne, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Temperatura?",
+                   "a":  "Refleksy do pracy: przysadka mózgowa. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Wysoka temperatura?",
+                   "a":  "Refleksy do pracy: krężnica, wszystkie palce, wszystkie gruczoły, okrężnica, klatka piersiowa/płuca. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Toczeń (lupus)?",
+                   "a":  "Refleksy do pracy: wszystkie gruczoły, jelito cienkie, wątroba, cały kręgosłup. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Uchyłek (zapalenie)?",
+                   "a":  "Refleksy do pracy: jelito grube, okrężnica, przepona, nadnercze, dół kręgosłupa, wątroba, woreczek żółciowy. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Uszy?",
+                   "a":  "Refleksy do pracy: refleksy uszu, wszystkie palce, gardło/kark, kanały słuchowe. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Uderzenie krwi do głowy?",
+                   "a":  "Refleksy do pracy: przepona, wszystkie gruczoły, narządy rozrodcze, okolice macicy. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Wyczerpanie ogólne (zmęczenie)?",
+                   "a":  "Refleksy do pracy: nadnercza, przepona, wszystkie gruczoły, cały kręgosłup. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Wzdęcia (z oddawaniem wiatrów)?",
+                   "a":  "Refleksy do pracy: jelito cienkie, żołądek, wątroba, woreczek żółciowy, trzustka. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Wzrost (nienormalny)?",
+                   "a":  "Refleksy do pracy: przysadka mózgowa, refleksy dotknięte chorobą na stopach. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Wątroba (problemy)?",
+                   "a":  "Refleksy do pracy: wątroba, woreczek żółciowy, cały kręgosłup. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Węch (zapach)?",
+                   "a":  "Refleksy do pracy: duży palec, wszystkie palce. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Wyrostek robaczkowy (zapalenie)?",
+                   "a":  "Refleksy do pracy: zastawka krętniczo-kątnicza jelita, przepona. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zawroty głowy?",
+                   "a":  "Refleksy do pracy: boki karku, refleksy oczu, kręgi szyjne. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zatrzymanie płynów (obrzęki)?",
+                   "a":  "Refleksy do pracy: nerki, nadnercza, układ limfatyczny. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Złamania?",
+                   "a":  "Refleksy do pracy: refleksy części złamanej + równolegle refleksy korespondujące. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zgaga?",
+                   "a":  "Refleksy do pracy: przepona, woreczek żółciowy, trzustka, żołądek, wszystkie gruczoły. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zatoki?",
+                   "a":  "Refleksy do pracy: jelito cienkie, wszystkie palce, nadnercza, klatka piersiowa/płuca. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zatoki (zapalenie)?",
+                   "a":  "Refleksy do pracy: wszystkie palce, jelito cienkie, nadnercza, klatka piersiowa/płuca. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Zęby (ból)?",
+                   "a":  "Refleksy do pracy: wszystkie palce, środek 1/3 dużego palca. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
+               },
+               {
+                   "r":  "indeks",
+                   "kat":  "Praca przy schorzeniu",
+                   "q":  "Na czym pracować przy: Żyły (zapalenie)?",
+                   "a":  "Refleksy do pracy: nadnercza, okrężnica, wątroba, równoległe miejsca na ręce. To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza."
                }
            ]
 };

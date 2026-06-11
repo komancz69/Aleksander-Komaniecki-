@@ -399,6 +399,23 @@ function bestDoc(typy,qTok,subjTok,preferNum){
 function card(tekst,zrodlo,extra){return `<div class="answer-card">${tekst}<div class="src">Źródło: ${esc(zrodlo)}</div>${extra||''}</div>`;}
 const DISC=`<div class="src">To mapa pracy refleksologa — nie wskazanie lecznicze ani diagnoza.</div>`;
 function refleksyChip(str){return str.split(',').map(r=>`<span class="reflx">${esc(r.trim())}</span>`).join('');}
+// dopasowanie pytania do gotowej bazy „Q&A z książki"
+function qaMatch(qTok){
+  let best=null,bs=0,bc=0;
+  (W.qa||[]).forEach(x=>{
+    const qt=tresc(x.q); let m=0; qTok.forEach(t=>{ if(maTok(qt,t)) m++; });
+    if(!m) return;
+    const at=tresc(x.a); let am=0; qTok.forEach(t=>{ if(maTok(at,t)) am++; });
+    const sc=m*3+am, cov=m/qTok.length;
+    if(sc>bs||(sc===bs&&cov>bc)){bs=sc;bc=cov;best=x;}
+  });
+  return best?{x:best,sc:bs,cov:bc}:null;
+}
+function qaCard(x,glowna){
+  return `<div class="answer-card">${glowna?'<div class="src" style="margin:0 0 4px">📚 Gotowa odpowiedź z bazy Q&amp;A</div>':''}`+
+    `<b>${esc(x.q)}</b><div style="margin-top:6px;line-height:1.6">${esc(x.a)}</div>`+
+    `<div class="src">Baza „Q&amp;A z książki” · ${esc(qaLabel(x.r))}</div></div>`;
+}
 
 function odpowiedz(){
   const q=document.getElementById('pyt-input').value.trim();
@@ -408,6 +425,13 @@ function odpowiedz(){
   if(!qTok.length){out.innerHTML='<p class="muted">Zadaj pełne pytanie (z nazwą narządu, refleksu, schorzenia lub pojęcia).</p>';return;}
   const intent=intencja(q);
   let html='';
+
+  // 1) najpierw gotowa odpowiedź z bazy „Q&A z książki" (jeśli pytanie dobrze pasuje)
+  const qb=qaMatch(qTok);
+  if(qb && (qb.sc>=6 || (qb.cov>=0.99 && qb.sc>=3))){
+    out.innerHTML=qaCard(qb.x,true);
+    return;
+  }
 
   if(intent==='lokalizacja'){
     const e=encjaTypu(qTok,['mapa']);
@@ -448,10 +472,17 @@ function odpowiedz(){
     }
   }
 
+  // „Zobacz też" — pasujące gotowe pytanie z bazy Q&A (gdy nie było główną odpowiedzią)
+  if(html && qb && qb.sc>=4){
+    html+=`<div class="answer-card"><div class="src" style="margin:0 0 4px">📚 Zobacz też w bazie „Q&amp;A z książki"</div>`+
+      `<details><summary>${esc(qb.x.q)}</summary><div style="line-height:1.6;margin-top:6px">${esc(qb.x.a)}</div></details></div>`;
+  }
   if(!html){
-    const d=bestDoc(['sekcja','fakt','pojecie','def','streszczenie'],qTok,null);
-    if(d) html=card(`<b>Najbliższa odpowiedź:</b><br>${d.d.wy}`,d.d.zrodlo);
-    else html=`<div class="answer-card">Nie znalazłem odpowiedzi. Spróbuj nazwać narząd, refleks, schorzenie lub pojęcie — np. „gdzie jest refleks nerek”, „co robić przy migrenie”, „czym jest homeostaza”, „dlaczego pracujemy na kręgosłupie”.</div>`;
+    if(qb && qb.sc>=2){ html=qaCard(qb.x,true); }
+    else { const d=bestDoc(['sekcja','fakt','pojecie','def','streszczenie'],qTok,null);
+      if(d) html=card(`<b>Najbliższa odpowiedź:</b><br>${d.d.wy}`,d.d.zrodlo);
+      else html=`<div class="answer-card">Nie znalazłem odpowiedzi. Spróbuj nazwać narząd, refleks, schorzenie lub pojęcie — np. „gdzie jest refleks nerek”, „co robić przy migrenie”, „czym jest homeostaza”, „dlaczego pracujemy na kręgosłupie”.</div>`;
+    }
   }
   out.innerHTML=html;
 }
@@ -589,10 +620,16 @@ function eksportWynik(){
 }
 
 /* ================= Q&A Z KSIĄŻKI ================= */
+const QA_SEK=[{id:'slownik',label:'Słownik pojęć'},
+  {id:'mapy',label:'Mapy stref — lokalizacja refleksów'},
+  {id:'indeks',label:'Indeks schorzeń (A–Ż)'}];
+function qaLabel(id){const r=rozdzialById(id); if(r)return `Rozdział ${r.nr} — ${r.tytul}`;
+  const s=QA_SEK.find(x=>x.id===id); return s?s.label:id;}
 function initQA(){
   const rs=document.getElementById('qa-rozdzial');
-  rs.innerHTML='<option value="all">Wszystkie rozdziały</option>'+
-    W.rozdzialy.map(r=>`<option value="${r.id}">R${r.nr} — ${esc(r.tytul)}</option>`).join('');
+  rs.innerHTML='<option value="all">Wszystkie działy</option>'+
+    W.rozdzialy.map(r=>`<option value="${r.id}">R${r.nr} — ${esc(r.tytul)}</option>`).join('')+
+    QA_SEK.map(s=>`<option value="${s.id}">${esc(s.label)}</option>`).join('');
   const kats=Array.from(new Set((W.qa||[]).map(x=>x.kat)));
   const ks=document.getElementById('qa-kat');
   ks.innerHTML='<option value="all">Wszystkie kategorie</option>'+
@@ -608,15 +645,12 @@ function renderQA(){
   let lista=qa.filter(x=>(rz==='all'||x.r===rz)&&(kt==='all'||x.kat===kt)&&
     (!q||(x.q+' '+x.a).toLowerCase().includes(q)));
   document.getElementById('qa-licznik').textContent=`Znaleziono: ${lista.length} z ${qa.length}`;
-  // grupuj wg rozdziału (kolejność książki)
   const grupy={};
   lista.forEach(x=>{(grupy[x.r]=grupy[x.r]||[]).push(x);});
-  const kolej=W.rozdzialy.map(r=>r.id).filter(id=>grupy[id]);
-  let html='';
-  if(!lista.length){ html='<p class="muted">Brak pasujących pytań. Zmień filtr lub frazę.</p>'; }
+  const kolej=W.rozdzialy.map(r=>r.id).concat(QA_SEK.map(s=>s.id)).filter(id=>grupy[id]);
+  let html=lista.length?'':'<p class="muted">Brak pasujących pytań. Zmień filtr lub frazę.</p>';
   kolej.forEach(id=>{
-    const r=rozdzialById(id);
-    html+=`<h3>Rozdział ${r.nr} — ${esc(r.tytul)}</h3>`;
+    html+=`<h3>${esc(qaLabel(id))}</h3>`;
     grupy[id].forEach(x=>{
       html+=`<details><summary>${esc(x.q)} <span class="reflx" style="font-size:.72rem;background:#ece3d0">${esc(x.kat)}</span></summary>`+
         `<div style="line-height:1.6;margin-top:6px">${esc(x.a)}</div></details>`;
