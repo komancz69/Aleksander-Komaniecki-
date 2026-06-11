@@ -300,7 +300,8 @@ function pokazBezpieczenstwo(){
 const STOP=new Set(['i','w','we','na','do','z','ze','o','u','co','to','jest','sa','jak','gdzie','czy','przy','dla',
   'a','po','od','sie','ze','ma','maja','byc','lub','oraz','jakie','ktore','ktory','ktora','mozna','robic','dziala',
   'nad','pod','przed','mi','mnie','ten','ta','te','tym','tego','jaki','jaka','powiedz','wyjasnij','opisz',
-  'znajduje','znajduja','lezy','leza','wystepuje','sluzy','jakis','jakies','oraz','czym','jakas']);
+  'znajduje','znajduja','lezy','leza','wystepuje','sluzy','sluza','jakis','jakies','oraz','czym','jakas',
+  'za','czego','role','rola','pelni','odpowiada','odpowiadaja','zajmuje','funkcja','funkcje']);
 function bezznak(s){return (s||'').toLowerCase()
   .replace(/ą/g,'a').replace(/ć/g,'c').replace(/ę/g,'e').replace(/ł/g,'l').replace(/ń/g,'n')
   .replace(/ó/g,'o').replace(/ś/g,'s').replace(/ż/g,'z').replace(/ź/g,'z');}
@@ -313,10 +314,10 @@ const KAN={nerka:'nerka',nerki:'nerka',nerek:'nerka',nerkach:'nerka',nerkami:'ne
   zab:'zab',zeby:'zab',zebow:'zab'};
 function kan(w){return KAN[w]||w;}
 function tresc(s){return slowa(s).filter(w=>w.length>2&&!STOP.has(w)).map(kan);}
-// dopasowanie po rdzeniu — wspólny prefiks ≥4 znaki i ≥ połowy dłuższego słowa
-// (łączy serc-e/-a, wątrob-a/-y; rozdziela zaparcia/zapalenie)
-function rdzen(a,b){if(a===b)return true;let p=0;const n=Math.min(a.length,b.length);
-  while(p<n&&a[p]===b[p])p++;return p>=4 && p*2>=Math.max(a.length,b.length);}
+// dopasowanie po rdzeniu — wspólny prefiks ≥4 znaki i ≥60% dłuższego słowa
+// (łączy serc-e/-a, wątrob-a/-y, stop-a/-ach; rozdziela prze-pona/prze-gub, zaparcia/zapalenie)
+function rdzen(a,b){if(a===b)return true;let p=0;const mx=Math.max(a.length,b.length);
+  while(p<a.length&&p<b.length&&a[p]===b[p])p++;return p>=Math.max(4,Math.ceil(0.6*mx));}
 function maTok(tok,w){return tok.some(t=>rdzen(t,w));}
 function keyTok(label){return Array.from(new Set(tresc(label)));}
 
@@ -419,7 +420,7 @@ function odpowiedz(){
     }
   }
   else { // liczba / dlaczego / ogolne — jeden spójny akapit
-    const e=encjaTypu(qTok,['mapa','schorzenie','termin','rozdzial']);
+    const e=encjaTypu(qTok,['mapa','schorzenie','termin']);
     const d=bestDoc(['sekcja','fakt','pojecie','def','streszczenie'],qTok,e?e.tok:null,intent==='liczba');
     if(d) html+=card(d.d.wy,d.d.zrodlo);
     // „powiązane refleksy" tylko gdy temat to faktycznie schorzenie (nie przy pytaniach „ile")
