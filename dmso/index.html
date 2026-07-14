@@ -148,6 +148,10 @@ th{background:var(--green-l)}
 /* klikalny surowiec */
 .slink{color:var(--green-d);border-bottom:1px dashed var(--green);cursor:pointer;font-weight:600;white-space:nowrap}
 .slink:hover{background:var(--green-l);border-radius:4px}
+/* przycisk lupy — pełny tekst książki */
+.lupa-btn{display:inline-flex;align-items:center;gap:6px;margin:6px 0 14px;padding:9px 16px;border-radius:22px;
+  background:var(--green-d);color:#fff;border:none;font-weight:700;font-size:14.5px;cursor:pointer;box-shadow:0 3px 10px rgba(46,125,91,.28);transition:.14s}
+.lupa-btn:hover{filter:brightness(1.07);transform:translateY(-1px);box-shadow:0 6px 16px rgba(46,125,91,.34)}
 /* modal / pop-up */
 .overlay{position:fixed;inset:0;background:rgba(18,28,22,.5);display:none;z-index:100;align-items:flex-start;justify-content:center;padding:40px 16px;overflow:auto}
 .overlay.open{display:flex}
@@ -393,19 +397,13 @@ VIEWS['problem']=(hl,route)=>{
   h+='<div class="card"><h1>'+esc(p.nazwa)+' '+src(p.zrodlo,1)+'</h1>';
   if(p.synonimy&&p.synonimy.length) h+='<p class="muted">także: '+p.synonimy.map(esc).join(', ')+'</p>';
   if(p.opis) h+='<p>'+esc(p.opis)+'</p>';
-  h+=ogolnyBlock(p.opis_ogolny);
-  h+=mechanizmBlock(p.mechanizm);
-  h+=ksiazkaBlock(p.nazwa,null);
-  // substancje zalecane
-  if(p.substancje_zalecane&&p.substancje_zalecane.length){
-    const maIle=p.substancje_zalecane.some(s=>s.ile||s.jak_dlugo);
-    h+='<h3>Zalecane środki'+(maIle?' (stężenie · droga · ile · jak długo)':'')+'</h3><div class="tblwrap"><table><tr><th>Środek</th><th>Stężenie</th><th>Droga</th>'+(maIle?'<th>Ile</th><th>Jak długo</th>':'')+'<th>Uwaga</th></tr>';
-    p.substancje_zalecane.forEach(s=>{h+='<tr><td><span class="slink" onclick="subPopup(\''+s.substancja_id+'\')">'+esc(subName(s.substancja_id))+'</span></td><td class="num">'+esc(s.stezenie||'')+'</td><td>'+esc(s.droga||'')+'</td>'+(maIle?'<td class="num">'+esc(s.ile||'')+'</td><td>'+esc(s.jak_dlugo||'')+'</td>':'')+'<td class="muted">'+esc(s.notatka||s.uwaga||'')+'</td></tr>';});
-    h+='</table></div>';
-  }
-  // receptury powiązane
-  const recs=(p.receptury||[]).map(rid=>REC_BY_ID[rid]).filter(Boolean);
-  if(recs.length){h+='<h3>Gotowe receptury</h3>'+recs.map(r=>'<div class="chip" onclick="go(\'receptura:'+r.id+'\')">📋 '+esc(r.nazwa)+'</div>').join('');}
+  h+=ogolnyBlock(p.opis_ogolny||opisOgolnyByTopic(p.nazwa));
+  h+=lupaBtn(p.nazwa);
+  h+=aggMechanizmy(p.nazwa,null);       // mechanizmy z Tomu 1 i 2
+  h+=ksiazkaBlock(p.nazwa,null);        // co mówi książka (fragmenty ze stronami)
+  h+=aggSubstancje(p.nazwa,null);       // scalona tabela środków (Tom 1+2)
+  h+=aggReceptury(p.nazwa,p.receptury); // receptury powiązane
+  h+=aggTom3(p.nazwa,null,null);        // protokoły i relacje z Tomu 3 inline
   h+=gdzieJeszcze(p.nazwa,null,'problem:'+id);
   h+=dowodyIfaq(p.nazwa,null);
   h+='</div>';
@@ -418,7 +416,8 @@ VIEWS['ptom2']=(hl,route)=>{
   let h=crumb([['Start','home'],['Problemy A–Z','problemy'],[p.nazwa,'ptom2:'+i]]);
   h+='<div class="card"><h1>'+esc(p.nazwa)+' '+src({tom:2,strony:p.strony},2)+'</h1>';
   h+=ogolnyBlock(p.opis_ogolny||opisOgolnyByTopic(p.nazwa));
-  h+=mechanizmBlock(p.mechanizm);
+  h+=lupaBtn(p.nazwa);
+  h+=aggMechanizmy(p.nazwa,p.slug_map);
   if(p.opis) h+=blk('metod','Protokół / dawkowanie (Tom 2)',esc(p.opis));
   if(p.substancje&&p.substancje.length){
     if(typeof p.substancje[0]==='object'){
@@ -440,6 +439,8 @@ VIEWS['rel3']=(hl,route)=>{
   let h=crumb([['Start','home'],['Doświadczenia (T.3)','doswiadczenia'],[r.nazwa,'rel3:'+id]]);
   h+='<div class="card"><h1>'+esc(r.nazwa)+' '+src({tom:3,strony:r.strony},3)+'</h1>';
   h+=ogolnyBlock(r.opis_ogolny||opisOgolnyByTopic(r.nazwa));
+  h+=lupaBtn(r.nazwa);
+  h+=aggMechanizmy(r.nazwa,r.slug);
   if(r.niepewne) h+=blk('weryf','Do weryfikacji','Część danych z tej sekcji pochodzi z nieostrego skanu.');
   (r.protokoly||[]).forEach(pr=>{
     let inner='<b>'+esc(pr.nazwa)+'</b>'+(pr.sposob?' <span class="pill">'+esc(pr.sposob)+'</span>':'');
@@ -475,8 +476,8 @@ function dowodyIfaq(name,slug){
   rel3.forEach(r=>{(r.relacje||[]).slice(0,3).forEach(rl=>{h+=blk('dowod','Dowód / relacja z praktyki (Tom 3)',(rl.autor?'<b>'+esc(rl.autor)+'</b> — ':'')+esc(rl.opis)+(rl.cytat?'<div style="font-style:italic">„'+esc(rl.cytat)+'”</div>':'')+' '+src({tom:3,strony:rl.strony},3));});});
   return h;
 }
-const KLAB={faq:'Pytanie i odpowiedź',opis:'Opis / protokół',protokol:'Protokół z praktyki (Tom 3)',cytat:'Cytat ze źródła'};
-const KTYP={faq:'metod',opis:'metod',protokol:'recept',cytat:'cytat'};
+const KLAB={mechanizm:'🔬 Jak działa DMSO / surowce',faq:'Pytanie i odpowiedź',opis:'Opis / protokół',protokol:'Protokół z praktyki (Tom 3)',relacja:'Relacja z praktyki (Tom 3)',cytat:'Cytat ze źródła'};
+const KTYP={mechanizm:'metod',faq:'metod',opis:'metod',protokol:'recept',relacja:'dowod',cytat:'cytat'};
 /* klikalne odwołanie do strony → pop-up z KOMPLETNYM zestawem fragmentów danego schorzenia */
 function pageBadge(name,tom,strony){
   const lbl=srcLabel(strony!=null?{tom:tom,strony:strony}:null,tom)||('[Tom '+tom+']');
@@ -485,14 +486,50 @@ function pageBadge(name,tom,strony){
 }
 function bookAllModal(enc){
   const name=decodeURIComponent(enc); const items=ksiazkaItems(name,null);
-  let h='<h3>📖 Co mówi książka — '+esc(name)+'</h3>'+
-    '<p class="muted" style="font-size:.85em;margin-top:-4px">Pełny zestaw fragmentów z książki dla tego schorzenia (ze stronami — tekst, nie skan).</p>';
+  let h='<h3>🔍 Pełny tekst z książki — '+esc(name)+'</h3>'+
+    '<p class="muted" style="font-size:.85em;margin-top:-4px">Wszystko, co o tym zagadnieniu mówią 3 tomy „Biblii DMSO” (tekst ze stronami, nie skan). Surowce są klikalne.</p>';
   if(!items.length){h+='<p class="muted">Brak fragmentów w bazie.</p>';}
+  const col={mechanizm:'#2e7d5b',opis:'#8a7a3c',protokol:'#7a6b34',relacja:'#6a8caf',faq:'#8a7a3c',cytat:'#cdbf8f'};
   items.forEach(x=>{ const lbl=srcLabel(x.st!=null?{tom:x.t,strony:x.st}:null,x.t)||('[Tom '+x.t+']');
-    h+='<div style="margin:14px 0;padding:2px 0 2px 14px;border-left:3px solid #cdbf8f">'+
+    h+='<div style="margin:14px 0;padding:2px 0 2px 14px;border-left:3px solid '+(col[x.typ]||'#cdbf8f')+'">'+
        '<div class="muted" style="font-size:.78em;text-transform:uppercase;letter-spacing:.05em;font-weight:700">'+(KLAB[x.typ]||'Fragment')+' · '+lbl+'</div>'+
-       '<div style="line-height:1.7;margin-top:3px">'+esc(x.txt)+'</div></div>'; });
+       '<div style="line-height:1.7;margin-top:3px">'+esc(x.txt)+'</div>'+subChipsDetected(x.txt)+'</div>'; });
   openModal(h);
+}
+/* wyraźny przycisk lupy — pełny tekst książki (3 tomy) dla tematu */
+function lupaBtn(name){ return '<button class="lupa-btn" onclick="bookAllModal(\''+encodeURIComponent(name)+'\')">🔍 Pokaż pełny tekst z książki (3 tomy)</button>'; }
+/* AGREGACJA v6 — zbiera treść o temacie ze wszystkich 3 tomów */
+function aggMechanizmy(name,slug){
+  const seen={}; let h='';
+  const add=(m,tomDef)=>{ if(!m||!m.tekst)return; const k=(''+m.tekst).slice(0,40); if(seen[k])return; seen[k]=1; h+=mechanizmBlock({tom:m.tom||tomDef,strony:m.strony,tekst:m.tekst}); };
+  (DB.problemy||[]).forEach(p=>{ if(sameTopic(p.nazwa,name)) add(p.mechanizm,1); });
+  (DB.problemy_tom2||[]).forEach(p=>{ if(sameTopic(p.nazwa,name)||(slug&&p.slug_map===slug)) add(p.mechanizm,2); });
+  return h;
+}
+function aggSubstancje(name,slug){
+  const rows=[]; const seen={}; let maIle=false;
+  const addRow=(cell,st,dr,ile,jak,uw,tom,dk)=>{ if(seen[dk])return; seen[dk]=1; if(ile||jak)maIle=true; rows.push({cell,st,dr,ile,jak,uw,tom}); };
+  (DB.problemy||[]).forEach(p=>{ if(sameTopic(p.nazwa,name)) (p.substancje_zalecane||[]).forEach(s=>{ const nm=subName(s.substancja_id); const cell='<span class="slink" onclick="subPopup(\''+s.substancja_id+'\')">'+esc(nm)+'</span>'; addRow(cell,s.stezenie||'',s.droga||'',s.ile||'',s.jak_dlugo||'',s.notatka||s.uwaga||'',1,norm(nm+'|'+(s.stezenie||'')+'|'+(s.droga||''))); }); });
+  (DB.problemy_tom2||[]).forEach(p=>{ if(sameTopic(p.nazwa,name)||(slug&&p.slug_map===slug)) (p.substancje||[]).forEach(s=>{ if(typeof s==='string'){ addRow(subCell(s),'','','','','',2,norm(s)); return; } const nm=s.s||s.substancja||s.nazwa||''; addRow(subCell(nm),s.stezenie||'',s.droga||'',s.ile||'',s.jak_dlugo||s.jak_dlug||'',s.kiedy||s.uwaga||s.notatka||'',2,norm(nm+'|'+(s.stezenie||'')+'|'+(s.droga||''))); }); });
+  if(!rows.length)return '';
+  let h='<h3>Zalecane środki i dawki <span class="muted" style="font-weight:400;font-size:.8em">(scalone z 3 tomów · klik = karta surowca)</span></h3><div class="tblwrap"><table><tr><th>Środek</th><th>Stężenie</th><th>Droga</th>'+(maIle?'<th>Ile</th><th>Jak długo</th>':'')+'<th>Uwaga</th><th>Tom</th></tr>';
+  rows.forEach(r=>{ h+='<tr><td>'+r.cell+'</td><td class="num">'+esc(r.st)+'</td><td>'+esc(r.dr)+'</td>'+(maIle?'<td class="num">'+esc(r.ile)+'</td><td>'+esc(r.jak)+'</td>':'')+'<td class="muted">'+esc(r.uw)+'</td><td class="num muted">'+r.tom+'</td></tr>'; });
+  h+='</table></div>'; return h;
+}
+function aggTom3(name,slug,skipRef){
+  let h='';
+  (DB.relacje_tom3||[]).forEach(r=>{ if('rel3:'+r.id===skipRef)return; if(sameTopic(r.nazwa,name)||(slug&&r.slug===slug)){
+    (r.protokoly||[]).forEach(pr=>{ const t=pr.nazwa+(pr.dawka?' — '+pr.dawka:'')+(pr.skladniki&&pr.skladniki.length?': '+pr.skladniki.join('; '):''); h+=blk('recept','Protokół z praktyki (Tom 3) '+src({tom:3,strony:pr.zrodlo_str||r.strony},3),esc(t)+subChipsDetected(t)); });
+    (r.relacje||[]).slice(0,4).forEach(rl=>{ h+=blk('dowod','Relacja z praktyki (Tom 3) '+src({tom:3,strony:rl.strony||r.strony},3),(rl.autor?'<b>'+esc(rl.autor)+'</b> — ':'')+esc(rl.opis||'')+(rl.cytat?'<div style="font-style:italic">„'+esc(rl.cytat)+'”</div>':'')); });
+  }});
+  return h;
+}
+function aggReceptury(name,ids){
+  const recs=[]; const seen={};
+  (ids||[]).forEach(rid=>{ const r=REC_BY_ID[rid]; if(r&&!seen[r.id]){seen[r.id]=1;recs.push(r);} });
+  (DB.receptury||[]).forEach(r=>{ if(!seen[r.id]&&r.nazwa&&sameTopic(r.nazwa,name)){seen[r.id]=1;recs.push(r);} });
+  if(!recs.length)return '';
+  return '<h3>Gotowe receptury</h3>'+recs.map(r=>'<div class="chip" onclick="go(\'receptura:'+r.id+'\')">📋 '+esc(r.nazwa)+'</div>').join('');
 }
 /* przyjazny opis ogólny „co to jest” — wyraźnie oznaczony jako spoza Biblii DMSO */
 function ogolnyBlock(txt){ if(!txt)return ''; return '<div class="blk opinia"><span class="lbl">ℹ️ Krótko o schorzeniu — opis ogólny (nie z „Biblii DMSO”)</span>'+esc(txt)+'</div>'; }
@@ -502,6 +539,10 @@ function opisOgolnyByTopic(name){ let p=(DB.problemy||[]).find(x=>x.opis_ogolny&
 /* zbiera wszystkie czytelne fragmenty z książki (opis+cytaty+protokoły+FAQ) dla danego schorzenia */
 function ksiazkaItems(name,slug){
   const items=[]; const push=(t,st,txt,typ)=>{ if(txt&&(''+txt).trim().length>3) items.push({t,st,txt:(''+txt).trim(),typ}); };
+  // 1) MECHANIZM (jak działa DMSO) — Tom 1 i Tom 2, na początku
+  (DB.problemy||[]).forEach(p=>{ if(sameTopic(p.nazwa,name)){ const m=p.mechanizm; if(m&&m.tekst) push(m.tom||1,m.strony,m.tekst,'mechanizm'); } });
+  (DB.problemy_tom2||[]).forEach(p=>{ if(sameTopic(p.nazwa,name)||(slug&&p.slug_map===slug)){ const m=p.mechanizm; if(m&&m.tekst) push(m.tom||2,m.strony,m.tekst,'mechanizm'); } });
+  // 2) Cytaty / opisy / protokoły
   (DB.problemy||[]).forEach(p=>{ if(sameTopic(p.nazwa,name)){ (p.cytaty||[]).forEach(c=>{const tk=typeof c==='string'?c:c.tekst; const st=typeof c==='object'?c.strona:null; push(c.tom||1,st,tk,'cytat');}); } });
   (DB.problemy_tom2||[]).forEach(p=>{ if(sameTopic(p.nazwa,name)||(slug&&p.slug_map===slug)){
     push(2,p.strony,p.opis,'opis');
@@ -509,11 +550,11 @@ function ksiazkaItems(name,slug){
   }});
   (DB.relacje_tom3||[]).forEach(r=>{ if(sameTopic(r.nazwa,name)||(slug&&r.slug===slug)){
     (r.protokoly||[]).forEach(pr=>{ const t=pr.nazwa+(pr.dawka?' — '+pr.dawka:'')+(pr.skladniki&&pr.skladniki.length?': '+pr.skladniki.join('; '):''); push(3,pr.zrodlo_str||r.strony,t,'protokol'); });
-    (r.relacje||[]).forEach(rl=>{ if(rl.cytat) push(3,rl.strony,rl.cytat,'cytat'); });
+    (r.relacje||[]).forEach(rl=>{ const t=(rl.autor?rl.autor+' — ':'')+(rl.opis||'')+(rl.cytat?' „'+rl.cytat+'”':''); push(3,rl.strony||r.strony,t,'relacja'); });
   }});
   const mw=stem(name).split(' ')[0];
   if(mw&&mw.length>3)(DB.faq||[]).forEach(f=>{ if(stem(f.pytanie+' '+f.odpowiedz).indexOf(mw)>=0) push(2,f.strony,f.pytanie+' — '+f.odpowiedz,'faq'); });
-  const seen={},uniq=[]; items.forEach(x=>{const k=x.txt.slice(0,45);if(!seen[k]){seen[k]=1;uniq.push(x);}});
+  const seen={},uniq=[]; items.forEach(x=>{const k=x.typ+'|'+x.txt.slice(0,45);if(!seen[k]){seen[k]=1;uniq.push(x);}});
   return uniq;
 }
 /* „Co mówi książka” — sekcja na karcie; każde 🔎 otwiera KOMPLETNY zestaw (bookAllModal) */
