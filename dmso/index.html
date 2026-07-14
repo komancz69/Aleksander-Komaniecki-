@@ -398,14 +398,7 @@ VIEWS['problem']=(hl,route)=>{
   if(p.synonimy&&p.synonimy.length) h+='<p class="muted">także: '+p.synonimy.map(esc).join(', ')+'</p>';
   if(p.opis) h+='<p>'+esc(p.opis)+'</p>';
   h+=ogolnyBlock(p.opis_ogolny||opisOgolnyByTopic(p.nazwa));
-  h+=lupaBtn(p.nazwa);
-  h+=aggMechanizmy(p.nazwa,null);       // mechanizmy z Tomu 1 i 2
-  h+=ksiazkaBlock(p.nazwa,null);        // co mówi książka (fragmenty ze stronami)
-  h+=aggSubstancje(p.nazwa,null);       // scalona tabela środków (Tom 1+2)
-  h+=aggReceptury(p.nazwa,p.receptury); // receptury powiązane
-  h+=aggTom3(p.nazwa,null,null);        // protokoły i relacje z Tomu 3 inline
-  h+=gdzieJeszcze(p.nazwa,null,'problem:'+id);
-  h+=dowodyIfaq(p.nazwa,null);
+  h+=topicBody(p.nazwa,null,'problem:'+id,p.receptury);
   h+='</div>';
   return h;
 };
@@ -416,20 +409,7 @@ VIEWS['ptom2']=(hl,route)=>{
   let h=crumb([['Start','home'],['Problemy A–Z','problemy'],[p.nazwa,'ptom2:'+i]]);
   h+='<div class="card"><h1>'+esc(p.nazwa)+' '+src({tom:2,strony:p.strony},2)+'</h1>';
   h+=ogolnyBlock(p.opis_ogolny||opisOgolnyByTopic(p.nazwa));
-  h+=lupaBtn(p.nazwa);
-  h+=aggMechanizmy(p.nazwa,p.slug_map);
-  if(p.opis) h+=blk('metod','Protokół / dawkowanie (Tom 2)',esc(p.opis));
-  if(p.substancje&&p.substancje.length){
-    if(typeof p.substancje[0]==='object'){
-      h+='<h3>Zalecane środki (kiedy / ile / jak długo)</h3><div class="tblwrap"><table><tr><th>Środek</th><th>Stężenie</th><th>Droga</th><th>Ile</th><th>Jak długo</th><th>Uwaga</th></tr>';
-      p.substancje.forEach(s=>{ if(typeof s==='string'){h+='<tr><td>'+esc(s)+'</td><td colspan="5"></td></tr>';return;}
-        h+='<tr><td>'+subCell(s.s||s.substancja||s.nazwa||'')+'</td><td class="num">'+esc(s.stezenie||'')+'</td><td>'+esc(s.droga||'')+'</td><td class="num">'+esc(s.ile||'')+'</td><td>'+esc(s.jak_dlugo||s.jak_dlug||'')+'</td><td class="muted">'+esc(s.kiedy||s.uwaga||s.notatka||'')+'</td></tr>';});
-      h+='</table></div>';
-    } else h+='<p><b>Środki:</b> '+p.substancje.map(esc).join(', ')+'</p>';
-  }
-  (p.cytaty||[]).forEach(c=>{const tekst=typeof c==='string'?c:(c.tekst||''); const st=typeof c==='object'?c.strona:null; h+=blk('cytat','Cytat ze źródła',esc(tekst)+' '+src(st,2));});
-  h+=gdzieJeszcze(p.nazwa,p.slug_map,'ptom2:'+i);
-  h+=dowodyIfaq(p.nazwa,p.slug_map);
+  h+=topicBody(p.nazwa,p.slug_map,'ptom2:'+i,null);
   h+='</div>';return h;
 };
 
@@ -439,25 +419,8 @@ VIEWS['rel3']=(hl,route)=>{
   let h=crumb([['Start','home'],['Doświadczenia (T.3)','doswiadczenia'],[r.nazwa,'rel3:'+id]]);
   h+='<div class="card"><h1>'+esc(r.nazwa)+' '+src({tom:3,strony:r.strony},3)+'</h1>';
   h+=ogolnyBlock(r.opis_ogolny||opisOgolnyByTopic(r.nazwa));
-  h+=lupaBtn(r.nazwa);
-  h+=aggMechanizmy(r.nazwa,r.slug);
   if(r.niepewne) h+=blk('weryf','Do weryfikacji','Część danych z tej sekcji pochodzi z nieostrego skanu.');
-  (r.protokoly||[]).forEach(pr=>{
-    let inner='<b>'+esc(pr.nazwa)+'</b>'+(pr.sposob?' <span class="pill">'+esc(pr.sposob)+'</span>':'');
-    if(pr.dawka) inner+='<div><b>Dawka:</b> '+esc(pr.dawka)+'</div>';
-    if(pr.skladniki&&pr.skladniki.length) inner+='<ul>'+pr.skladniki.map(s=>'<li>'+esc(s)+'</li>').join('')+'</ul>';
-    if(pr.uwaga) inner+='<div class="muted">Uwaga: '+esc(pr.uwaga)+'</div>';
-    inner+=subChipsDetected((pr.skladniki||[]).join(' ')+' '+(pr.nazwa||'')+' '+(pr.dawka||''));
-    h+=blk('recept','Receptura / protokół',inner);
-  });
-  (r.relacje||[]).forEach(rl=>{
-    let inner=(rl.autor?'<b>'+esc(rl.autor)+'</b> — ':'')+esc(rl.opis);
-    if(rl.srodki&&rl.srodki.length) inner+='<div class="muted" style="margin-top:4px">Środki: '+subChips(rl.srodki)+'</div>';
-    if(rl.cytat) inner+='<div style="font-style:italic;margin-top:4px">„'+esc(rl.cytat)+'”</div>';
-    inner+=' '+src({tom:3,strony:rl.strony},3);
-    h+=blk('dowod','Dowód / relacja z praktyki (Tom 3)',inner);
-  });
-  h+=gdzieJeszcze(r.nazwa,r.slug,'rel3:'+id);
+  h+=topicBody(r.nazwa,r.slug,'rel3:'+id,null);
   h+='</div>';return h;
 };
 
@@ -518,9 +481,22 @@ function aggSubstancje(name,slug){
 }
 function aggTom3(name,slug,skipRef){
   let h='';
-  (DB.relacje_tom3||[]).forEach(r=>{ if('rel3:'+r.id===skipRef)return; if(sameTopic(r.nazwa,name)||(slug&&r.slug===slug)){
-    (r.protokoly||[]).forEach(pr=>{ const t=pr.nazwa+(pr.dawka?' — '+pr.dawka:'')+(pr.skladniki&&pr.skladniki.length?': '+pr.skladniki.join('; '):''); h+=blk('recept','Protokół z praktyki (Tom 3) '+src({tom:3,strony:pr.zrodlo_str||r.strony},3),esc(t)+subChipsDetected(t)); });
-    (r.relacje||[]).slice(0,4).forEach(rl=>{ h+=blk('dowod','Relacja z praktyki (Tom 3) '+src({tom:3,strony:rl.strony||r.strony},3),(rl.autor?'<b>'+esc(rl.autor)+'</b> — ':'')+esc(rl.opis||'')+(rl.cytat?'<div style="font-style:italic">„'+esc(rl.cytat)+'”</div>':'')); });
+  (DB.relacje_tom3||[]).forEach(r=>{ if(skipRef&&'rel3:'+r.id===skipRef)return; if(sameTopic(r.nazwa,name)||(slug&&r.slug===slug)){
+    (r.protokoly||[]).forEach(pr=>{
+      let inner='<b>'+esc(pr.nazwa)+'</b>'+(pr.sposob?' <span class="pill">'+esc(pr.sposob)+'</span>':'');
+      if(pr.dawka) inner+='<div><b>Dawka:</b> '+esc(pr.dawka)+'</div>';
+      if(pr.skladniki&&pr.skladniki.length) inner+='<ul>'+pr.skladniki.map(s=>'<li>'+subCell(s)+'</li>').join('')+'</ul>';
+      if(pr.uwaga) inner+='<div class="muted">Uwaga: '+esc(pr.uwaga)+'</div>';
+      inner+=' '+src({tom:3,strony:pr.zrodlo_str||r.strony},3);
+      h+=blk('recept','Protokół leczenia (Tom 3)',inner);
+    });
+    (r.relacje||[]).forEach(rl=>{
+      let inner=(rl.autor?'<b>'+esc(rl.autor)+'</b> — ':'')+esc(rl.opis||'');
+      if(rl.srodki&&rl.srodki.length) inner+='<div class="muted" style="margin-top:4px">Środki: '+subChips(rl.srodki)+'</div>';
+      if(rl.cytat) inner+='<div style="font-style:italic;margin-top:4px">„'+esc(rl.cytat)+'”</div>';
+      inner+=' '+src({tom:3,strony:rl.strony||r.strony},3);
+      h+=blk('dowod','Opinia / relacja z praktyki (Tom 3)',inner);
+    });
   }});
   return h;
 }
@@ -530,6 +506,21 @@ function aggReceptury(name,ids){
   (DB.receptury||[]).forEach(r=>{ if(!seen[r.id]&&r.nazwa&&sameTopic(r.nazwa,name)){seen[r.id]=1;recs.push(r);} });
   if(!recs.length)return '';
   return '<h3>Gotowe receptury</h3>'+recs.map(r=>'<div class="chip" onclick="go(\'receptura:'+r.id+'\')">📋 '+esc(r.nazwa)+'</div>').join('');
+}
+/* ujednolicone ciało karty tematu (ta sama kolejność w Tom 1/2/3):
+   opis (dodawany przez widok) → jak działa DMSO → co mówi książka → środki i dawki →
+   PROTOKÓŁ LECZENIA + opinie (Tom 3) → RECEPTURY → gdzie jeszcze */
+function topicBody(name,slug,selfRef,recIds){
+  let h=lupaBtn(name);
+  h+=aggMechanizmy(name,slug);                 // jak działa DMSO i surowce (po co / dlaczego)
+  h+=ksiazkaBlock(name,slug);                  // co mówi książka — fragmenty ze stronami
+  h+=aggSubstancje(name,slug);                 // zalecane środki i dawki
+  const t3=aggTom3(name,slug,null);            // protokół leczenia + opinie z praktyki
+  if(t3) h+='<h3>Protokół leczenia i opinie z praktyki</h3>'+t3;
+  h+=aggReceptury(name,recIds);                // receptury — na końcu
+  h+=gdzieJeszcze(name,slug,selfRef);
+  h+=dowodyIfaq(name,slug);
+  return h;
 }
 /* przyjazny opis ogólny „co to jest” — wyraźnie oznaczony jako spoza Biblii DMSO */
 function ogolnyBlock(txt){ if(!txt)return ''; return '<div class="blk opinia"><span class="lbl">ℹ️ Krótko o schorzeniu — opis ogólny (nie z „Biblii DMSO”)</span>'+esc(txt)+'</div>'; }
@@ -559,9 +550,9 @@ function ksiazkaItems(name,slug){
 }
 /* „Co mówi książka” — sekcja na karcie; każde 🔎 otwiera KOMPLETNY zestaw (bookAllModal) */
 function ksiazkaBlock(name,slug){
-  const uniq=ksiazkaItems(name,slug); if(!uniq.length) return '';
+  const uniq=ksiazkaItems(name,slug).filter(x=>x.typ!=='mechanizm'); if(!uniq.length) return '';
   let h='<h3>📖 Co mówi książka <span class="muted" style="font-weight:400;font-size:.8em">(tekst ze stronami — nie skan · 🔎 = pełny opis)</span></h3>';
-  uniq.slice(0,12).forEach(x=>{ h+=blk(KTYP[x.typ]||'cytat',(KLAB[x.typ]||'Fragment')+' '+pageBadge(name,x.t,x.st),esc(x.txt)); });
+  uniq.slice(0,12).forEach(x=>{ h+=blk(KTYP[x.typ]||'cytat',(KLAB[x.typ]||'Fragment')+' '+pageBadge(name,x.t,x.st),esc(x.txt)+subChipsDetected(x.txt)); });
   return h;
 }
 
@@ -824,6 +815,8 @@ function buildSearch(){
   (DB.substancje||[]).forEach(s=>a.push({label:s.nazwa,typ:'środek',ref:'substancja:'+s.id,n:norm(s.nazwa+' '+(s.synonimy||[]).join(' '))}));
   (DB.receptury||[]).forEach(r=>a.push({label:r.nazwa,typ:'receptura',ref:'receptura:'+r.id,n:norm(r.nazwa)}));
   (DB.metody||[]).forEach(m=>a.push({label:m.nazwa,typ:'metoda',ref:'metoda:'+m.id,n:norm(m.nazwa)}));
+  // sposób podania / zabieg → prowadzi do widoku „Zabiegi” (na co się to stosuje)
+  Object.keys(ZABIEGI).forEach(grp=>ZABIEGI[grp].forEach(z=>a.push({label:z,typ:'sposób podania',zabieg:z,n:norm(z)})));
   SEARCHABLE=a;return a;
 }
 function onSearch(){
@@ -838,6 +831,7 @@ function onSearch(){
   box._res=res; box.classList.add('open');
 }
 function pick(ix){const box=document.getElementById('sugg');const it=(box._res||[])[ix];if(!it)return;closeSugg();document.getElementById('q').value='';
+  if(it.zabieg){go('zabiegi');setTimeout(()=>{try{zabiegNaCo(it.zabieg);}catch(e){}},60);return;}
   if(it.ref)return go(it.ref,it.label);
   if(it.rekord)return routeToRecord(it.rekord,it.tom,it.label);
 }
